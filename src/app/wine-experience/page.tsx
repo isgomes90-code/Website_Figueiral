@@ -34,8 +34,10 @@ export default function WineExperiencePage() {
         eyebrow="Cellar atmosphere"
         title="Portuguese depth, Mediterranean brightness and bottles for memorable evenings."
         body="The list is imagined for expressive pairings with fire-grilled meat, Brazilian-style picanha, Algarve seafood and relaxed hospitality."
-        image={images.wine}
+        image={images.wineCellar}
         alt="Sommelier wine service at a premium Algarve restaurant"
+        supportingImage="/images/wine/Vinho-detalhe-2.jpg"
+        supportingAlt="Detalhe de vinho no Restaurante Figueiral"
       />
       <section className="pb-24">
         <div className="section-shell grid gap-5 md:grid-cols-3">

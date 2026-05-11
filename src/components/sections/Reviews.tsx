@@ -1,6 +1,14 @@
+import Image from "next/image";
 import { reviews } from "@/lib/site";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+
+const experienceImages = [
+  "/images/people/Convicio-clientes-1.jpg",
+  "/images/people/Convicio-clientes-2.jpg",
+  "/images/people/Convicio-clientes-3.jpg",
+  "/images/people/Rececao-clientes.jpg"
+];
 
 export function Reviews() {
   return (
@@ -13,6 +21,26 @@ export function Reviews() {
           title="Long-standing hospitality, remembered long after the evening ends."
           align="center"
         />
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {experienceImages.map((image, index) => (
+            <MotionReveal
+              key={image}
+              delay={index * 0.05}
+              className={`relative min-h-56 overflow-hidden rounded-[1.5rem] shadow-[0_24px_80px_rgba(0,0,0,0.28)] ${
+                index % 2 === 1 ? "lg:mt-8" : ""
+              }`}
+            >
+              <Image
+                src={image}
+                alt="Clientes e hospitalidade no Restaurante Figueiral"
+                fill
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/46 via-transparent to-transparent" />
+            </MotionReveal>
+          ))}
+        </div>
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {reviews.map((review, index) => (
             <MotionReveal

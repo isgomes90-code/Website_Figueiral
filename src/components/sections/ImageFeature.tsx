@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 
@@ -10,10 +11,12 @@ type ImageFeatureProps = {
   reverse?: boolean;
   note?: string;
   quiet?: boolean;
+  supportingImage?: string;
+  supportingAlt?: string;
 };
 
 export function ImageFeature(props: ImageFeatureProps) {
-  const { eyebrow, title, body, alt, reverse = false, note, quiet = false } = props;
+  const { eyebrow, title, body, image, alt, reverse = false, note, quiet = false, supportingImage, supportingAlt } = props;
 
   return (
     <section className={quiet ? "py-14 sm:py-20" : "py-20 sm:py-32"}>
@@ -28,23 +31,23 @@ export function ImageFeature(props: ImageFeatureProps) {
         </div>
         <MotionReveal
           delay={0.15}
-          className={`neutral-placeholder grain relative min-h-[22rem] overflow-hidden rounded-[2rem] shadow-[0_30px_100px_rgba(0,0,0,0.32)] sm:min-h-[30rem] ${
+          className={`grain relative min-h-[22rem] overflow-hidden rounded-[2rem] shadow-[0_30px_100px_rgba(0,0,0,0.32)] sm:min-h-[30rem] ${
             reverse ? "lg:order-1 lg:-ml-8" : "lg:-mr-8"
           } ${quiet ? "lg:min-h-[24rem]" : "lg:min-h-[34rem]"}`}
-          aria-label={alt}
-          role="img"
         >
-          <div className="absolute inset-5 rounded-[1.5rem] border border-cream/10" />
-          <div className="absolute -bottom-20 -right-12 h-64 w-64 rounded-full bg-gold/10 blur-3xl" />
-          <div className="absolute left-7 top-7 text-[0.62rem] uppercase tracking-[0.32em] text-cream/40">
-            Temporary visual study
-          </div>
-          <div className="absolute bottom-8 left-7 right-7 flex items-end justify-between gap-6">
-            <span className="font-display text-4xl text-cream/70">Figueiral</span>
-            <span className="hidden max-w-[12rem] text-right text-xs uppercase leading-5 tracking-[0.24em] text-gold/70 sm:block">
-              Atmosphere placeholder
-            </span>
-          </div>
+          <Image src={image} alt={alt} fill sizes="(min-width: 1024px) 52vw, 100vw" className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/62 via-charcoal/8 to-transparent" />
+          {supportingImage ? (
+            <div className="absolute bottom-6 right-6 hidden h-44 w-36 overflow-hidden rounded-[1.1rem] border border-cream/15 shadow-[0_24px_70px_rgba(0,0,0,0.42)] sm:block lg:h-56 lg:w-44">
+              <Image
+                src={supportingImage}
+                alt={supportingAlt ?? ""}
+                fill
+                sizes="180px"
+                className="object-cover"
+              />
+            </div>
+          ) : null}
         </MotionReveal>
       </div>
     </section>

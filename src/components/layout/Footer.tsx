@@ -1,10 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 import { navItems, siteConfig } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="grain border-t border-cream/10 bg-[#0d0c0b] px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
-      <div className="mx-auto grid max-w-[82rem] gap-12 lg:grid-cols-[1.4fr_0.75fr_0.9fr]">
+    <footer className="grain relative overflow-hidden border-t border-cream/10 bg-[#0d0c0b] px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
+      <Image
+        src="/images/bar/Cocktail-figueiral-siganture.jpg"
+        alt=""
+        fill
+        unoptimized
+        sizes="100vw"
+        className="object-cover opacity-[0.08] blur-sm"
+      />
+      <div className="absolute inset-0 bg-[#0d0c0b]/88" />
+      <div className="relative mx-auto grid max-w-[82rem] gap-12 lg:grid-cols-[1.4fr_0.75fr_0.9fr]">
         <div>
           <p className="text-[0.66rem] font-semibold uppercase tracking-[0.36em] text-gold/85">Almancil since 1986</p>
           <p className="mt-4 font-display text-5xl leading-none text-cream">Restaurante Figueiral</p>
@@ -32,10 +42,10 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-14 max-w-[82rem]">
+      <div className="relative mx-auto mt-14 max-w-[82rem]">
         <div className="hairline" />
       </div>
-      <div className="mx-auto mt-6 flex max-w-[82rem] flex-col gap-3 text-xs text-cream/40 sm:flex-row sm:items-center sm:justify-between">
+      <div className="relative mx-auto mt-6 flex max-w-[82rem] flex-col gap-3 text-xs text-cream/40 sm:flex-row sm:items-center sm:justify-between">
         <p>(c) {new Date().getFullYear()} Restaurante Figueiral. All rights reserved.</p>
         <p>Near Quinta do Lago and Vale do Lobo.</p>
       </div>

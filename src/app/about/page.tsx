@@ -30,6 +30,8 @@ export default function AboutPage() {
         body="The philosophy is simple: excellent products, attentive service, relaxed confidence and a dining room that makes guests want to return year after year."
         image={images.family}
         alt="Family hospitality at Restaurante Figueiral"
+        supportingImage="/images/people/Rececao-clientes.jpg"
+        supportingAlt="Rececao de clientes no Restaurante Figueiral"
       />
       <section className="pb-24">
         <div className="section-shell grid gap-6 lg:grid-cols-3">

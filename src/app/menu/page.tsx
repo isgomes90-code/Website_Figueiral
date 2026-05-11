@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { menuCategories } from "@/lib/site";
@@ -20,6 +21,33 @@ export default function MenuPage() {
           title="A premium Algarve menu built around fire, produce and generous hospitality."
           body="The menu is structured for a refined dining experience and ready to be connected to a CMS such as Sanity. Dishes are shown as indexable HTML for stronger search visibility."
         />
+        <MotionReveal className="mt-12 overflow-hidden rounded-[2rem] shadow-[0_30px_100px_rgba(0,0,0,0.32)]">
+          <div className="relative min-h-[20rem] sm:min-h-[28rem]">
+            <Image
+              src="/images/food/Picanha-grelha.jpg"
+              alt="Picanha na grelha no Figueiral"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent" />
+            <div className="absolute bottom-6 left-6 max-w-sm sm:bottom-9 sm:left-9">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-gold">Fire and produce</p>
+              <p className="mt-3 font-display text-3xl leading-tight text-cream sm:text-4xl">
+                The menu begins with the rhythm of the grill.
+              </p>
+            </div>
+            <div className="absolute bottom-6 right-6 hidden h-36 w-32 overflow-hidden rounded-[1rem] border border-cream/15 shadow-[0_20px_60px_rgba(0,0,0,0.4)] sm:block">
+              <Image
+                src="/images/food/Cogumelos-alho.JPG"
+                alt="Cogumelos ao alho no Figueiral"
+                fill
+                sizes="128px"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </MotionReveal>
         <div className="mt-14 grid gap-8">
           {menuCategories.map((category, index) => (
             <MotionReveal key={category.title} delay={index * 0.06} className="luxury-card rounded-[2rem] p-6 sm:p-9">

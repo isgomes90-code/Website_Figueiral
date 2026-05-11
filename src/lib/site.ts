@@ -32,16 +32,23 @@ export const navItems = [
   { href: "/wine-experience", label: "Wine" },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/press", label: "Press" },
   { href: "/contact", label: "Contact" }
 ];
 
 export const images = {
-  hero: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2400&q=85",
-  picanha: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1800&q=85",
-  wine: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1800&q=85",
-  terrace: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85",
-  family: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=85",
-  dining: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1800&q=85"
+  hero: "/images/food/Picanha-grelha.jpg",
+  picanha: "/images/food/Chateaubriand.jpg",
+  fire: "/images/food/Camarao-alho-fogo.JPG",
+  wine: "/images/wine/Vinho-detalhe-1.jpg",
+  wineCellar: "/images/wine/Vinho-garrafeira.JPG",
+  terrace: "/images/terrace/Esplanada-1.JPG",
+  terraceAlt: "/images/terrace/Esplanada-2.JPG",
+  family: "/images/people/Convicio-clientes-2.jpg",
+  dining: "/images/people/Empratamento-1.jpg",
+  bar: "/images/bar/Cocktail-figueiral-siganture.jpg",
+  cocktail: "/images/bar/Cocktail-figueiral-siganture.jpg",
+  dessert: "/images/food/Profiteroles-chocolate.jpg"
 };
 
 export const menuCategories = [
@@ -142,12 +149,15 @@ export const reviews = [
 ];
 
 export const galleryImages = [
-  images.hero,
-  images.picanha,
-  images.wine,
-  images.terrace,
-  images.family,
-  images.dining,
-  "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=85",
-  "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1600&q=85"
+  { src: "/images/food/Picanha-grelha.jpg", alt: "Picanha na grelha no Restaurante Figueiral", tall: true },
+  { src: "/images/people/Empratamento-1.jpg", alt: "Empratamento cuidado na cozinha do Figueiral" },
+  { src: "/images/wine/Vinho-garrafeira.JPG", alt: "Garrafeira e selecao de vinhos do Figueiral" },
+  { src: "/images/food/Camarao-alho-fogo.JPG", alt: "Camarao ao alho com fogo e movimento" },
+  { src: "/images/terrace/Esplanada-1.JPG", alt: "Esplanada do Restaurante Figueiral em Almancil", tall: true },
+  { src: "/images/food/Chateaubriand.jpg", alt: "Chateaubriand servido no Figueiral" },
+  { src: "/images/bar/Cocktail-figueiral-siganture.jpg", alt: "Cocktail assinatura do Figueiral" },
+  { src: "/images/people/Convicio-clientes-2.jpg", alt: "Convivio de clientes no Figueiral" },
+  { src: "/images/food/Rossini.JPG", alt: "Prato Rossini preparado no Figueiral" },
+  { src: "/images/food/Robalo-mustarda.jpg", alt: "Robalo com mostarda no Figueiral" },
+  { src: "/images/food/Tarte-maca.jpg", alt: "Tarte de maca do Figueiral" }
 ];
