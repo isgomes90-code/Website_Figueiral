@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "homeTitle": "Restaurante Figueiral | Restaurante premium em Almancil, Algarve",
+    "homeDescription": "O Restaurante Figueiral é um restaurante familiar premium em Almancil, Algarve, conhecido desde 1986 pela picanha, vinho e hospitalidade elegante.",
+    "pages": {
+      "about": {
+        "title": "Sobre | Restaurante familiar desde 1986 em Almancil",
+        "description": "Conheça a história do Restaurante Figueiral, um restaurante familiar em Almancil com hospitalidade premium no Algarve desde 1986."
+      },
+      "menu": {
+        "title": "Menu | Restaurante Figueiral Almancil",
+        "description": "Explore o menu do Restaurante Figueiral em Almancil, com picanha premium, carne, peixe do Algarve, entradas e sobremesas."
+      },
+      "wine": {
+        "title": "Experiência de Vinho | Restaurante Figueiral Algarve",
+        "description": "Descubra a experiência de vinho do Restaurante Figueiral, um restaurante premium em Almancil com serviço pensado para harmonização."
+      },
+      "gallery": {
+        "title": "Galeria | Ambiente Restaurante Figueiral",
+        "description": "Veja a galeria cinematográfica do Restaurante Figueiral em Almancil, Algarve, com esplanada, sala, vinho e picanha."
+      },
+      "press": {
+        "title": "Imprensa | Restaurante Figueiral Algarve",
+        "description": "Arquivo editorial e imprensa do Restaurante Figueiral, restaurante premium de longa história em Almancil, Algarve."
+      },
+      "reservations": {
+        "title": "Reservas | Restaurante Figueiral Almancil",
+        "description": "Reserve mesa no Restaurante Figueiral em Almancil, um restaurante premium perto da Quinta do Lago e Vale do Lobo."
+      },
+      "contact": {
+        "title": "Contacto | Restaurante Figueiral Almancil Algarve",
+        "description": "Contacte o Restaurante Figueiral em Almancil, Algarve. Consulte horários, estacionamento, telefone, email e localização."
+      }
+    }
+  },
+  "navigation": {
+    "home": "Início",
+    "menu": "Menu",
+    "wine": "Vinho",
+    "about": "Sobre",
+    "gallery": "Galeria",
+    "press": "Imprensa",
+    "contact": "Contacto",
+    "reserve": "Reservar",
+    "reserveTable": "Reservar Mesa",
+    "ariaMain": "Navegação principal",
+    "ariaMobile": "Navegação mobile",
+    "language": "Idioma",
+    "brandLine": "Almancil desde 1986"
+  },
+  "hero": {
+    "eyebrow": "Almancil, Algarve - Desde 1986",
+    "title": "Noites quentes do Algarve, moldadas pelo fogo, vinho e tempo.",
+    "subtitle": "Uma mesa familiar em Almancil onde a calma mediterrânica encontra a generosidade da picanha, do vinho português e das conversas que continuam pela noite.",
+    "primaryCta": "Reservar Mesa",
+    "secondaryCta": "Ver Menu",
+    "sideTitle": "Hospitalidade cuidada com discrição e consistência desde 1986.",
+    "sideText": "Perto da Quinta do Lago e Vale do Lobo, enraizado no ritmo descontraído do Algarve.",
+    "keywords": ["Fogo", "Vinho", "Hospitalidade algarvia"]
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "Clássico moderno no Algarve",
+      "title": "Um restaurante com confiança para ser calmo, generoso e inequivocamente local.",
+      "body": "O Restaurante Figueiral une o calor de uma sala familiar, o brilho da grelha e o refinamento tranquilo de uma casa que recebe locais e viajantes há décadas."
+    },
+    "highlights": [
+      "Cozinha de fogo com contenção mediterrânica",
+      "Vinho português escolhido para conversas longas",
+      "Uma morada em Almancil respeitada desde 1986",
+      "Hospitalidade familiar com naturalidade internacional"
+    ],
+    "statement": {
+      "text": "O ambiente não é encenado. Constrói-se devagar: uma receção, uma garrafa, uma noite de cada vez.",
+      "caption": "Hospitalidade de Almancil, mantida com paciência desde 1986"
+    },
+    "meat": {
+      "eyebrow": "Picanha assinatura",
+      "title": "Fogo, ritmo e generosidade, servidos sem espetáculo.",
+      "body": "A assinatura da casa continua a ser a picanha ao estilo brasileiro: precisa, abundante e profundamente convivial. É uma experiência de carne premium, mas com uma sensação mais calorosa do que formal.",
+      "note": "A grelha dá pulso à noite; a sala mantém tudo descontraído."
+    },
+    "wine": {
+      "eyebrow": "Experiência de vinho",
+      "title": "Garrafas escolhidas para conversa, não para exibição.",
+      "body": "Dos ícones portugueses às descobertas discretas, o vinho no Figueiral existe para prolongar a noite: harmonizar com o fogo, suavizar o ritmo e dar a cada mesa o seu próprio tempo.",
+      "note": "Uma carta para habitués, viajantes, celebrações e para quem prefere ser guiado."
+    },
+    "legacy": {
+      "eyebrow": "Legado",
+      "title": "Longevidade, aqui, não é nostalgia. É o luxo de ser confiado.",
+      "body": "O Figueiral cresceu através da consistência: rostos familiares, famílias que regressam, serviço atento e uma forma de receber polida sem se tornar distante."
+    },
+    "terrace": {
+      "eyebrow": "Ambiente de esplanada",
+      "title": "Uma noite algarvia com espaço para respirar.",
+      "body": "Luz quente, serviço atento e a naturalidade de Almancil criam uma atmosfera perto da Quinta do Lago e Vale do Lobo que se sente internacional, mas nunca anónima."
+    },
+    "cta": {
+      "eyebrow": "Reservas",
+      "title": "Reserve uma mesa para fogo, vinho e uma noite algarvia sem pressa.",
+      "body": "Para jantares a dois, celebrações familiares e hóspedes perto de Almancil, Quinta do Lago ou Vale do Lobo."
+    }
+  },
+  "reviews": {
+    "eyebrow": "Confiança dos clientes",
+    "title": "Hospitalidade de longa data, lembrada muito depois da noite terminar.",
+    "items": [
+      {
+        "source": "Google Reviews",
+        "quote": "Um restaurante intemporal no Algarve, com picanha excecional, serviço caloroso e uma atmosfera bonita.",
+        "author": "Cliente recente",
+        "rating": "4.8"
+      },
+      {
+        "source": "Tripadvisor",
+        "quote": "Elegante, descontraído e consistentemente excelente. Obrigatório para quem fica perto da Quinta do Lago ou Vale do Lobo.",
+        "author": "Viajante internacional",
+        "rating": "Excelente"
+      },
+      {
+        "source": "Menção editorial",
+        "quote": "Uma instituição familiar em Almancil onde a hospitalidade é tratada com tanta seriedade como a comida.",
+        "author": "Guia gastronómico do Algarve",
+        "rating": "Destaque"
+      }
+    ]
+  },
+  "about": {
+    "intro": {
+      "eyebrow": "Desde 1986",
+      "title": "Um restaurante familiar moldado pela lealdade, pelo serviço e pela forma algarvia de receber.",
+      "body": "O Figueiral cresceu através da consistência: recebendo clientes habituais, viajantes internacionais e famílias locais com o mesmo cuidado, calor e atenção ao detalhe."
+    },
+    "feature": {
+      "eyebrow": "Hospitalidade familiar",
+      "title": "Premium não precisa de ser distante. Aqui, a elegância ainda tem voz humana.",
+      "body": "A filosofia é simples: excelentes produtos, serviço atento, confiança descontraída e uma sala que faz os clientes quererem regressar ano após ano."
+    },
+    "cards": [
+      {
+        "title": "Excelência de serviço",
+        "body": "Atento sem ser formal, polido sem perder calor."
+      },
+      {
+        "title": "Lealdade de longa data",
+        "body": "Um restaurante lembrado por famílias, viajantes que regressam e clientes locais."
+      },
+      {
+        "title": "Atmosfera algarvia",
+        "body": "Naturalidade mediterrânica, luz de fim de tarde e um ritmo elegante em Almancil."
+      }
+    ]
+  },
+  "menu": {
+    "intro": {
+      "eyebrow": "Menu",
+      "title": "Um menu premium no Algarve construído em torno do fogo, do produto e da hospitalidade generosa.",
+      "body": "O menu está estruturado para uma experiência de refeição refinada e preparado para futura ligação a CMS. Os pratos são apresentados em HTML indexável para melhor visibilidade de pesquisa."
+    },
+    "hero": {
+      "eyebrow": "Fogo e produto",
+      "title": "O menu começa no ritmo da grelha."
+    },
+    "signature": "Assinatura",
+    "categories": [
+      {
+        "title": "Experiência de Carne Assinatura",
+        "description": "Cortes premium preparados com paciência, precisão e o calor da hospitalidade de longa data.",
+        "items": [
+          {
+            "name": "Picanha ao Estilo Brasileiro",
+            "description": "A assinatura da casa, grelhada no fogo e servida com acompanhamentos clássicos.",
+            "highlight": true
+          },
+          {
+            "name": "Ribeye Maturado",
+            "description": "Um corte de sabor profundo, com marmoreio elegante e acabamento mediterrânico na brasa."
+          },
+          {
+            "name": "Filet Mignon",
+            "description": "Tenro, refinado e servido com legumes sazonais e molho da casa."
+          }
+        ]
+      },
+      {
+        "title": "Do Algarve",
+        "description": "Sabores costeiros frescos com um ritmo mediterrânico descontraído.",
+        "items": [
+          {
+            "name": "Robalo Grelhado",
+            "description": "Preparado de forma simples com azeite, ervas aromáticas e citrinos."
+          },
+          {
+            "name": "Camarão ao Alho",
+            "description": "Um clássico quente de mesa com carácter costeiro."
+          },
+          {
+            "name": "Peixe do Mercado",
+            "description": "Selecionado de acordo com a melhor pesca disponível."
+          }
+        ]
+      },
+      {
+        "title": "Para Começar",
+        "description": "Entradas elegantes pensadas para partilhar e conversar.",
+        "items": [
+          {
+            "name": "Enchidos Curados e Pão Quente",
+            "description": "Sabores portugueses, azeite e conservas da casa."
+          },
+          {
+            "name": "Burrata com Tomate Assado",
+            "description": "Burrata cremosa, óleo de manjericão e texturas de noz."
+          },
+          {
+            "name": "Legumes Assados no Fogo",
+            "description": "Legumes sazonais, iogurte fumado e ervas."
+          }
+        ]
+      },
+      {
+        "title": "Sobremesas",
+        "description": "Clássicos reconfortantes com acabamento cuidado de restaurante.",
+        "items": [
+          {
+            "name": "Creme Brulee Caramelizado",
+            "description": "Creme sedoso, açúcar crocante e notas cítricas."
+          },
+          {
+            "name": "Chocolate e Vinho do Porto",
+            "description": "Texturas de chocolate negro com acento de vinho português."
+          },
+          {
+            "name": "Tarte de Amêndoa do Algarve",
+            "description": "Pastelaria quente de amêndoa com creme de baunilha."
+          }
+        ]
+      }
+    ]
+  },
+  "wine": {
+    "intro": {
+      "eyebrow": "Experiência de vinho",
+      "title": "Um restaurante de vinho no Algarve onde a harmonização se sente pessoal, não performativa.",
+      "body": "O serviço de vinho no Figueiral é construído em torno da mesa: o que os clientes celebram, o que estão a comer e como a noite deve decorrer."
+    },
+    "feature": {
+      "eyebrow": "Ambiente de garrafeira",
+      "title": "Profundidade portuguesa, brilho mediterrânico e garrafas para noites memoráveis.",
+      "body": "A carta é pensada para harmonizações expressivas com carne grelhada no fogo, picanha ao estilo brasileiro, mar do Algarve e hospitalidade descontraída."
+    },
+    "moments": [
+      "Tintos portugueses para picanha premium e carne",
+      "Brancos elegantes para peixe do Algarve e almoços de esplanada",
+      "Garrafas de celebração para jantares românticos e ocasiões privadas"
+    ]
+  },
+  "gallery": {
+    "intro": {
+      "eyebrow": "Galeria",
+      "title": "Momentos cinematográficos da mesa, da esplanada e do brilho de uma noite algarvia.",
+      "body": "Uma expressão visual da hospitalidade mediterrânica premium: fogo, vinho, atmosfera e serviço generoso."
+    }
+  },
+  "press": {
+    "intro": {
+      "eyebrow": "Imprensa",
+      "title": "Um arquivo editorial para um restaurante com uma longa história algarvia.",
+      "body": "Um espaço curado para futuras menções de imprensa, artigos digitalizados, guias gastronómicos e peças de arquivo ligadas à reputação do Figueiral desde 1986."
+    },
+    "cards": [
+      "Futuras publicações em revistas",
+      "Guias de restaurante e prémios",
+      "Artigos digitalizados e peças de arquivo"
+    ],
+    "archive": "Arquivo",
+    "cardBody": "Reservado para material de imprensa cuidadosamente selecionado, apresentado com contenção e clareza editorial."
+  },
+  "reservations": {
+    "intro": {
+      "eyebrow": "Reservas",
+      "title": "Reserve uma mesa para uma experiência refinada no Algarve.",
+      "body": "Esta página serve como ponto de integração para OpenTable, CoverManager ou outro sistema de reservas. O placeholder atual preserva layout, conversão e SEO enquanto o widget final é ligado."
+    },
+    "widget": {
+      "eyebrow": "Widget de reservas",
+      "title": "OpenTable / CoverManager",
+      "body": "Inserir aqui o sistema de reservas selecionado. Manter o CTA mobile ativo para que os clientes tenham sempre um caminho claro para reservar.",
+      "call": "Ligar Agora",
+      "contact": "Contacto"
+    }
+  },
+  "contact": {
+    "intro": {
+      "eyebrow": "Contacto",
+      "title": "Encontre-nos em Almancil, perto da Quinta do Lago e Vale do Lobo.",
+      "body": "Planeie a sua visita para picanha premium, vinho e hospitalidade familiar no coração do Algarve."
+    },
+    "details": "Detalhes",
+    "openingHours": "Horário",
+    "hours": [
+      "Segunda a Domingo: 12:00 - 15:00",
+      "Segunda a Domingo: 18:30 - 23:00"
+    ],
+    "parking": "Estacionamento",
+    "parkingText": "Estacionamento local conveniente para clientes ao almoço e ao jantar.",
+    "reserve": "Reservar",
+    "emailUs": "Enviar Email"
+  },
+  "footer": {
+    "brandLine": "Almancil desde 1986",
+    "description": "Fogo, vinho e hospitalidade familiar em Almancil, mantidos com a mesma confiança serena ao longo de gerações de noites algarvias.",
+    "explore": "Explorar",
+    "visit": "Visitar",
+    "rights": "Todos os direitos reservados.",
+    "locationNote": "Perto da Quinta do Lago e Vale do Lobo."
+  }
+}

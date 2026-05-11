@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { reviews } from "@/lib/site";
+import type { Dictionary } from "@/i18n/getDictionary";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 
@@ -10,15 +10,17 @@ const experienceImages = [
   "/images/people/Rececao-clientes.jpg"
 ];
 
-export function Reviews() {
+export function Reviews({ dictionary }: { dictionary: Dictionary }) {
+  const reviews = dictionary.reviews;
+
   return (
     <section className="relative overflow-hidden bg-[#130f0c] py-20 sm:py-32">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/15 to-transparent" />
       <div className="absolute left-1/2 top-0 h-80 w-[42rem] -translate-x-1/2 rounded-full bg-walnut/20 blur-3xl" />
       <div className="section-shell relative">
         <SectionIntro
-          eyebrow="Trusted by guests"
-          title="Long-standing hospitality, remembered long after the evening ends."
+          eyebrow={reviews.eyebrow}
+          title={reviews.title}
           align="center"
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -42,7 +44,7 @@ export function Reviews() {
           ))}
         </div>
         <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {reviews.map((review, index) => (
+          {reviews.items.map((review, index) => (
             <MotionReveal
               key={review.source}
               delay={index * 0.08}

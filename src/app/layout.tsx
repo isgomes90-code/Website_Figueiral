@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { MobileReservationBar } from "@/components/layout/MobileReservationBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { pageMetadata, restaurantSchema } from "@/lib/seo";
 
@@ -33,13 +30,10 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable}`}>
+    <html lang="pt" className={`${display.variable} ${sans.variable}`}>
       <body className="font-sans antialiased">
         <JsonLd data={restaurantSchema()} />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <MobileReservationBar />
+        {children}
       </body>
     </html>
   );

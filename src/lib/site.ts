@@ -27,14 +27,14 @@ export const siteConfig = {
 };
 
 export const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/menu", label: "Menu" },
-  { href: "/wine-experience", label: "Wine" },
-  { href: "/about", label: "About" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/press", label: "Press" },
-  { href: "/contact", label: "Contact" }
-];
+  { href: "/", labelKey: "home" },
+  { href: "/menu", labelKey: "menu" },
+  { href: "/wine-experience", labelKey: "wine" },
+  { href: "/about", labelKey: "about" },
+  { href: "/gallery", labelKey: "gallery" },
+  { href: "/press", labelKey: "press" },
+  { href: "/contact", labelKey: "contact" }
+] as const;
 
 export const images = {
   hero: "/images/hero/Preparacao-picanha.jpg",

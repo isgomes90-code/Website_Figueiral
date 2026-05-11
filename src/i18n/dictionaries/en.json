@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "homeTitle": "Restaurante Figueiral | Premium Restaurant in Almancil, Algarve",
+    "homeDescription": "Restaurante Figueiral is a premium family restaurant in Almancil, Algarve, known since 1986 for picanha, wine and elegant hospitality.",
+    "pages": {
+      "about": {
+        "title": "About | Family Restaurant Since 1986 in Almancil",
+        "description": "Learn the story of Restaurante Figueiral, a family restaurant in Almancil serving premium hospitality in the Algarve since 1986."
+      },
+      "menu": {
+        "title": "Menu | Restaurante Figueiral Almancil",
+        "description": "Explore the menu at Restaurante Figueiral in Almancil, featuring premium picanha, steak, Algarve fish, starters and desserts."
+      },
+      "wine": {
+        "title": "Wine Experience | Restaurante Figueiral Algarve",
+        "description": "Discover the wine experience at Restaurante Figueiral, a premium wine restaurant in Almancil with pairing-led hospitality."
+      },
+      "gallery": {
+        "title": "Gallery | Restaurante Figueiral Atmosphere",
+        "description": "View the cinematic gallery for Restaurante Figueiral in Almancil, Algarve, featuring terrace atmosphere, dining, wine and picanha."
+      },
+      "press": {
+        "title": "Press | Restaurante Figueiral Algarve",
+        "description": "Press and editorial archive for Restaurante Figueiral, a long-standing premium restaurant in Almancil, Algarve."
+      },
+      "reservations": {
+        "title": "Reservations | Restaurante Figueiral Almancil",
+        "description": "Reserve a table at Restaurante Figueiral in Almancil, a premium restaurant near Quinta do Lago and Vale do Lobo."
+      },
+      "contact": {
+        "title": "Contact | Restaurante Figueiral Almancil Algarve",
+        "description": "Contact Restaurante Figueiral in Almancil, Algarve. Find opening hours, parking information, phone, email and location."
+      }
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "menu": "Menu",
+    "wine": "Wine",
+    "about": "About",
+    "gallery": "Gallery",
+    "press": "Press",
+    "contact": "Contact",
+    "reserve": "Reserve",
+    "reserveTable": "Reserve Table",
+    "ariaMain": "Main navigation",
+    "ariaMobile": "Mobile navigation",
+    "language": "Language",
+    "brandLine": "Almancil since 1986"
+  },
+  "hero": {
+    "eyebrow": "Almancil, Algarve - Since 1986",
+    "title": "Warm Algarve evenings, shaped by fire, wine and time.",
+    "subtitle": "A family table in Almancil where Mediterranean calm meets the generosity of picanha, Portuguese wine and long conversations that continue into the evening.",
+    "primaryCta": "Reserve Table",
+    "secondaryCta": "View Menu",
+    "sideTitle": "Hospitality carried quietly, consistently, since 1986.",
+    "sideText": "Close to Quinta do Lago and Vale do Lobo, rooted in the relaxed rhythm of the Algarve.",
+    "keywords": ["Fire", "Wine", "Algarve hospitality"]
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "Modern classic Algarve dining",
+      "title": "A restaurant with the confidence to feel calm, generous and unmistakably local.",
+      "body": "Restaurante Figueiral brings together the warmth of a family dining room, the glow of the grill and the quiet refinement of a place that has welcomed locals and travellers for decades."
+    },
+    "highlights": [
+      "Fire-led cooking with Mediterranean restraint",
+      "Portuguese wine chosen for long conversations",
+      "An Almancil address trusted since 1986",
+      "Family hospitality with international ease"
+    ],
+    "statement": {
+      "text": "The atmosphere is not staged. It is built slowly: one welcome, one bottle, one evening at a time.",
+      "caption": "Almancil hospitality, carried with patience since 1986"
+    },
+    "meat": {
+      "eyebrow": "Signature picanha",
+      "title": "Fire, rhythm and generosity, served without spectacle.",
+      "body": "The house signature remains Brazilian-style picanha: precise, abundant and deeply convivial. It is a premium meat experience, but the feeling is warmer than formal.",
+      "note": "The grill gives the evening its pulse; the room keeps it relaxed."
+    },
+    "wine": {
+      "eyebrow": "Wine experience",
+      "title": "Bottles chosen for conversation rather than display.",
+      "body": "From Portuguese icons to quiet discoveries, wine at Figueiral is there to lengthen the evening: pairing with fire, softening the pace and giving each table its own rhythm.",
+      "note": "A list for regulars, travellers, celebrations and those who prefer to be guided."
+    },
+    "legacy": {
+      "eyebrow": "Legacy",
+      "title": "Longevity, here, is not nostalgia. It is the luxury of being trusted.",
+      "body": "Figueiral has grown through consistency: familiar faces, returning families, attentive service and the kind of welcome that feels polished without becoming distant."
+    },
+    "terrace": {
+      "eyebrow": "Terrace atmosphere",
+      "title": "An Algarve evening with room to breathe.",
+      "body": "Warm light, attentive service and the ease of Almancil create a dining atmosphere close to Quinta do Lago and Vale do Lobo that feels international, but never anonymous."
+    },
+    "cta": {
+      "eyebrow": "Reservations",
+      "title": "Reserve a table for fire, wine and an unhurried Algarve evening.",
+      "body": "For romantic dinners, family celebrations and guests staying near Almancil, Quinta do Lago or Vale do Lobo."
+    }
+  },
+  "reviews": {
+    "eyebrow": "Trusted by guests",
+    "title": "Long-standing hospitality, remembered long after the evening ends.",
+    "items": [
+      {
+        "source": "Google Reviews",
+        "quote": "A timeless Algarve restaurant with exceptional picanha, warm service and a beautiful atmosphere.",
+        "author": "Recent guest",
+        "rating": "4.8"
+      },
+      {
+        "source": "Tripadvisor",
+        "quote": "Elegant, relaxed and consistently excellent. A must when staying near Quinta do Lago or Vale do Lobo.",
+        "author": "International traveller",
+        "rating": "Excellent"
+      },
+      {
+        "source": "Press Mention",
+        "quote": "A family dining institution in Almancil where hospitality is treated as seriously as the food.",
+        "author": "Algarve dining guide",
+        "rating": "Featured"
+      }
+    ]
+  },
+  "about": {
+    "intro": {
+      "eyebrow": "Since 1986",
+      "title": "A family restaurant shaped by loyalty, service and the Algarve way of hosting.",
+      "body": "Figueiral has grown through consistency: welcoming regular guests, international travellers and local families with the same care, warmth and attention to detail."
+    },
+    "feature": {
+      "eyebrow": "Family hospitality",
+      "title": "Premium does not need to feel distant. Here, elegance still has a human voice.",
+      "body": "The philosophy is simple: excellent products, attentive service, relaxed confidence and a dining room that makes guests want to return year after year."
+    },
+    "cards": [
+      {
+        "title": "Service excellence",
+        "body": "Attentive without being formal, polished without losing warmth."
+      },
+      {
+        "title": "Long-term loyalty",
+        "body": "A restaurant remembered by families, returning travellers and local guests."
+      },
+      {
+        "title": "Algarve atmosphere",
+        "body": "Mediterranean ease, evening light and an elegant relaxed rhythm in Almancil."
+      }
+    ]
+  },
+  "menu": {
+    "intro": {
+      "eyebrow": "Menu",
+      "title": "A premium Algarve menu built around fire, produce and generous hospitality.",
+      "body": "The menu is structured for a refined dining experience and ready to be connected to a CMS. Dishes are shown as indexable HTML for stronger search visibility."
+    },
+    "hero": {
+      "eyebrow": "Fire and produce",
+      "title": "The menu begins with the rhythm of the grill."
+    },
+    "signature": "Signature",
+    "categories": [
+      {
+        "title": "Signature Meat Experience",
+        "description": "Premium cuts prepared with patience, precision and the warmth of long-standing hospitality.",
+        "items": [
+          {
+            "name": "Brazilian-Style Picanha",
+            "description": "The house signature, grilled over fire and served with classic accompaniments.",
+            "highlight": true
+          },
+          {
+            "name": "Matured Ribeye",
+            "description": "A deeply flavoured cut with elegant marbling and a charred Mediterranean finish."
+          },
+          {
+            "name": "Filet Mignon",
+            "description": "Tender, refined and served with seasonal vegetables and house sauce."
+          }
+        ]
+      },
+      {
+        "title": "From the Algarve",
+        "description": "Fresh coastal flavours with a relaxed Mediterranean rhythm.",
+        "items": [
+          {
+            "name": "Grilled Sea Bass",
+            "description": "Simply prepared with olive oil, herbs and citrus."
+          },
+          {
+            "name": "Garlic Prawns",
+            "description": "A warm table classic with coastal character."
+          },
+          {
+            "name": "Seasonal Market Fish",
+            "description": "Selected according to the best catch available."
+          }
+        ]
+      },
+      {
+        "title": "To Begin",
+        "description": "Elegant starters designed for sharing and conversation.",
+        "items": [
+          {
+            "name": "Cured Meats & Warm Bread",
+            "description": "Portuguese flavours, olive oil and house preserves."
+          },
+          {
+            "name": "Burrata with Roasted Tomatoes",
+            "description": "Creamy burrata, basil oil and walnut textures."
+          },
+          {
+            "name": "Fire-Roasted Vegetables",
+            "description": "Seasonal vegetables, smoked yoghurt and herbs."
+          }
+        ]
+      },
+      {
+        "title": "Desserts",
+        "description": "Comforting classics with a polished restaurant finish.",
+        "items": [
+          {
+            "name": "Caramelised Creme Brulee",
+            "description": "Silky custard, crisp sugar and citrus notes."
+          },
+          {
+            "name": "Chocolate & Port Wine",
+            "description": "Dark chocolate textures with a Portuguese wine accent."
+          },
+          {
+            "name": "Algarve Almond Tart",
+            "description": "Warm almond pastry with vanilla cream."
+          }
+        ]
+      }
+    ]
+  },
+  "wine": {
+    "intro": {
+      "eyebrow": "Wine experience",
+      "title": "A wine restaurant in the Algarve where pairing feels personal, not performative.",
+      "body": "The wine service at Figueiral is built around the table: what guests are celebrating, what they are eating and how the evening should unfold."
+    },
+    "feature": {
+      "eyebrow": "Cellar atmosphere",
+      "title": "Portuguese depth, Mediterranean brightness and bottles for memorable evenings.",
+      "body": "The list is imagined for expressive pairings with fire-grilled meat, Brazilian-style picanha, Algarve seafood and relaxed hospitality."
+    },
+    "moments": [
+      "Portuguese reds for premium picanha and steak",
+      "Elegant whites for Algarve fish and terrace lunches",
+      "Celebration bottles for romantic dinners and private occasions"
+    ]
+  },
+  "gallery": {
+    "intro": {
+      "eyebrow": "Gallery",
+      "title": "Cinematic moments from the table, the terrace and the glow of an Algarve evening.",
+      "body": "A visual expression of premium Mediterranean hospitality: fire, wine, atmosphere and generous service."
+    }
+  },
+  "press": {
+    "intro": {
+      "eyebrow": "Press",
+      "title": "An editorial archive for a restaurant with a long Algarve story.",
+      "body": "A curated space for future press mentions, scanned magazine articles, restaurant guides and archive pieces connected to Figueiral's reputation since 1986."
+    },
+    "cards": [
+      "Future magazine features",
+      "Restaurant guides and awards",
+      "Scanned articles and archive pieces"
+    ],
+    "archive": "Archive",
+    "cardBody": "Reserved for carefully selected press material, presented with restraint and editorial clarity."
+  },
+  "reservations": {
+    "intro": {
+      "eyebrow": "Reservations",
+      "title": "Reserve a table for a refined Algarve dining experience.",
+      "body": "Use this page as the integration point for OpenTable, CoverManager or another reservation provider. The current placeholder preserves layout, conversion flow and SEO while the live widget is connected."
+    },
+    "widget": {
+      "eyebrow": "Reservation widget",
+      "title": "OpenTable / CoverManager",
+      "body": "Embed the selected booking system here. Keep the mobile sticky CTA active so guests always have a clear reservation path.",
+      "call": "Call Now",
+      "contact": "Contact"
+    }
+  },
+  "contact": {
+    "intro": {
+      "eyebrow": "Contact",
+      "title": "Find us in Almancil, close to Quinta do Lago and Vale do Lobo.",
+      "body": "Plan your visit for premium picanha, wine and warm family hospitality in the heart of the Algarve."
+    },
+    "details": "Details",
+    "openingHours": "Opening hours",
+    "hours": [
+      "Monday to Sunday: 12:00 - 15:00",
+      "Monday to Sunday: 18:30 - 23:00"
+    ],
+    "parking": "Parking",
+    "parkingText": "Convenient local parking available for lunch and dinner guests.",
+    "reserve": "Reserve",
+    "emailUs": "Email Us"
+  },
+  "footer": {
+    "brandLine": "Almancil since 1986",
+    "description": "Fire, wine and family hospitality in Almancil, held with the same quiet confidence for generations of Algarve evenings.",
+    "explore": "Explore",
+    "visit": "Visit",
+    "rights": "All rights reserved.",
+    "locationNote": "Near Quinta do Lago and Vale do Lobo."
+  }
+}

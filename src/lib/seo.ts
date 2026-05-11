@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultLocale, locales, localizedPath, type Locale } from "@/i18n/config";
 import { siteConfig } from "@/lib/site";
 
 const keywords = [
@@ -15,13 +16,19 @@ const keywords = [
 export function pageMetadata({
   title,
   description,
-  path = "/"
+  path = "/",
+  lang = defaultLocale
 }: {
   title: string;
   description: string;
   path?: string;
+  lang?: Locale;
 }): Metadata {
-  const url = new URL(path, siteConfig.url).toString();
+  const localized = localizedPath(lang, path);
+  const url = new URL(localized, siteConfig.url).toString();
+  const languages = Object.fromEntries(
+    locales.map((locale) => [locale === "pt" ? "pt-PT" : "en", localizedPath(locale, path)])
+  );
 
   return {
     metadataBase: new URL(siteConfig.url),
@@ -29,14 +36,19 @@ export function pageMetadata({
     description,
     keywords,
     alternates: {
-      canonical: url
+      canonical: localized,
+      languages: {
+        ...languages,
+        "x-default": localizedPath(defaultLocale, path)
+      }
     },
     openGraph: {
       title,
       description,
       url,
       siteName: siteConfig.name,
-      locale: "en_PT",
+      locale: lang === "pt" ? "pt_PT" : "en",
+      alternateLocale: lang === "pt" ? ["en"] : ["pt_PT"],
       type: "website",
       images: [
         {

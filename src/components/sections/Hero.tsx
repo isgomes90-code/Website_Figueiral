@@ -1,7 +1,11 @@
 import Image from "next/image";
+import { localizedPath, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/getDictionary";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 
-export function Hero() {
+export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Locale }) {
+  const hero = dictionary.hero;
+
   return (
     <section className="grain relative min-h-screen overflow-hidden bg-[#0f0d0b]">
       <Image
@@ -18,28 +22,27 @@ export function Hero() {
         <div className="grid w-full gap-12 lg:grid-cols-[0.9fr_0.42fr] lg:items-end">
           <div className="max-w-4xl">
             <p className="mb-7 text-[0.68rem] font-semibold uppercase tracking-[0.42em] text-gold">
-              Almancil, Algarve - Since 1986
+              {hero.eyebrow}
             </p>
             <h1 className="font-display text-[3.35rem] leading-[0.96] text-cream text-balance sm:text-7xl lg:text-[6.7rem]">
-              Warm Algarve evenings, shaped by fire, wine and time.
+              {hero.title}
             </h1>
             <p className="mt-8 max-w-[40rem] text-base leading-8 text-cream/70 sm:text-lg">
-              A family table in Almancil where Mediterranean calm meets the generosity of picanha, Portuguese wine and
-              long conversations that continue into the evening.
+              {hero.subtitle}
             </p>
             <div className="mt-11 flex flex-col gap-4 sm:flex-row">
-              <LuxuryButton href="/reservations">Reserve Table</LuxuryButton>
-              <LuxuryButton href="/menu" variant="secondary">
-                View Menu
+              <LuxuryButton href={localizedPath(lang, "/reservations")}>{hero.primaryCta}</LuxuryButton>
+              <LuxuryButton href={localizedPath(lang, "/menu")} variant="secondary">
+                {hero.secondaryCta}
               </LuxuryButton>
             </div>
           </div>
           <div className="hidden border-l border-cream/15 pl-7 pb-6 lg:block">
             <p className="font-display text-3xl leading-tight text-cream/80">
-              Hospitality carried quietly, consistently, since 1986.
+              {hero.sideTitle}
             </p>
             <p className="mt-5 text-sm leading-7 text-cream/50">
-              Close to Quinta do Lago and Vale do Lobo, rooted in the relaxed rhythm of the Algarve.
+              {hero.sideText}
             </p>
           </div>
         </div>
@@ -48,9 +51,9 @@ export function Hero() {
         <div className="section-shell">
           <div className="hairline" />
           <div className="flex flex-col gap-3 py-5 text-[0.65rem] uppercase tracking-[0.28em] text-cream/40 sm:flex-row sm:justify-between">
-            <span>Fire</span>
-            <span>Wine</span>
-            <span>Algarve hospitality</span>
+            {hero.keywords.map((keyword) => (
+              <span key={keyword}>{keyword}</span>
+            ))}
           </div>
         </div>
       </div>
