@@ -5,14 +5,14 @@ export function Hero() {
   return (
     <section className="grain relative min-h-screen overflow-hidden bg-[#0f0d0b]">
       <Image
-        src="/images/food/Picanha-grelha.jpg"
-        alt="Picanha na grelha no Restaurante Figueiral"
+        src="/images/hero/Preparacao-picanha.jpg"
+        alt="Preparacao da picanha no Restaurante Figueiral"
         fill
-        priority
+        priority={true}
         sizes="100vw"
-        className="scale-105 object-cover object-center"
+        className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(182,144,84,0.14),transparent_24rem),linear-gradient(90deg,rgba(15,13,11,0.94),rgba(15,13,11,0.58),rgba(15,13,11,0.86))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(182,144,84,0.12),transparent_24rem),linear-gradient(90deg,rgba(15,13,11,0.94),rgba(15,13,11,0.62),rgba(15,13,11,0.88))]" />
       <div className="absolute bottom-12 right-[7vw] hidden h-[58vh] w-[30vw] rounded-t-full border border-cream/10 bg-cream/[0.035] shadow-[0_34px_100px_rgba(0,0,0,0.34)] lg:block" />
       <div className="section-shell relative z-10 flex min-h-screen items-center pt-36 sm:pt-32">
         <div className="grid w-full gap-12 lg:grid-cols-[0.9fr_0.42fr] lg:items-end">

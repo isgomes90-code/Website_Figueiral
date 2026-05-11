@@ -37,7 +37,7 @@ export const navItems = [
 ];
 
 export const images = {
-  hero: "/images/food/Picanha-grelha.jpg",
+  hero: "/images/hero/Preparacao-picanha.jpg",
   picanha: "/images/food/Chateaubriand.jpg",
   fire: "/images/food/Camarao-alho-fogo.JPG",
   wine: "/images/wine/Vinho-detalhe-1.jpg",
