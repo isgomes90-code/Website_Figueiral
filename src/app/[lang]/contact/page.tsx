@@ -38,7 +38,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
             <div className="space-y-8">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">{contact.details}</p>
-                <div className="mt-4 space-y-2 text-cream/72">
+                <div className="mt-4 space-y-2 text-walnut">
                   <p>{siteConfig.address.locality}, {siteConfig.address.region}, Portugal</p>
                   <p>{siteConfig.phone}</p>
                   <p>{siteConfig.email}</p>
@@ -46,7 +46,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">{contact.openingHours}</p>
-                <div className="mt-4 space-y-2 text-cream/72">
+                <div className="mt-4 space-y-2 text-walnut">
                   {contact.hours.map((hours) => (
                     <p key={hours}>{hours}</p>
                   ))}
@@ -54,7 +54,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">{contact.parking}</p>
-                <p className="mt-4 text-cream/72">{contact.parkingText}</p>
+                <p className="mt-4 text-walnut">{contact.parkingText}</p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <LuxuryButton href={localizedPath(locale, "/reservations")}>{contact.reserve}</LuxuryButton>

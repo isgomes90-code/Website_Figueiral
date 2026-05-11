@@ -62,11 +62,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/72 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/34 to-transparent" />
                 </div>
                 <div className="p-6 sm:p-7">
                   <span className="font-display text-4xl text-gold/85">0{index + 1}</span>
-                  <p className="mt-7 text-base leading-7 text-cream/75">{item}</p>
+                  <p className="mt-7 text-base leading-7 text-walnut">{item}</p>
                 </div>
               </MotionReveal>
             ))}
@@ -77,7 +77,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="section-shell">
           <MotionReveal className="mx-auto max-w-5xl text-center">
             <div className="hairline mb-12" />
-            <p className="font-display text-4xl leading-tight text-cream/90 text-balance sm:text-6xl">
+            <p className="font-display text-4xl leading-tight text-charcoal text-balance sm:text-6xl">
               {home.statement.text}
             </p>
             <p className="mx-auto mt-7 max-w-2xl text-sm uppercase leading-7 tracking-[0.26em] text-gold/70">
@@ -113,13 +113,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="grid gap-12 lg:grid-cols-[0.62fr_1fr] lg:items-end">
               <div>
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.36em] text-gold/85">{home.legacy.eyebrow}</p>
-                <p className="mt-5 font-display text-7xl leading-none text-cream sm:text-8xl">1986</p>
+                <p className="mt-5 font-display text-7xl leading-none text-charcoal sm:text-8xl">1986</p>
               </div>
               <div>
-                <h2 className="font-display text-4xl leading-tight text-cream text-balance sm:text-5xl">
+                <h2 className="font-display text-4xl leading-tight text-charcoal text-balance sm:text-5xl">
                   {home.legacy.title}
                 </h2>
-                <p className="mt-7 max-w-2xl text-base leading-8 text-cream/70">{home.legacy.body}</p>
+                <p className="mt-7 max-w-2xl text-base leading-8 text-walnut">{home.legacy.body}</p>
               </div>
             </div>
           </MotionReveal>
@@ -140,10 +140,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="section-shell">
           <MotionReveal className="atmospheric-panel rounded-[2.4rem] px-6 py-16 text-center shadow-[0_34px_100px_rgba(0,0,0,0.34)] sm:px-12 sm:py-20">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.36em] text-gold/85">{home.cta.eyebrow}</p>
-            <h2 className="mx-auto mt-6 max-w-3xl font-display text-4xl leading-tight text-cream text-balance sm:text-6xl">
+            <h2 className="mx-auto mt-6 max-w-3xl font-display text-4xl leading-tight text-charcoal text-balance sm:text-6xl">
               {home.cta.title}
             </h2>
-            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-cream/60">{home.cta.body}</p>
+            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-walnut">{home.cta.body}</p>
             <div className="mt-10">
               <LuxuryButton href={localizedPath(locale, "/reservations")}>{dictionary.navigation.reserveTable}</LuxuryButton>
             </div>

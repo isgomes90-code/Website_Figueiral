@@ -40,7 +40,7 @@ export default async function WineExperiencePage({ params }: { params: Promise<{
           {wine.moments.map((moment, index) => (
             <MotionReveal key={moment} delay={index * 0.08} className="luxury-card rounded-[1.5rem] p-7">
               <p className="font-display text-5xl text-gold">0{index + 1}</p>
-              <h2 className="mt-8 text-xl leading-8 text-cream">{moment}</h2>
+              <h2 className="mt-8 text-xl leading-8 text-charcoal">{moment}</h2>
             </MotionReveal>
           ))}
         </div>

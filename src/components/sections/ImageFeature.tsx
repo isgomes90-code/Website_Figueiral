@@ -24,21 +24,21 @@ export function ImageFeature(props: ImageFeatureProps) {
         <div className={`${reverse ? "lg:order-2 lg:pl-8" : "lg:pr-8"} ${quiet ? "lg:self-start" : ""}`}>
           <SectionIntro eyebrow={eyebrow} title={title} body={body} />
           {note ? (
-            <div className="mt-8 max-w-sm border-l border-gold/30 pl-5 text-sm leading-7 text-cream/50">
+            <div className="mt-8 max-w-sm border-l border-gold/35 pl-5 text-sm leading-7 text-walnut">
               {note}
             </div>
           ) : null}
         </div>
         <MotionReveal
           delay={0.15}
-          className={`grain relative min-h-[22rem] overflow-hidden rounded-[2rem] shadow-[0_30px_100px_rgba(0,0,0,0.32)] sm:min-h-[30rem] ${
+          className={`grain relative min-h-[22rem] overflow-hidden rounded-[2rem] shadow-[0_28px_70px_rgba(92,68,48,0.16)] sm:min-h-[30rem] ${
             reverse ? "lg:order-1 lg:-ml-8" : "lg:-mr-8"
           } ${quiet ? "lg:min-h-[24rem]" : "lg:min-h-[34rem]"}`}
         >
           <Image src={image} alt={alt} fill sizes="(min-width: 1024px) 52vw, 100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/62 via-charcoal/8 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/28 via-transparent to-transparent" />
           {supportingImage ? (
-            <div className="absolute bottom-6 right-6 hidden h-44 w-36 overflow-hidden rounded-[1.1rem] border border-cream/15 shadow-[0_24px_70px_rgba(0,0,0,0.42)] sm:block lg:h-56 lg:w-44">
+            <div className="absolute bottom-6 right-6 hidden h-44 w-36 overflow-hidden rounded-[1.1rem] border border-cream/50 shadow-[0_20px_50px_rgba(92,68,48,0.22)] sm:block lg:h-56 lg:w-44">
               <Image
                 src={supportingImage}
                 alt={supportingAlt ?? ""}

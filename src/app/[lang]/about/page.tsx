@@ -39,8 +39,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         <div className="section-shell grid gap-6 lg:grid-cols-3">
           {about.cards.map((card, index) => (
             <MotionReveal key={card.title} delay={index * 0.08} className="luxury-card rounded-[1.5rem] p-8">
-              <h2 className="font-display text-3xl text-cream">{card.title}</h2>
-              <p className="mt-5 text-sm leading-7 text-cream/64">{card.body}</p>
+              <h2 className="font-display text-3xl text-charcoal">{card.title}</h2>
+              <p className="mt-5 text-sm leading-7 text-walnut">{card.body}</p>
             </MotionReveal>
           ))}
         </div>

@@ -26,9 +26,9 @@ export default async function GalleryPage({ params }: { params: Promise<{ lang: 
         <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3">
           {galleryImages.map((image, index) => (
             <MotionReveal key={image.src} delay={(index % 3) * 0.06} className="mb-5 break-inside-avoid overflow-hidden rounded-[1.6rem] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
-              <div className={`grain relative border border-cream/10 ${image.tall ? "h-[520px]" : "h-[360px]"}`}>
+              <div className={`grain relative border border-cream/60 ${image.tall ? "h-[520px]" : "h-[360px]"}`}>
                 <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-700 hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/42 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />
               </div>
             </MotionReveal>
           ))}

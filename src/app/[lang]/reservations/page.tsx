@@ -28,10 +28,10 @@ export default async function ReservationsPage({ params }: { params: Promise<{ l
           body={reservations.intro.body}
         />
         <MotionReveal className="luxury-card rounded-[2rem] p-6 sm:p-9">
-          <div className="rounded-[1.4rem] border border-dashed border-gold/35 bg-charcoal/55 p-8 text-center">
+          <div className="rounded-[1.4rem] border border-dashed border-gold/35 bg-cream/55 p-8 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">{reservations.widget.eyebrow}</p>
-            <h2 className="mt-5 font-display text-4xl text-cream">{reservations.widget.title}</h2>
-            <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-cream/64">{reservations.widget.body}</p>
+            <h2 className="mt-5 font-display text-4xl text-charcoal">{reservations.widget.title}</h2>
+            <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-walnut">{reservations.widget.body}</p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
               <LuxuryButton href="tel:+351289399982">{reservations.widget.call}</LuxuryButton>
               <LuxuryButton href={localizedPath(locale, "/contact")} variant="secondary">

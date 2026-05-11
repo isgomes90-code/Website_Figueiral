@@ -17,11 +17,11 @@ export function LanguageSwitcher({ lang, ariaLabel }: { lang: Locale; ariaLabel:
     <div aria-label={ariaLabel} className="flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.22em]">
       {locales.map((locale, index) => (
         <span key={locale} className="flex items-center gap-2">
-          {index > 0 ? <span className="text-cream/25">|</span> : null}
+          {index > 0 ? <span className="text-walnut/30">|</span> : null}
           <Link
             href={hrefFor(locale)}
             hrefLang={locale === "pt" ? "pt-PT" : "en"}
-            className={locale === lang ? "text-gold" : "text-cream/55 transition hover:text-cream"}
+            className={locale === lang ? "text-gold" : "text-charcoal/55 transition hover:text-charcoal"}
           >
             {locale}
           </Link>

@@ -7,7 +7,7 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
   const hero = dictionary.hero;
 
   return (
-    <section className="grain relative min-h-screen overflow-hidden bg-[#0f0d0b]">
+    <section className="grain relative min-h-screen overflow-hidden bg-charcoal">
       <Image
         src="/images/hero/Preparacao-picanha.jpg"
         alt="Preparacao da picanha no Restaurante Figueiral"
@@ -16,8 +16,8 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
         sizes="100vw"
         className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(182,144,84,0.12),transparent_24rem),linear-gradient(90deg,rgba(15,13,11,0.94),rgba(15,13,11,0.62),rgba(15,13,11,0.88))]" />
-      <div className="absolute bottom-12 right-[7vw] hidden h-[58vh] w-[30vw] rounded-t-full border border-cream/10 bg-cream/[0.035] shadow-[0_34px_100px_rgba(0,0,0,0.34)] lg:block" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(166,124,82,0.16),transparent_24rem),linear-gradient(to_bottom,rgba(34,24,18,0.45),rgba(34,24,18,0.55)),linear-gradient(90deg,rgba(34,24,18,0.68),rgba(34,24,18,0.28),rgba(34,24,18,0.52))]" />
+      <div className="absolute bottom-12 right-[7vw] hidden h-[58vh] w-[30vw] rounded-t-full border border-cream/20 bg-cream/[0.08] shadow-[0_28px_70px_rgba(92,68,48,0.22)] lg:block" />
       <div className="section-shell relative z-10 flex min-h-screen items-center pt-36 sm:pt-32">
         <div className="grid w-full gap-12 lg:grid-cols-[0.9fr_0.42fr] lg:items-end">
           <div className="max-w-4xl">
@@ -32,7 +32,7 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
             </p>
             <div className="mt-11 flex flex-col gap-4 sm:flex-row">
               <LuxuryButton href={localizedPath(lang, "/reservations")}>{hero.primaryCta}</LuxuryButton>
-              <LuxuryButton href={localizedPath(lang, "/menu")} variant="secondary">
+              <LuxuryButton href={localizedPath(lang, "/menu")} variant="secondary" className="border-cream/45 bg-cream/10 text-cream hover:bg-cream hover:text-charcoal">
                 {hero.secondaryCta}
               </LuxuryButton>
             </div>
