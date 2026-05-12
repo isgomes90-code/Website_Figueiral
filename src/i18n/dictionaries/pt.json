@@ -45,6 +45,8 @@
     "reserveTable": "Reservar Mesa",
     "ariaMain": "Navegação principal",
     "ariaMobile": "Navegação mobile",
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu",
     "language": "Idioma",
     "brandLine": "Almancil desde 1986"
   },
@@ -56,7 +58,14 @@
     "secondaryCta": "Ver Menu",
     "sideTitle": "Hospitalidade cuidada com discrição e consistência desde 1986.",
     "sideText": "Perto da Quinta do Lago e Vale do Lobo, enraizado no ritmo descontraído do Algarve.",
-    "keywords": ["Fogo", "Vinho", "Hospitalidade algarvia"]
+    "keywords": ["Fogo", "Vinho", "Hospitalidade algarvia"],
+    "slidesAria": "Slides do hero",
+    "slidesAlt": [
+      "Fogo e preparação sobre a grelha assinatura do Figueiral.",
+      "Sala e bar sob luz baixa na casa em Almancil.",
+      "Detalhe de vinho, textura à mesa.",
+      "Hospitalidade prolongada ao redor das mesas com conversa e calor."
+    ]
   },
   "home": {
     "intro": {
@@ -65,7 +74,7 @@
       "body": "O Restaurante Figueiral une o calor de uma sala familiar, o brilho da grelha e o refinamento tranquilo de uma casa que recebe locais e viajantes há décadas."
     },
     "highlights": [
-      "Cozinha de fogo com contenção mediterrânica",
+      "Cozinha mediterrânica com uma pitada de fogo",
       "Vinho português escolhido para conversas longas",
       "Uma morada em Almancil respeitada desde 1986",
       "Hospitalidade familiar com naturalidade internacional"
@@ -73,6 +82,11 @@
     "statement": {
       "text": "O ambiente não é encenado. Constrói-se devagar: uma receção, uma garrafa, uma noite de cada vez.",
       "caption": "Hospitalidade de Almancil, mantida com paciência desde 1986"
+    },
+    "atmosphere": {
+      "eyebrow": "À mesa",
+      "line": "Mesas que se prolongam pela noite.",
+      "imageAlt": "Luz quente sobre o salão: convívio prolongado no Restaurante Figueiral."
     },
     "meat": {
       "eyebrow": "Picanha assinatura",
@@ -89,7 +103,8 @@
     "legacy": {
       "eyebrow": "Legado",
       "title": "Longevidade, aqui, não é nostalgia. É o luxo de ser confiado.",
-      "body": "O Figueiral cresceu através da consistência: rostos familiares, famílias que regressam, serviço atento e uma forma de receber polida sem se tornar distante."
+      "body": "O Figueiral cresceu através da consistência: rostos familiares, famílias que regressam, serviço atento e uma forma de receber polida sem se tornar distante.",
+      "imageAlt": "Anfitriões na receção do Restaurante Figueiral."
     },
     "terrace": {
       "eyebrow": "Ambiente de esplanada",
@@ -155,85 +170,147 @@
   "menu": {
     "intro": {
       "eyebrow": "Menu",
-      "title": "Um menu premium no Algarve construído em torno do fogo, do produto e da hospitalidade generosa.",
-      "body": "O menu está estruturado para uma experiência de refeição refinada e preparado para futura ligação a CMS. Os pratos são apresentados em HTML indexável para melhor visibilidade de pesquisa."
+      "title": "Fogo, vinho e produto algarvio servidos com tempo.",
+      "body": "Pratos de grelha, mar e sobremesa pensados para uma mesa demorada: azeite, brasa, molhos quentes, vinho português e partilha."
     },
     "hero": {
       "eyebrow": "Fogo e produto",
-      "title": "O menu começa no ritmo da grelha."
+      "title": "A cozinha começa na grelha e termina à mesa.",
+      "body": "Entre a picanha fatiada, o camarão ao alho, o peixe grelhado e as sobremesas da casa, o menu foi pensado para noites longas e conversas sem pressa.",
+      "note": "Escolha um prato de fogo, peça vinho com calma e deixe a mesa ganhar ritmo."
     },
     "signature": "Assinatura",
+    "interludes": [
+      {
+        "eyebrow": "Na grelha",
+        "title": "Calor direto, carne repousada e serviço sem pressa.",
+        "body": "A brasa aparece no prato com contenção: crosta, suco e acompanhamentos que deixam o produto falar."
+      },
+      {
+        "eyebrow": "À mesa",
+        "title": "Vinho português, pão quente e pratos para partilhar.",
+        "body": "O menu ganha outra dimensão quando a garrafa acompanha o ritmo da conversa."
+      },
+      {
+        "eyebrow": "Final doce",
+        "title": "Chocolate, maçã e texturas feitas para prolongar a noite.",
+        "body": "Sobremesas familiares com acabamento de restaurante, servidas sem pressa."
+      }
+    ],
     "categories": [
       {
         "title": "Experiência de Carne Assinatura",
-        "description": "Cortes premium preparados com paciência, precisão e o calor da hospitalidade de longa data.",
+        "description": "Cortes escolhidos para a grelha, servidos com molhos quentes, legumes e acompanhamentos de mesa.",
+        "editorial": {
+          "label": "Técnica",
+          "value": "Brasa e repouso",
+          "note": "Corte servido no ponto, com textura suculenta e crosta limpa."
+        },
         "items": [
           {
             "name": "Picanha ao Estilo Brasileiro",
             "description": "A assinatura da casa, grelhada no fogo e servida com acompanhamentos clássicos.",
-            "highlight": true
+            "highlight": true,
+            "tag": "Desde 1986"
           },
           {
             "name": "Ribeye Maturado",
-            "description": "Um corte de sabor profundo, com marmoreio elegante e acabamento mediterrânico na brasa."
+            "description": "Corte marmoreado, grelhado com sal, crosta marcada e molho da casa.",
+            "highlight": false,
+            "tag": "Chef Selection"
           },
           {
             "name": "Filet Mignon",
-            "description": "Tenro, refinado e servido com legumes sazonais e molho da casa."
+            "description": "Tenro e limpo, servido com legumes da estação e molho quente.",
+            "highlight": false,
+            "tag": ""
           }
         ]
       },
       {
         "title": "Do Algarve",
-        "description": "Sabores costeiros frescos com um ritmo mediterrânico descontraído.",
+        "description": "Peixe, marisco e acidez fresca para equilibrar a mesa com leveza costeira.",
+        "editorial": {
+          "label": "Origem",
+          "value": "Costa algarvia",
+          "note": "Azeite, limão queimado e ervas aromáticas em pratos de mar simples e precisos."
+        },
         "items": [
           {
             "name": "Robalo Grelhado",
-            "description": "Preparado de forma simples com azeite, ervas aromáticas e citrinos."
+            "description": "Robalo grelhado servido com azeite algarvio, ervas e limão queimado.",
+            "highlight": false,
+            "tag": "Seasonal"
           },
           {
             "name": "Camarão ao Alho",
-            "description": "Um clássico quente de mesa com carácter costeiro."
+            "description": "Camarão quente em alho, azeite e lume vivo, feito para partilhar.",
+            "highlight": false,
+            "tag": "Most Ordered"
           },
           {
             "name": "Peixe do Mercado",
-            "description": "Selecionado de acordo com a melhor pesca disponível."
+            "description": "Selecionado conforme a melhor chegada do dia e preparado com simplicidade.",
+            "highlight": false,
+            "tag": ""
           }
         ]
       },
       {
         "title": "Para Começar",
-        "description": "Entradas elegantes pensadas para partilhar e conversar.",
+        "description": "Pratos de chegada à mesa: pão, azeite, alho, legumes e pequenos clássicos para abrir o apetite.",
+        "editorial": {
+          "label": "À chegada",
+          "value": "Partilha",
+          "note": "Entradas quentes e texturas simples para acompanhar o primeiro copo."
+        },
         "items": [
           {
             "name": "Enchidos Curados e Pão Quente",
-            "description": "Sabores portugueses, azeite e conservas da casa."
+            "description": "Enchidos portugueses, pão quente, azeite e conservas da casa.",
+            "highlight": false,
+            "tag": ""
           },
           {
             "name": "Burrata com Tomate Assado",
-            "description": "Burrata cremosa, óleo de manjericão e texturas de noz."
+            "description": "Burrata cremosa com tomate assado, manjericão e noz tostada.",
+            "highlight": false,
+            "tag": "Seasonal"
           },
           {
             "name": "Legumes Assados no Fogo",
-            "description": "Legumes sazonais, iogurte fumado e ervas."
+            "description": "Legumes da estação assados no fogo com iogurte fumado e ervas.",
+            "highlight": false,
+            "tag": "Chef Selection"
           }
         ]
       },
       {
         "title": "Sobremesas",
-        "description": "Clássicos reconfortantes com acabamento cuidado de restaurante.",
+        "description": "Finais de refeição com chocolate, maçã, amêndoa e vinho do Porto.",
+        "editorial": {
+          "label": "Final",
+          "value": "Doce e vinho",
+          "note": "Sobremesas para dividir ou acompanhar com um copo pequeno no fim da noite."
+        },
         "items": [
           {
             "name": "Creme Brulee Caramelizado",
-            "description": "Creme sedoso, açúcar crocante e notas cítricas."
+            "description": "Creme sedoso, açúcar queimado e notas cítricas leves.",
+            "highlight": false,
+            "tag": ""
           },
           {
             "name": "Chocolate e Vinho do Porto",
-            "description": "Texturas de chocolate negro com acento de vinho português."
+            "description": "Chocolate negro em diferentes texturas com um toque de vinho do Porto.",
+            "highlight": false,
+            "tag": "Most Ordered"
           },
           {
             "name": "Tarte de Amêndoa do Algarve",
-            "description": "Pastelaria quente de amêndoa com creme de baunilha."
+            "description": "Tarte quente de amêndoa algarvia com creme de baunilha.",
+            "highlight": false,
+            "tag": "Desde 1986"
           }
         ]
       }
@@ -310,9 +387,14 @@
   },
   "footer": {
     "brandLine": "Almancil desde 1986",
+    "closingPhrase": "Onde cada noite regressa ao ritmo tranquilo da mesa.",
+    "legalName": "Restaurante Figueiral",
     "description": "Fogo, vinho e hospitalidade familiar em Almancil, mantidos com a mesma confiança serena ao longo de gerações de noites algarvias.",
     "explore": "Explorar",
     "visit": "Visitar",
+    "addressLabel": "Morada",
+    "reservations": "Reservar mesa",
+    "social": "Redes sociais",
     "rights": "Todos os direitos reservados.",
     "locationNote": "Perto da Quinta do Lago e Vale do Lobo."
   }

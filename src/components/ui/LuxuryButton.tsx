@@ -1,14 +1,15 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { MouseEventHandler, ReactNode } from "react";
 
 type LuxuryButtonProps = {
   href: string;
   children: ReactNode;
   variant?: "primary" | "secondary";
   className?: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 };
 
-export function LuxuryButton({ href, children, variant = "primary", className = "" }: LuxuryButtonProps) {
+export function LuxuryButton({ href, children, variant = "primary", className = "", onClick }: LuxuryButtonProps) {
   const base =
     "group inline-flex min-h-12 items-center justify-center rounded-full px-7 text-[0.7rem] font-semibold uppercase tracking-[0.3em] transition duration-500 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-paper";
   const variants = {
@@ -21,14 +22,14 @@ export function LuxuryButton({ href, children, variant = "primary", className = 
 
   if (href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("http")) {
     return (
-      <a href={href} className={classNames}>
+      <a href={href} className={classNames} onClick={onClick}>
         {children}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={classNames}>
+    <Link href={href} className={classNames} onClick={onClick}>
       {children}
     </Link>
   );

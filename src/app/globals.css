@@ -49,7 +49,7 @@ a {
 }
 
 .luxury-card {
-  @apply border border-walnut/10 bg-cream/75 shadow-luxury backdrop-blur-md;
+  @apply border border-walnut/10 bg-cream/80 shadow-luxury;
 }
 
 .text-balance {
@@ -93,6 +93,11 @@ a {
   background: linear-gradient(90deg, transparent, rgba(120, 90, 60, 0.18), transparent);
 }
 
+.hairline-dusk {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(248, 243, 236, 0.2), transparent);
+}
+
 .hero-grain::before {
   opacity: 0.035;
 }
@@ -123,4 +128,117 @@ a {
   inset: 2rem;
   border-top: 1px solid rgba(111, 100, 89, 0.08);
   border-bottom: 1px solid rgba(111, 100, 89, 0.06);
+}
+
+@media (max-width: 639px) {
+  .editorial-paper::after {
+    inset: 1rem 0.85rem;
+  }
+}
+
+/** Secção quente intermediária — contraste editorial sem frieza tecnológica. */
+.section-warm-field {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 140% 80% at 20% -10%, rgba(156, 121, 87, 0.11), transparent 55%),
+    linear-gradient(180deg, rgba(242, 234, 224, 0.98), rgba(233, 220, 204, 0.92));
+}
+
+.section-warm-field::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.042;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+/** Pausa clara editorial entre blocos densos */
+.section-linen-breath {
+  background:
+    radial-gradient(circle at 70% 0%, rgba(122, 132, 113, 0.06), transparent 42rem),
+    linear-gradient(180deg, rgba(252, 248, 242, 0.55), rgba(246, 241, 234, 0.88));
+}
+
+/** Momento cinematográfico — texto claro sobre fundo quente escuro */
+.section-dusk {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 120% 90% at 12% 20%, rgba(156, 121, 87, 0.12), transparent 50%),
+    linear-gradient(168deg, #221c18 0%, #2f2721 52%, #2a221d 100%);
+}
+
+.section-dusk::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+/** Final de página antes do footer */
+.section-finale-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(90, 72, 58, 0.22);
+  background:
+    radial-gradient(ellipse 100% 80% at 50% -20%, rgba(156, 121, 87, 0.16), transparent 45%),
+    linear-gradient(145deg, #2c241f 0%, #3a312a 58%, #2e2620 100%);
+  box-shadow: 0 32px 80px rgba(28, 20, 16, 0.28);
+}
+
+/* Scroll reveal (substituto CSS do antigo MotionReveal + Framer) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 1.375rem, 0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s);
+}
+
+.reveal-on-scroll--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@keyframes mobile-nav-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-nav-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.375rem) scaleY(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.animate-mobile-nav-backdrop-in {
+  animation: mobile-nav-backdrop-in 0.2s ease-out forwards;
+}
+
+.animate-mobile-nav-panel-in {
+  transform-origin: top center;
+  animation: mobile-nav-panel-in 0.24s cubic-bezier(0.33, 1, 0.68, 1) forwards;
 }

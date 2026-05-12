@@ -4,7 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { locales, type Locale } from "@/i18n/config";
 
-export function LanguageSwitcher({ lang, ariaLabel }: { lang: Locale; ariaLabel: string }) {
+export function LanguageSwitcher({
+  lang,
+  ariaLabel,
+  variant = "default"
+}: {
+  lang: Locale;
+  ariaLabel: string;
+  variant?: "default" | "header" | "drawer";
+}) {
   const pathname = usePathname();
 
   function hrefFor(locale: Locale) {
@@ -13,15 +21,25 @@ export function LanguageSwitcher({ lang, ariaLabel }: { lang: Locale; ariaLabel:
     return segments.join("/") || `/${locale}`;
   }
 
+  const inactive =
+    variant === "drawer"
+      ? "text-charcoal hover:text-charcoal"
+      : variant === "header"
+        ? "text-charcoal/75 transition hover:text-charcoal"
+        : "text-charcoal/70 transition hover:text-charcoal";
+
+  const separator =
+    variant === "drawer" ? "text-walnut/40" : variant === "header" ? "text-walnut/35" : "text-walnut/30";
+
   return (
     <div aria-label={ariaLabel} className="flex shrink-0 items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.22em]">
       {locales.map((locale, index) => (
         <span key={locale} className="flex items-center gap-2">
-          {index > 0 ? <span className="text-walnut/30">|</span> : null}
+          {index > 0 ? <span className={separator}>|</span> : null}
           <Link
             href={hrefFor(locale)}
             hrefLang={locale === "pt" ? "pt-PT" : "en"}
-            className={locale === lang ? "text-gold" : "text-charcoal/55 transition hover:text-charcoal"}
+            className={locale === lang ? "text-gold" : inactive}
           >
             {locale}
           </Link>

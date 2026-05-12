@@ -26,6 +26,9 @@ export const siteConfig = {
   ]
 };
 
+/** Logótipo oficial (WebP); usar com moderação (header, footer, selos). */
+export const figueiralLogoSrc = "/images/RSTFI_logo.webp";
+
 export const navItems = [
   { href: "/", labelKey: "home" },
   { href: "/menu", labelKey: "menu" },

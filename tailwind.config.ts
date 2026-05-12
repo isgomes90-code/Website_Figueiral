@@ -9,6 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        dusk: "#2A221D",
+        ember: "#3A312A",
         cream: "#F8F3EC",
         paper: "#F6F1EA",
         sand: "#F0E7DC",
