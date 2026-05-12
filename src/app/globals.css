@@ -162,13 +162,13 @@ a {
     linear-gradient(180deg, rgba(252, 248, 242, 0.55), rgba(246, 241, 234, 0.88));
 }
 
-/** Momento cinematográfico — texto claro sobre fundo quente escuro */
+/** Momento cinematográfico — castanho quente, menos “preto” */
 .section-dusk {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 120% 90% at 12% 20%, rgba(156, 121, 87, 0.12), transparent 50%),
-    linear-gradient(168deg, #221c18 0%, #2f2721 52%, #2a221d 100%);
+    radial-gradient(ellipse 120% 90% at 12% 20%, rgba(156, 121, 87, 0.14), transparent 50%),
+    linear-gradient(168deg, #2e2721 0%, #3a322c 48%, #322b26 100%);
 }
 
 .section-dusk::before {
@@ -176,7 +176,26 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.038;
+  opacity: 0.034;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+/** Hospitalidade / reviews — mais luz, mesma família cromática */
+.section-hospitality {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 0%, rgba(156, 121, 87, 0.11), transparent 42%),
+    linear-gradient(168deg, #3a322b 0%, #423930 45%, #3a322b 100%);
+}
+
+.section-hospitality::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.032;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
   mix-blend-mode: soft-light;
 }

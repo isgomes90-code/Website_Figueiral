@@ -17,6 +17,8 @@ type ImageFeatureProps = {
   tone?: "none" | "warm" | "linen";
   /** Varia proporção/recorte editorial da fotografia dominante. */
   composition?: "standard" | "panorama" | "intimate";
+  /** Classes Tailwind extras no `<Image>` principal (ex.: `object-[center_30%]`). */
+  imageClassName?: string;
 };
 
 const toneWrap: Record<NonNullable<ImageFeatureProps["tone"]>, string> = {
@@ -46,12 +48,19 @@ export function ImageFeature(props: ImageFeatureProps) {
     supportingImage,
     supportingAlt,
     tone = "none",
-    composition = "standard"
+    composition = "standard",
+    imageClassName = ""
   } = props;
 
   const py = quiet ? "py-20 sm:py-28 lg:py-32" : "py-24 sm:py-36 lg:py-40";
   const toneClass = toneWrap[tone];
   const imageShell = compositionMap[composition];
+  const mainImageFit =
+    composition === "intimate"
+      ? (imageClassName?.trim()
+          ? `${imageClassName}`
+          : "object-[center_40%] sm:object-[center_35%]")
+      : imageClassName?.trim() || "object-center";
 
   return (
     <section className={`${py} ${toneClass}`}>
@@ -75,7 +84,7 @@ export function ImageFeature(props: ImageFeatureProps) {
             alt={alt}
             fill
             sizes="(min-width: 1024px) 52vw, 100vw"
-            className={`object-cover ${composition === "intimate" ? "object-[center_40%] sm:object-[center_35%]" : "object-center"}`}
+            className={`object-cover ${mainImageFit}`}
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/24 via-charcoal/5 to-transparent" />

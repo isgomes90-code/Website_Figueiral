@@ -10,8 +10,8 @@ import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
-/** Viewport ≥1200px: menu horizontal (preventivo) */
-const NAV_LG = "min-[1200px]";
+/** Navegação horizontal a partir do breakpoint `lg` (1024px) — típicos portáteis já vêem todas as páginas. */
+const NAV = "lg";
 
 function MenuGlyph({ open }: { open: boolean }) {
   return open ? (
@@ -94,42 +94,40 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   }, [mobileOpen]);
 
   const reserveHref = localizedPath(lang, "/reservations");
-  const navbarBottom = "calc(1rem + 4.75rem)";
+  const navbarBottom = "calc(1rem + 5rem + 0.35rem)";
 
   const linkDesk =
-    "relative whitespace-nowrap text-[0.72rem] font-medium uppercase tracking-[0.21em] text-charcoal transition duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:text-charcoal hover:after:w-full";
+    "relative whitespace-nowrap text-[0.74rem] font-semibold uppercase tracking-[0.2em] text-charcoal/[0.92] transition duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:text-charcoal hover:after:w-full focus-visible:text-charcoal focus-visible:outline-none focus-visible:after:w-full";
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden ${NAV_LG}:overflow-visible`}>
-      <div className={`mx-4 mt-4 min-w-0 sm:mx-6 lg:mx-10 ${NAV_LG}:overflow-visible`}>
+    <header className={`fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden ${NAV}:overflow-visible`}>
+      <div className={`mx-4 mt-4 min-w-0 sm:mx-6 lg:mx-10 ${NAV}:overflow-visible`}>
         <div
-          className={`mx-auto w-full max-w-[88rem] min-w-0 overflow-x-hidden border-x border-t border-walnut/15 bg-[#F6F1EE]/95 px-5 shadow-[0_16px_48px_rgba(92,68,48,0.12)] backdrop-blur-md sm:px-7 ${NAV_LG}:rounded-full ${NAV_LG}:border ${NAV_LG}:border-walnut/15 ${NAV_LG}:bg-[rgba(246,241,234,0.92)] ${NAV_LG}:px-10 max-[1199px]:rounded-b-none max-[1199px]:rounded-t-[1.95rem]`}
+          className={`relative z-[110] mx-auto w-full max-w-[88rem] min-w-0 overflow-x-visible border-x border-t border-walnut/[0.17] bg-[#F8F4EF]/96 px-5 shadow-[0_14px_40px_rgba(58,42,30,0.1)] backdrop-blur-md sm:px-7 ${NAV}:rounded-[2.85rem] ${NAV}:border ${NAV}:border-walnut/[0.14] ${NAV}:bg-[rgba(247,243,237,0.94)] ${NAV}:px-8 max-lg:rounded-b-none max-lg:rounded-t-[1.95rem]`}
         >
           <div
-            className={`grid h-[4.75rem] w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 sm:gap-x-4 ${NAV_LG}:grid-cols-[auto_minmax(0,1fr)_auto] ${NAV_LG}:gap-x-8`}
+            className={`grid min-h-[5rem] w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 sm:gap-x-4 lg:grid-cols-[auto_minmax(8rem,1fr)_auto] lg:gap-x-8 xl:gap-x-10`}
           >
             <div className="min-w-0 shrink">
-              <Link href={localizedPath(lang)} className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
-                <span className="relative h-[1.9rem] w-[2.56rem] shrink-0 opacity-[0.94] transition-opacity group-hover:opacity-100 sm:h-[2.1rem] sm:w-[2.76rem]" aria-hidden>
-                  <Image
-                    src={figueiralLogoSrc}
-                    alt=""
-                    fill
-                    priority
-                    sizes="64px"
-                    className="object-contain object-left"
-                  />
+              <Link href={localizedPath(lang)} className="group flex min-w-0 items-center gap-3.5 sm:gap-4">
+                <span
+                  className="relative h-[2.35rem] w-[3.25rem] shrink-0 brightness-[1.03] contrast-[1.06] opacity-[0.97] ring-1 ring-walnut/10 transition-[opacity,ring-color] duration-300 group-hover:opacity-100 sm:h-[2.55rem] sm:w-[3.45rem]"
+                  aria-hidden
+                >
+                  <Image src={figueiralLogoSrc} alt="" fill priority sizes="112px" className="object-contain object-center" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block truncate font-display text-[1.7rem] leading-none text-charcoal transition group-hover:text-gold">
+                  <span className="block truncate pt-px font-display text-[1.65rem] leading-none tracking-tight text-charcoal transition group-hover:text-gold sm:text-[1.76rem]">
                     Figueiral
                   </span>
-                  <span className="block text-[0.58rem] font-semibold uppercase tracking-[0.38em] text-gold">{navigation.brandLine}</span>
+                  <span className="mt-1 block max-w-[11rem] text-[0.58rem] font-semibold uppercase leading-tight tracking-[0.36em] text-gold/[0.88]">
+                    {navigation.brandLine}
+                  </span>
                 </span>
               </Link>
             </div>
 
-            <div className={`col-start-2 flex max-w-fit min-w-0 items-center justify-end gap-3 ${NAV_LG}:hidden`}>
+            <div className={`col-start-2 flex max-w-fit min-w-0 items-center justify-end gap-3 lg:hidden`}>
               <LuxuryButton
                 href={reserveHref}
                 className="hidden !min-h-10 !min-w-0 whitespace-nowrap !px-4 !py-3 !text-[0.61rem] !tracking-[0.24em] min-[460px]:inline-flex"
@@ -138,7 +136,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
               </LuxuryButton>
               <button
                 type="button"
-                className="mobile-menu-button inline-flex h-11 min-w-[2.75rem] shrink-0 items-center justify-center rounded-full border border-charcoal/18 bg-cream text-charcoal shadow-sm transition hover:border-gold/45 hover:bg-paper focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-[#F6F1EE]"
+                className="mobile-menu-button inline-flex h-11 min-w-[2.75rem] shrink-0 items-center justify-center rounded-full border border-charcoal/[0.22] bg-cream/[0.98] text-charcoal shadow-sm ring-2 ring-transparent transition hover:border-gold/50 hover:bg-paper hover:shadow-md focus:outline-none focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-paper active:scale-[0.98]"
                 aria-expanded={mobileOpen}
                 aria-controls={mobileOpen ? panelId : undefined}
                 aria-haspopup="true"
@@ -152,7 +150,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
             <nav
               id="site-desktop-nav"
               aria-label={navigation.ariaMain}
-              className={`desktop-nav hidden min-h-0 min-w-0 flex-wrap items-center justify-center gap-x-6 gap-y-2 ${NAV_LG}:col-start-2 ${NAV_LG}:row-start-1 ${NAV_LG}:flex ${NAV_LG}:min-w-0 2xl:gap-x-7`}
+              className={`relative z-[112] hidden min-h-0 min-w-0 flex-wrap items-center justify-center gap-x-5 gap-y-3 lg:col-start-2 lg:row-start-1 lg:flex lg:justify-center xl:gap-x-[1.375rem]`}
             >
               {navItems.map((item) => (
                 <Link key={item.href} href={localizedPath(lang, item.href)} className={linkDesk}>
@@ -161,8 +159,8 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
               ))}
             </nav>
 
-            <div className={`hidden min-w-0 max-w-fit shrink gap-x-4 ${NAV_LG}:col-start-3 ${NAV_LG}:row-start-1 ${NAV_LG}:flex ${NAV_LG}:items-center ${NAV_LG}:justify-end ${NAV_LG}:justify-self-end`}>
-              <div className={`flex flex-wrap items-center justify-end gap-x-4 gap-y-2 border-walnut/15 ${NAV_LG}:border-l ${NAV_LG}:pl-5 2xl:gap-x-5 2xl:pl-6`}>
+            <div className={`hidden min-w-0 shrink-0 lg:col-start-3 lg:row-start-1 lg:flex lg:items-center lg:justify-end`}>
+              <div className={`flex flex-wrap items-center justify-end gap-x-3 gap-y-2 border-walnut/15 lg:border-l lg:pl-6 xl:gap-x-4 xl:pl-7`}>
                 <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} />
                 <LuxuryButton href={reserveHref} className="inline-flex whitespace-nowrap !min-h-11 min-w-0 shrink !px-6">
                   {navigation.reserve}
@@ -173,11 +171,11 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
         </div>
       </div>
 
-      <div className={`${NAV_LG}:hidden`} aria-live="polite">
+      <div className={`lg:hidden`} aria-live="polite">
         {mobileOpen ? (
-          <div className="fixed inset-0 z-[84]" role="presentation">
+          <div className="fixed inset-0 z-[95]" role="presentation">
             <div
-              className="animate-mobile-nav-backdrop-in fixed inset-0 z-[88] cursor-pointer bg-charcoal/48"
+              className="animate-mobile-nav-backdrop-in fixed inset-0 z-[96] cursor-pointer bg-charcoal/[0.52] backdrop-blur-[1px]"
               aria-hidden="true"
               onClick={() => setMobileOpen(false)}
             />
@@ -187,7 +185,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
               role="dialog"
               aria-modal="true"
               aria-label={navigation.ariaMain}
-              className="animate-mobile-nav-panel-in fixed left-4 right-4 z-[92] mx-auto max-h-[calc(100dvh-7rem)] max-w-[88rem] origin-top overflow-hidden rounded-b-[1.35rem] border border-walnut/18 bg-[#F2EDE6] shadow-[0_28px_70px_rgba(55,42,34,0.18)] sm:left-6 sm:right-6 lg:left-10 lg:right-10"
+              className="animate-mobile-nav-panel-in fixed left-4 right-4 z-[99] mx-auto max-h-[calc(100dvh-7rem)] max-w-[88rem] origin-top overflow-hidden rounded-b-[1.35rem] border border-walnut/18 bg-[#F8F5F0] shadow-[0_28px_70px_rgba(55,42,34,0.2)] sm:left-6 sm:right-6 lg:left-10 lg:right-10"
               style={{ top: navbarBottom }}
             >
               <div className="max-h-[calc(100dvh-7.75rem)] overflow-y-auto overscroll-contain px-5 pb-8 pt-6 sm:pb-10 sm:pt-8">
@@ -196,7 +194,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
                     <Link
                       key={item.href}
                       href={localizedPath(lang, item.href)}
-                      className="rounded-xl px-3 py-4 text-[1.08rem] font-medium leading-snug text-charcoal outline-none ring-offset-2 ring-offset-[#F2EDE6] transition hover:bg-sand focus-visible:ring-2 focus-visible:ring-gold sm:py-3.5"
+                      className="rounded-xl px-3 py-4 text-[1.05rem] font-medium leading-snug text-charcoal outline-none ring-offset-2 ring-offset-[#F8F5F0] transition hover:bg-sand/[0.75] active:bg-sand focus-visible:ring-2 focus-visible:ring-gold sm:py-3.5"
                       onClick={() => setMobileOpen(false)}
                     >
                       {navigation[item.labelKey]}

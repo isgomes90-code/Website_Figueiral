@@ -84,15 +84,15 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
         <div className="grid w-full gap-14 xl:grid-cols-[minmax(0,0.88fr)_minmax(16rem,0.32fr)] xl:items-end">
           <div className="max-w-[56rem]">
             <div
-              className="rounded-[28px] border border-white/[0.14] px-[22px] py-[18px] shadow-[0_20px_50px_rgba(12,8,6,0.22)] sm:px-7 sm:py-6"
+              className="box-border w-full rounded-[28px] border border-white/[0.16] p-8 shadow-[0_20px_50px_rgba(12,8,6,0.22)] sm:p-9"
               style={{ backgroundColor: "rgba(24, 16, 12, 0.28)" }}
             >
-              <p className="mb-8 text-[0.68rem] font-semibold uppercase tracking-[0.44em] text-gold">{hero.eyebrow}</p>
+              <p className="mb-7 text-[0.68rem] font-semibold uppercase tracking-[0.44em] text-gold sm:mb-8">{hero.eyebrow}</p>
               <h1 className="font-display text-[2.95rem] leading-[1.04] text-cream text-balance sm:text-[4rem] lg:text-[5.05rem] xl:text-[5.55rem]">
                 {hero.title}
               </h1>
               <p
-                className="mt-9 max-w-[38rem] text-base leading-8 sm:text-[1.05rem] sm:leading-[1.75rem]"
+                className="mt-8 max-w-[38rem] text-base leading-8 sm:mt-9 sm:text-[1.05rem] sm:leading-[1.75rem]"
                 style={{
                   color: "rgba(246, 239, 230, 0.92)",
                   textShadow: "0 1px 18px rgba(12, 8, 6, 0.45)"
@@ -100,7 +100,7 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
               >
                 {hero.subtitle}
               </p>
-              <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-11 flex flex-col gap-4 sm:mt-12 sm:flex-row">
                 <LuxuryButton href={localizedPath(lang, "/reservations")}>{hero.primaryCta}</LuxuryButton>
                 <LuxuryButton
                   href={localizedPath(lang, "/menu")}

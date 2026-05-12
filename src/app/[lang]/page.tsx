@@ -9,7 +9,7 @@ import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, localizedPath, type Locale } from "@/i18n/config";
-import { figueiralLogoSrc, images } from "@/lib/site";
+import { images } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 const highlightImages = [
@@ -67,16 +67,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className={`object-cover brightness-[1.03] contrast-[0.94] saturate-[0.88] sepia-[0.06] transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 1 ? "object-[center_38%]" : index === 2 ? "object-[center_52%]" : "object-center"}`}
+                    className={`object-cover brightness-[1.03] contrast-[0.94] saturate-[0.88] sepia-[0.06] transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 1 ? "object-[center_18%]" : index === 2 ? "object-[center_52%]" : "object-center"}`}
                     loading={index === 0 ? "eager" : "lazy"}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(252,246,238,0.05),rgba(52,41,34,0.16))]" />
                 </div>
                 <div className="flex flex-1 flex-col px-8 pb-[1.85rem] pt-7 sm:px-9 sm:pb-[2.1rem] sm:pt-8">
-                  <span className="font-display text-[0.73rem] font-normal tabular-nums tracking-[0.28em] text-gold/[0.36] sm:text-[0.77rem]">
+                  <span className="font-display text-[1.05rem] font-medium tabular-nums tracking-[0.26em] text-gold/[0.82] sm:text-[1.2rem] sm:tracking-[0.23em]">
                     0{index + 1}
                   </span>
-                  <p className="mt-5 grow text-[1.02rem] font-semibold leading-[1.71] tracking-[0.015em] text-walnut sm:mt-[1.375rem] sm:text-[1.06rem] sm:leading-[1.76] max-sm:max-w-[22rem] max-sm:text-pretty lg:max-w-none text-balance">
+                  <p className="mt-4 grow text-[1.02rem] font-semibold leading-[1.71] tracking-[0.015em] text-walnut sm:mt-5 sm:text-[1.06rem] sm:leading-[1.76] max-sm:max-w-[22rem] max-sm:text-pretty lg:max-w-none text-balance">
                     {item}
                   </p>
                 </div>
@@ -132,6 +132,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         reverse
         tone="linen"
         composition="standard"
+        imageClassName="object-[center_20%] sm:object-[center_16%]"
       />
 
       <section className="section-linen-breath relative py-[4.5rem] sm:py-[7rem] lg:py-[7.25rem]">
@@ -139,12 +140,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <MotionReveal className="atmospheric-panel rounded-[2.05rem] px-8 py-14 sm:rounded-[2.2rem] sm:px-12 sm:py-18 lg:px-[3.65rem] lg:py-[4.85rem]">
             <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-[4.25rem]">
               <div className="order-1 max-w-xl lg:max-w-none">
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.36em] text-gold/80">{home.legacy.eyebrow}</p>
-                  <span className="relative h-[1.35rem] w-[2rem] shrink-0 opacity-[0.76]" aria-hidden>
-                    <Image src={figueiralLogoSrc} alt="" fill sizes="42px" className="object-contain object-left" />
-                  </span>
-                </div>
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.36em] text-gold/80">{home.legacy.eyebrow}</p>
                 <p className="mt-[1.375rem] font-display text-[4.95rem] leading-none tracking-[-0.03em] text-charcoal/[0.95] sm:text-[6.85rem] sm:tracking-tight">1986</p>
                 <h2 className="mt-9 max-w-[46rem] font-display text-[2.15rem] leading-[1.1] tracking-[-0.015em] text-charcoal text-balance sm:text-[2.95rem] sm:leading-[1.05] lg:text-[3.2rem]">
                   {home.legacy.title}
@@ -153,15 +149,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   {home.legacy.body}
                 </p>
               </div>
-              <div className="order-2 lg:pl-6">
-                <figure className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
-                  <div className="relative aspect-[9/14] max-h-[min(72vh,36rem)] overflow-hidden rounded-[2rem] border border-walnut/[0.09] shadow-[0_26px_64px_rgba(58,44,34,0.11)] sm:aspect-[4/5] sm:max-h-none sm:rounded-[2.05rem] lg:aspect-[5/7] lg:rounded-[38px]">
+              <div className="order-2 lg:pl-2">
+                <figure className="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] border border-walnut/[0.09] shadow-[0_26px_64px_rgba(58,44,34,0.11)] sm:aspect-[5/6] sm:rounded-[2.05rem] lg:aspect-[11/13] lg:rounded-[38px]">
                     <Image
-                      src="/images/people/Rececao-clientes.webp"
+                      src={images.legacyOwners}
                       alt={home.legacy.imageAlt}
                       fill
-                      sizes="(min-width: 1024px) 38vw, 90vw"
-                      className="object-cover object-[50%_22%]"
+                      sizes="(min-width: 1024px) 42vw, 90vw"
+                      className="object-cover object-[50%_32%]"
                       loading="lazy"
                     />
                   </div>

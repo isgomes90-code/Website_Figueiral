@@ -14,8 +14,8 @@ export function Reviews({ dictionary }: { dictionary: Dictionary }) {
   const reviews = dictionary.reviews;
 
   return (
-    <section className="section-dusk relative py-28 sm:py-40 lg:py-44">
-      <div className="absolute inset-x-0 top-0 hairline-dusk opacity-80" />
+    <section className="section-hospitality grain relative py-28 sm:py-40 lg:py-44">
+      <div className="absolute inset-x-0 top-0 hairline-dusk opacity-90" />
 
       <div className="section-shell relative">
         <SectionIntro
@@ -48,13 +48,17 @@ export function Reviews({ dictionary }: { dictionary: Dictionary }) {
             <MotionReveal
               key={review.source}
               delay={index * 0.08}
-              className="flex h-full flex-col rounded-[1.6rem] border border-white/14 bg-cream/[0.07] px-7 py-8 sm:px-8 sm:py-9"
+              className="flex h-full flex-col rounded-[1.6rem] border border-white/16 bg-cream/[0.1] px-7 py-8 shadow-[inset_0_1px_0_rgba(255,249,238,0.06)] backdrop-blur-[0.5px] sm:px-8 sm:py-9"
             >
-              <div className="mb-6 flex shrink-0 items-center justify-between text-[0.62rem] uppercase tracking-[0.28em] text-gold/70 sm:mb-7">
-                <span>{review.source}</span>
-                <span>{review.rating}</span>
+              <div className="mb-7 flex shrink-0 flex-wrap items-start justify-between gap-x-5 gap-y-4 sm:mb-8">
+                <span className="max-w-[12rem] text-[0.64rem] font-semibold uppercase leading-relaxed tracking-[0.3em] text-gold/[0.78]">
+                  {review.source}
+                </span>
+                <span className="font-display text-[1.72rem] font-medium leading-none tracking-[-0.02em] text-cream/[0.95] sm:text-[2rem]">
+                  {review.rating}
+                </span>
               </div>
-              <blockquote className="flex-1 font-display text-xl leading-snug tracking-[-0.01em] text-cream/[0.92] sm:text-2xl sm:leading-9">
+              <blockquote className="flex-1 font-display text-xl leading-snug tracking-[-0.01em] text-cream/[0.94] sm:text-2xl sm:leading-9">
                 &ldquo;{review.quote}&rdquo;
               </blockquote>
               <p className="mt-8 text-sm leading-relaxed text-cream/62">{review.author}</p>

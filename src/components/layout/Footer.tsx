@@ -13,25 +13,27 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
   const { socials } = siteConfig;
 
   return (
-    <footer className="relative overflow-hidden bg-[linear-gradient(180deg,#241e1a_0%,#1a1613_92%)] pb-24 pt-[4.75rem] text-sm sm:pb-[5.75rem] sm:pt-[5.75rem]">
+    <footer className="relative overflow-hidden bg-[linear-gradient(180deg,#2a231e_0%,#201a16_94%)] pb-24 pt-[4.75rem] text-sm sm:pb-[5.75rem] sm:pt-[5.75rem]">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(248,243,236,0.26),transparent)]"
         aria-hidden
       />
 
       <div className="section-shell relative">
-        <div className="grid gap-14 sm:gap-16 lg:grid-cols-2 lg:gap-14 xl:grid-cols-4 xl:gap-14">
-          <div className="min-w-0">
-            <div className="flex flex-col gap-8 border-b border-white/[0.1] pb-12 sm:flex-row sm:items-start sm:gap-10 lg:border-0 lg:pb-0">
-              <div className="relative h-[3.05rem] w-[4.95rem] shrink-0 opacity-[0.93]" aria-hidden>
-                <Image src={figueiralLogoSrc} alt="" fill sizes="132px" className="object-contain object-left" />
+        <div className="grid gap-14 sm:gap-16 lg:grid-cols-2 lg:gap-16 xl:grid-cols-[1.05fr_repeat(3,minmax(0,1fr))] xl:gap-12">
+          <div className="min-w-0 xl:pr-4">
+            <div className="flex flex-col gap-9 border-b border-white/[0.12] pb-12 sm:flex-row sm:items-start sm:gap-11 lg:border-0 lg:pb-0">
+              <div className="relative h-[3.75rem] w-[5.95rem] shrink-0 brightness-[1.06] opacity-[0.96]" aria-hidden>
+                <Image src={figueiralLogoSrc} alt="" fill sizes="154px" className="object-contain object-left" />
               </div>
               <div className="min-w-0">
-                <p className="text-[0.64rem] font-semibold uppercase tracking-[0.38em] text-gold/[0.78]">{footer.brandLine}</p>
-                <p className="mt-5 font-display text-[2.5rem] leading-[0.98] tracking-[-0.02em] text-cream/[0.95] sm:text-[3rem] xl:text-[3.35rem]">
+                <p className="text-[0.64rem] font-semibold uppercase tracking-[0.38em] text-gold/[0.82]">{footer.brandLine}</p>
+                <p className="mt-4 font-display text-[1.78rem] leading-[1.08] tracking-[-0.018em] text-cream/[0.96] sm:mt-5 sm:text-[2.05rem] sm:leading-[1.06] xl:text-[2.2rem]">
                   {footer.legalName}
                 </p>
-                <p className="mt-6 max-w-[23rem] text-[0.95rem] leading-[1.8] tracking-[0.01em] text-cream/[0.55]">{footer.description}</p>
+                <p className="mt-5 max-w-[24rem] text-[0.94rem] leading-[1.82] tracking-[0.01em] text-cream/[0.58] sm:mt-6">
+                  {footer.description}
+                </p>
               </div>
             </div>
             <p className="mt-11 max-w-lg font-display text-[1.2rem] leading-snug tracking-[-0.01em] text-cream/[0.42] sm:mt-12 sm:text-[1.36rem] sm:leading-[1.42] lg:mt-16">

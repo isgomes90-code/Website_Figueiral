@@ -51,7 +51,9 @@ export const images = {
   dining: "/images/people/Empratamento-1.webp",
   bar: "/images/bar/Figueiral-0494-20191105-Web.webp",
   cocktail: "/images/bar/Expresso-martini-preparcao-1.webp",
-  dessert: "/images/food/Profiteroles-chocolate.webp"
+  dessert: "/images/food/Profiteroles-chocolate.webp",
+  /** Retrato família na secção Legado — adicionar ficheiro em `public/images/people/`. */
+  legacyOwners: "/images/people/Proprietarios.jpg"
 };
 
 export const menuCategories = [

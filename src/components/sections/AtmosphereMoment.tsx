@@ -19,11 +19,11 @@ export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/
         fill
         sizes="100vw"
         loading="lazy"
-        className="object-cover object-[center_42%] brightness-[0.92] contrast-[0.96] saturate-[0.88]"
+        className="object-cover object-[center_72%] brightness-[0.92] contrast-[0.96] saturate-[0.88]"
         quality={82}
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(18,12,9,0.72)_0%,rgba(22,16,12,0.38)_46%,rgba(28,22,18,0.22)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(18,12,9,0.66)_0%,rgba(22,16,12,0.34)_46%,rgba(28,22,18,0.2)_100%)]"
         aria-hidden
       />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_120%_at_20%_50%,transparent_0%,rgba(12,9,8,0.35)_100%)]" aria-hidden />
