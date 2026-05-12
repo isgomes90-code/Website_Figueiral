@@ -12,11 +12,20 @@ import { images } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 const highlightImages = [
-  "/images/food/Picanha-grelha.jpg",
-  "/images/wine/Vinho-garrafeira.JPG",
-  "/images/terrace/Esplanada-1.JPG",
-  "/images/people/Convicio-clientes-2.jpg"
+  "/images/hero/Preparacao-picanha.webp",
+  "/images/wine/Vinho-garrafeira.webp",
+  "/images/terrace/Esplanada-1.webp",
+  "/images/people/Convicio-clientes-1.webp"
 ];
+
+const highlightCardStyles = [
+  "lg:mt-6",
+  "lg:mt-0",
+  "lg:mt-12",
+  "lg:mt-3"
+];
+
+const highlightImageHeights = ["h-44", "h-48", "h-40", "h-[11.5rem]"];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -39,45 +48,49 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   return (
     <>
       <Hero dictionary={dictionary} lang={locale} />
-      <section className="relative py-20 sm:py-32">
-        <div className="section-shell">
+      <section className="editorial-paper relative py-28 sm:py-40">
+        <div className="section-shell relative z-10">
           <SectionIntro
             eyebrow={home.intro.eyebrow}
             title={home.intro.title}
             body={home.intro.body}
             align="center"
           />
-          <div className="mx-auto mt-14 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-20 grid max-w-6xl gap-6 sm:grid-cols-2 lg:mt-24 lg:grid-cols-4 lg:items-start">
             {home.highlights.map((item, index) => (
               <MotionReveal
                 key={item}
                 delay={index * 0.07}
-                className={`luxury-card overflow-hidden rounded-[1.55rem] ${index % 2 === 1 ? "lg:mt-8" : ""}`}
+                className={`group overflow-hidden rounded-[1.55rem] border border-walnut/10 bg-cream/70 shadow-[0_26px_70px_rgba(91,66,46,0.095)] backdrop-blur-md transition-shadow duration-[900ms] hover:shadow-[0_34px_90px_rgba(91,66,46,0.13)] ${highlightCardStyles[index]}`}
               >
-                <div className="relative h-40">
+                <div className={`relative ${highlightImageHeights[index]} overflow-hidden`}>
                   <Image
                     src={highlightImages[index]}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover brightness-[1.03] contrast-[0.92] saturate-[0.86] sepia-[0.08] transition duration-[1400ms] ease-out group-hover:scale-[1.025]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/34 to-transparent" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(246,241,234,0.04),rgba(45,37,31,0.18))]" />
                 </div>
-                <div className="p-6 sm:p-7">
-                  <span className="font-display text-4xl text-gold/85">0{index + 1}</span>
-                  <p className="mt-7 text-base leading-7 text-walnut">{item}</p>
+                <div className="p-7 sm:p-8">
+                  <span className="block font-display text-[1.95rem] font-medium leading-none tracking-[0.08em] text-gold/65">
+                    0{index + 1}
+                  </span>
+                  <p className="mt-7 max-w-[13.5rem] text-[0.96rem] font-medium leading-[1.75] tracking-[0.01em] text-walnut/90">
+                    {item}
+                  </p>
                 </div>
               </MotionReveal>
             ))}
           </div>
         </div>
       </section>
-      <section className="py-10 sm:py-16">
+      <section className="py-12 sm:py-20">
         <div className="section-shell">
           <MotionReveal className="mx-auto max-w-5xl text-center">
             <div className="hairline mb-12" />
-            <p className="font-display text-4xl leading-tight text-charcoal text-balance sm:text-6xl">
+            <p className="font-display text-[2.35rem] leading-tight text-charcoal text-balance sm:text-[3.55rem]">
               {home.statement.text}
             </p>
             <p className="mx-auto mt-7 max-w-2xl text-sm uppercase leading-7 tracking-[0.26em] text-gold/70">
@@ -103,13 +116,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         image={images.wine}
         alt="Wine service and cellar atmosphere"
         note={home.wine.note}
-        supportingImage="/images/wine/Vinho-detalhe-2.jpg"
+        supportingImage="/images/wine/Vinho-detalhe-2.webp"
         supportingAlt="Detalhe de garrafa de vinho no Figueiral"
         reverse
       />
-      <section className="py-14 sm:py-24">
+      <section className="py-16 sm:py-28">
         <div className="section-shell">
-          <MotionReveal className="atmospheric-panel rounded-[2.2rem] px-6 py-14 shadow-[0_34px_100px_rgba(0,0,0,0.34)] sm:px-12 lg:px-16">
+          <MotionReveal className="atmospheric-panel rounded-[2.2rem] px-6 py-14 shadow-[0_24px_64px_rgba(92,68,48,0.12)] sm:px-12 lg:px-16">
             <div className="grid gap-12 lg:grid-cols-[0.62fr_1fr] lg:items-end">
               <div>
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.36em] text-gold/85">{home.legacy.eyebrow}</p>
@@ -136,9 +149,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         quiet
       />
       <Reviews dictionary={dictionary} />
-      <section className="py-20 sm:py-32">
+      <section className="py-24 sm:py-36">
         <div className="section-shell">
-          <MotionReveal className="atmospheric-panel rounded-[2.4rem] px-6 py-16 text-center shadow-[0_34px_100px_rgba(0,0,0,0.34)] sm:px-12 sm:py-20">
+          <MotionReveal className="atmospheric-panel rounded-[2.4rem] px-6 py-16 text-center shadow-[0_24px_64px_rgba(92,68,48,0.12)] sm:px-12 sm:py-20">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.36em] text-gold/85">{home.cta.eyebrow}</p>
             <h2 className="mx-auto mt-6 max-w-3xl font-display text-4xl leading-tight text-charcoal text-balance sm:text-6xl">
               {home.cta.title}

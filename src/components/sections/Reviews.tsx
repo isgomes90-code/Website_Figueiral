@@ -4,10 +4,10 @@ import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 
 const experienceImages = [
-  "/images/people/Convicio-clientes-1.jpg",
-  "/images/people/Convicio-clientes-2.jpg",
-  "/images/people/Convicio-clientes-3.jpg",
-  "/images/people/Rececao-clientes.jpg"
+  "/images/people/Convicio-clientes-1.webp",
+  "/images/people/Convicio-clientes-3.webp",
+  "/images/people/Rececao-clientes.webp",
+  "/images/people/Empratamento-2.webp"
 ];
 
 export function Reviews({ dictionary }: { dictionary: Dictionary }) {

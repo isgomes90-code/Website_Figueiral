@@ -24,14 +24,14 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
         <SectionIntro eyebrow={menu.intro.eyebrow} title={menu.intro.title} body={menu.intro.body} />
         <MotionReveal className="mt-12 overflow-hidden rounded-[2rem] shadow-[0_30px_100px_rgba(0,0,0,0.32)]">
           <div className="relative min-h-[20rem] sm:min-h-[28rem]">
-            <Image src="/images/food/Picanha-grelha.jpg" alt="Picanha na grelha no Figueiral" fill sizes="100vw" className="object-cover" />
+            <Image src="/images/hero/Preparacao-picanha.webp" alt="Preparacao de picanha no Figueiral" fill sizes="100vw" className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-charcoal/10 to-transparent" />
             <div className="absolute bottom-6 left-6 max-w-sm sm:bottom-9 sm:left-9">
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-gold">{menu.hero.eyebrow}</p>
               <p className="mt-3 font-display text-3xl leading-tight text-cream sm:text-4xl">{menu.hero.title}</p>
             </div>
             <div className="absolute bottom-6 right-6 hidden h-36 w-32 overflow-hidden rounded-[1rem] border border-cream/55 shadow-[0_18px_44px_rgba(92,68,48,0.22)] sm:block">
-              <Image src="/images/food/Cogumelos-alho.JPG" alt="Cogumelos ao alho no Figueiral" fill sizes="128px" className="object-cover" />
+              <Image src="/images/food/Cogumelos-alho.webp" alt="Cogumelos ao alho no Figueiral" fill sizes="128px" className="object-cover" />
             </div>
           </div>
         </MotionReveal>

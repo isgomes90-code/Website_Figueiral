@@ -14,7 +14,7 @@ export function LanguageSwitcher({ lang, ariaLabel }: { lang: Locale; ariaLabel:
   }
 
   return (
-    <div aria-label={ariaLabel} className="flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.22em]">
+    <div aria-label={ariaLabel} className="flex shrink-0 items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.22em]">
       {locales.map((locale, index) => (
         <span key={locale} className="flex items-center gap-2">
           {index > 0 ? <span className="text-walnut/30">|</span> : null}

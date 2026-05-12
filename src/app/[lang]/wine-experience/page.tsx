@@ -32,7 +32,7 @@ export default async function WineExperiencePage({ params }: { params: Promise<{
         body={wine.feature.body}
         image={images.wineCellar}
         alt="Sommelier wine service at a premium Algarve restaurant"
-        supportingImage="/images/wine/Vinho-detalhe-2.jpg"
+        supportingImage="/images/wine/Vinho-detalhe-2.webp"
         supportingAlt="Detalhe de vinho no Restaurante Figueiral"
       />
       <section className="pb-24">

@@ -11,7 +11,7 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
   return (
     <footer className="grain relative overflow-hidden border-t border-walnut/15 bg-sand px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
       <Image
-        src="/images/bar/Cocktail-figueiral-siganture.jpg"
+        src="/images/bar/Figueiral-0494-20191105-Web.webp"
         alt=""
         fill
         unoptimized

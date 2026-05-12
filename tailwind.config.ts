@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#F6F1EA",
-        paper: "#F3EEE7",
-        sand: "#EFE7DD",
-        linen: "#DDD0C1",
+        cream: "#F8F3EC",
+        paper: "#F6F1EA",
+        sand: "#F0E7DC",
+        linen: "#DFD1C0",
         sage: "#7A8471",
-        olive: "#DDD0C1",
-        charcoal: "#2B211B",
-        walnut: "#6E6257",
-        gold: "#A67C52",
+        olive: "#DFD1C0",
+        charcoal: "#2D251F",
+        walnut: "#6F6459",
+        gold: "#9C7957",
         wine: "#5A1F2E"
       },
       fontFamily: {
@@ -25,10 +25,10 @@ const config: Config = {
         sans: ["var(--font-sans)", "sans-serif"]
       },
       boxShadow: {
-        luxury: "0 24px 70px rgba(80, 56, 38, 0.12)"
+        luxury: "0 22px 58px rgba(80, 56, 38, 0.1)"
       },
       backgroundImage: {
-        "radial-gold": "radial-gradient(circle at top, rgba(166, 124, 82, 0.16), transparent 34rem)",
+        "radial-gold": "radial-gradient(circle at top, rgba(156, 121, 87, 0.14), transparent 34rem)",
         "olive-glow": "linear-gradient(135deg, rgba(243, 238, 231, 0.95), rgba(239, 231, 221, 0.98))"
       }
     }

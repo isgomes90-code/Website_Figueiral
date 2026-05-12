@@ -32,7 +32,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         body={about.feature.body}
         image={images.family}
         alt="Family hospitality at Restaurante Figueiral"
-        supportingImage="/images/people/Rececao-clientes.jpg"
+        supportingImage="/images/people/Rececao-clientes.webp"
         supportingAlt="Rececao de clientes no Restaurante Figueiral"
       />
       <section className="pb-24">

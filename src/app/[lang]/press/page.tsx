@@ -20,7 +20,7 @@ export default async function PressPage({ params }: { params: Promise<{ lang: st
 
   return (
     <section className="relative overflow-hidden pt-36 pb-24 sm:pt-44">
-      <Image src="/images/wine/Vinho-detalhe-2.jpg" alt="" fill sizes="100vw" className="object-cover opacity-15" />
+      <Image src="/images/wine/Vinho-detalhe-2.webp" alt="" fill sizes="100vw" className="object-cover opacity-15" />
       <div className="absolute inset-0 bg-paper/88" />
       <div className="section-shell relative">
         <SectionIntro eyebrow={press.intro.eyebrow} title={press.intro.title} body={press.intro.body} />
