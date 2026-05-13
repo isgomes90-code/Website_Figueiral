@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:3007": "next dev -p 3007",
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "start:3007": "next start -p 3007",
     "lint": "next lint"
   },
   "dependencies": {
