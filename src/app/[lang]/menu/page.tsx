@@ -126,7 +126,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                         <article key={item.name} className="group py-7 first:pt-0 last:pb-0">
                           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                             <div>
-                              <h3 className="font-display text-[1.65rem] leading-tight text-charcoal transition group-hover:text-gold">
+                              <h3 className="font-display text-[1.75rem] leading-tight text-charcoal transition group-hover:text-gold sm:text-[1.8125rem]">
                                 {item.name}
                               </h3>
                               <p className="mt-3 max-w-xl text-sm leading-7 text-walnut">{item.description}</p>

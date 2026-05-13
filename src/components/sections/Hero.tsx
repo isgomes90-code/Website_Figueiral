@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
-import { sectionTitleClasses } from "@/lib/sectionTitle";
+import { editorialEyebrowClasses, heroDisplayTitleClasses } from "@/lib/sectionTitle";
 
 /** Narrativa: fogo → sala/mesas → vinho → hospitalidade */
 const HERO_SLIDE_SRC = [
@@ -89,18 +89,16 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
 
       <div className="pointer-events-none absolute inset-0 z-[2]" style={readingOverlayStyle} aria-hidden />
 
-      <div className="section-shell relative z-10 flex min-h-screen items-center pt-36 pb-36 sm:pt-32 sm:pb-40 xl:pt-28 xl:pb-44">
+      <div className="section-shell relative z-10 flex min-h-screen items-center pt-[8.75rem] pb-32 sm:pt-36 sm:pb-36 xl:pt-32 xl:pb-44">
         <div className="w-full max-w-[54rem]">
           <div
             className="box-border w-full rounded-[26px] border border-white/[0.14] p-8 shadow-[0_18px_44px_rgba(12,8,6,0.18)] sm:rounded-[28px] sm:p-9"
             style={{ backgroundColor: "rgba(22, 15, 11, 0.34)" }}
           >
-            <p className="mb-7 text-[0.7rem] font-semibold uppercase tracking-[0.42em] text-gold sm:mb-8 sm:text-[0.72rem] sm:tracking-[0.44em]">{hero.eyebrow}</p>
-            <h1 className={`${sectionTitleClasses} text-cream`}>
-              {hero.title}
-            </h1>
+            <p className={`mb-7 text-gold sm:mb-8 ${editorialEyebrowClasses} tracking-[0.38em] sm:tracking-[0.4em]`}>{hero.eyebrow}</p>
+            <h1 className={`${heroDisplayTitleClasses} text-cream`}>{hero.title}</h1>
             <p
-              className="mt-8 max-w-[40rem] text-base leading-8 sm:mt-9 sm:text-[1.05rem] sm:leading-[1.75rem]"
+              className="mt-8 max-w-[40rem] text-[1rem] leading-[1.72] text-cream/[0.92] sm:mt-9 sm:text-[1.0625rem] sm:leading-[1.78] lg:text-[1.125rem] lg:leading-[1.8]"
               style={{
                 color: "rgba(246, 239, 230, 0.93)",
                 textShadow: "0 1px 14px rgba(12, 8, 6, 0.42)"

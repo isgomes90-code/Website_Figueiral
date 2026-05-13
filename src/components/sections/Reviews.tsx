@@ -55,11 +55,11 @@ export function Reviews({ dictionary }: { dictionary: Dictionary }) {
                 <span className="max-w-[14rem] text-[0.64rem] font-semibold uppercase leading-relaxed tracking-[0.28em] text-gold/[0.78]">
                   {review.source}
                 </span>
-                <span className="relative inline-flex items-center gap-3 pl-4 font-display text-[2.05rem] font-medium leading-none tracking-[-0.025em] text-cream before:absolute before:left-0 before:top-1 before:h-[2.75rem] before:w-[3px] before:rounded-full before:bg-brandGreen/55 before:content-[''] sm:text-[2.42rem]">
+                <span className="relative inline-flex items-center gap-3 pl-4 font-display text-[2.35rem] font-medium leading-none tracking-[-0.025em] text-cream before:absolute before:left-0 before:top-1 before:h-[2.85rem] before:w-[3px] before:rounded-full before:bg-brandGreen/55 before:content-[''] sm:text-[2.7rem]">
                   {review.rating}
                 </span>
               </div>
-              <blockquote className="flex-1 font-display text-xl leading-snug tracking-[-0.01em] text-cream/[0.96] sm:text-2xl sm:leading-9">
+              <blockquote className="flex-1 font-display text-[1.3125rem] leading-snug tracking-[-0.01em] text-cream/[0.96] sm:text-[1.4375rem] sm:leading-[1.45]">
                 &ldquo;{review.quote}&rdquo;
               </blockquote>
               <p className="mt-8 text-sm leading-relaxed text-cream/[0.72]">{review.author}</p>

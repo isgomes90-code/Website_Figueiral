@@ -49,7 +49,7 @@ export function LanguageSwitcher({
   return (
     <div
       aria-label={ariaLabel}
-      className={`flex shrink-0 items-center font-semibold uppercase ${variant === "header" ? "gap-px text-[0.875rem] leading-none tracking-[0.065em] xl:text-[0.9rem] xl:tracking-[0.065em] 2xl:text-[0.9rem]" : "gap-2 text-[0.65rem] tracking-[0.22em]"}`}
+      className={`flex shrink-0 items-center font-medium uppercase ${variant === "header" ? "gap-px text-[15px] leading-none tracking-[0.065em] min-[900px]:text-[15.5px] xl:text-[16px]" : "gap-2 text-[0.65rem] font-semibold tracking-[0.22em]"}`}
     >
       {locales.map((locale, index) => (
         <span key={locale} className={`flex items-center ${variant === "header" ? "gap-0.5" : "gap-2"}`}>

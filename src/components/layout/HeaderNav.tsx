@@ -10,13 +10,12 @@ import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
-/** Em conjunto com classes `min-[900px]:*`: abaixo disto, menu hamburger. */
+/** Concordante com classes `min-[900px]:*` — abaixo disso usa-se o menu mobile. */
 export const HEADER_DESKTOP_NAV_PX = 900;
 
-/**
- * Grelha desktop: logo (faixa útil limitada) | nav centrado (`1fr`) | rail `auto`.
- * Tracking e gaps maiores onde a largura o permite — sem esmagar o tipo.
- */
+const AT_TOP_SCROLL_PX = 28;
+const HIDE_AFTER_SCROLL_PX = 100;
+const SCROLL_DIRECTION_DELTA_PX = 8;
 
 function normalizeRoutePath(path: string): string {
   let p = path.split("?")[0]?.split("#")[0] ?? "";
@@ -47,11 +46,11 @@ function MenuGlyph({ open, className = "text-charcoal" }: { open: boolean; class
   );
 }
 
-const deskNavPaper =
-  "relative inline-flex shrink-0 whitespace-nowrap pb-[0.34rem] text-[0.875rem] font-semibold uppercase leading-snug tracking-[0.065em] text-charcoal/[0.92] outline-none transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-center after:scale-x-0 after:bg-brandGreen after:transition-transform after:duration-300 hover:text-charcoal hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(252,249,245,0.85)] xl:text-[0.925rem] xl:tracking-[0.075em] 2xl:text-[0.95rem] 2xl:tracking-[0.08em]";
+const deskNavElevatedPaper =
+  "relative inline-flex shrink-0 whitespace-nowrap pb-0.5 text-[15px] font-medium leading-snug tracking-[0.065em] text-charcoal/[0.9] outline-none transition-colors duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-[2px] after:h-px after:origin-center after:scale-x-0 after:bg-brandGreen after:transition-transform after:duration-300 hover:text-charcoal hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/40 focus-visible:ring-offset-2 focus-visible:ring-offset-cream min-[900px]:text-[15.5px] xl:text-[16px]";
 
-const deskNavGlass =
-  "relative inline-flex shrink-0 whitespace-nowrap pb-[0.34rem] text-[0.875rem] font-semibold uppercase leading-snug tracking-[0.065em] text-cream/[0.93] outline-none transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[1.5px] after:origin-center after:scale-x-0 after:bg-gold/80 after:transition-transform after:duration-300 hover:text-cream hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/35 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent xl:text-[0.925rem] xl:tracking-[0.075em] 2xl:text-[0.95rem] 2xl:tracking-[0.08em]";
+const deskNavTransparentGlass =
+  "relative inline-flex shrink-0 whitespace-nowrap pb-0.5 text-[15px] font-medium leading-snug tracking-[0.065em] text-cream/[0.93] outline-none transition-colors duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:-bottom-[2px] after:h-[1.5px] after:origin-center after:scale-x-0 after:bg-gold/85 after:transition-transform after:duration-300 hover:text-cream hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/35 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent min-[900px]:text-[15.5px] xl:text-[16px]";
 
 const deskNavActivePaper = "text-charcoal after:!scale-x-100";
 const deskNavActiveGlass = "text-cream after:!scale-x-100";
@@ -62,17 +61,27 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   const pathname = usePathname();
   const panelId = useId();
   const panelRef = useRef<HTMLDivElement | null>(null);
+  const lastScrollY = useRef(0);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const [atTopChrome, setAtTopChrome] = useState(true);
 
-  const heroBlend = normalizeRoutePath(pathname) === `/${lang}`;
-
+  const isHomeHero = normalizeRoutePath(pathname) === `/${lang}`;
   const reservationsActive = isReservationsActive(pathname, lang);
-
   const reserveAriaPageBar = reservationsActive && !mobileOpen;
   const reserveAriaPageDrawer = reservationsActive && mobileOpen;
+
+  /** Navegação clara sobre o hero apenas no topo inicial; sempre legível quando o bar está em modo sólido. */
+  const useTransparentHeroTone = isHomeHero && atTopChrome;
 
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      setHeaderVisible(true);
+    }
+  }, [mobileOpen]);
 
   useEffect(() => {
     const mq = window.matchMedia(`(min-width: ${HEADER_DESKTOP_NAV_PX}px)`);
@@ -82,6 +91,41 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
     closeIfDesktop();
     mq.addEventListener("change", closeIfDesktop);
     return () => mq.removeEventListener("change", closeIfDesktop);
+  }, []);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY || 0;
+    setAtTopChrome(lastScrollY.current <= AT_TOP_SCROLL_PX);
+
+    let ticking = false;
+    function syncFromScroll() {
+      const y = window.scrollY || 0;
+      const prev = lastScrollY.current;
+      lastScrollY.current = y;
+
+      const atTop = y <= AT_TOP_SCROLL_PX;
+      setAtTopChrome(atTop);
+
+      const delta = y - prev;
+      const scrollingDown = delta > SCROLL_DIRECTION_DELTA_PX;
+      const scrollingUp = delta < -SCROLL_DIRECTION_DELTA_PX;
+
+      if (atTop) setHeaderVisible(true);
+      else if (scrollingDown && y > HIDE_AFTER_SCROLL_PX) setHeaderVisible(false);
+      else if (scrollingUp) setHeaderVisible(true);
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        syncFromScroll();
+      });
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -142,79 +186,79 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   }, [mobileOpen]);
 
   const reserveHref = localizedPath(lang, "/reservations");
-  const navbarBottom = "calc(max(0.5rem, env(safe-area-inset-top, 0px)) + 4.65rem)";
+  const navbarBottom = "calc(max(0.5rem, env(safe-area-inset-top, 0px)) + 5.25rem)";
 
-  const stripShell = heroBlend
-    ? "border-b border-white/[0.08] bg-gradient-to-b from-[rgba(10,9,8,0.62)] via-[rgba(10,9,8,0.32)] to-transparent backdrop-blur-[14px] backdrop-saturate-[1.08]"
-    : "border-b border-walnut/[0.09] bg-[rgba(252,249,245,0.58)] backdrop-blur-xl backdrop-saturate-[1.05]";
+  const deskBase = useTransparentHeroTone ? deskNavTransparentGlass : deskNavElevatedPaper;
+  const deskActive = useTransparentHeroTone ? deskNavActiveGlass : deskNavActivePaper;
 
-  const deskBase = heroBlend ? deskNavGlass : deskNavPaper;
-  const deskActive = heroBlend ? deskNavActiveGlass : deskNavActivePaper;
+  const shellClasses =
+    atTopChrome && !mobileOpen
+      ? "border-b border-transparent bg-transparent shadow-none backdrop-blur-0 backdrop-saturate-[1]"
+      : "border-b border-walnut/[0.1] bg-[rgba(253,251,246,0.9)] shadow-[0_10px_40px_rgba(45,37,31,0.05)] backdrop-blur-xl backdrop-saturate-[1.05]";
 
-  const logoSubtitleCls = heroBlend ? "text-gold/[0.82]" : "text-brandGreen/[0.78]";
-  const logoImageCls = heroBlend
-    ? "object-contain object-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] transition-opacity duration-300 group-hover:opacity-95"
-    : "object-contain object-left drop-shadow-[0_1px_2px_rgba(58,44,34,0.06)] transition-opacity duration-300 group-hover:opacity-95";
+  const logoImageCls = useTransparentHeroTone
+    ? "object-contain object-left brightness-[1.06] contrast-[1.02] saturate-[1.02] drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)] transition-opacity duration-300 group-hover:opacity-93"
+    : "object-contain object-left drop-shadow-[0_1px_2px_rgba(58,44,34,0.08)] transition-opacity duration-300 group-hover:opacity-93";
 
-  const mobileBtnCls = heroBlend
-    ? "mobile-menu-button inline-flex h-10 min-w-[2.625rem] shrink-0 items-center justify-center rounded-full border border-cream/[0.22] bg-charcoal/[0.38] text-cream shadow-[0_6px_20px_rgba(0,0,0,0.2)] backdrop-blur-md ring-2 ring-transparent transition hover:border-cream/35 hover:bg-charcoal/48 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent active:scale-[0.98]"
-    : "mobile-menu-button inline-flex h-10 min-w-[2.625rem] shrink-0 items-center justify-center rounded-full border border-charcoal/[0.18] bg-[rgba(252,249,245,0.88)] text-charcoal shadow-sm ring-2 ring-transparent backdrop-blur-md transition hover:border-brandGreen/35 hover:bg-paper hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2 focus-visible:ring-offset-paper active:scale-[0.98]";
+  const mobileBtnTone = useTransparentHeroTone ? "border-cream/25 text-cream bg-charcoal/[0.2]" : "border-charcoal/15 text-charcoal bg-paper/[0.75]";
 
-  const railBorder = heroBlend ? "border-white/[0.14]" : "border-brandGreen/[0.16]";
+  const mobileBtnCls = `mobile-menu-button inline-flex h-11 min-w-[2.75rem] shrink-0 items-center justify-center rounded-full border shadow-sm backdrop-blur-md ring-2 ring-transparent transition hover:brightness-[1.04] hover:shadow-md focus:outline-none focus-visible:ring-2 active:scale-[0.98] ${mobileBtnTone} ${
+    useTransparentHeroTone ? "focus-visible:ring-cream/35 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" : "focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+  }`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden min-[900px]:overflow-visible">
-      <div className="relative z-[110] w-full min-w-0 overflow-x-hidden pt-[max(0.35rem,env(safe-area-inset-top))] min-[900px]:overflow-visible">
-        <div className={stripShell}>
-          <div className="mx-auto grid min-h-[4rem] w-full max-w-[88rem] min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2 px-4 pb-3 pt-2 sm:gap-x-2.5 sm:px-5 min-[900px]:grid-cols-[minmax(7.5rem,10.5rem)_minmax(0,1fr)_auto] min-[900px]:items-center min-[900px]:gap-x-3 min-[900px]:px-4 min-[900px]:max-xl:px-[1rem] xl:gap-x-4 xl:px-7 2xl:gap-x-5 2xl:px-9">
-            <div className="min-w-0 max-w-[9.25rem] shrink justify-self-start min-[900px]:max-w-full min-[900px]:justify-self-start">
-              <Link
-                href={localizedPath(lang)}
-                className="group inline-flex max-w-full flex-col items-start gap-1 sm:gap-1.5"
-                aria-label={`${siteConfig.name} — ${navigation.brandLine}`}
-              >
-                <span className="relative h-[2.6rem] w-[4.35rem] shrink-0 sm:h-[2.95rem] sm:w-[4.95rem] min-[900px]:max-xl:h-[3.06rem] min-[900px]:max-xl:w-[5.1rem] xl:h-[3.3rem] xl:w-[5.5rem] 2xl:h-[3.5rem] 2xl:w-[5.85rem]">
-                  <Image
-                    src={figueiralLogoSrc}
-                    alt=""
-                    fill
-                    priority
-                    sizes="(max-width: 640px) 108px, (max-width: 900px) 124px, (max-width: 1280px) 138px, 154px"
-                    className={logoImageCls}
-                  />
-                </span>
-                <span className={`block max-w-full text-[0.6rem] font-semibold uppercase leading-snug tracking-[0.24em] sm:text-[0.62rem] sm:tracking-[0.25em] xl:text-[0.64rem] xl:tracking-[0.26em] ${logoSubtitleCls}`}>
-                  {navigation.brandLine}
-                </span>
-              </Link>
-            </div>
+    <header
+      className={`fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden transition-[transform] duration-[480ms] ease-[cubic-bezier(0.22,1,0.36,1)] min-[900px]:overflow-visible ${
+        headerVisible ? "translate-y-0" : "-translate-y-[110%]"
+      }`}
+      data-header-state={headerVisible ? "visible" : "hidden"}
+    >
+      <div className={`relative ${shellClasses}`}>
+        <div className="header-inner relative mx-auto flex w-full max-w-[88rem] min-w-0 flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pb-4 pt-[max(0.75rem,env(safe-area-inset-top))] sm:flex-nowrap sm:px-7 sm:pb-5 sm:pt-[max(0.85rem,env(safe-area-inset-top))] lg:px-11">
+          <div className="header-logo relative z-[2] shrink-0">
+            <Link href={localizedPath(lang)} className="group inline-block" aria-label={siteConfig.name}>
+              <span className="relative block h-14 w-[7.625rem] min-[900px]:h-[4.375rem] min-[900px]:w-[10rem] xl:h-[4.75rem] xl:w-[11.25rem]">
+                <Image
+                  src={figueiralLogoSrc}
+                  alt=""
+                  fill
+                  priority
+                  sizes="(max-width: 899px) 132px, (max-width: 1280px) 174px, 198px"
+                  className={logoImageCls}
+                />
+              </span>
+            </Link>
+          </div>
 
-            <div className="col-start-2 row-start-1 flex max-w-fit min-w-0 items-center justify-end gap-2.5 min-[900px]:hidden sm:gap-3">
-              <LuxuryButton
-                href={reserveHref}
-                className="hidden !min-h-10 !min-w-0 whitespace-nowrap !px-3.5 !py-2.5 !text-[0.58rem] !tracking-[0.2em] min-[460px]:inline-flex"
-                ariaCurrent={reserveAriaPageBar}
-              >
-                {navigation.reserve}
-              </LuxuryButton>
-              <button
-                type="button"
-                className={mobileBtnCls}
-                aria-expanded={mobileOpen}
-                aria-controls={panelId}
-                aria-haspopup="true"
-                aria-label={mobileOpen ? navigation.menuClose : navigation.menuOpen}
-                onClick={() => setMobileOpen((o) => !o)}
-              >
-                <MenuGlyph open={mobileOpen} className={heroBlend ? "text-cream" : "text-charcoal"} />
-              </button>
-            </div>
-
-            <nav
-              id="site-desktop-nav"
-              aria-label={navigation.ariaMain}
-              className="relative z-[112] hidden min-h-0 min-w-0 shrink flex-nowrap items-center justify-center gap-x-3 min-[900px]:col-start-2 min-[900px]:row-start-1 min-[900px]:flex min-[900px]:w-full xl:gap-x-4 2xl:gap-x-5"
+          {/* Mobile controlo */}
+          <div className="flex flex-nowrap items-center justify-end gap-x-3 min-[900px]:hidden">
+            <LuxuryButton
+              href={reserveHref}
+              className="hidden !min-h-[2.5rem] !min-w-0 whitespace-nowrap !px-4 !py-2 !text-[0.625rem] !tracking-[0.18em] min-[460px]:inline-flex"
+              ariaCurrent={reserveAriaPageBar}
             >
+              {navigation.reserve}
+            </LuxuryButton>
+            <button
+              type="button"
+              className={mobileBtnCls}
+              aria-expanded={mobileOpen}
+              aria-controls={panelId}
+              aria-haspopup="true"
+              aria-label={mobileOpen ? navigation.menuClose : navigation.menuOpen}
+              onClick={() => setMobileOpen((o) => !o)}
+            >
+              <MenuGlyph open={mobileOpen} className={useTransparentHeroTone ? "text-cream" : "text-charcoal"} />
+            </button>
+          </div>
+
+          {/* Nav centrado no viewport */}
+          <nav
+            id="site-desktop-nav"
+            aria-label={navigation.ariaMain}
+            className="pointer-events-none absolute left-1/2 top-1/2 z-[1] hidden min-h-[1.5rem] w-max max-w-[min(52rem,calc(100vw-17rem))] min-w-0 -translate-x-1/2 -translate-y-1/2 xl:max-w-[min(54rem,calc(100vw-20rem))] min-[900px]:flex min-[900px]:items-center min-[900px]:justify-center"
+          >
+            <div className="pointer-events-auto flex flex-nowrap items-center justify-center gap-x-8 min-[900px]:gap-x-[1.875rem] xl:gap-x-10 2xl:gap-x-[2.875rem]">
               {navItems.map((item) => {
                 const active = isNavItemActive(pathname, lang, item.href);
                 return (
@@ -228,23 +272,15 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
                   </Link>
                 );
               })}
-            </nav>
-
-            <div className="hidden min-w-0 shrink-0 min-[900px]:col-start-3 min-[900px]:row-start-1 min-[900px]:flex min-[900px]:items-center min-[900px]:justify-self-end">
-              <div
-                className={`flex flex-nowrap items-center justify-end gap-x-2 border-l min-[900px]:max-xl:pl-2 xl:pl-3 ${railBorder}`}
-              >
-                <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} inverse={heroBlend} />
-                <LuxuryButton
-                  density="headerReserve"
-                  href={reserveHref}
-                  className="min-w-0 whitespace-nowrap"
-                  ariaCurrent={reserveAriaPageBar}
-                >
-                  {navigation.reserve}
-                </LuxuryButton>
-              </div>
             </div>
+          </nav>
+
+          <div className="header-actions relative z-[2] hidden shrink-0 min-w-[8.5rem] flex-nowrap items-center justify-end gap-x-7 min-[900px]:flex xl:gap-x-[2.375rem]">
+            <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} inverse={useTransparentHeroTone} />
+            <span className={`h-5 w-px shrink-0 ${useTransparentHeroTone ? "bg-cream/[0.32]" : "bg-walnut/25"}`} aria-hidden />
+            <LuxuryButton density="headerReserve" href={reserveHref} className="whitespace-nowrap" ariaCurrent={reserveAriaPageBar}>
+              {navigation.reserve}
+            </LuxuryButton>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, localizedPath, type Locale } from "@/i18n/config";
 import { images } from "@/lib/site";
-import { sectionTitleClasses } from "@/lib/sectionTitle";
+import { editorialEyebrowClasses, sectionTitleClasses } from "@/lib/sectionTitle";
 import { pageMetadata } from "@/lib/seo";
 
 const highlightImages = [
@@ -141,12 +141,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <MotionReveal className="atmospheric-panel rounded-[2.05rem] px-8 py-14 sm:rounded-[2.2rem] sm:px-12 sm:py-18 lg:px-[3.35rem] lg:py-[4.65rem]">
             <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-start lg:gap-[3.25rem] xl:gap-[3.75rem]">
               <div className="order-1 max-w-xl border-l-[3px] border-brandGreen/[0.22] pl-5 sm:pl-6 lg:max-w-none lg:border-l-0 lg:pl-0">
-                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.36em] text-oliveMuted/[0.85]">{home.legacy.eyebrow}</p>
+                <p className={`text-oliveMuted/[0.85] ${editorialEyebrowClasses}`}>{home.legacy.eyebrow}</p>
                 <p className="mt-[1.375rem] font-display text-[4.95rem] leading-none tracking-[-0.03em] text-charcoal/[0.95] sm:text-[6.85rem] sm:tracking-tight">1986</p>
                 <h2 className={`mt-9 max-w-[46rem] text-charcoal ${sectionTitleClasses}`}>
                   {home.legacy.title}
                 </h2>
-                <p className="mt-7 max-w-2xl text-[0.95rem] leading-[1.82] tracking-[0.01em] text-walnut/[0.95] sm:text-[1.02rem] sm:leading-[1.85]">
+                <p className="mt-7 max-w-2xl text-[1rem] leading-[1.84] tracking-[0.008em] text-walnut/[0.94] sm:mt-[1.875rem] sm:text-[1.0625rem] sm:leading-[1.86] lg:text-[1.125rem]">
                   {home.legacy.body}
                 </p>
               </div>
@@ -188,11 +188,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section className="section-linen-breath py-[5rem] sm:py-[8rem] lg:py-[9rem]">
         <div className="section-shell">
           <MotionReveal className="section-finale-panel rounded-[2rem] px-8 py-16 text-center sm:rounded-[2.35rem] sm:px-14 sm:py-[5.25rem] lg:px-20 lg:py-[6rem]">
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.38em] text-gold/[0.78]">{home.cta.eyebrow}</p>
+            <p className={`text-gold/[0.78] ${editorialEyebrowClasses}`}>{home.cta.eyebrow}</p>
             <h2 className={`mx-auto mt-7 max-w-[34rem] text-cream/[0.94] sm:mt-[2rem] sm:max-w-[40rem] ${sectionTitleClasses}`}>
               {home.cta.title}
             </h2>
-            <p className="mx-auto mt-8 max-w-2xl text-[0.95rem] leading-[1.82] tracking-[0.012em] text-cream/[0.58] sm:mt-[2.125rem] sm:text-[1.02rem] sm:leading-[1.87] lg:max-w-[38rem]">
+            <p className="mx-auto mt-8 max-w-2xl text-[1rem] leading-[1.82] tracking-[0.011em] text-cream/[0.62] sm:mt-[2.125rem] sm:text-[1.0625rem] sm:leading-[1.86] lg:max-w-[38rem] lg:text-[1.125rem]">
               {home.cta.body}
             </p>
             <div className="mt-[2.625rem] sm:mt-[2.85rem]">
