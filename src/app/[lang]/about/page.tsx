@@ -6,6 +6,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, type Locale } from "@/i18n/config";
 import { images } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
+import { sectionTitleClasses } from "@/lib/sectionTitle";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -39,7 +40,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         <div className="section-shell grid gap-6 lg:grid-cols-3">
           {about.cards.map((card, index) => (
             <MotionReveal key={card.title} delay={index * 0.08} className="luxury-card rounded-[1.5rem] p-8">
-              <h2 className="font-display text-3xl text-charcoal">{card.title}</h2>
+              <h2 className={`text-charcoal ${sectionTitleClasses}`}>{card.title}</h2>
               <p className="mt-5 text-sm leading-7 text-walnut">{card.body}</p>
             </MotionReveal>
           ))}

@@ -4,6 +4,7 @@ import { MotionReveal } from "@/components/ui/MotionReveal";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/lib/seo";
+import { sectionTitleClasses } from "@/lib/sectionTitle";
 
 const categoryVisuals = [
   {
@@ -54,7 +55,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
             <p className="mb-5 text-[0.68rem] font-semibold uppercase tracking-[0.36em] text-gold">
               {menu.intro.eyebrow}
             </p>
-            <h1 className="font-display text-[3.2rem] leading-[1.02] text-charcoal text-balance sm:text-[4.8rem]">
+            <h1 className={`text-charcoal ${sectionTitleClasses}`}>
               {menu.intro.title}
             </h1>
             <p className="mt-7 max-w-[34rem] text-base leading-8 text-walnut sm:text-[1.05rem]">{menu.intro.body}</p>
@@ -116,7 +117,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                   <div className="p-7 sm:p-9 lg:p-11">
                     <div className="max-w-xl">
                       <p className="text-xs font-semibold uppercase tracking-[0.34em] text-gold">0{index + 1}</p>
-                      <h2 className="mt-4 font-display text-4xl leading-tight text-charcoal sm:text-5xl">{category.title}</h2>
+                      <h2 className={`mt-4 text-charcoal ${sectionTitleClasses}`}>{category.title}</h2>
                       <p className="mt-5 max-w-lg text-sm leading-7 text-walnut">{category.description}</p>
                     </div>
 
@@ -162,7 +163,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                     </div>
                     <div className="p-7 sm:p-9">
                       <p className="text-[0.64rem] font-semibold uppercase tracking-[0.32em] text-gold">{menu.interludes[index].eyebrow}</p>
-                      <h3 className="mt-4 font-display text-3xl leading-tight text-charcoal sm:text-4xl">{menu.interludes[index].title}</h3>
+                      <h3 className={`mt-4 text-charcoal ${sectionTitleClasses}`}>{menu.interludes[index].title}</h3>
                       <p className="mt-5 max-w-xl text-sm leading-7 text-walnut">{menu.interludes[index].body}</p>
                     </div>
                   </div>

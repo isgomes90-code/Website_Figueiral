@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { MotionReveal } from "@/components/ui/MotionReveal";
+import { sectionTitleClasses } from "@/lib/sectionTitle";
 
 type AtmosphereMomentProps = {
   eyebrow: string;
@@ -19,7 +20,7 @@ export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/
         fill
         sizes="100vw"
         loading="lazy"
-        className="object-cover object-[center_78%] brightness-[0.96] contrast-[0.97] saturate-[0.9]"
+        className="object-cover object-[center_56%] sm:object-[center_60%] lg:object-[center_63%] xl:object-[center_64%] brightness-[0.96] contrast-[0.97] saturate-[0.9] scale-[1.05] translate-y-[2.5%]"
         quality={82}
       />
       <div
@@ -30,10 +31,10 @@ export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/
 
       <div className="relative z-10 mx-auto flex min-h-[inherit] max-w-[82rem] items-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
         <MotionReveal className="max-w-xl" delay={0.08}>
-          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.42em] text-sage/[0.84] sm:text-[0.68rem]">{eyebrow}</p>
+          <p className="text-[0.66rem] font-semibold uppercase tracking-[0.42em] text-sage/[0.86] sm:text-[0.7rem]">{eyebrow}</p>
           <h2
             id="atmosphere-moment-heading"
-            className="mt-6 font-display text-[2rem] leading-[1.22] tracking-[-0.01em] text-cream text-balance sm:mt-8 sm:text-[2.85rem] sm:leading-[1.18] lg:text-[3.35rem]"
+            className={`mt-6 text-cream sm:mt-8 ${sectionTitleClasses}`}
             style={{ textShadow: "0 2px 28px rgba(12, 9, 7, 0.35)" }}
           >
             {line}

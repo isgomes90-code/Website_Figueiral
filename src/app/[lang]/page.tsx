@@ -10,12 +10,13 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, localizedPath, type Locale } from "@/i18n/config";
 import { images } from "@/lib/site";
+import { sectionTitleClasses } from "@/lib/sectionTitle";
 import { pageMetadata } from "@/lib/seo";
 
 const highlightImages = [
   "/images/hero/Preparacao-picanha.webp",
-  "/images/hero/Alinhamento-mesas.webp",
   "/images/wine/Vinho-garrafeira.webp",
+  "/images/hero/Alinhamento-mesas.webp",
   "/images/people/Convicio-clientes-1.webp"
 ];
 
@@ -65,7 +66,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className={`object-cover brightness-[1.03] contrast-[0.94] saturate-[0.88] sepia-[0.06] transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 0 ? "object-[center_48%]" : index === 1 ? "object-[center_72%]" : index === 2 ? "object-[center_22%]" : "object-[center_46%]"}`}
+                    className={`object-cover brightness-[1.03] contrast-[0.94] saturate-[0.88] sepia-[0.06] transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 0 ? "object-[center_48%]" : index === 1 ? "object-[center_22%]" : index === 2 ? "object-[center_72%]" : "object-[center_46%]"}`}
                     loading={index === 0 ? "eager" : "lazy"}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(252,246,238,0.05),rgba(52,41,34,0.16))]" />
@@ -88,10 +89,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="section-shell">
           <MotionReveal className="mx-auto max-w-5xl text-center">
             <div className="hairline-dusk mb-[2.85rem]" />
-            <p id="home-statement" className="font-display text-[1.9rem] leading-[1.18] tracking-[-0.015em] text-cream/[0.94] text-balance sm:text-[3.05rem] sm:leading-[1.07] lg:text-[3.55rem]">
+            <p id="home-statement" className={`${sectionTitleClasses} text-cream/[0.94]`}>
               {home.statement.text}
             </p>
-            <p className="mx-auto mt-[1.75rem] max-w-2xl text-[0.68rem] uppercase leading-[1.85] tracking-[0.38em] text-gold/[0.58] sm:mt-[2.125rem] sm:text-[0.7rem]">
+            <p className="mx-auto mt-[1.75rem] max-w-2xl text-[0.73rem] font-semibold uppercase leading-[1.92] tracking-[0.4em] text-gold/[0.76] sm:mt-[2.125rem] sm:text-[0.78rem] sm:tracking-[0.38em] lg:max-w-[46rem]">
               {home.statement.caption}
             </p>
           </MotionReveal>
@@ -112,8 +113,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         image={images.picanha}
         alt="Premium grilled steak and picanha experience"
         note={home.meat.note}
-        supportingImage={images.fire}
-        supportingAlt="Camarao ao alho preparado com fogo no Figueiral"
+        supportingImage="/images/food/Picanha-grelha-1.webp"
+        supportingAlt="Picanha na grelha no Restaurante Figueiral"
         tone="warm"
         composition="panorama"
         eyebrowTone="institutional"
@@ -142,7 +143,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div className="order-1 max-w-xl border-l-[3px] border-brandGreen/[0.22] pl-5 sm:pl-6 lg:max-w-none lg:border-l-0 lg:pl-0">
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.36em] text-oliveMuted/[0.85]">{home.legacy.eyebrow}</p>
                 <p className="mt-[1.375rem] font-display text-[4.95rem] leading-none tracking-[-0.03em] text-charcoal/[0.95] sm:text-[6.85rem] sm:tracking-tight">1986</p>
-                <h2 className="mt-9 max-w-[46rem] font-display text-[2.15rem] leading-[1.1] tracking-[-0.015em] text-charcoal text-balance sm:text-[2.95rem] sm:leading-[1.05] lg:text-[3.2rem]">
+                <h2 className={`mt-9 max-w-[46rem] text-charcoal ${sectionTitleClasses}`}>
                   {home.legacy.title}
                 </h2>
                 <p className="mt-7 max-w-2xl text-[0.95rem] leading-[1.82] tracking-[0.01em] text-walnut/[0.95] sm:text-[1.02rem] sm:leading-[1.85]">
@@ -157,7 +158,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       alt={home.legacy.imageAlt}
                       fill
                       sizes="(min-width: 1024px) 38vw, 90vw"
-                      className="object-cover object-[52%_35%]"
+                      className="object-cover object-[52%_50%] sm:object-[54%_50%] lg:object-[57%_48%]"
                       loading="lazy"
                     />
                   </div>
@@ -188,7 +189,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="section-shell">
           <MotionReveal className="section-finale-panel rounded-[2rem] px-8 py-16 text-center sm:rounded-[2.35rem] sm:px-14 sm:py-[5.25rem] lg:px-20 lg:py-[6rem]">
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.38em] text-gold/[0.78]">{home.cta.eyebrow}</p>
-            <h2 className="mx-auto mt-7 max-w-[34rem] font-display text-[2.15rem] leading-[1.12] tracking-[-0.015em] text-cream/[0.94] text-balance sm:mt-[2rem] sm:max-w-[40rem] sm:text-[2.95rem] sm:leading-[1.07] lg:text-[3.35rem]">
+            <h2 className={`mx-auto mt-7 max-w-[34rem] text-cream/[0.94] sm:mt-[2rem] sm:max-w-[40rem] ${sectionTitleClasses}`}>
               {home.cta.title}
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-[0.95rem] leading-[1.82] tracking-[0.012em] text-cream/[0.58] sm:mt-[2.125rem] sm:text-[1.02rem] sm:leading-[1.87] lg:max-w-[38rem]">

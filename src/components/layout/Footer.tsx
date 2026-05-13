@@ -22,19 +22,28 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
       <div className="section-shell relative">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-16 xl:gap-x-14">
           <div className="min-w-0 border-b border-white/[0.1] pb-12 lg:col-span-5 lg:border-b-0 lg:pb-0">
-            <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
-              <div className="relative h-[4rem] w-[6.35rem] shrink-0 brightness-[1.08]" aria-hidden>
-                <Image src={figueiralLogoSrc} alt="" fill sizes="168px" className="object-contain object-left" />
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-12">
+              <div
+                className="relative h-[5.35rem] w-[9rem] shrink-0 sm:h-[6rem] sm:w-[10rem]"
+                aria-hidden
+              >
+                <Image
+                  src={figueiralLogoSrc}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 144px, 168px"
+                  className="object-contain object-left brightness-[1.18] contrast-[1.08] saturate-[1.12] drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)]"
+                />
               </div>
               <div className="min-w-0 space-y-4">
                 <p className="text-[0.64rem] font-semibold uppercase tracking-[0.38em] text-sage/[0.82]">{footer.brandLine}</p>
-                <p className="font-display text-[1.42rem] leading-[1.12] tracking-[-0.016em] text-cream/[0.96] sm:text-[1.62rem] sm:leading-[1.08]">
+                <p className="font-display text-[1.55rem] leading-[1.1] tracking-[-0.016em] text-cream/[0.96] sm:text-[1.8rem] sm:leading-[1.08]">
                   {footer.legalName}
                 </p>
                 <p className="max-w-[26rem] text-[0.93rem] leading-[1.82] tracking-[0.008em] text-cream/[0.56]">{footer.description}</p>
               </div>
             </div>
-            <p className="mt-10 max-w-xl font-display text-[1.08rem] leading-snug tracking-[-0.008em] text-cream/[0.44] sm:mt-11 sm:text-[1.22rem] sm:leading-[1.38] lg:mt-14">
+            <p className="mt-10 max-w-xl font-display text-[1.14rem] leading-snug tracking-[-0.008em] text-cream/[0.5] sm:mt-11 sm:text-[1.28rem] sm:leading-[1.36] lg:mt-14">
               {footer.closingPhrase}
             </p>
           </div>

@@ -1,4 +1,5 @@
 import { MotionReveal } from "@/components/ui/MotionReveal";
+import { sectionTitleClasses } from "@/lib/sectionTitle";
 
 export function SectionIntro({
   eyebrow,
@@ -30,12 +31,8 @@ export function SectionIntro({
 
   return (
     <MotionReveal className={align === "center" ? "mx-auto max-w-[48rem] text-center" : "max-w-[44rem]"}>
-      <p className={`mb-5 sm:mb-6 text-[0.64rem] font-semibold uppercase tracking-[0.36em] sm:text-[0.68rem] ${eyebrowCls}`}>{eyebrow}</p>
-      <h2
-        className={`font-display leading-[1.06] text-balance text-[2.15rem] sm:text-[2.85rem] sm:leading-[1.04] lg:text-[3.6rem] ${
-          dark ? "text-cream" : "text-charcoal"
-        }`}
-      >
+      <p className={`mb-5 sm:mb-6 text-[0.65rem] font-semibold uppercase tracking-[0.36em] sm:text-[0.7rem] ${eyebrowCls}`}>{eyebrow}</p>
+      <h2 className={`${sectionTitleClasses} ${dark ? "text-cream" : "text-charcoal"}`}>
         {title}
       </h2>
       {body ? (

@@ -10,18 +10,20 @@ import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
+/** Em conjunto com classes `min-[900px]:*`: abaixo disto, menu hamburger. */
+export const HEADER_DESKTOP_NAV_PX = 900;
+
 /**
- * Desktop horizontal nav só a partir de `xl` (1280px): evita links comprimidos entre ~1024–1279px.
+ * Grelha desktop: logo (faixa útil limitada) | nav centrado (`1fr`) | rail `auto`.
+ * Tracking e gaps maiores onde a largura o permite — sem esmagar o tipo.
  */
 
-/** Normaliza pathname para comparação (sem query/hash; remove trailing slash excepto `/`). */
 function normalizeRoutePath(path: string): string {
   let p = path.split("?")[0]?.split("#")[0] ?? "";
   if (p.length > 1 && p.endsWith("/")) p = p.slice(0, -1);
   return p || "/";
 }
 
-/** Uma página ativa de cada vez — igualdade exacta com a rota localizada. */
 function isNavItemActive(pathname: string, lang: Locale, itemHref: string): boolean {
   const current = normalizeRoutePath(pathname);
   const target =
@@ -33,22 +35,26 @@ function isReservationsActive(pathname: string, lang: Locale): boolean {
   return normalizeRoutePath(pathname) === normalizeRoutePath(localizedPath(lang, "/reservations"));
 }
 
-function MenuGlyph({ open }: { open: boolean }) {
+function MenuGlyph({ open, className = "text-charcoal" }: { open: boolean; className?: string }) {
   return open ? (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden className="text-charcoal">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden className={className}>
       <path d="M4 4L18 18M18 4L4 18" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
     </svg>
   ) : (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden className="text-charcoal">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden className={className}>
       <path d="M4 6H18M4 11H18M4 16H18" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
     </svg>
   );
 }
 
-const deskNavLinkBase =
-  "relative inline-flex shrink-0 whitespace-nowrap pb-1 text-[0.72rem] font-semibold uppercase tracking-[0.19em] text-charcoal/[0.88] outline-none ring-offset-[rgba(249,246,241,0.96)] transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-center after:scale-x-0 after:bg-brandGreen after:transition-transform after:duration-300 hover:text-charcoal hover:after:scale-x-100 focus-visible:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/35 focus-visible:ring-offset-2";
+const deskNavPaper =
+  "relative inline-flex shrink-0 whitespace-nowrap pb-[0.34rem] text-[0.875rem] font-semibold uppercase leading-snug tracking-[0.065em] text-charcoal/[0.92] outline-none transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-center after:scale-x-0 after:bg-brandGreen after:transition-transform after:duration-300 hover:text-charcoal hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[rgba(252,249,245,0.85)] xl:text-[0.925rem] xl:tracking-[0.075em] 2xl:text-[0.95rem] 2xl:tracking-[0.08em]";
 
-const deskNavLinkActive = "text-charcoal after:!scale-x-100";
+const deskNavGlass =
+  "relative inline-flex shrink-0 whitespace-nowrap pb-[0.34rem] text-[0.875rem] font-semibold uppercase leading-snug tracking-[0.065em] text-cream/[0.93] outline-none transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[1.5px] after:origin-center after:scale-x-0 after:bg-gold/80 after:transition-transform after:duration-300 hover:text-cream hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/35 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent xl:text-[0.925rem] xl:tracking-[0.075em] 2xl:text-[0.95rem] 2xl:tracking-[0.08em]";
+
+const deskNavActivePaper = "text-charcoal after:!scale-x-100";
+const deskNavActiveGlass = "text-cream after:!scale-x-100";
 
 export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: Locale }) {
   const navigation = dictionary.navigation;
@@ -57,9 +63,10 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   const panelId = useId();
   const panelRef = useRef<HTMLDivElement | null>(null);
 
+  const heroBlend = normalizeRoutePath(pathname) === `/${lang}`;
+
   const reservationsActive = isReservationsActive(pathname, lang);
 
-  /** Um único «Reservar» com `aria-current="page"` visível de cada vez (drawer vs barra). */
   const reserveAriaPageBar = reservationsActive && !mobileOpen;
   const reserveAriaPageDrawer = reservationsActive && mobileOpen;
 
@@ -68,7 +75,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   }, [pathname]);
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1280px)");
+    const mq = window.matchMedia(`(min-width: ${HEADER_DESKTOP_NAV_PX}px)`);
     function closeIfDesktop() {
       if (mq.matches) setMobileOpen(false);
     }
@@ -135,62 +142,78 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   }, [mobileOpen]);
 
   const reserveHref = localizedPath(lang, "/reservations");
-  const navbarBottom = "calc(0.875rem + 4.85rem + 0.35rem)";
+  const navbarBottom = "calc(max(0.5rem, env(safe-area-inset-top, 0px)) + 4.65rem)";
+
+  const stripShell = heroBlend
+    ? "border-b border-white/[0.08] bg-gradient-to-b from-[rgba(10,9,8,0.62)] via-[rgba(10,9,8,0.32)] to-transparent backdrop-blur-[14px] backdrop-saturate-[1.08]"
+    : "border-b border-walnut/[0.09] bg-[rgba(252,249,245,0.58)] backdrop-blur-xl backdrop-saturate-[1.05]";
+
+  const deskBase = heroBlend ? deskNavGlass : deskNavPaper;
+  const deskActive = heroBlend ? deskNavActiveGlass : deskNavActivePaper;
+
+  const logoSubtitleCls = heroBlend ? "text-gold/[0.82]" : "text-brandGreen/[0.78]";
+  const logoImageCls = heroBlend
+    ? "object-contain object-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] transition-opacity duration-300 group-hover:opacity-95"
+    : "object-contain object-left drop-shadow-[0_1px_2px_rgba(58,44,34,0.06)] transition-opacity duration-300 group-hover:opacity-95";
+
+  const mobileBtnCls = heroBlend
+    ? "mobile-menu-button inline-flex h-10 min-w-[2.625rem] shrink-0 items-center justify-center rounded-full border border-cream/[0.22] bg-charcoal/[0.38] text-cream shadow-[0_6px_20px_rgba(0,0,0,0.2)] backdrop-blur-md ring-2 ring-transparent transition hover:border-cream/35 hover:bg-charcoal/48 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent active:scale-[0.98]"
+    : "mobile-menu-button inline-flex h-10 min-w-[2.625rem] shrink-0 items-center justify-center rounded-full border border-charcoal/[0.18] bg-[rgba(252,249,245,0.88)] text-charcoal shadow-sm ring-2 ring-transparent backdrop-blur-md transition hover:border-brandGreen/35 hover:bg-paper hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2 focus-visible:ring-offset-paper active:scale-[0.98]";
+
+  const railBorder = heroBlend ? "border-white/[0.14]" : "border-brandGreen/[0.16]";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden xl:overflow-visible">
-      <div className="mx-4 mt-3 min-w-0 sm:mx-6 sm:mt-3.5 lg:mx-10 xl:overflow-visible">
-        <div
-          className={`relative z-[110] mx-auto w-full max-w-[88rem] min-w-0 overflow-x-hidden border-x border-t border-walnut/[0.11] bg-[#FAF7F3]/97 px-5 py-2.5 shadow-[0_10px_28px_rgba(58,42,30,0.06)] backdrop-blur-md sm:px-7 xl:overflow-visible xl:rounded-[2.45rem] xl:border xl:border-walnut/[0.11] xl:bg-[rgba(249,246,241,0.96)] xl:px-8 xl:py-2.5 max-xl:rounded-b-none max-xl:rounded-t-[1.85rem]`}
-        >
-          <div className="grid min-h-[4.85rem] w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 sm:gap-x-4 xl:grid-cols-[auto_minmax(8rem,1fr)_auto] xl:gap-x-8 2xl:gap-x-10">
-            <div className="min-w-0 shrink">
+    <header className="fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden min-[900px]:overflow-visible">
+      <div className="relative z-[110] w-full min-w-0 overflow-x-hidden pt-[max(0.35rem,env(safe-area-inset-top))] min-[900px]:overflow-visible">
+        <div className={stripShell}>
+          <div className="mx-auto grid min-h-[4rem] w-full max-w-[88rem] min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2 px-4 pb-3 pt-2 sm:gap-x-2.5 sm:px-5 min-[900px]:grid-cols-[minmax(7.5rem,10.5rem)_minmax(0,1fr)_auto] min-[900px]:items-center min-[900px]:gap-x-3 min-[900px]:px-4 min-[900px]:max-xl:px-[1rem] xl:gap-x-4 xl:px-7 2xl:gap-x-5 2xl:px-9">
+            <div className="min-w-0 max-w-[9.25rem] shrink justify-self-start min-[900px]:max-w-full min-[900px]:justify-self-start">
               <Link
                 href={localizedPath(lang)}
-                className="group flex max-w-[11.5rem] flex-col items-start gap-1 sm:max-w-[13rem] sm:gap-1.5"
+                className="group inline-flex max-w-full flex-col items-start gap-1 sm:gap-1.5"
                 aria-label={`${siteConfig.name} — ${navigation.brandLine}`}
               >
-                <span className="relative h-[2.72rem] w-[4.55rem] shrink-0 sm:h-[3.15rem] sm:w-[5.25rem] xl:h-[3.35rem] xl:w-[5.55rem]">
+                <span className="relative h-[2.6rem] w-[4.35rem] shrink-0 sm:h-[2.95rem] sm:w-[4.95rem] min-[900px]:max-xl:h-[3.06rem] min-[900px]:max-xl:w-[5.1rem] xl:h-[3.3rem] xl:w-[5.5rem] 2xl:h-[3.5rem] 2xl:w-[5.85rem]">
                   <Image
                     src={figueiralLogoSrc}
                     alt=""
                     fill
                     priority
-                    sizes="(max-width: 640px) 128px, (max-width: 1280px) 148px, 162px"
-                    className="object-contain object-left drop-shadow-[0_1px_2px_rgba(58,44,34,0.06)] transition-opacity duration-300 group-hover:opacity-95"
+                    sizes="(max-width: 640px) 108px, (max-width: 900px) 124px, (max-width: 1280px) 138px, 154px"
+                    className={logoImageCls}
                   />
                 </span>
-                <span className="block max-w-full text-[0.54rem] font-semibold uppercase leading-snug tracking-[0.28em] text-brandGreen/[0.78] sm:text-[0.57rem] sm:tracking-[0.32em]">
+                <span className={`block max-w-full text-[0.6rem] font-semibold uppercase leading-snug tracking-[0.24em] sm:text-[0.62rem] sm:tracking-[0.25em] xl:text-[0.64rem] xl:tracking-[0.26em] ${logoSubtitleCls}`}>
                   {navigation.brandLine}
                 </span>
               </Link>
             </div>
 
-            <div className={`col-start-2 flex max-w-fit min-w-0 items-center justify-end gap-3 xl:hidden`}>
+            <div className="col-start-2 row-start-1 flex max-w-fit min-w-0 items-center justify-end gap-2.5 min-[900px]:hidden sm:gap-3">
               <LuxuryButton
                 href={reserveHref}
-                className="hidden !min-h-10 !min-w-0 whitespace-nowrap !px-4 !py-3 !text-[0.61rem] !tracking-[0.24em] min-[460px]:inline-flex"
+                className="hidden !min-h-10 !min-w-0 whitespace-nowrap !px-3.5 !py-2.5 !text-[0.58rem] !tracking-[0.2em] min-[460px]:inline-flex"
                 ariaCurrent={reserveAriaPageBar}
               >
                 {navigation.reserve}
               </LuxuryButton>
               <button
                 type="button"
-                className="mobile-menu-button inline-flex h-11 min-w-[2.75rem] shrink-0 items-center justify-center rounded-full border border-charcoal/[0.22] bg-[#F8F5F0] text-charcoal shadow-sm ring-2 ring-transparent transition hover:border-brandGreen/35 hover:bg-paper hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2 focus-visible:ring-offset-paper active:scale-[0.98]"
+                className={mobileBtnCls}
                 aria-expanded={mobileOpen}
                 aria-controls={panelId}
                 aria-haspopup="true"
                 aria-label={mobileOpen ? navigation.menuClose : navigation.menuOpen}
                 onClick={() => setMobileOpen((o) => !o)}
               >
-                <MenuGlyph open={mobileOpen} />
+                <MenuGlyph open={mobileOpen} className={heroBlend ? "text-cream" : "text-charcoal"} />
               </button>
             </div>
 
             <nav
               id="site-desktop-nav"
               aria-label={navigation.ariaMain}
-              className="relative z-[112] hidden min-h-0 min-w-0 shrink xl:col-start-2 xl:row-start-1 xl:flex xl:flex-nowrap xl:items-center xl:justify-center xl:gap-x-6 xl:gap-y-0 2xl:gap-x-[1.375rem]"
+              className="relative z-[112] hidden min-h-0 min-w-0 shrink flex-nowrap items-center justify-center gap-x-3 min-[900px]:col-start-2 min-[900px]:row-start-1 min-[900px]:flex min-[900px]:w-full xl:gap-x-4 2xl:gap-x-5"
             >
               {navItems.map((item) => {
                 const active = isNavItemActive(pathname, lang, item.href);
@@ -198,7 +221,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
                   <Link
                     key={item.href}
                     href={localizedPath(lang, item.href)}
-                    className={`${deskNavLinkBase} ${active ? deskNavLinkActive : ""}`}
+                    className={`${deskBase} ${active ? deskActive : ""}`}
                     {...(active ? { "aria-current": "page" as const } : {})}
                   >
                     {navigation[item.labelKey]}
@@ -207,10 +230,17 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
               })}
             </nav>
 
-            <div className={`hidden min-w-0 shrink-0 xl:col-start-3 xl:row-start-1 xl:flex xl:items-center xl:justify-end`}>
-              <div className={`flex flex-wrap items-center justify-end gap-x-3 gap-y-2 border-brandGreen/[0.18] xl:border-l xl:pl-6 2xl:gap-x-4 2xl:pl-7`}>
-                <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} />
-                <LuxuryButton href={reserveHref} className="inline-flex whitespace-nowrap !min-h-11 min-w-0 shrink !px-6" ariaCurrent={reserveAriaPageBar}>
+            <div className="hidden min-w-0 shrink-0 min-[900px]:col-start-3 min-[900px]:row-start-1 min-[900px]:flex min-[900px]:items-center min-[900px]:justify-self-end">
+              <div
+                className={`flex flex-nowrap items-center justify-end gap-x-2 border-l min-[900px]:max-xl:pl-2 xl:pl-3 ${railBorder}`}
+              >
+                <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} inverse={heroBlend} />
+                <LuxuryButton
+                  density="headerReserve"
+                  href={reserveHref}
+                  className="min-w-0 whitespace-nowrap"
+                  ariaCurrent={reserveAriaPageBar}
+                >
                   {navigation.reserve}
                 </LuxuryButton>
               </div>
@@ -219,7 +249,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
         </div>
       </div>
 
-      <div className={`xl:hidden`} aria-live="polite">
+      <div className="min-[900px]:hidden" aria-live="polite">
         {mobileOpen ? (
           <div className="fixed inset-0 z-[95]" role="presentation">
             <div
@@ -233,7 +263,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
               role="dialog"
               aria-modal="true"
               aria-label={navigation.ariaMain}
-              className="animate-mobile-nav-panel-in fixed left-4 right-4 z-[99] mx-auto max-h-[calc(100dvh-7rem)] max-w-[88rem] origin-top overflow-hidden rounded-b-[1.35rem] border border-walnut/20 bg-[#F4EFE8] shadow-[0_28px_70px_rgba(55,42,34,0.22)] sm:left-6 sm:right-6 lg:left-10 lg:right-10"
+              className="animate-mobile-nav-panel-in fixed left-4 right-4 z-[99] mx-auto max-h-[calc(100dvh-7rem)] max-w-[88rem] origin-top overflow-hidden rounded-b-[1.35rem] border border-walnut/20 bg-[#F4EFE8] shadow-[0_28px_70px_rgba(55,42,34,0.22)] sm:left-6 sm:right-6"
               style={{ top: navbarBottom }}
             >
               <div className="max-h-[calc(100dvh-7.75rem)] overflow-y-auto overflow-x-hidden overscroll-contain px-5 pb-8 pt-6 sm:pb-10 sm:pt-8">

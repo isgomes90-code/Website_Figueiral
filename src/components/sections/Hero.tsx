@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
+import { sectionTitleClasses } from "@/lib/sectionTitle";
 
 /** Narrativa: fogo → sala/mesas → vinho → hospitalidade */
 const HERO_SLIDE_SRC = [
@@ -94,8 +95,8 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
             className="box-border w-full rounded-[26px] border border-white/[0.14] p-8 shadow-[0_18px_44px_rgba(12,8,6,0.18)] sm:rounded-[28px] sm:p-9"
             style={{ backgroundColor: "rgba(22, 15, 11, 0.34)" }}
           >
-            <p className="mb-7 text-[0.68rem] font-semibold uppercase tracking-[0.44em] text-gold sm:mb-8">{hero.eyebrow}</p>
-            <h1 className="font-display text-[2.95rem] leading-[1.04] text-cream text-balance sm:text-[4rem] lg:text-[5.05rem] xl:text-[5.35rem]">
+            <p className="mb-7 text-[0.7rem] font-semibold uppercase tracking-[0.42em] text-gold sm:mb-8 sm:text-[0.72rem] sm:tracking-[0.44em]">{hero.eyebrow}</p>
+            <h1 className={`${sectionTitleClasses} text-cream`}>
               {hero.title}
             </h1>
             <p

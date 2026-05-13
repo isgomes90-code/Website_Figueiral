@@ -6,6 +6,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, type Locale } from "@/i18n/config";
 import { images } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
+import { sectionTitleClasses } from "@/lib/sectionTitle";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -40,7 +41,7 @@ export default async function WineExperiencePage({ params }: { params: Promise<{
           {wine.moments.map((moment, index) => (
             <MotionReveal key={moment} delay={index * 0.08} className="luxury-card rounded-[1.5rem] p-7">
               <p className="font-display text-5xl text-gold">0{index + 1}</p>
-              <h2 className="mt-8 text-xl leading-8 text-charcoal">{moment}</h2>
+              <h2 className={`mt-8 text-charcoal ${sectionTitleClasses}`}>{moment}</h2>
             </MotionReveal>
           ))}
         </div>
