@@ -7,9 +7,11 @@ type LuxuryButtonProps = {
   variant?: "primary" | "secondary";
   className?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
+  /** Quando verdadeiro, marca o destino como página atual (ex.: Reservas no header). */
+  ariaCurrent?: boolean;
 };
 
-export function LuxuryButton({ href, children, variant = "primary", className = "", onClick }: LuxuryButtonProps) {
+export function LuxuryButton({ href, children, variant = "primary", className = "", onClick, ariaCurrent }: LuxuryButtonProps) {
   const base =
     "group inline-flex min-h-12 items-center justify-center rounded-full px-7 text-[0.7rem] font-semibold uppercase tracking-[0.3em] transition duration-500 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-paper";
   const variants = {
@@ -29,7 +31,7 @@ export function LuxuryButton({ href, children, variant = "primary", className = 
   }
 
   return (
-    <Link href={href} className={classNames} onClick={onClick}>
+    <Link href={href} className={classNames} onClick={onClick} {...(ariaCurrent ? { "aria-current": "page" as const } : {})}>
       {children}
     </Link>
   );
