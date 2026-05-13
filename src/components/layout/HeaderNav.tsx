@@ -46,7 +46,7 @@ function MenuGlyph({ open }: { open: boolean }) {
 }
 
 const deskNavLinkBase =
-  "relative inline-flex shrink-0 whitespace-nowrap pb-1 text-[0.72rem] font-semibold uppercase tracking-[0.19em] text-charcoal/[0.88] outline-none ring-offset-[rgba(247,243,237,0.94)] transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-center after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:text-charcoal hover:after:scale-x-100 focus-visible:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2";
+  "relative inline-flex shrink-0 whitespace-nowrap pb-1 text-[0.72rem] font-semibold uppercase tracking-[0.19em] text-charcoal/[0.88] outline-none ring-offset-[rgba(249,246,241,0.96)] transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-center after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:text-charcoal hover:after:scale-x-100 focus-visible:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2";
 
 const deskNavLinkActive = "text-charcoal after:!scale-x-100";
 
@@ -135,28 +135,28 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   }, [mobileOpen]);
 
   const reserveHref = localizedPath(lang, "/reservations");
-  const navbarBottom = "calc(1rem + 5rem + 0.35rem)";
+  const navbarBottom = "calc(0.875rem + 4.5rem + 0.35rem)";
 
   return (
     <header className="fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden xl:overflow-visible">
-      <div className="mx-4 mt-4 min-w-0 sm:mx-6 lg:mx-10 xl:overflow-visible">
+      <div className="mx-4 mt-3 min-w-0 sm:mx-6 sm:mt-3.5 lg:mx-10 xl:overflow-visible">
         <div
-          className={`relative z-[110] mx-auto w-full max-w-[88rem] min-w-0 overflow-x-hidden border-x border-t border-walnut/[0.17] bg-[#F8F4EF]/96 px-5 shadow-[0_14px_40px_rgba(58,42,30,0.1)] backdrop-blur-md sm:px-7 xl:overflow-visible xl:rounded-[2.85rem] xl:border xl:border-walnut/[0.14] xl:bg-[rgba(247,243,237,0.94)] xl:px-8 max-xl:rounded-b-none max-xl:rounded-t-[1.95rem]`}
+          className={`relative z-[110] mx-auto w-full max-w-[88rem] min-w-0 overflow-x-hidden border-x border-t border-walnut/[0.11] bg-[#FAF7F3]/97 px-5 shadow-[0_10px_28px_rgba(58,42,30,0.06)] backdrop-blur-md sm:px-7 xl:overflow-visible xl:rounded-[2.45rem] xl:border xl:border-walnut/[0.11] xl:bg-[rgba(249,246,241,0.96)] xl:px-8 max-xl:rounded-b-none max-xl:rounded-t-[1.85rem]`}
         >
-          <div className="grid min-h-[5rem] w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 sm:gap-x-4 xl:grid-cols-[auto_minmax(8rem,1fr)_auto] xl:gap-x-8 2xl:gap-x-10">
+          <div className="grid min-h-[4.5rem] w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 sm:gap-x-4 xl:grid-cols-[auto_minmax(8rem,1fr)_auto] xl:gap-x-8 2xl:gap-x-10">
             <div className="min-w-0 shrink">
-              <Link href={localizedPath(lang)} className="group flex min-w-0 items-center gap-3.5 sm:gap-4">
+              <Link href={localizedPath(lang)} className="group flex min-w-0 items-center gap-3 sm:gap-3.5">
                 <span
-                  className="relative h-[2.35rem] w-[3.25rem] shrink-0 brightness-[1.03] contrast-[1.06] opacity-[0.97] ring-1 ring-walnut/10 transition-[opacity,ring-color] duration-300 group-hover:opacity-100 sm:h-[2.55rem] sm:w-[3.45rem]"
+                  className="relative h-[2.15rem] w-[3rem] shrink-0 brightness-[1.02] contrast-[1.05] opacity-[0.96] ring-1 ring-walnut/[0.07] transition-[opacity,ring-color] duration-300 group-hover:opacity-100 sm:h-[2.38rem] sm:w-[3.28rem]"
                   aria-hidden
                 >
-                  <Image src={figueiralLogoSrc} alt="" fill priority sizes="112px" className="object-contain object-center" />
+                  <Image src={figueiralLogoSrc} alt="" fill priority sizes="108px" className="object-contain object-center" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block truncate pt-px font-display text-[1.65rem] leading-none tracking-tight text-charcoal transition group-hover:text-gold sm:text-[1.76rem]">
+                  <span className="block truncate pt-px font-display text-[1.52rem] leading-none tracking-tight text-charcoal transition group-hover:text-gold sm:text-[1.68rem]">
                     Figueiral
                   </span>
-                  <span className="mt-1 block max-w-[11rem] text-[0.58rem] font-semibold uppercase leading-tight tracking-[0.36em] text-gold/[0.88]">
+                  <span className="mt-0.5 block max-w-[11rem] text-[0.56rem] font-semibold uppercase leading-tight tracking-[0.34em] text-gold/[0.85]">
                     {navigation.brandLine}
                   </span>
                 </span>

@@ -48,20 +48,18 @@ export function Reviews({ dictionary }: { dictionary: Dictionary }) {
             <MotionReveal
               key={review.source}
               delay={index * 0.08}
-              className="flex h-full flex-col rounded-[1.6rem] border border-white/16 bg-cream/[0.1] px-7 py-8 shadow-[inset_0_1px_0_rgba(255,249,238,0.06)] backdrop-blur-[0.5px] sm:px-8 sm:py-9"
+              className="flex h-full flex-col rounded-[1.6rem] border border-white/18 bg-[rgba(252,247,239,0.11)] px-7 py-8 shadow-[inset_0_1px_0_rgba(255,249,238,0.08)] backdrop-blur-[0.5px] sm:px-8 sm:py-9"
             >
-              <div className="mb-7 flex shrink-0 flex-wrap items-start justify-between gap-x-5 gap-y-4 sm:mb-8">
-                <span className="max-w-[12rem] text-[0.64rem] font-semibold uppercase leading-relaxed tracking-[0.3em] text-gold/[0.78]">
+              <div className="mb-7 flex shrink-0 flex-col gap-5 border-b border-white/[0.12] pb-6 sm:mb-8">
+                <span className="max-w-[14rem] text-[0.64rem] font-semibold uppercase leading-relaxed tracking-[0.28em] text-gold/[0.82]">
                   {review.source}
                 </span>
-                <span className="font-display text-[1.72rem] font-medium leading-none tracking-[-0.02em] text-cream/[0.95] sm:text-[2rem]">
-                  {review.rating}
-                </span>
+                <span className="font-display text-[2.05rem] font-medium leading-none tracking-[-0.025em] text-cream sm:text-[2.42rem]">{review.rating}</span>
               </div>
-              <blockquote className="flex-1 font-display text-xl leading-snug tracking-[-0.01em] text-cream/[0.94] sm:text-2xl sm:leading-9">
+              <blockquote className="flex-1 font-display text-xl leading-snug tracking-[-0.01em] text-cream/[0.96] sm:text-2xl sm:leading-9">
                 &ldquo;{review.quote}&rdquo;
               </blockquote>
-              <p className="mt-8 text-sm leading-relaxed text-cream/62">{review.author}</p>
+              <p className="mt-8 text-sm leading-relaxed text-cream/[0.72]">{review.author}</p>
             </MotionReveal>
           ))}
         </div>

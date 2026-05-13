@@ -14,16 +14,13 @@ import { pageMetadata } from "@/lib/seo";
 
 const highlightImages = [
   "/images/hero/Preparacao-picanha.webp",
+  "/images/hero/Alinhamento-mesas.webp",
   "/images/wine/Vinho-garrafeira.webp",
-  "/images/terrace/Esplanada-1.webp",
   "/images/people/Convicio-clientes-1.webp"
 ];
 
 /** Altura fixa da imagem em todos os cards — bases do bloco alinham na grelha. */
 const HIGHLIGHT_IMAGE_BLOCK = "relative h-[12rem] shrink-0 overflow-hidden sm:h-[12.75rem] lg:h-[12.75rem]";
-
-/** Desnível apenas no topo, em caixas à mesma altura (bases alinhadas). */
-const pillarTopBreath = ["lg:pt-0", "lg:pt-[0.4rem]", "lg:pt-2", "lg:pt-1"] as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -59,7 +56,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <MotionReveal
                 key={item}
                 delay={index * 0.07}
-                className={`group flex h-full flex-col overflow-hidden rounded-[1.38rem] border border-walnut/[0.08] bg-[linear-gradient(168deg,rgba(252,248,242,0.78),rgba(241,231,217,0.42))] shadow-[0_16px_48px_rgba(58,44,34,0.06)] backdrop-blur-[1px] transition-[box-shadow,border-color] duration-700 ease-out hover:border-walnut/[0.13] hover:shadow-[0_22px_58px_rgba(58,44,34,0.089)] ${pillarTopBreath[index]}`}
+                className="group flex h-full flex-col overflow-hidden rounded-[1.38rem] border border-walnut/[0.09] bg-[linear-gradient(168deg,rgba(252,248,242,0.82),rgba(241,231,217,0.45))] shadow-[0_14px_42px_rgba(58,44,34,0.055)] backdrop-blur-[1px] transition-[box-shadow,border-color] duration-700 ease-out hover:border-walnut/[0.14] hover:shadow-[0_20px_52px_rgba(58,44,34,0.078)]"
               >
                 <div className={`${HIGHLIGHT_IMAGE_BLOCK}`}>
                   <Image
@@ -67,16 +64,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className={`object-cover brightness-[1.03] contrast-[0.94] saturate-[0.88] sepia-[0.06] transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 1 ? "object-[center_18%]" : index === 2 ? "object-[center_52%]" : "object-center"}`}
+                    className={`object-cover brightness-[1.03] contrast-[0.94] saturate-[0.88] sepia-[0.06] transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 0 ? "object-[center_48%]" : index === 1 ? "object-[center_72%]" : index === 2 ? "object-[center_22%]" : "object-[center_46%]"}`}
                     loading={index === 0 ? "eager" : "lazy"}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(252,246,238,0.05),rgba(52,41,34,0.16))]" />
                 </div>
-                <div className="flex flex-1 flex-col px-8 pb-[1.85rem] pt-7 sm:px-9 sm:pb-[2.1rem] sm:pt-8">
-                  <span className="font-display text-[1.05rem] font-medium tabular-nums tracking-[0.26em] text-gold/[0.82] sm:text-[1.2rem] sm:tracking-[0.23em]">
+                <div className="flex flex-1 flex-col px-8 pb-[1.85rem] pt-7 sm:px-9 sm:pb-[2.05rem] sm:pt-8">
+                  <span className="font-display text-[1.15rem] font-medium tabular-nums tracking-[0.22em] text-gold/[0.88] sm:text-[1.32rem] sm:tracking-[0.2em]">
                     0{index + 1}
                   </span>
-                  <p className="mt-4 grow text-[1.02rem] font-semibold leading-[1.71] tracking-[0.015em] text-walnut sm:mt-5 sm:text-[1.06rem] sm:leading-[1.76] max-sm:max-w-[22rem] max-sm:text-pretty lg:max-w-none text-balance">
+                  <p className="mt-4 flex-1 text-[1.02rem] font-semibold leading-[1.71] tracking-[0.015em] text-walnut sm:mt-5 sm:text-[1.06rem] sm:leading-[1.76] max-sm:max-w-[22rem] max-sm:text-pretty lg:max-w-none text-balance">
                     {item}
                   </p>
                 </div>
@@ -135,10 +132,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         imageClassName="object-[center_20%] sm:object-[center_16%]"
       />
 
-      <section className="section-linen-breath relative py-[4.5rem] sm:py-[7rem] lg:py-[7.25rem]">
+      <section className="section-linen-breath relative py-[4.25rem] sm:py-[6.75rem] lg:py-[7rem]">
         <div className="section-shell">
-          <MotionReveal className="atmospheric-panel rounded-[2.05rem] px-8 py-14 sm:rounded-[2.2rem] sm:px-12 sm:py-18 lg:px-[3.65rem] lg:py-[4.85rem]">
-            <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-[4.25rem]">
+          <MotionReveal className="atmospheric-panel rounded-[2.05rem] px-8 py-14 sm:rounded-[2.2rem] sm:px-12 sm:py-18 lg:px-[3.35rem] lg:py-[4.65rem]">
+            <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-start lg:gap-[3.25rem] xl:gap-[3.75rem]">
               <div className="order-1 max-w-xl lg:max-w-none">
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.36em] text-gold/80">{home.legacy.eyebrow}</p>
                 <p className="mt-[1.375rem] font-display text-[4.95rem] leading-none tracking-[-0.03em] text-charcoal/[0.95] sm:text-[6.85rem] sm:tracking-tight">1986</p>
@@ -149,15 +146,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   {home.legacy.body}
                 </p>
               </div>
-              <div className="order-2 lg:pl-2">
-                <figure className="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] border border-walnut/[0.09] shadow-[0_26px_64px_rgba(58,44,34,0.11)] sm:aspect-[5/6] sm:rounded-[2.05rem] lg:aspect-[11/13] lg:rounded-[38px]">
+              <div className="order-2 lg:pl-0 xl:pl-2">
+                <figure className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+                  <div className="relative aspect-[5/6] overflow-hidden rounded-[2rem] border border-walnut/[0.09] shadow-[0_22px_56px_rgba(58,44,34,0.1)] sm:aspect-[6/7] sm:rounded-[2.05rem] lg:aspect-[7/9] lg:rounded-[38px]">
                     <Image
                       src={images.legacyOwners}
                       alt={home.legacy.imageAlt}
                       fill
-                      sizes="(min-width: 1024px) 42vw, 90vw"
-                      className="object-cover object-[50%_32%]"
+                      sizes="(min-width: 1024px) 38vw, 90vw"
+                      className="object-cover object-[52%_35%]"
                       loading="lazy"
                     />
                   </div>
