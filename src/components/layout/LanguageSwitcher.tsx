@@ -39,7 +39,7 @@ export function LanguageSwitcher({
           <Link
             href={hrefFor(locale)}
             hrefLang={locale === "pt" ? "pt-PT" : "en"}
-            className={locale === lang ? "text-gold" : inactive}
+            className={locale === lang ? "text-brandGreen" : inactive}
           >
             {locale}
           </Link>

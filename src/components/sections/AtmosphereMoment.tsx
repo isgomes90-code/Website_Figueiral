@@ -23,14 +23,14 @@ export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/
         quality={82}
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(24,17,13,0.52)_0%,rgba(28,20,15,0.28)_48%,rgba(32,24,18,0.14)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(22,19,16,0.5)_0%,rgba(26,23,18,0.27)_48%,rgba(28,26,22,0.13)_100%)]"
         aria-hidden
       />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_120%_at_22%_55%,transparent_0%,rgba(18,13,10,0.22)_100%)]" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_120%_at_22%_55%,transparent_0%,rgba(24,26,22,0.2)_100%)]" aria-hidden />
 
       <div className="relative z-10 mx-auto flex min-h-[inherit] max-w-[82rem] items-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
         <MotionReveal className="max-w-xl" delay={0.08}>
-          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.42em] text-gold/[0.82] sm:text-[0.68rem]">{eyebrow}</p>
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.42em] text-sage/[0.84] sm:text-[0.68rem]">{eyebrow}</p>
           <h2
             id="atmosphere-moment-heading"
             className="mt-6 font-display text-[2rem] leading-[1.22] tracking-[-0.01em] text-cream text-balance sm:mt-8 sm:text-[2.85rem] sm:leading-[1.18] lg:text-[3.35rem]"

@@ -5,7 +5,8 @@ export function SectionIntro({
   title,
   body,
   align = "left",
-  theme = "light"
+  theme = "light",
+  eyebrowTone = "gold"
 }: {
   eyebrow: string;
   title: string;
@@ -13,17 +14,23 @@ export function SectionIntro({
   align?: "left" | "center";
   /** `dusk`: texto sobre fundos escuros/quentes na secção. */
   theme?: "light" | "dusk";
+  /** `institutional`: verde oliva/seco para harmonia com o logótipo (secções claras ou escuras). */
+  eyebrowTone?: "gold" | "institutional";
 }) {
   const dark = theme === "dusk";
+
+  const eyebrowCls =
+    eyebrowTone === "institutional"
+      ? dark
+        ? "text-sage/[0.82]"
+        : "text-oliveMuted/[0.88]"
+      : dark
+        ? "text-gold/72"
+        : "text-gold";
+
   return (
     <MotionReveal className={align === "center" ? "mx-auto max-w-[48rem] text-center" : "max-w-[44rem]"}>
-      <p
-        className={`mb-5 sm:mb-6 text-[0.64rem] font-semibold uppercase tracking-[0.36em] sm:text-[0.68rem] ${
-          dark ? "text-gold/72" : "text-gold"
-        }`}
-      >
-        {eyebrow}
-      </p>
+      <p className={`mb-5 sm:mb-6 text-[0.64rem] font-semibold uppercase tracking-[0.36em] sm:text-[0.68rem] ${eyebrowCls}`}>{eyebrow}</p>
       <h2
         className={`font-display leading-[1.06] text-balance text-[2.15rem] sm:text-[2.85rem] sm:leading-[1.04] lg:text-[3.6rem] ${
           dark ? "text-cream" : "text-charcoal"

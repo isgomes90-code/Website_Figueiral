@@ -21,10 +21,10 @@ const SLIDE_INTERVAL_MS = 6500;
 const readingOverlayStyle: CSSProperties = {
   background: `linear-gradient(
     92deg,
-    rgba(26, 17, 13, 0.76) 0%,
-    rgba(26, 17, 13, 0.52) 40%,
-    rgba(26, 17, 13, 0.22) 68%,
-    rgba(26, 17, 13, 0.06) 100%
+    rgba(23, 18, 15, 0.76) 0%,
+    rgba(22, 19, 17, 0.52) 40%,
+    rgba(20, 22, 19, 0.21) 68%,
+    rgba(18, 16, 14, 0.055) 100%
   )`
 };
 
@@ -131,8 +131,8 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
                 role="tab"
                 aria-selected={activeSlide === i}
                 aria-label={`${i + 1} / ${slides.length}`}
-                className={`h-1.5 rounded-full transition-all duration-500 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[#35261d] ${
-                  activeSlide === i ? "w-8 bg-cream/90" : "w-1.5 bg-cream/38 hover:bg-cream/58"
+                className={`h-1.5 rounded-full transition-all duration-500 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-sage/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#35261d] ${
+                  activeSlide === i ? "w-8 bg-cream/90 ring-1 ring-brandGreen/28" : "w-1.5 bg-cream/38 hover:bg-sage/48"
                 }`}
                 onClick={() => setActiveSlide(i)}
               />
@@ -140,8 +140,10 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
           </div>
           <div className="hairline" />
           <div className="flex flex-col gap-3 py-5 text-[0.62rem] uppercase tracking-[0.3em] text-cream/58 sm:flex-row sm:justify-between">
-            {hero.keywords.map((keyword) => (
-              <span key={keyword}>{keyword}</span>
+            {hero.keywords.map((keyword, i) => (
+              <span key={keyword} className={i === 1 ? "sm:text-center text-sage/85" : undefined}>
+                {keyword}
+              </span>
             ))}
           </div>
         </div>

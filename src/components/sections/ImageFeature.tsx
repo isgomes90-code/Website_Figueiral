@@ -19,6 +19,7 @@ type ImageFeatureProps = {
   composition?: "standard" | "panorama" | "intimate";
   /** Classes Tailwind extras no `<Image>` principal (ex.: `object-[center_30%]`). */
   imageClassName?: string;
+  eyebrowTone?: "gold" | "institutional";
 };
 
 const toneWrap: Record<NonNullable<ImageFeatureProps["tone"]>, string> = {
@@ -49,7 +50,8 @@ export function ImageFeature(props: ImageFeatureProps) {
     supportingAlt,
     tone = "none",
     composition = "standard",
-    imageClassName = ""
+    imageClassName = "",
+    eyebrowTone = "gold"
   } = props;
 
   const py = quiet ? "py-20 sm:py-28 lg:py-32" : "py-24 sm:py-36 lg:py-40";
@@ -66,9 +68,9 @@ export function ImageFeature(props: ImageFeatureProps) {
     <section className={`${py} ${toneClass}`}>
       <div className="section-shell grid gap-11 sm:gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16 xl:gap-[4.25rem]">
         <div className={`${reverse ? "lg:order-2 lg:pl-6 xl:pl-10" : "lg:pr-6 xl:pr-10"} ${quiet ? "lg:self-start" : ""}`}>
-          <SectionIntro eyebrow={eyebrow} title={title} body={body} />
+          <SectionIntro eyebrow={eyebrow} title={title} body={body} eyebrowTone={eyebrowTone} />
           {note ? (
-            <div className="mt-9 max-w-sm border-l border-gold/40 pl-5 text-[0.9rem] leading-[1.75] tracking-[0.01em] text-walnut sm:mt-10 sm:text-[0.93rem] sm:leading-[1.82]">
+            <div className="mt-9 max-w-sm border-l border-brandGreen/35 pl-5 text-[0.9rem] leading-[1.75] tracking-[0.01em] text-walnut sm:mt-10 sm:text-[0.93rem] sm:leading-[1.82]">
               {note}
             </div>
           ) : null}

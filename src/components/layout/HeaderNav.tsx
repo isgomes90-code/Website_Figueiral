@@ -46,7 +46,7 @@ function MenuGlyph({ open }: { open: boolean }) {
 }
 
 const deskNavLinkBase =
-  "relative inline-flex shrink-0 whitespace-nowrap pb-1 text-[0.72rem] font-semibold uppercase tracking-[0.19em] text-charcoal/[0.88] outline-none ring-offset-[rgba(249,246,241,0.96)] transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-center after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:text-charcoal hover:after:scale-x-100 focus-visible:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2";
+  "relative inline-flex shrink-0 whitespace-nowrap pb-1 text-[0.72rem] font-semibold uppercase tracking-[0.19em] text-charcoal/[0.88] outline-none ring-offset-[rgba(249,246,241,0.96)] transition-[color] duration-300 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-center after:scale-x-0 after:bg-brandGreen after:transition-transform after:duration-300 hover:text-charcoal hover:after:scale-x-100 focus-visible:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/35 focus-visible:ring-offset-2";
 
 const deskNavLinkActive = "text-charcoal after:!scale-x-100";
 
@@ -160,7 +160,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
                     className="object-contain object-left drop-shadow-[0_1px_2px_rgba(58,44,34,0.06)] transition-opacity duration-300 group-hover:opacity-95"
                   />
                 </span>
-                <span className="block max-w-full text-[0.54rem] font-semibold uppercase leading-snug tracking-[0.28em] text-gold/[0.88] sm:text-[0.57rem] sm:tracking-[0.32em]">
+                <span className="block max-w-full text-[0.54rem] font-semibold uppercase leading-snug tracking-[0.28em] text-brandGreen/[0.78] sm:text-[0.57rem] sm:tracking-[0.32em]">
                   {navigation.brandLine}
                 </span>
               </Link>
@@ -176,7 +176,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
               </LuxuryButton>
               <button
                 type="button"
-                className="mobile-menu-button inline-flex h-11 min-w-[2.75rem] shrink-0 items-center justify-center rounded-full border border-charcoal/[0.22] bg-[#F8F5F0] text-charcoal shadow-sm ring-2 ring-transparent transition hover:border-gold/50 hover:bg-paper hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-paper active:scale-[0.98]"
+                className="mobile-menu-button inline-flex h-11 min-w-[2.75rem] shrink-0 items-center justify-center rounded-full border border-charcoal/[0.22] bg-[#F8F5F0] text-charcoal shadow-sm ring-2 ring-transparent transition hover:border-brandGreen/35 hover:bg-paper hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2 focus-visible:ring-offset-paper active:scale-[0.98]"
                 aria-expanded={mobileOpen}
                 aria-controls={panelId}
                 aria-haspopup="true"
@@ -208,7 +208,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
             </nav>
 
             <div className={`hidden min-w-0 shrink-0 xl:col-start-3 xl:row-start-1 xl:flex xl:items-center xl:justify-end`}>
-              <div className={`flex flex-wrap items-center justify-end gap-x-3 gap-y-2 border-walnut/15 xl:border-l xl:pl-6 2xl:gap-x-4 2xl:pl-7`}>
+              <div className={`flex flex-wrap items-center justify-end gap-x-3 gap-y-2 border-brandGreen/[0.18] xl:border-l xl:pl-6 2xl:gap-x-4 2xl:pl-7`}>
                 <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} />
                 <LuxuryButton href={reserveHref} className="inline-flex whitespace-nowrap !min-h-11 min-w-0 shrink !px-6" ariaCurrent={reserveAriaPageBar}>
                   {navigation.reserve}
@@ -246,8 +246,8 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
                         href={localizedPath(lang, item.href)}
                         className={`rounded-r-xl px-4 py-4 text-[1.05rem] leading-snug outline-none ring-offset-[#F4EFE8] transition-colors sm:py-3.5 ${
                           active
-                            ? "border-l-[3px] border-gold bg-[rgba(156,121,87,0.14)] font-semibold text-charcoal focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
-                            : "border-l-[3px] border-transparent font-medium text-charcoal hover:bg-[rgba(156,121,87,0.1)] active:bg-[rgba(156,121,87,0.14)] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+                            ? "border-l-[3px] border-brandGreen bg-[rgba(88,96,86,0.1)] font-semibold text-charcoal focus-visible:ring-2 focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2"
+                            : "border-l-[3px] border-transparent font-medium text-charcoal hover:bg-[rgba(111,121,108,0.11)] active:bg-[rgba(111,121,108,0.15)] focus-visible:ring-2 focus-visible:ring-brandGreen/40 focus-visible:ring-offset-2"
                         }`}
                         onClick={() => setMobileOpen(false)}
                         {...(active ? { "aria-current": "page" as const } : {})}
