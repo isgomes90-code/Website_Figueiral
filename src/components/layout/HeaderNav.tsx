@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
-import { navItems, figueiralLogoSrc } from "@/lib/site";
+import { navItems, figueiralLogoSrc, siteConfig } from "@/lib/site";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
@@ -135,30 +135,33 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   }, [mobileOpen]);
 
   const reserveHref = localizedPath(lang, "/reservations");
-  const navbarBottom = "calc(0.875rem + 4.5rem + 0.35rem)";
+  const navbarBottom = "calc(0.875rem + 4.85rem + 0.35rem)";
 
   return (
     <header className="fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden xl:overflow-visible">
       <div className="mx-4 mt-3 min-w-0 sm:mx-6 sm:mt-3.5 lg:mx-10 xl:overflow-visible">
         <div
-          className={`relative z-[110] mx-auto w-full max-w-[88rem] min-w-0 overflow-x-hidden border-x border-t border-walnut/[0.11] bg-[#FAF7F3]/97 px-5 shadow-[0_10px_28px_rgba(58,42,30,0.06)] backdrop-blur-md sm:px-7 xl:overflow-visible xl:rounded-[2.45rem] xl:border xl:border-walnut/[0.11] xl:bg-[rgba(249,246,241,0.96)] xl:px-8 max-xl:rounded-b-none max-xl:rounded-t-[1.85rem]`}
+          className={`relative z-[110] mx-auto w-full max-w-[88rem] min-w-0 overflow-x-hidden border-x border-t border-walnut/[0.11] bg-[#FAF7F3]/97 px-5 py-2.5 shadow-[0_10px_28px_rgba(58,42,30,0.06)] backdrop-blur-md sm:px-7 xl:overflow-visible xl:rounded-[2.45rem] xl:border xl:border-walnut/[0.11] xl:bg-[rgba(249,246,241,0.96)] xl:px-8 xl:py-2.5 max-xl:rounded-b-none max-xl:rounded-t-[1.85rem]`}
         >
-          <div className="grid min-h-[4.5rem] w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 sm:gap-x-4 xl:grid-cols-[auto_minmax(8rem,1fr)_auto] xl:gap-x-8 2xl:gap-x-10">
+          <div className="grid min-h-[4.85rem] w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 sm:gap-x-4 xl:grid-cols-[auto_minmax(8rem,1fr)_auto] xl:gap-x-8 2xl:gap-x-10">
             <div className="min-w-0 shrink">
-              <Link href={localizedPath(lang)} className="group flex min-w-0 items-center gap-3 sm:gap-3.5">
-                <span
-                  className="relative h-[2.15rem] w-[3rem] shrink-0 brightness-[1.02] contrast-[1.05] opacity-[0.96] ring-1 ring-walnut/[0.07] transition-[opacity,ring-color] duration-300 group-hover:opacity-100 sm:h-[2.38rem] sm:w-[3.28rem]"
-                  aria-hidden
-                >
-                  <Image src={figueiralLogoSrc} alt="" fill priority sizes="108px" className="object-contain object-center" />
+              <Link
+                href={localizedPath(lang)}
+                className="group flex max-w-[11.5rem] flex-col items-start gap-1 sm:max-w-[13rem] sm:gap-1.5"
+                aria-label={`${siteConfig.name} — ${navigation.brandLine}`}
+              >
+                <span className="relative h-[2.72rem] w-[4.55rem] shrink-0 sm:h-[3.15rem] sm:w-[5.25rem] xl:h-[3.35rem] xl:w-[5.55rem]">
+                  <Image
+                    src={figueiralLogoSrc}
+                    alt=""
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 128px, (max-width: 1280px) 148px, 162px"
+                    className="object-contain object-left drop-shadow-[0_1px_2px_rgba(58,44,34,0.06)] transition-opacity duration-300 group-hover:opacity-95"
+                  />
                 </span>
-                <span className="min-w-0">
-                  <span className="block truncate pt-px font-display text-[1.52rem] leading-none tracking-tight text-charcoal transition group-hover:text-gold sm:text-[1.68rem]">
-                    Figueiral
-                  </span>
-                  <span className="mt-0.5 block max-w-[11rem] text-[0.56rem] font-semibold uppercase leading-tight tracking-[0.34em] text-gold/[0.85]">
-                    {navigation.brandLine}
-                  </span>
+                <span className="block max-w-full text-[0.54rem] font-semibold uppercase leading-snug tracking-[0.28em] text-gold/[0.88] sm:text-[0.57rem] sm:tracking-[0.32em]">
+                  {navigation.brandLine}
                 </span>
               </Link>
             </div>
