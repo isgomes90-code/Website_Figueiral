@@ -4,7 +4,7 @@
 .pnp.*
 
 # next.js
-/.next
+.next/
 /out
 
 # production
@@ -19,6 +19,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+.dev-server.log
 
 # local env files
 .env*

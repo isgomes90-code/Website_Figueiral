@@ -2,7 +2,7 @@
 
 import type { CSSProperties } from "react";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
@@ -16,6 +16,7 @@ const HERO_SLIDE_SRC = [
   "/images/people/Convicio-clientes-1.webp"
 ] as const;
 
+const SLIDE_COUNT = HERO_SLIDE_SRC.length;
 const SLIDE_INTERVAL_MS = 6500;
 
 /** Overlay estável entre slides — leitura consistente sem saltos bruscos de luminosidade */
@@ -44,35 +45,27 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
   const hero = dictionary.hero;
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const slides = useMemo(() => {
-    const alts = hero.slidesAlt;
-    return HERO_SLIDE_SRC.map((src, i) => ({
-      src,
-      alt: alts[i] ?? hero.title
-    }));
-  }, [hero.slidesAlt, hero.title]);
-
   useEffect(() => {
-    if (slides.length <= 1) return;
+    if (SLIDE_COUNT <= 1) return;
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) return;
     const id = window.setInterval(() => {
-      setActiveSlide((i) => (i + 1) % slides.length);
+      setActiveSlide((i) => (i + 1) % SLIDE_COUNT);
     }, SLIDE_INTERVAL_MS);
     return () => window.clearInterval(id);
-  }, [slides.length]);
+  }, []);
 
   return (
     <section className="grain hero-grain relative min-h-screen overflow-hidden bg-[#453528]">
       <div className="absolute inset-0 z-0" aria-hidden>
-        {slides.map((slide, i) => (
+        {HERO_SLIDE_SRC.map((src, i) => (
           <div
-            key={slide.src}
+            key={src}
             className="absolute inset-0 transition-opacity duration-[1400ms] ease-in-out"
             style={{ opacity: activeSlide === i ? 1 : 0 }}
           >
             <Image
-              src={slide.src}
+              src={src}
               alt=""
               fill
               priority={i === 0}
@@ -122,14 +115,13 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
 
       <div className="absolute inset-x-0 bottom-0 z-10">
         <div className="section-shell">
-          <div className="flex justify-center gap-2 pb-4 sm:gap-2.5" role="tablist" aria-label={hero.slidesAria}>
-            {slides.map((_, i) => (
+          <div className="flex justify-center gap-2 pb-4 sm:gap-2.5" role="group" aria-label={hero.slidesAria}>
+            {HERO_SLIDE_SRC.map((_, i) => (
               <button
                 key={i}
                 type="button"
-                role="tab"
-                aria-selected={activeSlide === i}
-                aria-label={`${i + 1} / ${slides.length}`}
+                aria-label={hero.slidesAlt[i] ?? `${i + 1} / ${SLIDE_COUNT}`}
+                aria-current={activeSlide === i}
                 className={`h-1.5 rounded-full transition-all duration-500 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-sage/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#35261d] ${
                   activeSlide === i ? "w-8 bg-cream/90 ring-1 ring-brandGreen/28" : "w-1.5 bg-cream/38 hover:bg-sage/48"
                 }`}

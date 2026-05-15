@@ -2,16 +2,28 @@ import type { Metadata } from "next";
 import { defaultLocale, locales, localizedPath, type Locale } from "@/i18n/config";
 import { siteConfig } from "@/lib/site";
 
-const keywords = [
-  "best restaurant Almancil",
-  "steak restaurant Algarve",
-  "best picanha Algarve",
-  "restaurant near Quinta do Lago",
-  "restaurant Vale do Lobo",
-  "romantic restaurant Algarve",
-  "premium restaurant Algarve",
-  "wine restaurant Algarve"
-];
+const keywordsByLocale: Record<Locale, string[]> = {
+  pt: [
+    "melhor restaurante Almancil",
+    "restaurante de carne Algarve",
+    "melhor picanha Algarve",
+    "restaurante perto da Quinta do Lago",
+    "restaurante Vale do Lobo",
+    "restaurante romântico Algarve",
+    "restaurante premium Algarve",
+    "restaurante de vinhos Algarve"
+  ],
+  en: [
+    "best restaurant Almancil",
+    "steak restaurant Algarve",
+    "best picanha Algarve",
+    "restaurant near Quinta do Lago",
+    "restaurant Vale do Lobo",
+    "romantic restaurant Algarve",
+    "premium restaurant Algarve",
+    "wine restaurant Algarve"
+  ]
+};
 
 export function pageMetadata({
   title,
@@ -34,7 +46,7 @@ export function pageMetadata({
     metadataBase: new URL(siteConfig.url),
     title,
     description,
-    keywords,
+    keywords: keywordsByLocale[lang],
     alternates: {
       canonical: localized,
       languages: {
@@ -76,7 +88,9 @@ export function restaurantSchema() {
     telephone: siteConfig.phone,
     email: siteConfig.email,
     servesCuisine: ["Portuguese", "Mediterranean", "Steakhouse", "Brazilian Picanha"],
-    priceRange: "EUR 30-50",
+    priceRange: "€€€",
+    acceptsReservations: true,
+    menu: `${siteConfig.url}/${defaultLocale}/menu`,
     foundingDate: siteConfig.founded,
     image: `${siteConfig.url}/opengraph-image`,
     address: {

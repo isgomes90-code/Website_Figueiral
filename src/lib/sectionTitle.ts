@@ -4,10 +4,10 @@
  * sectionTitle*: H2 primários de secção e titulares equivalentes em páginas interiores.
  */
 export const heroDisplayTitleClasses =
-  "font-display text-balance leading-[1.05] tracking-[-0.024em] text-[2rem] sm:text-[2.45rem] md:text-[2.75rem] lg:text-[3rem] xl:text-[3.125rem] 2xl:text-[3.375rem]";
+  "font-display text-balance leading-[1.04] tracking-[-0.025em] text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.95rem] xl:text-[4.2rem] 2xl:text-[4.5rem]";
 
 export const sectionTitleClasses =
-  "font-display text-balance leading-[1.08] tracking-[-0.021em] text-[1.75rem] sm:text-[1.875rem] md:text-[2rem] lg:text-[2.25rem] xl:text-[2.375rem]";
+  "font-display text-balance leading-[1.1] tracking-[-0.022em] text-[2.05rem] sm:text-[2.4rem] md:text-[2.7rem] lg:text-[3rem] xl:text-[3.2rem]";
 
 /** Eyebrows / linhas‑guia — sempre claramente secundários ao título principal. */
 export const editorialEyebrowClasses =
