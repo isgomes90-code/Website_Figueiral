@@ -1,14 +1,36 @@
 /**
- * Escala editorial global — hierarquia clara versus corpo (luxury hospitality).
- * heroDisplay*: H1 / momentos de máximo destaque sobre imagem ou fundo forte.
- * sectionTitle*: H2 primários de secção e titulares equivalentes em páginas interiores.
+ * Tokens tipográficos — classes CSS em globals.css (`.type-*`).
+ * Não usar text-[…] solto: o preflight do Tailwind define h1–h6 com font-size:inherit.
  */
-export const heroDisplayTitleClasses =
-  "font-display text-balance leading-[1.04] tracking-[-0.025em] text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.95rem] xl:text-[4.2rem] 2xl:text-[4.5rem]";
 
-export const sectionTitleClasses =
-  "font-display text-balance leading-[1.1] tracking-[-0.022em] text-[2.05rem] sm:text-[2.4rem] md:text-[2.7rem] lg:text-[3rem] xl:text-[3.2rem]";
+export const heroDisplayTitleClasses = "type-hero-title";
+export const heroLeadClasses = "type-hero-lead";
+export const pageTitleClasses = "type-page-title";
+export const sectionTitleClasses = "type-section-title";
+export const featureTitleClasses = "type-feature-title";
+export const statementTitleClasses = "type-statement-title";
+export const cardTitleClasses = "type-card-title";
+export const editorialEyebrowClasses = "type-eyebrow";
+export const bodyLeadClasses = "type-body-lead";
+export const bodyTextClasses = "type-body";
+export const bodyNoteClasses = "type-note";
 
-/** Eyebrows / linhas‑guia — sempre claramente secundários ao título principal. */
-export const editorialEyebrowClasses =
-  "text-[0.6875rem] font-semibold uppercase tracking-[0.32em] sm:text-[0.7rem] sm:tracking-[0.34em]";
+export const displayFigureClasses =
+  "font-display font-semibold leading-none tracking-[-0.03em] tabular-nums";
+
+export const reviewQuoteClasses =
+  "font-display text-[1.25rem] font-medium leading-[1.42] tracking-[-0.012em] sm:text-[1.38rem] sm:leading-[1.44]";
+
+export const highlightCardTitleClasses =
+  "font-sans text-[1rem] font-semibold leading-[1.68] tracking-[0.012em] sm:text-[1.04rem] sm:leading-[1.72]";
+
+export const atmosphereEyebrowClasses =
+  "text-[0.66rem] font-semibold uppercase tracking-[0.42em] sm:text-[0.7rem]";
+
+export type TitleScale = "section" | "feature" | "page";
+
+export function titleClassesFor(scale: TitleScale, as: "h1" | "h2"): string {
+  if (as === "h1") return pageTitleClasses;
+  if (scale === "feature") return featureTitleClasses;
+  return sectionTitleClasses;
+}

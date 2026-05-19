@@ -5,7 +5,7 @@
     "pages": {
       "about": {
         "title": "Sobre | Restaurante familiar desde 1986 em Almancil",
-        "description": "Conheça a história do Restaurante Figueiral, um restaurante familiar em Almancil com hospitalidade premium no Algarve desde 1986."
+        "description": "Conheça a história do Restaurante Figueiral, um restaurante familiar em Almancil com hospitalidade premium no Algarve desde 1986, incluindo arquivo de imprensa."
       },
       "menu": {
         "title": "Menu | Restaurante Figueiral Almancil",
@@ -165,7 +165,21 @@
         "title": "Atmosfera algarvia",
         "body": "Naturalidade mediterrânica, luz de fim de tarde e um ritmo elegante em Almancil."
       }
-    ]
+    ],
+    "press": {
+      "intro": {
+        "eyebrow": "Imprensa",
+        "title": "Um arquivo editorial para um restaurante com uma longa história algarvia.",
+        "body": "Um espaço curado para futuras menções de imprensa, artigos digitalizados, guias gastronómicos e peças de arquivo ligadas à reputação do Figueiral desde 1986."
+      },
+      "cards": [
+        "Futuras publicações em revistas",
+        "Guias de restaurante e prémios",
+        "Artigos digitalizados e peças de arquivo"
+      ],
+      "archive": "Arquivo",
+      "cardBody": "Reservado para material de imprensa cuidadosamente selecionado, apresentado com contenção e clareza editorial."
+    }
   },
   "menu": {
     "intro": {
@@ -339,20 +353,6 @@
       "title": "Momentos cinematográficos da mesa, da esplanada e do brilho de uma noite algarvia.",
       "body": "Uma expressão visual da hospitalidade mediterrânica premium: fogo, vinho, atmosfera e serviço generoso."
     }
-  },
-  "press": {
-    "intro": {
-      "eyebrow": "Imprensa",
-      "title": "Um arquivo editorial para um restaurante com uma longa história algarvia.",
-      "body": "Um espaço curado para futuras menções de imprensa, artigos digitalizados, guias gastronómicos e peças de arquivo ligadas à reputação do Figueiral desde 1986."
-    },
-    "cards": [
-      "Futuras publicações em revistas",
-      "Guias de restaurante e prémios",
-      "Artigos digitalizados e peças de arquivo"
-    ],
-    "archive": "Arquivo",
-    "cardBody": "Reservado para material de imprensa cuidadosamente selecionado, apresentado com contenção e clareza editorial."
   },
   "reservations": {
     "intro": {

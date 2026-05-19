@@ -6,7 +6,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, type Locale } from "@/i18n/config";
 import { images } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
-import { sectionTitleClasses } from "@/lib/sectionTitle";
+import { cardTitleClasses, displayFigureClasses } from "@/lib/sectionTitle";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -22,9 +22,9 @@ export default async function WineExperiencePage({ params }: { params: Promise<{
 
   return (
     <>
-      <section className="pt-36 pb-16 sm:pt-44">
+      <section className="pt-36 pb-24 sm:pt-44">
         <div className="section-shell">
-          <SectionIntro eyebrow={wine.intro.eyebrow} title={wine.intro.title} body={wine.intro.body} />
+          <SectionIntro as="h1" eyebrow={wine.intro.eyebrow} title={wine.intro.title} body={wine.intro.body} />
         </div>
       </section>
       <ImageFeature
@@ -40,8 +40,8 @@ export default async function WineExperiencePage({ params }: { params: Promise<{
         <div className="section-shell grid gap-5 md:grid-cols-3">
           {wine.moments.map((moment, index) => (
             <MotionReveal key={moment} delay={index * 0.08} className="luxury-card rounded-[1.5rem] p-7">
-              <p className="font-display text-5xl text-gold">0{index + 1}</p>
-              <h2 className={`mt-8 text-charcoal ${sectionTitleClasses}`}>{moment}</h2>
+              <p className={`text-[2.75rem] text-gold sm:text-[3.25rem] ${displayFigureClasses}`}>0{index + 1}</p>
+              <h2 className={`mt-8 text-charcoal ${cardTitleClasses}`}>{moment}</h2>
             </MotionReveal>
           ))}
         </div>

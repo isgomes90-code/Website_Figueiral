@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { bodyNoteClasses, displayFigureClasses, editorialEyebrowClasses, reviewQuoteClasses } from "@/lib/sectionTitle";
 
 const experienceImages = [
   "/images/people/Convicio-clientes-1.webp",
@@ -52,17 +53,19 @@ export function Reviews({ dictionary }: { dictionary: Dictionary }) {
               className="relative flex h-full flex-col rounded-[1.6rem] border border-white/[0.16] bg-[rgba(252,247,239,0.11)] px-7 py-8 shadow-[inset_0_3px_0_0_rgba(88,96,86,0.32),inset_0_1px_0_rgba(255,249,238,0.08)] backdrop-blur-[0.5px] sm:px-8 sm:py-9"
             >
               <div className="mb-7 flex shrink-0 flex-col gap-5 border-b border-white/[0.12] pb-6 sm:mb-8">
-                <span className="max-w-[14rem] text-[0.64rem] font-semibold uppercase leading-relaxed tracking-[0.28em] text-gold/[0.78]">
+                <span className={`max-w-[14rem] leading-relaxed text-gold/[0.78] ${editorialEyebrowClasses}`}>
                   {review.source}
                 </span>
-                <span className="relative inline-flex items-center gap-3 pl-4 font-display text-[2.35rem] font-medium leading-none tracking-[-0.025em] text-cream before:absolute before:left-0 before:top-1 before:h-[2.85rem] before:w-[3px] before:rounded-full before:bg-brandGreen/55 before:content-[''] sm:text-[2.7rem]">
+                <span
+                  className={`relative inline-flex items-center gap-3 pl-4 text-[2.2rem] text-cream before:absolute before:left-0 before:top-1 before:h-[2.65rem] before:w-[3px] before:rounded-full before:bg-brandGreen/55 before:content-[''] sm:text-[2.5rem] ${displayFigureClasses}`}
+                >
                   {review.rating}
                 </span>
               </div>
-              <blockquote className="flex-1 font-display text-[1.3125rem] leading-snug tracking-[-0.01em] text-cream/[0.96] sm:text-[1.4375rem] sm:leading-[1.45]">
+              <blockquote className={`flex-1 text-cream/[0.96] ${reviewQuoteClasses}`}>
                 &ldquo;{review.quote}&rdquo;
               </blockquote>
-              <p className="mt-8 text-sm leading-relaxed text-cream/[0.72]">{review.author}</p>
+              <p className={`mt-8 text-cream/[0.72] ${bodyNoteClasses}`}>{review.author}</p>
             </MotionReveal>
           ))}
         </div>

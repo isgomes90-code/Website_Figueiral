@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { bodyNoteClasses } from "@/lib/sectionTitle";
 
 type ImageFeatureProps = {
   eyebrow: string;
@@ -68,9 +69,15 @@ export function ImageFeature(props: ImageFeatureProps) {
     <section className={`${py} ${toneClass}`}>
       <div className="section-shell grid gap-11 sm:gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16 xl:gap-[4.25rem]">
         <div className={`${reverse ? "lg:order-2 lg:pl-6 xl:pl-10" : "lg:pr-6 xl:pr-10"} ${quiet ? "lg:self-start" : ""}`}>
-          <SectionIntro eyebrow={eyebrow} title={title} body={body} eyebrowTone={eyebrowTone} />
+          <SectionIntro
+            eyebrow={eyebrow}
+            title={title}
+            body={body}
+            eyebrowTone={eyebrowTone}
+            titleScale="feature"
+          />
           {note ? (
-            <div className="mt-9 max-w-sm border-l border-brandGreen/35 pl-5 text-[0.9rem] leading-[1.75] tracking-[0.01em] text-walnut sm:mt-10 sm:text-[0.93rem] sm:leading-[1.82]">
+            <div className={`mt-9 max-w-sm border-l border-brandGreen/35 pl-5 tracking-[0.01em] text-walnut sm:mt-10 ${bodyNoteClasses}`}>
               {note}
             </div>
           ) : null}

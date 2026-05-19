@@ -22,7 +22,7 @@ export default async function GalleryPage({ params }: { params: Promise<{ lang: 
   return (
     <section className="pt-36 pb-24 sm:pt-44">
       <div className="section-shell">
-        <SectionIntro eyebrow={gallery.intro.eyebrow} title={gallery.intro.title} body={gallery.intro.body} />
+        <SectionIntro as="h1" eyebrow={gallery.intro.eyebrow} title={gallery.intro.title} body={gallery.intro.body} />
         <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3">
           {galleryImages.map((image, index) => (
             <MotionReveal key={image.src} delay={(index % 3) * 0.06} className="mb-5 break-inside-avoid overflow-hidden rounded-[1.6rem] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">

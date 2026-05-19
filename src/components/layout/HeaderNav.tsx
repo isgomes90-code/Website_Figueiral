@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
-import { navItems, figueiralLogoSrc, siteConfig } from "@/lib/site";
+import { figueiralLogoHeaderCreamSrc, figueiralLogoSrc, navItems, siteConfig } from "@/lib/site";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
@@ -196,9 +196,8 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
       ? "border-b border-transparent bg-transparent shadow-none backdrop-blur-0 backdrop-saturate-[1]"
       : "border-b border-walnut/[0.1] bg-[rgba(253,251,246,0.9)] shadow-[0_10px_40px_rgba(45,37,31,0.05)] backdrop-blur-xl backdrop-saturate-[1.05]";
 
-  const logoImageCls = useTransparentHeroTone
-    ? "object-contain object-left brightness-[1.06] contrast-[1.02] saturate-[1.02] drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)] transition-opacity duration-300 group-hover:opacity-93"
-    : "object-contain object-left drop-shadow-[0_1px_2px_rgba(58,44,34,0.08)] transition-opacity duration-300 group-hover:opacity-93";
+  const logoSrc = useTransparentHeroTone ? figueiralLogoHeaderCreamSrc : figueiralLogoSrc;
+  const logoImageCls = useTransparentHeroTone ? "header-logo-image header-logo-image--cream" : "header-logo-image header-logo-image--paper";
 
   const mobileBtnTone = useTransparentHeroTone ? "border-cream/25 text-cream bg-charcoal/[0.2]" : "border-charcoal/15 text-charcoal bg-paper/[0.75]";
 
@@ -214,16 +213,16 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
       data-header-state={headerVisible ? "visible" : "hidden"}
     >
       <div className={`relative ${shellClasses}`}>
-        <div className="header-inner relative mx-auto flex w-full max-w-[88rem] min-w-0 flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pb-4 pt-[max(0.75rem,env(safe-area-inset-top))] sm:flex-nowrap sm:px-7 sm:pb-5 sm:pt-[max(0.85rem,env(safe-area-inset-top))] lg:px-11">
-          <div className="header-logo relative z-[2] shrink-0">
-            <Link href={localizedPath(lang)} className="group inline-block" aria-label={siteConfig.name}>
-              <span className="relative block h-14 w-[7.625rem] min-[900px]:h-[4.375rem] min-[900px]:w-[10rem] xl:h-[4.75rem] xl:w-[11.25rem]">
+        <div className="header-inner relative mx-auto flex w-full max-w-[88rem] min-w-0 flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pb-4 pt-[max(0.75rem,env(safe-area-inset-top))] sm:flex-nowrap sm:items-center sm:px-7 sm:pb-5 sm:pt-[max(0.85rem,env(safe-area-inset-top))] lg:px-11">
+          <div className="header-logo relative z-[4] shrink-0 self-center">
+            <Link href={localizedPath(lang)} className="header-logo-link" aria-label={siteConfig.name}>
+              <span className="relative block h-[4.85rem] w-[11.35rem] sm:h-[5.4rem] sm:w-[12.65rem] min-[900px]:h-[5.85rem] min-[900px]:w-[13.7rem] xl:h-[6.35rem] xl:w-[14.85rem]">
                 <Image
-                  src={figueiralLogoSrc}
+                  src={logoSrc}
                   alt=""
                   fill
                   priority
-                  sizes="(max-width: 899px) 132px, (max-width: 1280px) 174px, 198px"
+                  sizes="(max-width: 899px) 182px, (max-width: 1280px) 220px, 238px"
                   className={logoImageCls}
                 />
               </span>
@@ -256,7 +255,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
           <nav
             id="site-desktop-nav"
             aria-label={navigation.ariaMain}
-            className="pointer-events-none absolute left-1/2 top-1/2 z-[1] hidden min-h-[1.5rem] w-max max-w-[min(52rem,calc(100vw-17rem))] min-w-0 -translate-x-1/2 -translate-y-1/2 xl:max-w-[min(54rem,calc(100vw-20rem))] min-[900px]:flex min-[900px]:items-center min-[900px]:justify-center"
+            className="pointer-events-none absolute left-1/2 top-1/2 z-[1] hidden min-h-[1.5rem] w-max max-w-[min(48rem,calc(100vw-26rem))] min-w-0 -translate-x-1/2 -translate-y-1/2 xl:max-w-[min(50rem,calc(100vw-32rem))] min-[900px]:flex min-[900px]:items-center min-[900px]:justify-center"
           >
             <div className="pointer-events-auto flex flex-nowrap items-center justify-center gap-x-8 min-[900px]:gap-x-[1.875rem] xl:gap-x-10 2xl:gap-x-[2.875rem]">
               {navItems.map((item) => {
@@ -275,7 +274,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
             </div>
           </nav>
 
-          <div className="header-actions relative z-[2] hidden shrink-0 min-w-[8.5rem] flex-nowrap items-center justify-end gap-x-7 min-[900px]:flex xl:gap-x-[2.375rem]">
+          <div className="header-actions relative z-[2] hidden shrink-0 min-w-[9.5rem] flex-nowrap items-center justify-end gap-x-7 min-[900px]:flex xl:min-w-[10.5rem] xl:gap-x-[2.375rem]">
             <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} inverse={useTransparentHeroTone} />
             <span className={`h-5 w-px shrink-0 ${useTransparentHeroTone ? "bg-cream/[0.32]" : "bg-walnut/25"}`} aria-hidden />
             <LuxuryButton density="headerReserve" href={reserveHref} className="whitespace-nowrap" ariaCurrent={reserveAriaPageBar}>

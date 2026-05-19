@@ -10,7 +10,15 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, localizedPath, type Locale } from "@/i18n/config";
 import { images } from "@/lib/site";
-import { editorialEyebrowClasses, sectionTitleClasses } from "@/lib/sectionTitle";
+import {
+  bodyLeadClasses,
+  displayFigureClasses,
+  editorialEyebrowClasses,
+  highlightCardTitleClasses,
+  sectionTitleClasses,
+  statementTitleClasses
+} from "@/lib/sectionTitle";
+import { imageToneEditorial } from "@/lib/imageTone";
 import { pageMetadata } from "@/lib/seo";
 
 const highlightImages = [
@@ -66,16 +74,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className={`object-cover brightness-[1.03] contrast-[0.94] saturate-[0.88] sepia-[0.06] transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 0 ? "object-[center_48%]" : index === 1 ? "object-[center_22%]" : index === 2 ? "object-[center_72%]" : "object-[center_46%]"}`}
+                    className={`object-cover ${imageToneEditorial} transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 0 ? "object-[center_48%]" : index === 1 ? "object-[center_22%]" : index === 2 ? "object-[center_72%]" : "object-[center_46%]"}`}
                     loading={index === 0 ? "eager" : "lazy"}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(252,246,238,0.05),rgba(52,41,34,0.16))]" />
                 </div>
                 <div className="flex flex-1 flex-col px-8 pb-[1.85rem] pt-7 sm:px-9 sm:pb-[2.05rem] sm:pt-8">
-                  <span className="font-display text-[1.15rem] font-medium tabular-nums tracking-[0.22em] text-brandGreen/[0.78] sm:text-[1.32rem] sm:tracking-[0.2em]">
+                  <span
+                    className={`text-[1.1rem] text-brandGreen/[0.78] tracking-[0.2em] sm:text-[1.22rem] ${displayFigureClasses}`}
+                  >
                     0{index + 1}
                   </span>
-                  <p className="mt-4 flex-1 text-[1.02rem] font-semibold leading-[1.71] tracking-[0.015em] text-walnut sm:mt-5 sm:text-[1.06rem] sm:leading-[1.76] max-sm:max-w-[22rem] max-sm:text-pretty lg:max-w-none text-balance">
+                  <p
+                    className={`mt-4 flex-1 text-walnut sm:mt-5 max-sm:max-w-[22rem] max-sm:text-pretty lg:max-w-none text-balance ${highlightCardTitleClasses}`}
+                  >
                     {item}
                   </p>
                 </div>
@@ -89,9 +101,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="section-shell">
           <MotionReveal className="mx-auto max-w-5xl text-center">
             <div className="hairline-dusk mb-[2.85rem]" />
-            <p id="home-statement" className={`${sectionTitleClasses} text-cream/[0.94]`}>
+            <h2 id="home-statement" className={`${statementTitleClasses} text-cream/[0.94]`}>
               {home.statement.text}
-            </p>
+            </h2>
             <p className="mx-auto mt-[1.75rem] max-w-2xl text-[0.73rem] font-semibold uppercase leading-[1.92] tracking-[0.4em] text-gold/[0.76] sm:mt-[2.125rem] sm:text-[0.78rem] sm:tracking-[0.38em] lg:max-w-[46rem]">
               {home.statement.caption}
             </p>
@@ -142,11 +154,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-start lg:gap-[3.25rem] xl:gap-[3.75rem]">
               <div className="order-1 max-w-xl border-l-[3px] border-brandGreen/[0.22] pl-5 sm:pl-6 lg:max-w-none lg:border-l-0 lg:pl-0">
                 <p className={`text-oliveMuted/[0.85] ${editorialEyebrowClasses}`}>{home.legacy.eyebrow}</p>
-                <p className="mt-[1.375rem] font-display text-[4.95rem] leading-none tracking-[-0.03em] text-charcoal/[0.95] sm:text-[6.85rem] sm:tracking-tight">1986</p>
+                <p className={`mt-[1.375rem] text-[4.5rem] text-charcoal/[0.95] sm:text-[6.25rem] ${displayFigureClasses}`}>1986</p>
                 <h2 className={`mt-9 max-w-[46rem] text-charcoal ${sectionTitleClasses}`}>
                   {home.legacy.title}
                 </h2>
-                <p className="mt-7 max-w-2xl text-[1rem] leading-[1.84] tracking-[0.008em] text-walnut/[0.94] sm:mt-[1.875rem] sm:text-[1.0625rem] sm:leading-[1.86] lg:text-[1.125rem]">
+                <p className={`mt-7 max-w-2xl tracking-[0.008em] text-walnut/[0.94] sm:mt-[1.875rem] ${bodyLeadClasses}`}>
                   {home.legacy.body}
                 </p>
               </div>
@@ -192,7 +204,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <h2 className={`mx-auto mt-7 max-w-[34rem] text-cream/[0.94] sm:mt-[2rem] sm:max-w-[40rem] ${sectionTitleClasses}`}>
               {home.cta.title}
             </h2>
-            <p className="mx-auto mt-8 max-w-2xl text-[1rem] leading-[1.82] tracking-[0.011em] text-cream/[0.62] sm:mt-[2.125rem] sm:text-[1.0625rem] sm:leading-[1.86] lg:max-w-[38rem] lg:text-[1.125rem]">
+            <p className={`mx-auto mt-8 max-w-2xl tracking-[0.011em] text-cream/[0.62] sm:mt-[2.125rem] lg:max-w-[38rem] ${bodyLeadClasses}`}>
               {home.cta.body}
             </p>
             <div className="mt-[2.625rem] sm:mt-[2.85rem]">

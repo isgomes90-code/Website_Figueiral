@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
-import { editorialEyebrowClasses, heroDisplayTitleClasses } from "@/lib/sectionTitle";
+import { editorialEyebrowClasses, heroDisplayTitleClasses, heroLeadClasses } from "@/lib/sectionTitle";
+import { imageToneHero } from "@/lib/imageTone";
 
 /** Narrativa: fogo → sala/mesas → vinho → hospitalidade */
 const HERO_SLIDE_SRC = [
@@ -23,10 +24,10 @@ const SLIDE_INTERVAL_MS = 6500;
 const readingOverlayStyle: CSSProperties = {
   background: `linear-gradient(
     92deg,
-    rgba(23, 18, 15, 0.76) 0%,
-    rgba(22, 19, 17, 0.52) 40%,
-    rgba(20, 22, 19, 0.21) 68%,
-    rgba(18, 16, 14, 0.055) 100%
+    rgba(20, 15, 12, 0.86) 0%,
+    rgba(21, 17, 14, 0.66) 38%,
+    rgba(20, 22, 19, 0.34) 66%,
+    rgba(18, 16, 14, 0.08) 100%
   )`
 };
 
@@ -37,9 +38,6 @@ const SLIDE_OBJECT = [
   "object-cover object-[center_38%]",
   "object-cover object-[center_42%]"
 ] as const;
-
-const slideImageTreatment =
-  "pointer-events-none brightness-[0.93] contrast-[0.96] saturate-[0.9]";
 
 export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Locale }) {
   const hero = dictionary.hero;
@@ -73,7 +71,7 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
               loading={i === 0 ? "eager" : "lazy"}
               sizes="100vw"
               quality={i === 0 ? 82 : 68}
-              className={`${SLIDE_OBJECT[i]} ${slideImageTreatment}`}
+              className={`${SLIDE_OBJECT[i]} ${imageToneHero}`}
               aria-hidden={activeSlide !== i}
             />
           </div>
@@ -84,31 +82,35 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
 
       <div className="section-shell relative z-10 flex min-h-screen items-center pt-[8.75rem] pb-32 sm:pt-36 sm:pb-36 xl:pt-32 xl:pb-44">
         <div className="w-full max-w-[54rem]">
-          <div
-            className="box-border w-full rounded-[26px] border border-white/[0.14] p-8 shadow-[0_18px_44px_rgba(12,8,6,0.18)] sm:rounded-[28px] sm:p-9"
-            style={{ backgroundColor: "rgba(22, 15, 11, 0.34)" }}
+          <p
+            className={`mb-6 text-gold sm:mb-7 ${editorialEyebrowClasses} tracking-[0.38em] sm:tracking-[0.4em]`}
+            style={{ textShadow: "0 1px 12px rgba(10, 7, 5, 0.55)" }}
           >
-            <p className={`mb-7 text-gold sm:mb-8 ${editorialEyebrowClasses} tracking-[0.38em] sm:tracking-[0.4em]`}>{hero.eyebrow}</p>
-            <h1 className={`${heroDisplayTitleClasses} text-cream`}>{hero.title}</h1>
-            <p
-              className="mt-8 max-w-[40rem] text-[1rem] leading-[1.72] text-cream/[0.92] sm:mt-9 sm:text-[1.0625rem] sm:leading-[1.78] lg:text-[1.125rem] lg:leading-[1.8]"
-              style={{
-                color: "rgba(246, 239, 230, 0.93)",
-                textShadow: "0 1px 14px rgba(12, 8, 6, 0.42)"
-              }}
+            {hero.eyebrow}
+          </p>
+          <h1
+            className={`${heroDisplayTitleClasses} text-cream`}
+            style={{ textShadow: "0 2px 32px rgba(10, 7, 5, 0.58), 0 1px 3px rgba(10, 7, 5, 0.42)" }}
+          >
+            {hero.title}
+          </h1>
+          <p
+            className={`mt-10 max-w-[38rem] text-cream/[0.9] sm:mt-12 lg:mt-14 ${heroLeadClasses}`}
+            style={{
+              textShadow: "0 1px 18px rgba(10, 7, 5, 0.62)"
+            }}
+          >
+            {hero.subtitle}
+          </p>
+          <div className="mt-11 flex flex-col gap-4 sm:mt-12 sm:flex-row">
+            <LuxuryButton href={localizedPath(lang, "/reservations")}>{hero.primaryCta}</LuxuryButton>
+            <LuxuryButton
+              href={localizedPath(lang, "/menu")}
+              variant="secondary"
+              className="border-cream/50 bg-cream/15 text-cream hover:bg-cream hover:text-charcoal"
             >
-              {hero.subtitle}
-            </p>
-            <div className="mt-11 flex flex-col gap-4 sm:mt-12 sm:flex-row">
-              <LuxuryButton href={localizedPath(lang, "/reservations")}>{hero.primaryCta}</LuxuryButton>
-              <LuxuryButton
-                href={localizedPath(lang, "/menu")}
-                variant="secondary"
-                className="border-cream/50 bg-cream/15 text-cream hover:bg-cream hover:text-charcoal"
-              >
-                {hero.secondaryCta}
-              </LuxuryButton>
-            </div>
+              {hero.secondaryCta}
+            </LuxuryButton>
           </div>
         </div>
       </div>

@@ -1,5 +1,10 @@
 import { MotionReveal } from "@/components/ui/MotionReveal";
-import { editorialEyebrowClasses, sectionTitleClasses } from "@/lib/sectionTitle";
+import {
+  bodyLeadClasses,
+  editorialEyebrowClasses,
+  titleClassesFor,
+  type TitleScale
+} from "@/lib/sectionTitle";
 
 export function SectionIntro({
   eyebrow,
@@ -7,7 +12,9 @@ export function SectionIntro({
   body,
   align = "left",
   theme = "light",
-  eyebrowTone = "gold"
+  eyebrowTone = "gold",
+  as = "h2",
+  titleScale = "section"
 }: {
   eyebrow: string;
   title: string;
@@ -17,6 +24,10 @@ export function SectionIntro({
   theme?: "light" | "dusk";
   /** `institutional`: verde oliva/seco para harmonia com o logótipo (secções claras ou escuras). */
   eyebrowTone?: "gold" | "institutional";
+  /** `h1` para título principal de página interior. */
+  as?: "h1" | "h2";
+  /** `feature` para blocos ImageFeature com título extra-generoso. */
+  titleScale?: TitleScale;
 }) {
   const dark = theme === "dusk";
 
@@ -29,15 +40,18 @@ export function SectionIntro({
         ? "text-gold/72"
         : "text-gold";
 
+  const TitleTag = as;
+  const titleClasses = titleClassesFor(titleScale, as);
+
   return (
     <MotionReveal className={align === "center" ? "mx-auto max-w-[48rem] text-center" : "max-w-[44rem]"}>
-      <p className={`mb-5 sm:mb-6 ${editorialEyebrowClasses} ${eyebrowCls}`}>{eyebrow}</p>
-      <h2 className={`${sectionTitleClasses} ${dark ? "text-cream" : "text-charcoal"}`}>
+      <p className={`mb-3 sm:mb-4 ${editorialEyebrowClasses} ${eyebrowCls}`}>{eyebrow}</p>
+      <TitleTag className={`${titleClasses} ${dark ? "text-cream" : "text-charcoal"}`}>
         {title}
-      </h2>
+      </TitleTag>
       {body ? (
         <p
-          className={`mt-6 max-w-[38rem] text-pretty text-[1rem] leading-[1.74] sm:mt-7 sm:text-[1.0625rem] sm:leading-[1.78] lg:text-[1.125rem] lg:leading-[1.8] ${dark ? "text-cream/88" : "text-walnut"} ${
+          className={`mt-8 max-w-[36rem] sm:mt-9 lg:mt-10 ${bodyLeadClasses} ${dark ? "text-cream/88" : "text-walnut"} ${
             align === "center" ? "mx-auto" : ""
           }`}
         >

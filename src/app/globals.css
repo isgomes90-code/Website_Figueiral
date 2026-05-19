@@ -62,6 +62,177 @@ a {
   text-wrap: balance;
 }
 
+/**
+ * Tipografia editorial — tamanhos explícitos em CSS (não dependem de utilities Tailwind
+ * nem de font-size:inherit do preflight em h1–h6).
+ */
+.type-hero-title {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(2.75rem, 1.4rem + 4.2vw, 6.5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.type-page-title {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(2.35rem, 1.1rem + 2.8vw, 4.55rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.026em;
+  text-wrap: balance;
+}
+
+.type-section-title {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(2.1rem, 0.95rem + 2.4vw, 4rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.024em;
+  text-wrap: balance;
+}
+
+.type-feature-title {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(2.35rem, 1.15rem + 2.65vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.026em;
+  text-wrap: balance;
+}
+
+.type-statement-title {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(2.15rem, 1rem + 2.35vw, 4rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+
+.type-card-title {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.5rem, 0.55rem + 1.35vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.014em;
+  text-wrap: balance;
+}
+
+.type-eyebrow {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .type-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.34em;
+  }
+}
+
+.type-body-lead {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.74;
+  text-wrap: pretty;
+}
+
+@media (min-width: 640px) {
+  .type-body-lead {
+    font-size: 1.05rem;
+    line-height: 1.78;
+  }
+}
+
+.type-hero-lead {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+@media (min-width: 640px) {
+  .type-hero-lead {
+    font-size: 1.03rem;
+    line-height: 1.76;
+  }
+}
+
+.type-body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.74;
+}
+
+@media (min-width: 640px) {
+  .type-body {
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+}
+
+.type-note {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/** Logótipo no header — leitura sobre hero escuro e presença em modo paper. */
+.header-logo-link {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.35s ease;
+}
+
+.header-logo-link:hover {
+  opacity: 0.92;
+}
+
+.header-logo-image {
+  object-fit: contain;
+  object-position: left center;
+}
+
+.header-logo-image--cream {
+  filter: drop-shadow(0 3px 28px rgba(8, 6, 5, 0.55));
+}
+
+.header-logo-image--paper {
+  filter: drop-shadow(0 2px 10px rgba(58, 44, 34, 0.12));
+}
+
+/** Texto sobre fotografias escuras (menu hero, overlays). */
+.menu-photo-copy {
+  text-shadow: 0 1px 14px rgba(12, 8, 6, 0.48);
+}
+
+.menu-photo-copy .menu-photo-eyebrow {
+  color: rgba(248, 243, 236, 0.82);
+}
+
+.menu-photo-copy .menu-photo-title {
+  color: #f8f3ec;
+}
+
+.menu-photo-copy .menu-photo-body {
+  color: rgba(248, 243, 236, 0.9);
+}
+
+@media (min-width: 640px) {
+  .type-note {
+    font-size: 0.93rem;
+    line-height: 1.74;
+  }
+}
+
 .grain {
   position: relative;
 }

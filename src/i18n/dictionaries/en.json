@@ -5,7 +5,7 @@
     "pages": {
       "about": {
         "title": "About | Family Restaurant Since 1986 in Almancil",
-        "description": "Learn the story of Restaurante Figueiral, a family restaurant in Almancil serving premium hospitality in the Algarve since 1986."
+        "description": "Learn the story of Restaurante Figueiral, a family restaurant in Almancil serving premium hospitality in the Algarve since 1986, including the press archive."
       },
       "menu": {
         "title": "Menu | Restaurante Figueiral Almancil",
@@ -165,7 +165,21 @@
         "title": "Algarve atmosphere",
         "body": "Mediterranean ease, evening light and an elegant relaxed rhythm in Almancil."
       }
-    ]
+    ],
+    "press": {
+      "intro": {
+        "eyebrow": "Press",
+        "title": "An editorial archive for a restaurant with a long Algarve story.",
+        "body": "A curated space for future press mentions, scanned magazine articles, restaurant guides and archive pieces connected to Figueiral's reputation since 1986."
+      },
+      "cards": [
+        "Future magazine features",
+        "Restaurant guides and awards",
+        "Scanned articles and archive pieces"
+      ],
+      "archive": "Archive",
+      "cardBody": "Reserved for carefully selected press material, presented with restraint and editorial clarity."
+    }
   },
   "menu": {
     "intro": {
@@ -339,20 +353,6 @@
       "title": "Cinematic moments from the table, the terrace and the glow of an Algarve evening.",
       "body": "A visual expression of premium Mediterranean hospitality: fire, wine, atmosphere and generous service."
     }
-  },
-  "press": {
-    "intro": {
-      "eyebrow": "Press",
-      "title": "An editorial archive for a restaurant with a long Algarve story.",
-      "body": "A curated space for future press mentions, scanned magazine articles, restaurant guides and archive pieces connected to Figueiral's reputation since 1986."
-    },
-    "cards": [
-      "Future magazine features",
-      "Restaurant guides and awards",
-      "Scanned articles and archive pieces"
-    ],
-    "archive": "Archive",
-    "cardBody": "Reserved for carefully selected press material, presented with restraint and editorial clarity."
   },
   "reservations": {
     "intro": {

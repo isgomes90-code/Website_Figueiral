@@ -10,8 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/gallery",
     "/reservations",
-    "/contact",
-    "/press"
+    "/contact"
   ];
 
   return locales.flatMap((locale) => routes.map((route) => ({
