@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { categoryVisuals, interludeImages, menuHeroImage } from "@/data/menu";
+import { categoryVisuals, menuAtTableImage, menuHeroImage } from "@/data/menu";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, localizedPath, type Locale } from "@/i18n/config";
 import { breadcrumbSchema, menuSchema, pageMetadata } from "@/lib/seo";
@@ -16,6 +16,10 @@ import {
   sectionTitleClasses
 } from "@/lib/sectionTitle";
 import { imageToneMenu, imageToneMenuRich } from "@/lib/imageTone";
+
+/** Miniaturas sobre a foto — tamanho uniforme; ocultas abaixo de `sm` para não comprimir mobile */
+const menuCategoryMiniShell =
+  "absolute right-4 top-4 z-[2] hidden h-[8.25rem] w-[7.25rem] overflow-hidden rounded-[1.05rem] border-2 border-cream/80 shadow-[0_22px_56px_rgba(82,58,39,0.32)] sm:right-5 sm:top-5 sm:block sm:h-[9.5rem] sm:w-[8.25rem] lg:right-6 lg:top-6 lg:h-[10.5rem] lg:w-[9.25rem]";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -79,14 +83,46 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                 <p className={`menu-photo-body mt-4 max-w-sm ${bodyNoteClasses}`}>{menu.hero.body}</p>
               </div>
             </div>
-            <div className="absolute -bottom-6 right-6 hidden max-w-[18rem] rounded-[1.25rem] border border-walnut/10 bg-cream/90 p-5 shadow-[0_24px_70px_rgba(82,58,39,0.15)] sm:block">
-              <p className={`text-charcoal ${cardTitleClasses}`}>{menu.hero.note}</p>
-            </div>
           </MotionReveal>
         </div>
 
+        {menu.interludes[0] ? (
+          <MotionReveal delay={0.06} className="mx-auto mt-24 max-w-5xl sm:mt-32">
+            <div className="grid overflow-hidden rounded-[1.8rem] border border-walnut/10 bg-sand/55 shadow-[0_22px_70px_rgba(82,58,39,0.1)] md:grid-cols-[0.92fr_1.08fr]">
+              <div className="relative min-h-[15rem]">
+                <Image
+                  src={menuAtTableImage}
+                  alt={img.menuInterludes[0] ?? ""}
+                  fill
+                  sizes="(min-width: 768px) 42vw, 100vw"
+                  className={`object-cover ${imageToneMenu}`}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/24 to-transparent" />
+              </div>
+              <div className="p-7 sm:p-9">
+                <p className={`text-gold ${editorialEyebrowClasses}`}>02 · {menu.interludes[0].eyebrow}</p>
+                <h2 className={`mt-4 text-charcoal ${cardTitleClasses}`}>{menu.interludes[0].title}</h2>
+                <p className={`mt-5 text-walnut ${bodyTextClasses}`}>{menu.interludes[0].body}</p>
+              </div>
+            </div>
+          </MotionReveal>
+        ) : null}
+
         <div className="mt-24 grid gap-14 sm:mt-32">
-          {menu.categories.map((category, index) => (
+          {menu.categories.map((category, index) => {
+            const sectionNumber = index + 3;
+            const visual = categoryVisuals[index];
+            const isCompact = "compact" in visual && visual.compact;
+            const hasMini = Boolean(visual.mini);
+            const showEditorial = !("hideEditorial" in visual && visual.hideEditorial);
+            const asideMinHeight =
+              hasMini && showEditorial
+                ? "min-h-[16.5rem] sm:min-h-[20rem] lg:min-h-[22rem]"
+                : isCompact
+                  ? "min-h-[14rem] sm:min-h-[15rem] lg:min-h-[18rem]"
+                  : "min-h-[14rem] sm:min-h-[15rem] lg:min-h-[22rem]";
+            return (
             <div key={category.title} className="grid gap-12">
               <MotionReveal
                 delay={index * 0.06}
@@ -94,53 +130,75 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                   index % 2 === 1 ? "lg:ml-10" : "lg:mr-10"
                 }`}
               >
-                <div className={`grid gap-0 lg:grid-cols-[0.78fr_1.22fr] ${index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                  <aside className="relative min-h-[22rem] overflow-hidden bg-sand/60 p-7 sm:p-9">
+                <div
+                  className={`grid gap-0 lg:grid-cols-[0.78fr_1.22fr] ${index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
+                >
+                  <aside
+                    className={`relative overflow-hidden bg-sand/60 ${asideMinHeight} ${isCompact ? "p-5 sm:p-6" : "p-7 sm:p-9"}`}
+                  >
                     <Image
-                      src={categoryVisuals[index].image}
+                      src={visual.image}
                       alt={img.menuCategories[index] ?? ""}
                       fill
                       sizes="(min-width: 1024px) 34vw, 100vw"
-                      className={`object-cover ${imageToneMenuRich}`}
+                      className={`object-cover ${
+                        "imageTone" in visual && visual.imageTone
+                          ? visual.imageTone
+                          : imageToneMenuRich
+                      } ${
+                        "imagePosition" in visual && visual.imagePosition ? visual.imagePosition : "object-center"
+                      }`}
+                      quality={82}
                     />
-                    <div className="absolute inset-0" style={{ background: categoryVisuals[index].overlay }} />
-                    <div className="absolute inset-x-7 bottom-7 sm:inset-x-9 sm:bottom-9">
-                      <div className="max-w-xs rounded-[1.2rem] border border-cream/45 bg-cream/85 p-5 shadow-[0_18px_55px_rgba(82,58,39,0.14)]">
+                    <div className="absolute inset-0" style={{ background: visual.overlay }} />
+                    {"hideEditorial" in visual && visual.hideEditorial ? null : (
+                    <div className={`absolute inset-x-7 bottom-7 sm:inset-x-9 sm:bottom-9 ${isCompact ? "!inset-x-5 !bottom-5 sm:!inset-x-6 sm:!bottom-6" : ""}`}>
+                      <div className={`max-w-xs rounded-[1.2rem] border border-cream/45 bg-cream/85 shadow-[0_18px_55px_rgba(82,58,39,0.14)] ${isCompact ? "p-4" : "p-5"}`}>
                         <p className={`text-gold ${editorialEyebrowClasses}`}>{category.editorial.label}</p>
-                        <p className={`mt-3 text-charcoal ${cardTitleClasses}`}>{category.editorial.value}</p>
-                        <p className={`mt-4 text-walnut ${bodyNoteClasses}`}>{category.editorial.note}</p>
+                        <p className={`mt-2 text-charcoal ${isCompact ? "text-[1.35rem] leading-snug" : cardTitleClasses}`}>{category.editorial.value}</p>
+                        <p className={`mt-3 text-walnut ${isCompact ? "text-[0.88rem] leading-relaxed" : bodyNoteClasses}`}>{category.editorial.note}</p>
                       </div>
                     </div>
-                    {categoryVisuals[index].mini ? (
-                      <div className="absolute right-6 top-6 hidden h-28 w-24 overflow-hidden rounded-[0.9rem] border border-cream/60 shadow-[0_18px_48px_rgba(82,58,39,0.22)] sm:block">
-                        <Image src={categoryVisuals[index].mini} alt="" fill sizes="96px" className="object-cover" aria-hidden />
+                    )}
+                    {visual.mini ? (
+                      <div className={menuCategoryMiniShell}>
+                        <Image
+                          src={visual.mini}
+                          alt=""
+                          fill
+                          sizes="(min-width: 1024px) 148px, 132px"
+                          className="object-cover"
+                          aria-hidden
+                        />
                       </div>
                     ) : null}
                   </aside>
 
-                  <div className="p-7 sm:p-9 lg:p-11">
-                    <div className="max-w-xl">
-                      <p className={`text-gold ${editorialEyebrowClasses}`}>0{index + 1}</p>
-                      <h2 className={`mt-4 text-charcoal ${sectionTitleClasses}`}>{category.title}</h2>
-                      <p className={`mt-5 max-w-lg text-walnut ${bodyTextClasses}`}>{category.description}</p>
+                  <div className={isCompact ? "p-6 sm:p-7 lg:p-8" : "p-7 sm:p-9 lg:p-11"}>
+                    <div className="w-full">
+                      <p className={`text-gold ${editorialEyebrowClasses}`}>0{sectionNumber}</p>
+                      <h2 className={`mt-3 text-charcoal ${isCompact ? "text-[clamp(1.85rem,1.2rem+1.6vw,2.65rem)] font-display font-semibold leading-[1.08] tracking-[-0.02em]" : sectionTitleClasses}`}>
+                        {category.title}
+                      </h2>
+                      <p className={`mt-3 text-walnut ${isCompact ? "text-[0.96rem] leading-[1.68]" : bodyTextClasses}`}>{category.description}</p>
                     </div>
 
-                    <div className="mt-10 divide-y divide-walnut/10">
+                    <div className={`w-full divide-y divide-walnut/10 ${isCompact ? "mt-6" : "mt-10"}`}>
                       {category.items.map((item) => {
                         const priced = item as typeof item & {
                           prices?: { label: string; value: string }[];
                           priceNote?: string;
                         };
                         return (
-                          <article key={item.name} className="group py-7 first:pt-0 last:pb-0">
-                            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                          <article key={item.name} className={`group ${isCompact ? "py-4 first:pt-0 last:pb-0 sm:py-[1.125rem]" : "py-7 first:pt-0 last:pb-0"}`}>
+                            <div className={`flex flex-col sm:flex-row sm:items-start sm:justify-between ${isCompact ? "gap-3 sm:gap-4" : "gap-4 sm:gap-6"}`}>
                               <div className="min-w-0 flex-1">
-                                <h3 className={`text-charcoal transition group-hover:text-gold ${cardTitleClasses}`}>
+                                <h3 className={`text-charcoal transition group-hover:text-gold ${isCompact ? "text-[1.28rem] font-display font-semibold leading-snug tracking-[-0.01em]" : cardTitleClasses}`}>
                                   {item.name}
                                 </h3>
-                                <p className={`mt-3 max-w-xl text-walnut ${bodyTextClasses}`}>{item.description}</p>
+                                <p className={`text-pretty text-walnut ${isCompact ? "mt-2 text-[0.94rem] leading-[1.62]" : `mt-3 ${bodyTextClasses}`}`}>{item.description}</p>
                                 {priced.prices && priced.prices.length ? (
-                                  <div className="mt-5 max-w-md space-y-2">
+                                  <div className={`w-full max-w-[28rem] space-y-1.5 sm:max-w-[32rem] ${isCompact ? "mt-3" : "mt-5"}`}>
                                     {priced.prices.map((p) => (
                                       <div key={p.label} className="flex items-baseline gap-3">
                                         <span className={`shrink-0 text-walnut/85 ${bodyNoteClasses}`}>{p.label}</span>
@@ -149,7 +207,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                                       </div>
                                     ))}
                                     {priced.priceNote ? (
-                                      <p className="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-walnut/65">
+                                      <p className={`font-semibold uppercase tracking-[0.24em] text-walnut/65 ${isCompact ? "mt-2 text-[0.62rem]" : "mt-3 text-[0.68rem]"}`}>
                                         {priced.priceNote}
                                       </p>
                                     ) : null}
@@ -157,11 +215,11 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                                 ) : null}
                               </div>
                               {item.tag ? (
-                                <span className="w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-gold">
+                                <span className={`w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 font-semibold uppercase tracking-[0.22em] text-gold ${isCompact ? "px-3 py-1 text-[0.58rem]" : "px-3.5 py-1.5 text-[0.62rem]"}`}>
                                   {item.tag}
                                 </span>
                               ) : item.highlight ? (
-                                <span className="w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-gold">
+                                <span className={`w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 font-semibold uppercase tracking-[0.22em] text-gold ${isCompact ? "px-3 py-1 text-[0.58rem]" : "px-3.5 py-1.5 text-[0.62rem]"}`}>
                                   {menu.signature}
                                 </span>
                               ) : null}
@@ -173,30 +231,9 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                   </div>
                 </div>
               </MotionReveal>
-
-              {menu.interludes[index] ? (
-                <MotionReveal delay={0.08} className="mx-auto max-w-5xl">
-                  <div className="grid overflow-hidden rounded-[1.8rem] border border-walnut/10 bg-sand/55 shadow-[0_22px_70px_rgba(82,58,39,0.1)] md:grid-cols-[0.92fr_1.08fr]">
-                    <div className="relative min-h-[15rem]">
-                      <Image
-                        src={interludeImages[index]}
-                        alt={img.menuInterludes[index] ?? ""}
-                        fill
-                        sizes="(min-width: 768px) 42vw, 100vw"
-                        className={`object-cover ${imageToneMenu}`}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/24 to-transparent" />
-                    </div>
-                    <div className="p-7 sm:p-9">
-                      <p className={`text-gold ${editorialEyebrowClasses}`}>{menu.interludes[index].eyebrow}</p>
-                      <h3 className={`mt-4 text-charcoal ${cardTitleClasses}`}>{menu.interludes[index].title}</h3>
-                      <p className={`mt-5 max-w-xl text-walnut ${bodyTextClasses}`}>{menu.interludes[index].body}</p>
-                    </div>
-                  </div>
-                </MotionReveal>
-              ) : null}
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

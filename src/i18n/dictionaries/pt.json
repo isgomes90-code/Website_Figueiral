@@ -101,16 +101,12 @@
       "aboutReception": "Receção de clientes no Restaurante Figueiral",
       "menuHero": "Preparação de picanha no Restaurante Figueiral em Almancil",
       "menuCategories": [
+        "Entradas de camarão no Restaurante Figueiral",
         "Carne grelhada no Restaurante Figueiral Almancil",
-        "Peixe fresco do Algarve no Restaurante Figueiral",
-        "Entradas para partilhar no Restaurante Figueiral",
+        "Empratamento no Restaurante Figueiral Almancil",
         "Sobremesas da casa no Restaurante Figueiral"
       ],
-      "menuInterludes": [
-        "Camarão ao alho na grelha do Restaurante Figueiral",
-        "Garrafeira de vinhos no Restaurante Figueiral Almancil",
-        "Empratamento na cozinha do Restaurante Figueiral"
-      ],
+      "menuInterludes": ["Convívio à mesa no Restaurante Figueiral Almancil"],
       "wineCellar": "Garrafeira do Restaurante Figueiral em Almancil",
       "wineDetail": "Detalhe de vinho português no Restaurante Figueiral",
       "reviews": "Clientes à mesa no Restaurante Figueiral Almancil",
@@ -252,7 +248,28 @@
     "feature": {
       "eyebrow": "Mesa e equipa",
       "title": "O segredo de uma boa casa está na mesa e na equipa.",
-      "body": "Quem nos visita há mais tempo já conhece os rostos que nos acompanham no serviço. Atender bem não é teatro: é memória — saber quando alguém prefere a mesa habitual, quando a noite pede mais tempo, quando a criança precisa de um prato simples. A dedicação de cada um permite que a cozinha surpreenda sem perder a consistência."
+      "body": "Quem nos visita há mais tempo já conhece os rostos que nos acompanham no serviço. Atender bem não é teatro: é memória — saber quando alguém prefere a mesa habitual, quando a noite pede mais tempo, quando a criança precisa de um prato simples. A dedicação de cada um permite que a cozinha surpreenda sem perder a consistência.",
+      "facesAltSuffix": "Restaurante Figueiral Almancil",
+      "faces": [
+        {
+          "name": "Olivia",
+          "role": "Responsável de Sala",
+          "quote": "Presença discreta, memória de clientes e atenção ao detalhe.",
+          "image": "/images/people/Olivia.webp"
+        },
+        {
+          "name": "Eraldo",
+          "role": "Chefe de Picanha",
+          "quote": "O ritmo da grelha, servido com precisão e consistência.",
+          "image": "/images/people/Eraldo.jpg"
+        },
+        {
+          "name": "Ivonaldo",
+          "role": "Sub-chefe de Picanha",
+          "quote": "Fogo, preparação e continuidade de uma tradição da casa.",
+          "image": "/images/people/Ivonaldo.webp"
+        }
+      ]
     },
     "cards": [
       {
@@ -302,22 +319,41 @@
     "signature": "Assinatura",
     "interludes": [
       {
-        "eyebrow": "Na grelha",
-        "title": "Brasa, repouso e carne servida no ponto certo.",
-        "body": "A grelha dá sabor e crosta; o repouso dá suco. É o trabalho de cada noite — simples, repetido, bem feito."
-      },
-      {
         "eyebrow": "À mesa",
         "title": "Pão quente, garrafa aberta e pratos a partilhar.",
         "body": "O jantar ganha outro ritmo quando a mesa fica cheia de pratos no meio e a conversa deixa de ter hora para acabar."
-      },
-      {
-        "eyebrow": "Final doce",
-        "title": "Um doce para fechar — ou para prolongar mais um bocado.",
-        "body": "Sobremesas que muitos clientes conhecem de memória, servidas sem pressa, muitas vezes com um copo pequeno no fim."
       }
     ],
     "categories": [
+      {
+        "title": "Para Começar",
+        "description": "Para abrir a mesa: pão quente, azeite, enchidos, legumes — o primeiro gesto antes da grelha.",
+        "editorial": {
+          "label": "À chegada",
+          "value": "Partilha",
+          "note": "Entradas para pôr conversa e apetite a andar ao mesmo tempo."
+        },
+        "items": [
+          {
+            "name": "Camarão com alho",
+            "description": "Camarão quente em alho e azeite, com lume na frigideira — um dos pratos que mais pedem para dividir.",
+            "highlight": false,
+            "tag": "Most Ordered"
+          },
+          {
+            "name": "Queijo de cabra com maçã, mel e nozes",
+            "description": "Queijo de cabra cremoso com maçã, mel e nozes — doce e salgado para abrir a mesa em boa conversa.",
+            "highlight": false,
+            "tag": ""
+          },
+          {
+            "name": "Salmão fumado com queijo fresco",
+            "description": "Salmão fumado com queijo fresco — leve, directo, ideal para partilhar antes da grelha.",
+            "highlight": false,
+            "tag": ""
+          }
+        ]
+      },
       {
         "title": "Carne Assinatura",
         "description": "Cortes para a grelha, molhos quentes e acompanhamentos que fazem sentido à mesa — com a picanha ao centro, como há muitos anos.",
@@ -331,7 +367,7 @@
             "name": "Picanha ao Estilo Brasileiro",
             "description": "A estrela da carta: grelhada no fogo, fatiada à mesa, servida com os acompanhamentos clássicos que os habitués conhecem de cor.",
             "highlight": true,
-            "tag": "Since 1986",
+            "tag": "Since 2000",
             "prices": [
               { "label": "Dose (até 350g)", "value": "38€" },
               { "label": "À descrição", "value": "80€" }
@@ -339,14 +375,14 @@
             "priceNote": "(preço por pessoa)"
           },
           {
-            "name": "Ribeye Maturado",
-            "description": "Corte com marmoreio, sal na grelha, crosta marcada e molho da casa — para quem quer carne com presença.",
+            "name": "Chateaubriand na pedra",
+            "description": "A ponta do Filet Mignon servida na pedra quente — mantém o calor à mesa e convida a partilhar.",
             "highlight": false,
             "tag": "Chef Selection"
           },
           {
-            "name": "Filet Mignon",
-            "description": "Tenro, limpo, legumes da estação e molho quente — um clássico de mesa sem complicações.",
+            "name": "Tornedó com molho Queijo Roquefort",
+            "description": "Bife tenro com molho cremoso de queijo Roquefort — um clássico de mesa para quem gosta de carne com sabor marcado.",
             "highlight": false,
             "tag": ""
           }
@@ -368,45 +404,16 @@
             "tag": "Seasonal"
           },
           {
-            "name": "Camarão ao Alho",
-            "description": "Camarão quente em alho e azeite, com lume na frigideira — um dos pratos que mais pedem para dividir.",
+            "name": "Linguado com camarão",
+            "description": "Linguado fresco com camarão — leve, directo, típico do Algarve.",
             "highlight": false,
             "tag": "Most Ordered"
           },
           {
-            "name": "Peixe do Mercado",
-            "description": "O que chegou bem hoje, cozinhado de forma simples — depende do mar, como deve ser.",
+            "name": "Filete de robalo com mostarda",
+            "description": "Filete de robalo com molho de mostarda — um clássico da casa, suave e com personalidade.",
             "highlight": false,
             "tag": ""
-          }
-        ]
-      },
-      {
-        "title": "Para Começar",
-        "description": "Para abrir a mesa: pão quente, azeite, enchidos, legumes — o primeiro gesto antes da grelha.",
-        "editorial": {
-          "label": "À chegada",
-          "value": "Partilha",
-          "note": "Entradas para pôr conversa e apetite a andar ao mesmo tempo."
-        },
-        "items": [
-          {
-            "name": "Enchidos Curados e Pão Quente",
-            "description": "Enchidos portugueses, pão acabado de sair do forno, azeite e conservas da casa — o começo clássico.",
-            "highlight": false,
-            "tag": ""
-          },
-          {
-            "name": "Burrata com Tomate Assado",
-            "description": "Burrata cremosa, tomate assado lento, manjericão fresco — leve antes da carne ou do peixe.",
-            "highlight": false,
-            "tag": "Seasonal"
-          },
-          {
-            "name": "Legumes Assados no Fogo",
-            "description": "Legumes da estação na brasa, iogurte fumado e ervas — vegetal com sabor de grelha.",
-            "highlight": false,
-            "tag": "Chef Selection"
           }
         ]
       },
@@ -426,14 +433,14 @@
             "tag": ""
           },
           {
-            "name": "Chocolate e Vinho do Porto",
-            "description": "Chocolate negro em camadas, um fio de vinho do Porto — para quem ainda tem espaço.",
+            "name": "Profiteroles",
+            "description": "Profiteroles recheados com cobertura de chocolate — leves, indulgentes, um clássico que muitos habitués pedem.",
             "highlight": false,
             "tag": "Most Ordered"
           },
           {
-            "name": "Tarte de Amêndoa do Algarve",
-            "description": "Tarte quente de amêndoa algarvia, creme de baunilha — doce de casa, servido quente.",
+            "name": "Tarte de maçã",
+            "description": "Tarte quente de maçã, servida com calma — doce de casa que fecha a noite bem.",
             "highlight": false,
             "tag": "Since 1986"
           }

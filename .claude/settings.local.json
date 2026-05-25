@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npx next lint 2>&1 | Select-Object -First 40)",
+      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -First 30; Write-Output \"exit:$LASTEXITCODE\")",
+      "PowerShell(npx next lint --dir src 2>&1 | Select-Object -Last 8)",
+      "PowerShell(npm install *)",
+      "Skill(frontend-design)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/pt)",
+      "Bash(npm run *)",
+      "Bash(echo \"started, pid $!\")",
+      "Bash(node .shots.mjs)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/pt)",
+      "Bash(curl -s -o /dev/null -w \"footer/reviews check: %{http_code}\\\\n\" http://localhost:3000/pt)",
+      "Bash(node .shot2.mjs)",
+      "Bash(node *)",
+      "Bash(Select-String -NotMatch \"node_modules\")",
+      "Bash(Select-Object -First 200)",
+      "PowerShell(git ls-files | Where-Object { $_ -notmatch \"node_modules\" })",
+      "PowerShell(Test-NetConnection *)",
+      "PowerShell(Get-NetTCPConnection *)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000__TRACKED_VAR__)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/pt)",
+      "Bash(echo \"status /pt: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/pt\\)\")",
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")"
+    ]
+  }
+}

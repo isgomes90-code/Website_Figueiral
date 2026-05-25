@@ -101,16 +101,12 @@
       "aboutReception": "Guest reception at Restaurante Figueiral",
       "menuHero": "Picanha preparation at Restaurante Figueiral in Almancil",
       "menuCategories": [
+        "Prawn starters at Restaurante Figueiral",
         "Grilled meat at Restaurante Figueiral Almancil",
-        "Fresh Algarve fish at Restaurante Figueiral",
-        "Sharing starters at Restaurante Figueiral",
+        "Plating at Restaurante Figueiral Almancil",
         "House desserts at Restaurante Figueiral"
       ],
-      "menuInterludes": [
-        "Garlic prawns on the grill at Restaurante Figueiral",
-        "Wine cellar at Restaurante Figueiral Almancil",
-        "Plating in the kitchen at Restaurante Figueiral"
-      ],
+      "menuInterludes": ["Dining together at Restaurante Figueiral Almancil"],
       "wineCellar": "Wine cellar at Restaurante Figueiral in Almancil",
       "wineDetail": "Portuguese wine detail at Restaurante Figueiral",
       "reviews": "Guests at the table at Restaurante Figueiral Almancil",
@@ -252,7 +248,28 @@
     "feature": {
       "eyebrow": "Table and team",
       "title": "The secret of a good house is the table and the team.",
-      "body": "Guests who have been coming for years already know the faces on the floor. Looking after people well is not theatre: it is memory — knowing when someone prefers their usual table, when the evening needs more time, when a child needs something simple. The dedication of each person lets the kitchen surprise without losing consistency."
+      "body": "Guests who have been coming for years already know the faces on the floor. Looking after people well is not theatre: it is memory — knowing when someone prefers their usual table, when the evening needs more time, when a child needs something simple. The dedication of each person lets the kitchen surprise without losing consistency.",
+      "facesAltSuffix": "Restaurante Figueiral Almancil",
+      "faces": [
+        {
+          "name": "Olivia",
+          "role": "Dining Room Lead",
+          "quote": "A discreet presence, guest memory and attention to detail.",
+          "image": "/images/people/Olivia.webp"
+        },
+        {
+          "name": "Eraldo",
+          "role": "Head of Picanha",
+          "quote": "The rhythm of the grill, served with precision and consistency.",
+          "image": "/images/people/Eraldo.jpg"
+        },
+        {
+          "name": "Ivonaldo",
+          "role": "Picanha Sous Chef",
+          "quote": "Fire, preparation and the continuity of a house tradition.",
+          "image": "/images/people/Ivonaldo.webp"
+        }
+      ]
     },
     "cards": [
       {
@@ -302,22 +319,41 @@
     "signature": "Signature",
     "interludes": [
       {
-        "eyebrow": "At the grill",
-        "title": "Embers, rest and meat served at the right moment.",
-        "body": "The grill gives flavour and crust; rest gives juice. It is the work of every night — simple, repeated, done well."
-      },
-      {
         "eyebrow": "At the table",
         "title": "Warm bread, an open bottle and dishes to share.",
         "body": "Dinner finds another rhythm when the table fills with plates in the middle and conversation loses its closing time."
-      },
-      {
-        "eyebrow": "A sweet finish",
-        "title": "Something sweet to close — or to stay a little longer.",
-        "body": "Desserts many guests know by memory, served without hurry, often with a small glass at the end."
       }
     ],
     "categories": [
+      {
+        "title": "To Begin",
+        "description": "To open the table: warm bread, olive oil, cured meats, vegetables — the first gesture before the grill.",
+        "editorial": {
+          "label": "Opening",
+          "value": "Sharing",
+          "note": "Starters to get conversation and appetite moving together."
+        },
+        "items": [
+          {
+            "name": "Garlic Prawns",
+            "description": "Hot prawns in garlic and olive oil, flame in the pan — one of the dishes most often ordered to share.",
+            "highlight": false,
+            "tag": "Most Ordered"
+          },
+          {
+            "name": "Goat's Cheese with Apple, Honey and Walnuts",
+            "description": "Creamy goat's cheese with apple, honey and walnuts — sweet and savoury to open the table in good conversation.",
+            "highlight": false,
+            "tag": ""
+          },
+          {
+            "name": "Smoked Salmon with Fresh Cheese",
+            "description": "Smoked salmon with fresh cheese — light, direct, ideal to share before the grill.",
+            "highlight": false,
+            "tag": ""
+          }
+        ]
+      },
       {
         "title": "Signature Meat",
         "description": "Cuts for the grill, warm sauces and sides that belong at the table — with picanha at the centre, as it has been for many years.",
@@ -331,7 +367,7 @@
             "name": "Brazilian-Style Picanha",
             "description": "The star of the menu: grilled over fire, sliced at the table, served with the classic sides regulars know by heart.",
             "highlight": true,
-            "tag": "Since 1986",
+            "tag": "Since 2000",
             "prices": [
               { "label": "Per portion (up to 350g)", "value": "€38" },
               { "label": "Unlimited", "value": "€80" }
@@ -339,14 +375,14 @@
             "priceNote": "(per person)"
           },
           {
-            "name": "Matured Ribeye",
-            "description": "A marbled cut, salt on the grill, a marked crust and house sauce — for those who want meat with presence.",
+            "name": "Chateaubriand on the Stone",
+            "description": "The tip of the fillet mignon served on a hot stone — keeps its heat at the table and invites sharing.",
             "highlight": false,
             "tag": "Chef Selection"
           },
           {
-            "name": "Filet Mignon",
-            "description": "Tender, clean, seasonal vegetables and warm sauce — a table classic without fuss.",
+            "name": "Tournedos with Roquefort Cheese Sauce",
+            "description": "Tender beef with a creamy Roquefort cheese sauce — a table classic for those who like their meat with bold flavour.",
             "highlight": false,
             "tag": ""
           }
@@ -368,45 +404,16 @@
             "tag": "Seasonal"
           },
           {
-            "name": "Garlic Prawns",
-            "description": "Hot prawns in garlic and olive oil, flame in the pan — one of the dishes most often ordered to share.",
+            "name": "Sole with Prawns",
+            "description": "Fresh sole with prawns — light, direct, typical of the Algarve.",
             "highlight": false,
             "tag": "Most Ordered"
           },
           {
-            "name": "Seasonal Market Fish",
-            "description": "What arrived well today, cooked simply — it depends on the sea, as it should.",
+            "name": "Sea Bass Fillet with Mustard",
+            "description": "Sea bass fillet with mustard sauce — a house classic, gently tangy and full of character.",
             "highlight": false,
             "tag": ""
-          }
-        ]
-      },
-      {
-        "title": "To Begin",
-        "description": "To open the table: warm bread, olive oil, cured meats, vegetables — the first gesture before the grill.",
-        "editorial": {
-          "label": "Opening",
-          "value": "Sharing",
-          "note": "Starters to get conversation and appetite moving together."
-        },
-        "items": [
-          {
-            "name": "Cured Meats & Warm Bread",
-            "description": "Portuguese cured meats, bread straight from the oven, olive oil and house preserves — the classic start.",
-            "highlight": false,
-            "tag": ""
-          },
-          {
-            "name": "Burrata with Roasted Tomatoes",
-            "description": "Creamy burrata, slow-roasted tomatoes, fresh basil — light before the meat or fish.",
-            "highlight": false,
-            "tag": "Seasonal"
-          },
-          {
-            "name": "Fire-Roasted Vegetables",
-            "description": "Seasonal vegetables on the embers, smoked yoghurt and herbs — vegetable with the taste of the grill.",
-            "highlight": false,
-            "tag": "Chef Selection"
           }
         ]
       },
@@ -426,14 +433,14 @@
             "tag": ""
           },
           {
-            "name": "Chocolate & Port Wine",
-            "description": "Dark chocolate in layers, a thread of Port wine — for those who still have room.",
+            "name": "Profiteroles",
+            "description": "Choux puffs filled and finished with chocolate — light, indulgent, a classic many regulars order.",
             "highlight": false,
             "tag": "Most Ordered"
           },
           {
-            "name": "Algarve Almond Tart",
-            "description": "Warm Algarve almond tart, vanilla cream — a house dessert, served hot.",
+            "name": "Apple Tart",
+            "description": "Warm apple tart, served without hurry — a house dessert that closes the evening well.",
             "highlight": false,
             "tag": "Since 1986"
           }

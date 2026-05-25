@@ -52,6 +52,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         alt={img.aboutFamily}
         supportingImage="/images/people/Rececao-clientes.webp"
         supportingAlt={img.aboutReception}
+        faces={about.feature.faces}
+        facesImageAltSuffix={about.feature.facesAltSuffix}
       />
       <section className="pb-20 sm:pb-24">
         <div className="section-shell grid gap-6 lg:grid-cols-3">

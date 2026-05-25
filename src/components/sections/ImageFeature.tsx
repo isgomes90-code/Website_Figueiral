@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
+import { TeamEditorialGrid, type TeamFace } from "@/components/sections/TeamEditorialGrid";
 import { bodyNoteClasses } from "@/lib/sectionTitle";
 
 type ImageFeatureProps = {
@@ -14,6 +15,8 @@ type ImageFeatureProps = {
   quiet?: boolean;
   supportingImage?: string;
   supportingAlt?: string;
+  faces?: TeamFace[];
+  facesImageAltSuffix?: string;
   /** Fundo envolvente da faixa onde o bloco vive — alterna ritmo vertical da página. */
   tone?: "none" | "warm" | "linen";
   /** Varia proporção/recorte editorial da fotografia dominante. */
@@ -49,6 +52,8 @@ export function ImageFeature(props: ImageFeatureProps) {
     quiet = false,
     supportingImage,
     supportingAlt,
+    faces,
+    facesImageAltSuffix = "",
     tone = "none",
     composition = "standard",
     imageClassName = "",
@@ -110,6 +115,7 @@ export function ImageFeature(props: ImageFeatureProps) {
             </div>
           ) : null}
         </MotionReveal>
+        {faces?.length ? <TeamEditorialGrid faces={faces} imageAltSuffix={facesImageAltSuffix} /> : null}
       </div>
     </section>
   );
