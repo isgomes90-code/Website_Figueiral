@@ -1,7 +1,16 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/site";
+import { isLocalTestSite, siteConfig } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
+  if (isLocalTestSite) {
+    return {
+      rules: {
+        userAgent: "*",
+        disallow: "/"
+      }
+    };
+  }
+
   return {
     rules: {
       userAgent: "*",

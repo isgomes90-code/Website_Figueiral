@@ -31,7 +31,12 @@ Build for production:
 npm run build
 ```
 
-## Notes
+## Site URL (teste vs produção)
 
-The reservation page includes a placeholder for OpenTable, CoverManager or a similar booking widget.
-Replace placeholder contact details, coordinates and social links in `src/lib/site.ts` with the final restaurant data before launch.
+Por defeito, o site usa **`http://localhost:3000`** para metadados (canonical, Open Graph, sitemap) e **não** está ligado a `www.figueiral.pt` até existir alojamento.
+
+- Em desenvolvimento: `npm run dev` → [http://localhost:3000](http://localhost:3000)
+- Em teste local, `robots.txt` bloqueia indexação e as páginas têm `noindex`
+- Para produção futura: definir `NEXT_PUBLIC_SITE_URL=https://www.figueiral.pt` (ver `.env.example`)
+
+Contactos, redes sociais, mapa e ResDiary estão em `src/lib/site.ts`.

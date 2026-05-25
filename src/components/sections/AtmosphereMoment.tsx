@@ -15,6 +15,7 @@ type AtmosphereMomentProps = {
 export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/hero/Alinhamento-mesas.webp" }: AtmosphereMomentProps) {
   return (
     <section className="relative min-h-[58vh] w-full overflow-hidden sm:min-h-[62vh] lg:min-h-[72vh]" aria-labelledby="atmosphere-moment-heading">
+      {/* TODO: SUBSTITUIR — fotografia diurna da sala, toalhas verdes. Substituir por fotografia nocturna do serviço com iluminação ambiente. */}
       <Image
         src={imageSrc}
         alt={imageAlt}

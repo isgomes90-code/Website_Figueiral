@@ -5,16 +5,18 @@ import { isLocalTestSite, siteConfig } from "@/lib/site";
 const defaultKeywordsByLocale: Record<Locale, string[]> = {
   pt: [
     "restaurante Almancil",
+    "restaurante premium Algarve",
+    "melhor picanha Algarve",
     "Restaurante Figueiral",
-    "picanha Algarve",
     "restaurante Quinta do Lago",
     "restaurante Vale do Lobo"
   ],
   en: [
-    "restaurant Almancil",
+    "best restaurant in Almancil",
+    "premium restaurant Algarve",
+    "steak restaurant Algarve",
     "Restaurante Figueiral",
-    "picanha Algarve",
-    "restaurant Quinta do Lago",
+    "restaurant near Quinta do Lago",
     "restaurant Vale do Lobo"
   ]
 };
@@ -134,6 +136,41 @@ export function pressArticleSchema({
       "@type": "WebPage",
       "@id": url
     }
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: new URL(item.path, siteConfig.url).toString()
+    }))
+  };
+}
+
+export function menuSchema(
+  sections: { title: string; items: { name: string; description: string }[] }[],
+  lang: Locale = defaultLocale
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    name: lang === "pt" ? "Menu Restaurante Figueiral" : "Restaurante Figueiral Menu",
+    url: new URL(localizedPath(lang, "/menu"), siteConfig.url).toString(),
+    inLanguage: lang === "pt" ? "pt-PT" : "en",
+    hasMenuSection: sections.map((section) => ({
+      "@type": "MenuSection",
+      name: section.title,
+      hasMenuItem: section.items.map((item) => ({
+        "@type": "MenuItem",
+        name: item.name,
+        description: item.description
+      }))
+    }))
   };
 }
 

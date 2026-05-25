@@ -6,6 +6,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, localizedPath, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/lib/seo";
 import { bodyTextClasses, cardTitleClasses, editorialEyebrowClasses } from "@/lib/sectionTitle";
+import { siteConfig, sitePhoneHref } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -29,13 +30,23 @@ export default async function ReservationsPage({ params }: { params: Promise<{ l
           title={reservations.intro.title}
           body={reservations.intro.body}
         />
-        <MotionReveal className="luxury-card rounded-[2rem] p-6 sm:p-9">
-          <div className="rounded-[1.4rem] border border-dashed border-gold/35 bg-cream/55 p-8 text-center">
+        <MotionReveal className="luxury-card rounded-[2rem] p-4 sm:p-6">
+          <div className="overflow-hidden rounded-[1.4rem] border border-walnut/10 bg-cream/40">
+            <iframe
+              title={reservations.widget.title}
+              src={siteConfig.booking.widgetUrl}
+              className="min-h-[560px] w-full border-0"
+              loading="lazy"
+            />
+          </div>
+          <div className="mt-6 rounded-[1.2rem] border border-dashed border-gold/30 bg-cream/55 p-6 text-center sm:p-8">
             <p className={`text-gold ${editorialEyebrowClasses}`}>{reservations.widget.eyebrow}</p>
-            <h2 className={`mt-5 text-charcoal ${cardTitleClasses}`}>{reservations.widget.title}</h2>
-            <p className={`mx-auto mt-5 max-w-md text-walnut ${bodyTextClasses}`}>{reservations.widget.body}</p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <LuxuryButton href="tel:+351289399982">{reservations.widget.call}</LuxuryButton>
+            <h2 className={`mt-4 text-charcoal ${cardTitleClasses}`}>{reservations.widget.fallbackTitle}</h2>
+            <p className={`mx-auto mt-4 max-w-md text-walnut ${bodyTextClasses}`}>
+              {reservations.widget.fallbackBody}
+            </p>
+            <div className="mt-6 flex flex-col justify-center gap-4 sm:flex-row">
+              <LuxuryButton href={sitePhoneHref()}>{reservations.widget.call}</LuxuryButton>
               <LuxuryButton href={localizedPath(locale, "/contact")} variant="secondary">
                 {reservations.widget.contact}
               </LuxuryButton>

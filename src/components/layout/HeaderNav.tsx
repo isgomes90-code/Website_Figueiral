@@ -193,15 +193,15 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
 
   const shellClasses =
     atTopChrome && !mobileOpen
-      ? "border-b border-transparent bg-transparent shadow-none backdrop-blur-0 backdrop-saturate-[1]"
-      : "border-b border-walnut/[0.1] bg-[rgba(253,251,246,0.9)] shadow-[0_10px_40px_rgba(45,37,31,0.05)] backdrop-blur-xl backdrop-saturate-[1.05]";
+      ? "border-b border-transparent bg-transparent shadow-none backdrop-blur-0"
+      : "border-b border-walnut/[0.1] bg-[rgba(253,251,246,0.92)] shadow-[0_8px_32px_rgba(45,37,31,0.04)] backdrop-blur-md";
 
   const logoSrc = useTransparentHeroTone ? figueiralLogoHeaderCreamSrc : figueiralLogoSrc;
   const logoImageCls = useTransparentHeroTone ? "header-logo-image header-logo-image--cream" : "header-logo-image header-logo-image--paper";
 
   const mobileBtnTone = useTransparentHeroTone ? "border-cream/25 text-cream bg-charcoal/[0.2]" : "border-charcoal/15 text-charcoal bg-paper/[0.75]";
 
-  const mobileBtnCls = `mobile-menu-button inline-flex h-11 min-w-[2.75rem] shrink-0 items-center justify-center rounded-full border shadow-sm backdrop-blur-md ring-2 ring-transparent transition hover:brightness-[1.04] hover:shadow-md focus:outline-none focus-visible:ring-2 active:scale-[0.98] ${mobileBtnTone} ${
+  const mobileBtnCls = `mobile-menu-button inline-flex h-11 min-w-[2.75rem] shrink-0 items-center justify-center rounded-full border shadow-sm ring-2 ring-transparent transition hover:brightness-[1.04] hover:shadow-md focus:outline-none focus-visible:ring-2 active:scale-[0.98] ${mobileBtnTone} ${
     useTransparentHeroTone ? "focus-visible:ring-cream/35 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" : "focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
   }`;
 
@@ -213,16 +213,16 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
       data-header-state={headerVisible ? "visible" : "hidden"}
     >
       <div className={`relative ${shellClasses}`}>
-        <div className="header-inner relative mx-auto flex w-full max-w-[88rem] min-w-0 flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 pb-4 pt-[max(0.75rem,env(safe-area-inset-top))] sm:flex-nowrap sm:items-center sm:px-7 sm:pb-5 sm:pt-[max(0.85rem,env(safe-area-inset-top))] lg:px-11">
-          <div className="header-logo relative z-[4] shrink-0 self-center">
+        <div className="header-inner relative mx-auto grid w-full max-w-[88rem] min-w-0 grid-cols-[auto_1fr_auto] items-center gap-x-3 px-5 pb-4 pt-[max(0.75rem,env(safe-area-inset-top))] sm:gap-x-4 sm:px-7 sm:pb-5 sm:pt-[max(0.85rem,env(safe-area-inset-top))] lg:gap-x-5 lg:px-11 xl:gap-x-6">
+          <div className="header-logo relative z-[4] min-w-0 shrink-0 self-center">
             <Link href={localizedPath(lang)} className="header-logo-link" aria-label={siteConfig.name}>
-              <span className="relative block h-[4.85rem] w-[11.35rem] sm:h-[5.4rem] sm:w-[12.65rem] min-[900px]:h-[5.85rem] min-[900px]:w-[13.7rem] xl:h-[6.35rem] xl:w-[14.85rem]">
+              <span className="relative block h-[4.35rem] w-[7.45rem] sm:h-[4.85rem] sm:w-[8.27rem] min-[900px]:h-[5rem] min-[900px]:w-[8.55rem] xl:h-[5.85rem] xl:w-[9.98rem]">
                 <Image
                   src={logoSrc}
-                  alt=""
+                  alt={dictionary.seo.images.logoHeader}
                   fill
                   priority
-                  sizes="(max-width: 899px) 182px, (max-width: 1280px) 220px, 238px"
+                  sizes="(max-width: 899px) 132px, (max-width: 1279px) 154px, 160px"
                   className={logoImageCls}
                 />
               </span>
@@ -230,7 +230,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
           </div>
 
           {/* Mobile controlo */}
-          <div className="flex flex-nowrap items-center justify-end gap-x-3 min-[900px]:hidden">
+          <div className="col-start-3 flex flex-nowrap items-center justify-end gap-x-2.5 min-[900px]:hidden sm:gap-x-3">
             <LuxuryButton
               href={reserveHref}
               className="hidden !min-h-[2.5rem] !min-w-0 whitespace-nowrap !px-4 !py-2 !text-[0.625rem] !tracking-[0.18em] min-[460px]:inline-flex"
@@ -251,13 +251,13 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
             </button>
           </div>
 
-          {/* Nav centrado no viewport */}
+          {/* Nav centrada na coluna do meio — sem overlap com logo/acções */}
           <nav
             id="site-desktop-nav"
             aria-label={navigation.ariaMain}
-            className="pointer-events-none absolute left-1/2 top-1/2 z-[1] hidden min-h-[1.5rem] w-max max-w-[min(48rem,calc(100vw-26rem))] min-w-0 -translate-x-1/2 -translate-y-1/2 xl:max-w-[min(50rem,calc(100vw-32rem))] min-[900px]:flex min-[900px]:items-center min-[900px]:justify-center"
+            className="col-start-2 hidden min-w-0 min-[900px]:block"
           >
-            <div className="pointer-events-auto flex flex-nowrap items-center justify-center gap-x-8 min-[900px]:gap-x-[1.875rem] xl:gap-x-10 2xl:gap-x-[2.875rem]">
+            <div className="flex flex-nowrap items-center justify-center gap-x-3 min-[900px]:gap-x-4 lg:gap-x-5 xl:gap-x-7 2xl:gap-x-9">
               {navItems.map((item) => {
                 const active = isNavItemActive(pathname, lang, item.href);
                 return (
@@ -274,7 +274,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
             </div>
           </nav>
 
-          <div className="header-actions relative z-[2] hidden shrink-0 min-w-[9.5rem] flex-nowrap items-center justify-end gap-x-7 min-[900px]:flex xl:min-w-[10.5rem] xl:gap-x-[2.375rem]">
+          <div className="header-actions relative z-[2] col-start-3 hidden shrink-0 flex-nowrap items-center justify-end gap-x-4 min-[900px]:flex lg:gap-x-5 xl:gap-x-7">
             <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} inverse={useTransparentHeroTone} />
             <span className={`h-5 w-px shrink-0 ${useTransparentHeroTone ? "bg-cream/[0.32]" : "bg-walnut/25"}`} aria-hidden />
             <LuxuryButton density="headerReserve" href={reserveHref} className="whitespace-nowrap" ariaCurrent={reserveAriaPageBar}>
@@ -288,7 +288,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
         {mobileOpen ? (
           <div className="fixed inset-0 z-[95]" role="presentation">
             <div
-              className="animate-mobile-nav-backdrop-in fixed inset-0 z-[96] cursor-pointer bg-charcoal/[0.52] backdrop-blur-[1px]"
+              className="animate-mobile-nav-backdrop-in fixed inset-0 z-[96] cursor-pointer bg-charcoal/[0.48]"
               aria-hidden="true"
               onClick={() => setMobileOpen(false)}
             />

@@ -16,8 +16,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function GalleryPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const locale: Locale = isLocale(lang) ? lang : "pt";
+  const dictionary = await getDictionary(locale);
   const gallery = dictionary.gallery;
+  const galleryAlts = dictionary.seo.gallery;
 
   return (
     <section className="pt-36 pb-24 sm:pt-44">
@@ -25,9 +27,20 @@ export default async function GalleryPage({ params }: { params: Promise<{ lang: 
         <SectionIntro as="h1" eyebrow={gallery.intro.eyebrow} title={gallery.intro.title} body={gallery.intro.body} />
         <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3">
           {galleryImages.map((image, index) => (
-            <MotionReveal key={image.src} delay={(index % 3) * 0.06} className="mb-5 break-inside-avoid overflow-hidden rounded-[1.6rem] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+            <MotionReveal
+              key={image.src}
+              delay={(index % 3) * 0.06}
+              className="mb-5 break-inside-avoid overflow-hidden rounded-[1.6rem] shadow-[0_24px_80px_rgba(0,0,0,0.28)]"
+            >
               <div className={`grain relative border border-cream/60 ${image.tall ? "h-[520px]" : "h-[360px]"}`}>
-                <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-700 hover:scale-105" />
+                <Image
+                  src={image.src}
+                  alt={galleryAlts[index] ?? image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition duration-700 hover:scale-105"
+                  loading="lazy"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />
               </div>
             </MotionReveal>

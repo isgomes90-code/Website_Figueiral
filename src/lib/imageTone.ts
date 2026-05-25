@@ -18,4 +18,4 @@ export const imageToneAtmosphere =
 export const imageToneLogoHeader =
   "object-contain object-left drop-shadow-[0_1px_6px_rgba(45,37,31,0.06)]";
 
-export const imageToneLogoFooter = "object-contain object-left";
+export const imageToneLogoFooter = "footer-logo-image object-contain object-left";

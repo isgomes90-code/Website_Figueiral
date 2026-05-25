@@ -9,7 +9,7 @@ import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, localizedPath, type Locale } from "@/i18n/config";
-import { images } from "@/lib/site";
+import { images, homeHighlightImages } from "@/lib/site";
 import {
   bodyLeadClasses,
   displayFigureClasses,
@@ -21,15 +21,8 @@ import {
 import { imageToneEditorial } from "@/lib/imageTone";
 import { pageMetadata } from "@/lib/seo";
 
-const highlightImages = [
-  "/images/hero/Preparacao-picanha.webp",
-  "/images/wine/Vinho-garrafeira.webp",
-  "/images/hero/Alinhamento-mesas.webp",
-  "/images/people/Convicio-clientes-1.webp"
-];
-
 /** Altura fixa da imagem em todos os cards — bases do bloco alinham na grelha. */
-const HIGHLIGHT_IMAGE_BLOCK = "relative h-[12rem] shrink-0 overflow-hidden sm:h-[12.75rem] lg:h-[12.75rem]";
+const HIGHLIGHT_IMAGE_BLOCK = "relative h-[11.5rem] shrink-0 overflow-hidden sm:h-[12rem] lg:h-[12rem]";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -39,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return pageMetadata({
     title: dictionary.meta.homeTitle,
     description: dictionary.meta.homeDescription,
+    keywords: dictionary.meta.homeKeywords,
     lang: locale
   });
 }
@@ -51,8 +45,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   return (
     <>
-      <Hero dictionary={dictionary} lang={locale} />
-      <section className="editorial-paper relative py-[4.75rem] sm:py-[6.25rem] lg:py-[6.75rem]">
+      <Hero dictionary={dictionary} lang={locale} slideAlts={dictionary.seo.images.heroSlides} />
+      <section className="editorial-paper relative py-[4.25rem] sm:py-[5.75rem] lg:py-[6.25rem]">
         <div className="section-shell relative z-10">
           <SectionIntro
             eyebrow={home.intro.eyebrow}
@@ -66,16 +60,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <MotionReveal
                 key={item}
                 delay={index * 0.07}
-                className="group flex h-full flex-col overflow-hidden rounded-[1.38rem] border border-brandGreen/[0.07] bg-[linear-gradient(168deg,rgba(252,248,242,0.82),rgba(241,231,217,0.45))] shadow-[0_14px_42px_rgba(58,44,34,0.055)] backdrop-blur-[1px] transition-[box-shadow,border-color] duration-700 ease-out hover:border-brandGreen/[0.16] hover:shadow-[0_20px_52px_rgba(58,44,34,0.078)]"
+                className="group flex h-full flex-col overflow-hidden rounded-[1.38rem] border border-brandGreen/[0.07] bg-[linear-gradient(168deg,rgba(252,248,242,0.82),rgba(241,231,217,0.45))] shadow-[0_14px_42px_rgba(58,44,34,0.055)] transition-[box-shadow,border-color] duration-700 ease-out hover:border-brandGreen/[0.16] hover:shadow-[0_20px_52px_rgba(58,44,34,0.078)]"
               >
                 <div className={`${HIGHLIGHT_IMAGE_BLOCK}`}>
                   <Image
-                    src={highlightImages[index]}
-                    alt=""
+                    src={homeHighlightImages[index]}
+                    alt={dictionary.seo.images.highlightCards[index] ?? ""}
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     className={`object-cover ${imageToneEditorial} transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 0 ? "object-[center_48%]" : index === 1 ? "object-[center_22%]" : index === 2 ? "object-[center_72%]" : "object-[center_46%]"}`}
                     loading={index === 0 ? "eager" : "lazy"}
+                    quality={index === 0 ? 75 : 68}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(252,246,238,0.05),rgba(52,41,34,0.16))]" />
                 </div>
@@ -97,7 +92,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="section-dusk grain relative py-[5rem] sm:py-[7rem] lg:py-[7.5rem]" aria-labelledby="home-statement">
+      <section className="section-dusk grain relative py-[4.5rem] sm:py-[6.25rem] lg:py-[6.75rem]" aria-labelledby="home-statement">
         <div className="section-shell">
           <MotionReveal className="mx-auto max-w-5xl text-center">
             <div className="hairline-dusk mb-[2.85rem]" />
@@ -123,10 +118,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         title={home.meat.title}
         body={home.meat.body}
         image={images.picanha}
-        alt="Premium grilled steak and picanha experience"
+        alt={dictionary.seo.images.picanhaFeature}
         note={home.meat.note}
         supportingImage="/images/food/Picanha-grelha-1.webp"
-        supportingAlt="Picanha na grelha no Restaurante Figueiral"
+        supportingAlt={dictionary.seo.images.picanhaSupporting}
         tone="warm"
         composition="panorama"
         eyebrowTone="institutional"
@@ -137,10 +132,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         title={home.wine.title}
         body={home.wine.body}
         image={images.wine}
-        alt="Wine service and cellar atmosphere"
+        alt={dictionary.seo.images.wineFeature}
         note={home.wine.note}
         supportingImage="/images/wine/Vinho-detalhe-2.webp"
-        supportingAlt="Detalhe de garrafa de vinho no Figueiral"
+        supportingAlt={dictionary.seo.images.wineSupporting}
         reverse
         tone="linen"
         composition="standard"
@@ -148,7 +143,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         eyebrowTone="institutional"
       />
 
-      <section className="section-linen-breath relative py-[4.25rem] sm:py-[6.75rem] lg:py-[7rem]">
+      <section className="section-linen-breath relative py-[4rem] sm:py-[6rem] lg:py-[6.25rem]">
         <div className="section-shell">
           <MotionReveal className="atmospheric-panel rounded-[2.05rem] px-8 py-14 sm:rounded-[2.2rem] sm:px-12 sm:py-18 lg:px-[3.35rem] lg:py-[4.65rem]">
             <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-start lg:gap-[3.25rem] xl:gap-[3.75rem]">
@@ -167,7 +162,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   <div className="relative aspect-[5/6] overflow-hidden rounded-[2rem] border border-walnut/[0.09] shadow-[0_22px_56px_rgba(58,44,34,0.1)] ring-1 ring-inset ring-brandGreen/[0.07] sm:aspect-[6/7] sm:rounded-[2.05rem] lg:aspect-[7/9] lg:rounded-[38px]">
                     <Image
                       src={images.legacyOwners}
-                      alt={home.legacy.imageAlt}
+                      alt={dictionary.seo.images.legacyOwners}
                       fill
                       sizes="(min-width: 1024px) 38vw, 90vw"
                       className="object-cover object-[52%_50%] sm:object-[54%_50%] lg:object-[57%_48%]"
@@ -186,9 +181,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         title={home.terrace.title}
         body={home.terrace.body}
         image={images.terrace}
-        alt="Mediterranean restaurant terrace atmosphere"
+        alt={dictionary.seo.images.terrace}
         supportingImage={images.terraceAlt}
-        supportingAlt="Outra perspetiva da esplanada do Figueiral"
+        supportingAlt={dictionary.seo.images.terraceAlt}
         quiet
         tone="linen"
         composition="intimate"
@@ -197,7 +192,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       <Reviews dictionary={dictionary} />
 
-      <section className="section-linen-breath py-[5rem] sm:py-[8rem] lg:py-[9rem]">
+      <section className="section-linen-breath py-[4.5rem] sm:py-[7rem] lg:py-[7.5rem]">
         <div className="section-shell">
           <MotionReveal className="section-finale-panel rounded-[2rem] px-8 py-16 text-center sm:rounded-[2.35rem] sm:px-14 sm:py-[5.25rem] lg:px-20 lg:py-[6rem]">
             <p className={`text-gold/[0.78] ${editorialEyebrowClasses}`}>{home.cta.eyebrow}</p>

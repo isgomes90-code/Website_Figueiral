@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { MotionReveal } from "@/components/ui/MotionReveal";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { categoryVisuals, interludeImages, menuHeroImage } from "@/data/menu";
 import { getDictionary } from "@/i18n/getDictionary";
-import { isLocale, type Locale } from "@/i18n/config";
-import { pageMetadata } from "@/lib/seo";
+import { isLocale, localizedPath, type Locale } from "@/i18n/config";
+import { breadcrumbSchema, menuSchema, pageMetadata } from "@/lib/seo";
 import {
   bodyLeadClasses,
   bodyNoteClasses,
@@ -15,35 +17,6 @@ import {
 } from "@/lib/sectionTitle";
 import { imageToneMenu, imageToneMenuRich } from "@/lib/imageTone";
 
-const categoryVisuals = [
-  {
-    image: "/images/hero/Preparacao-picanha.webp",
-    mini: "/images/food/Camarao-alho-fogo.webp",
-    overlay: "linear-gradient(180deg, rgba(52,42,35,0.08), rgba(52,42,35,0.44))"
-  },
-  {
-    image: "/images/food/Robalo-mustarda.webp",
-    mini: "/images/wine/Vinho-mesa.webp",
-    overlay: "linear-gradient(180deg, rgba(96,96,72,0.04), rgba(96,78,57,0.3))"
-  },
-  {
-    image: "/images/people/Empratamento-1.webp",
-    mini: "/images/food/Cogumelos-alho.webp",
-    overlay: "linear-gradient(180deg, rgba(92,68,48,0.04), rgba(92,68,48,0.32))"
-  },
-  {
-    image: "/images/food/Tarte-maca.webp",
-    mini: "/images/food/Profiteroles-chocolate.webp",
-    overlay: "linear-gradient(180deg, rgba(156,121,87,0.04), rgba(92,68,48,0.28))"
-  }
-];
-
-const interludeImages = [
-  "/images/food/Camarao-alho-fogo.webp",
-  "/images/wine/Vinho-garrafeira.webp",
-  "/images/people/Empratamento-2.webp"
-];
-
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const locale: Locale = isLocale(lang) ? lang : "pt";
@@ -53,11 +26,29 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function MenuPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const locale: Locale = isLocale(lang) ? lang : "pt";
+  const dictionary = await getDictionary(locale);
   const menu = dictionary.menu;
+  const img = dictionary.seo.images;
+
+  const schema = menuSchema(
+    menu.categories.map((category) => ({
+      title: category.title,
+      items: category.items.map((item) => ({ name: item.name, description: item.description }))
+    })),
+    locale
+  );
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: locale === "pt" ? "Início" : "Home", path: localizedPath(locale) },
+    { name: menu.intro.eyebrow, path: localizedPath(locale, "/menu") }
+  ]);
 
   return (
-    <section className="pt-36 pb-24 sm:pt-44">
+    <>
+      <JsonLd data={schema} />
+      <JsonLd data={breadcrumbs} />
+      <section className="pt-36 pb-24 sm:pt-44">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-[0.78fr_1.05fr] lg:items-end">
           <MotionReveal className="max-w-[42rem]">
@@ -73,10 +64,12 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
           <MotionReveal delay={0.08} className="relative">
             <div className="relative min-h-[26rem] overflow-hidden rounded-[2.1rem] shadow-[0_30px_90px_rgba(82,58,39,0.16)] sm:min-h-[34rem]">
               <Image
-                src="/images/hero/Preparacao-picanha.webp"
-                alt="Preparacao de picanha no Figueiral"
+                src={menuHeroImage}
+                alt={img.menuHero}
                 fill
+                priority
                 sizes="(min-width: 1024px) 54vw, 100vw"
+                quality={75}
                 className={`object-cover ${imageToneMenu}`}
               />
               <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(23,18,15,0.52)_0%,rgba(45,37,31,0.22)_45%,rgba(45,37,31,0.68)_100%)]" />
@@ -86,7 +79,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                 <p className={`menu-photo-body mt-4 max-w-sm ${bodyNoteClasses}`}>{menu.hero.body}</p>
               </div>
             </div>
-            <div className="absolute -bottom-6 right-6 hidden max-w-[18rem] rounded-[1.25rem] border border-walnut/10 bg-cream/85 p-5 shadow-[0_24px_70px_rgba(82,58,39,0.15)] backdrop-blur-md sm:block">
+            <div className="absolute -bottom-6 right-6 hidden max-w-[18rem] rounded-[1.25rem] border border-walnut/10 bg-cream/90 p-5 shadow-[0_24px_70px_rgba(82,58,39,0.15)] sm:block">
               <p className={`text-charcoal ${cardTitleClasses}`}>{menu.hero.note}</p>
             </div>
           </MotionReveal>
@@ -97,7 +90,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
             <div key={category.title} className="grid gap-12">
               <MotionReveal
                 delay={index * 0.06}
-                className={`overflow-hidden rounded-[2.1rem] border border-walnut/10 bg-cream/70 shadow-[0_28px_80px_rgba(82,58,39,0.12)] backdrop-blur-md ${
+                className={`overflow-hidden rounded-[2.1rem] border border-walnut/10 bg-cream/75 shadow-[0_28px_80px_rgba(82,58,39,0.12)] ${
                   index % 2 === 1 ? "lg:ml-10" : "lg:mr-10"
                 }`}
               >
@@ -105,22 +98,24 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                   <aside className="relative min-h-[22rem] overflow-hidden bg-sand/60 p-7 sm:p-9">
                     <Image
                       src={categoryVisuals[index].image}
-                      alt=""
+                      alt={img.menuCategories[index] ?? ""}
                       fill
                       sizes="(min-width: 1024px) 34vw, 100vw"
                       className={`object-cover ${imageToneMenuRich}`}
                     />
                     <div className="absolute inset-0" style={{ background: categoryVisuals[index].overlay }} />
                     <div className="absolute inset-x-7 bottom-7 sm:inset-x-9 sm:bottom-9">
-                      <div className="max-w-xs rounded-[1.2rem] border border-cream/45 bg-cream/80 p-5 shadow-[0_18px_55px_rgba(82,58,39,0.14)] backdrop-blur-md">
+                      <div className="max-w-xs rounded-[1.2rem] border border-cream/45 bg-cream/85 p-5 shadow-[0_18px_55px_rgba(82,58,39,0.14)]">
                         <p className={`text-gold ${editorialEyebrowClasses}`}>{category.editorial.label}</p>
                         <p className={`mt-3 text-charcoal ${cardTitleClasses}`}>{category.editorial.value}</p>
                         <p className={`mt-4 text-walnut ${bodyNoteClasses}`}>{category.editorial.note}</p>
                       </div>
                     </div>
-                    <div className="absolute right-6 top-6 hidden h-28 w-24 overflow-hidden rounded-[0.9rem] border border-cream/60 shadow-[0_18px_48px_rgba(82,58,39,0.22)] sm:block">
-                      <Image src={categoryVisuals[index].mini} alt="" fill sizes="96px" className="object-cover" />
-                    </div>
+                    {categoryVisuals[index].mini ? (
+                      <div className="absolute right-6 top-6 hidden h-28 w-24 overflow-hidden rounded-[0.9rem] border border-cream/60 shadow-[0_18px_48px_rgba(82,58,39,0.22)] sm:block">
+                        <Image src={categoryVisuals[index].mini} alt="" fill sizes="96px" className="object-cover" aria-hidden />
+                      </div>
+                    ) : null}
                   </aside>
 
                   <div className="p-7 sm:p-9 lg:p-11">
@@ -131,27 +126,49 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                     </div>
 
                     <div className="mt-10 divide-y divide-walnut/10">
-                      {category.items.map((item) => (
-                        <article key={item.name} className="group py-7 first:pt-0 last:pb-0">
-                          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                            <div>
-                              <h3 className={`text-charcoal transition group-hover:text-gold ${cardTitleClasses}`}>
-                                {item.name}
-                              </h3>
-                              <p className={`mt-3 max-w-xl text-walnut ${bodyTextClasses}`}>{item.description}</p>
+                      {category.items.map((item) => {
+                        const priced = item as typeof item & {
+                          prices?: { label: string; value: string }[];
+                          priceNote?: string;
+                        };
+                        return (
+                          <article key={item.name} className="group py-7 first:pt-0 last:pb-0">
+                            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                              <div className="min-w-0 flex-1">
+                                <h3 className={`text-charcoal transition group-hover:text-gold ${cardTitleClasses}`}>
+                                  {item.name}
+                                </h3>
+                                <p className={`mt-3 max-w-xl text-walnut ${bodyTextClasses}`}>{item.description}</p>
+                                {priced.prices && priced.prices.length ? (
+                                  <div className="mt-5 max-w-md space-y-2">
+                                    {priced.prices.map((p) => (
+                                      <div key={p.label} className="flex items-baseline gap-3">
+                                        <span className={`shrink-0 text-walnut/85 ${bodyNoteClasses}`}>{p.label}</span>
+                                        <span className="h-px flex-1 translate-y-[-3px] bg-walnut/18" aria-hidden />
+                                        <span className="shrink-0 font-semibold tabular-nums text-charcoal">{p.value}</span>
+                                      </div>
+                                    ))}
+                                    {priced.priceNote ? (
+                                      <p className="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-walnut/65">
+                                        {priced.priceNote}
+                                      </p>
+                                    ) : null}
+                                  </div>
+                                ) : null}
+                              </div>
+                              {item.tag ? (
+                                <span className="w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-gold">
+                                  {item.tag}
+                                </span>
+                              ) : item.highlight ? (
+                                <span className="w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-gold">
+                                  {menu.signature}
+                                </span>
+                              ) : null}
                             </div>
-                            {item.tag ? (
-                              <span className="w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-gold">
-                                {item.tag}
-                              </span>
-                            ) : item.highlight ? (
-                              <span className="w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-gold">
-                                {menu.signature}
-                              </span>
-                            ) : null}
-                          </div>
-                        </article>
-                      ))}
+                          </article>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -163,7 +180,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                     <div className="relative min-h-[15rem]">
                       <Image
                         src={interludeImages[index]}
-                        alt=""
+                        alt={img.menuInterludes[index] ?? ""}
                         fill
                         sizes="(min-width: 768px) 42vw, 100vw"
                         className={`object-cover ${imageToneMenu}`}
@@ -183,5 +200,6 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
         </div>
       </div>
     </section>
+    </>
   );
 }

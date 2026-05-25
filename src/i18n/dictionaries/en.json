@@ -3,12 +3,12 @@
     "homeTitle": "Restaurante Figueiral | Premium Restaurant in Almancil, Algarve",
     "homeDescription": "Fire-grilled meats, Portuguese wine and family hospitality since 1986. Restaurant in Almancil near Quinta do Lago and Vale do Lobo.",
     "homeKeywords": [
-      "restaurant Almancil",
+      "best restaurant in Almancil",
+      "premium restaurant Algarve",
+      "steak restaurant Algarve",
       "Restaurante Figueiral",
-      "picanha Algarve",
-      "restaurant Quinta do Lago",
-      "restaurant Vale do Lobo",
-      "steakhouse Algarve"
+      "restaurant near Quinta do Lago",
+      "restaurant Vale do Lobo"
     ],
     "pages": {
       "about": {
@@ -443,33 +443,33 @@
   },
   "wine": {
     "intro": {
-      "eyebrow": "Wine experience",
-      "title": "A wine restaurant in the Algarve where pairing feels personal, not performative.",
-      "body": "The wine service at Figueiral is built around the table: what guests are celebrating, what they are eating and how the evening should unfold."
+      "eyebrow": "Wine",
+      "title": "Bottles that accompany the evening — not dominate the table.",
+      "body": "Over the years we have gathered Portuguese labels that make sense here: for picanha, for fish, for that dinner that stretches without hurry. If you want a suggestion, just ask."
     },
     "feature": {
-      "eyebrow": "Cellar atmosphere",
-      "title": "Portuguese depth, Mediterranean brightness and bottles for memorable evenings.",
-      "body": "The list is imagined for expressive pairings with fire-grilled meat, Brazilian-style picanha, Algarve seafood and relaxed hospitality."
+      "eyebrow": "Cellar",
+      "title": "Wines chosen for the table — meat, fish and conversation.",
+      "body": "Reds for the grill, whites for the day's fish, bottles to celebrate without theatre. The list grew with our guests and the evenings that repeat."
     },
     "moments": [
-      "Portuguese reds for premium picanha and steak",
-      "Elegant whites for Algarve fish and terrace lunches",
-      "Celebration bottles for romantic dinners and private occasions"
+      "Portuguese reds for picanha and fire-grilled meats",
+      "Fresh whites for Algarve fish and terrace lunches",
+      "Bottles for family dinners and occasions that deserve time"
     ]
   },
   "gallery": {
     "intro": {
       "eyebrow": "Gallery",
-      "title": "Cinematic moments from the table, the terrace and the glow of an Algarve evening.",
-      "body": "A visual expression of premium Mediterranean hospitality: fire, wine, atmosphere and generous service."
+      "title": "Figueiral in images — fire, table, terrace.",
+      "body": "Real photographs from the house: the grill, the cellar, guests at the table and the warm light of Almancil."
     }
   },
   "reservations": {
     "intro": {
       "eyebrow": "Reservations",
-      "title": "Reserve a table for a refined Algarve dining experience.",
-      "body": "Book your table online or call us directly. The ResDiary widget below confirms availability in real time."
+      "title": "Reserve your table for an unhurried evening.",
+      "body": "Online or by phone — we confirm availability and seat you as you should be seated."
     },
     "widget": {
       "eyebrow": "Online reservations",

@@ -35,7 +35,7 @@ export function Reviews({ dictionary }: { dictionary: Dictionary }) {
             >
               <Image
                 src={image}
-                alt="Clientes e hospitalidade no Restaurante Figueiral"
+                alt={dictionary.seo.images.reviewMosaic[index] ?? dictionary.seo.images.reviews}
                 fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover"

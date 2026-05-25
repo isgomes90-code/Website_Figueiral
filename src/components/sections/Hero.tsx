@@ -8,6 +8,7 @@ import type { Dictionary } from "@/i18n/getDictionary";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { editorialEyebrowClasses, heroDisplayTitleClasses, heroLeadClasses } from "@/lib/sectionTitle";
 import { imageToneHero } from "@/lib/imageTone";
+import { heroSlideBlurs } from "@/lib/imagePlaceholders";
 
 /** Narrativa: fogo → sala/mesas → vinho → hospitalidade */
 const HERO_SLIDE_SRC = [
@@ -20,14 +21,14 @@ const HERO_SLIDE_SRC = [
 const SLIDE_COUNT = HERO_SLIDE_SRC.length;
 const SLIDE_INTERVAL_MS = 6500;
 
-/** Overlay estável entre slides — leitura consistente sem saltos bruscos de luminosidade */
+/** Overlay estável entre slides — leitura consistente sem excesso de escuridão */
 const readingOverlayStyle: CSSProperties = {
   background: `linear-gradient(
     92deg,
-    rgba(20, 15, 12, 0.86) 0%,
-    rgba(21, 17, 14, 0.66) 38%,
-    rgba(20, 22, 19, 0.34) 66%,
-    rgba(18, 16, 14, 0.08) 100%
+    rgba(20, 15, 12, 0.78) 0%,
+    rgba(21, 17, 14, 0.58) 38%,
+    rgba(20, 22, 19, 0.28) 66%,
+    rgba(18, 16, 14, 0.06) 100%
   )`
 };
 
@@ -39,7 +40,15 @@ const SLIDE_OBJECT = [
   "object-cover object-[center_42%]"
 ] as const;
 
-export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Locale }) {
+export function Hero({
+  dictionary,
+  lang,
+  slideAlts
+}: {
+  dictionary: Dictionary;
+  lang: Locale;
+  slideAlts: string[];
+}) {
   const hero = dictionary.hero;
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -64,15 +73,16 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
           >
             <Image
               src={src}
-              alt=""
+              alt={slideAlts[i] ?? hero.slidesAlt[i] ?? ""}
               fill
               priority={i === 0}
               fetchPriority={i === 0 ? "high" : "low"}
               loading={i === 0 ? "eager" : "lazy"}
-              sizes="100vw"
-              quality={i === 0 ? 82 : 68}
+              placeholder="blur"
+              blurDataURL={heroSlideBlurs[i] ?? heroSlideBlurs[0]}
+              sizes={i === 0 ? "100vw" : "0px"}
+              quality={i === 0 ? 75 : 68}
               className={`${SLIDE_OBJECT[i]} ${imageToneHero}`}
-              aria-hidden={activeSlide !== i}
             />
           </div>
         ))}
@@ -103,7 +113,12 @@ export function Hero({ dictionary, lang }: { dictionary: Dictionary; lang: Local
             {hero.subtitle}
           </p>
           <div className="mt-11 flex flex-col gap-4 sm:mt-12 sm:flex-row">
-            <LuxuryButton href={localizedPath(lang, "/reservations")}>{hero.primaryCta}</LuxuryButton>
+            <LuxuryButton
+              href={localizedPath(lang, "/reservations")}
+              className="border-[1.5px] border-cream/80 bg-[rgba(156,121,87,1)] shadow-[0_16px_38px_rgba(10,7,5,0.55)] hover:border-cream"
+            >
+              {hero.primaryCta}
+            </LuxuryButton>
             <LuxuryButton
               href={localizedPath(lang, "/menu")}
               variant="secondary"

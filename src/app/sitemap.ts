@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales, localizedPath } from "@/i18n/config";
 import { getAllPressSlugs } from "@/data/press";
+import { getAllEditorialSlugs } from "@/data/seo";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,8 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const pressRoutes = getAllPressSlugs().map((slug) => `/about/press/${slug}`);
+  const editorialRoutes = getAllEditorialSlugs().map((slug) => `/${slug}`);
 
-  const allRoutes = [...routes, ...pressRoutes];
+  const allRoutes = [...routes, ...pressRoutes, ...editorialRoutes];
 
   return locales.flatMap((locale) =>
     allRoutes.map((route) => ({

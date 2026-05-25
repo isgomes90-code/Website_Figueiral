@@ -4,11 +4,11 @@
     "homeDescription": "Carnes na grelha, vinho português e hospitalidade familiar desde 1986. Restaurante em Almancil perto da Quinta do Lago e Vale do Lobo.",
     "homeKeywords": [
       "restaurante Almancil",
+      "restaurante premium Algarve",
+      "melhor picanha Algarve",
       "Restaurante Figueiral",
-      "picanha Algarve",
       "restaurante Quinta do Lago",
-      "restaurante Vale do Lobo",
-      "carne grelhada Algarve"
+      "restaurante Vale do Lobo"
     ],
     "pages": {
       "about": {
@@ -443,33 +443,33 @@
   },
   "wine": {
     "intro": {
-      "eyebrow": "Experiência de vinho",
-      "title": "Um restaurante de vinho no Algarve onde a harmonização se sente pessoal, não performativa.",
-      "body": "O serviço de vinho no Figueiral é construído em torno da mesa: o que os clientes celebram, o que estão a comer e como a noite deve decorrer."
+      "eyebrow": "Vinhos",
+      "title": "Garrafas que acompanham a noite — não que dominam a mesa.",
+      "body": "Ao longo dos anos fomos juntando rótulos portugueses que fazem sentido aqui: para a picanha, para o peixe, para aquele jantar que se prolonga sem pressa. Se quiser sugestão, basta perguntar."
     },
     "feature": {
-      "eyebrow": "Ambiente de garrafeira",
-      "title": "Profundidade portuguesa, brilho mediterrânico e garrafas para noites memoráveis.",
-      "body": "A carta é pensada para harmonizações expressivas com carne grelhada no fogo, picanha ao estilo brasileiro, mar do Algarve e hospitalidade descontraída."
+      "eyebrow": "Garrafeira",
+      "title": "Vinhos escolhidos para a mesa — carne, peixe e conversa.",
+      "body": "Tintos para a grelha, brancos para o peixe do dia, garrafas para celebrar sem teatro. A carta cresceu com os clientes e com as noites que se repetem."
     },
     "moments": [
-      "Tintos portugueses para picanha premium e carne",
-      "Brancos elegantes para peixe do Algarve e almoços de esplanada",
-      "Garrafas de celebração para jantares românticos e ocasiões privadas"
+      "Tintos portugueses para picanha e carnes na grelha",
+      "Brancos frescos para peixe algarvio e almoços de esplanada",
+      "Garrafas para jantares em família e ocasiões que pedem tempo"
     ]
   },
   "gallery": {
     "intro": {
       "eyebrow": "Galeria",
-      "title": "Momentos cinematográficos da mesa, da esplanada e do brilho de uma noite algarvia.",
-      "body": "Uma expressão visual da hospitalidade mediterrânica premium: fogo, vinho, atmosfera e serviço generoso."
+      "title": "O Figueiral em imagens — fogo, mesa, esplanada.",
+      "body": "Fotografias reais da casa: a grelha, a garrafeira, clientes à mesa e a luz quente de Almancil."
     }
   },
   "reservations": {
     "intro": {
       "eyebrow": "Reservas",
-      "title": "Reserve uma mesa para uma experiência refinada no Algarve.",
-      "body": "Reserve a sua mesa online ou contacte-nos por telefone. O sistema ResDiary abaixo confirma disponibilidade em tempo real."
+      "title": "Reserve a sua mesa para uma noite sem pressa.",
+      "body": "Online ou por telefone — confirmamos disponibilidade e tratamos de vos sentar como deve ser."
     },
     "widget": {
       "eyebrow": "Reservas online",

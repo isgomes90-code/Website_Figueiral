@@ -7,7 +7,7 @@ import { MotionReveal } from "@/components/ui/MotionReveal";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, locales, localizedPath, type Locale } from "@/i18n/config";
 import { formatPressDate, getAllPressSlugs, getPressArticle, t } from "@/data/press";
-import { pageMetadata, pressArticleSchema } from "@/lib/seo";
+import { pageMetadata, pressArticleSchema, breadcrumbSchema } from "@/lib/seo";
 import {
   bodyLeadClasses,
   bodyTextClasses,
@@ -73,9 +73,16 @@ export default async function PressArticlePage({
     lang: locale
   });
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: locale === "pt" ? "Início" : "Home", path: localizedPath(locale) },
+    { name: press.intro.title, path: `${localizedPath(locale, "/about")}#press` },
+    { name: t(article.title, locale), path: localizedPath(locale, articlePath) }
+  ]);
+
   return (
     <article className="bg-[linear-gradient(180deg,#faf7f2_0%,#f5efe6_100%)] pb-20 pt-36 sm:pb-24 sm:pt-44">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       <div className="section-shell">
         <nav className="mb-8" aria-label="Breadcrumb">
           <Link

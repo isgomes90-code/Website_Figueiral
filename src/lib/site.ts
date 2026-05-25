@@ -1,32 +1,66 @@
+/** Domínio oficial — usar em `NEXT_PUBLIC_SITE_URL` quando o site estiver em servidor. */
+export const productionSiteUrl = "https://www.figueiral.pt";
+
+const normalizeSiteUrl = (value: string) => value.replace(/\/$/, "");
+
+/** URL pública (canonical, OG, sitemap). Por defeito: versão de teste em localhost. */
+export const siteUrl = normalizeSiteUrl(
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+);
+
+export const isLocalTestSite =
+  siteUrl.includes("localhost") || siteUrl.includes("127.0.0.1");
+
 export const siteConfig = {
   name: "Restaurante Figueiral",
   founded: "1986",
-  url: "https://www.restaurantefigueiral.pt",
-  phone: "+351 289 399 982",
-  email: "reservas@restaurantefigueiral.pt",
+  url: siteUrl,
+  phone: "+351 289 395 558",
+  email: "info@figueiral.pt",
   address: {
-    street: "Almancil",
+    street: "Rua Cristóvão Pires Norte, Restaurante Figueiral",
     locality: "Almancil",
     region: "Algarve",
-    postalCode: "8135-000",
+    postalCode: "8135-117",
     country: "PT"
   },
   coordinates: {
-    latitude: 37.0865,
-    longitude: -8.0306
+    latitude: 37.0830545,
+    longitude: -8.0334457
+  },
+  maps: {
+    embedUrl:
+      "https://maps.google.com/maps?q=37.0830545,-8.0334457&hl=pt&z=16&output=embed",
+    placeUrl:
+      "https://www.google.com/maps/place/Figueiral/@37.0830545,-8.0334457,17z/data=!3m1!4b1!4m6!3m5!1s0xd1ab3c1f80e254f:0xb24015ac29588ac8!8m2!3d37.0830545!4d-8.0334457!16s%2Fg%2F1tgxvtms"
+  },
+  booking: {
+    widgetUrl: "https://booking.resdiary.com/widget/Standard/RestauranteFigueiral/33271"
   },
   socials: {
-    instagram: "https://www.instagram.com/",
-    facebook: "https://www.facebook.com/",
-    tripadvisor: "https://www.tripadvisor.com/"
+    instagram: "https://www.instagram.com/restaurantefigueiral/",
+    facebook: "https://www.facebook.com/RestauranteFigueiral/?locale=pt_PT",
+    tripadvisor:
+      "https://www.tripadvisor.pt/Restaurant_Review-g262054-d2104103-Reviews-Figueiral-Almancil_Loule_Faro_District_Algarve.html"
   }
 };
 
-/** Logótipo oficial (WebP); usar com moderação (header, footer, selos). */
-export const figueiralLogoSrc = "/images/RSTFI_logo_ret.webp";
+export function sitePhoneHref(phone: string = siteConfig.phone) {
+  return `tel:${phone.replace(/\s/g, "")}`;
+}
 
-/** Variante creme para header sobre hero / fundos escuros. */
-export const figueiralLogoHeaderCreamSrc = "/images/RSTFI_logo_header-cream.webp";
+export function siteEmailHref(email: string = siteConfig.email) {
+  return `mailto:${email}`;
+}
+
+/** Logótipo do header (verde, fundo transparente) — para fundos claros/paper. Rácio ~1,71:1. */
+export const figueiralLogoSrc = "/images/Logo_Figueiral_Header.webp";
+
+/** Variante creme do logótipo do header — para o hero escuro e fundos escuros. */
+export const figueiralLogoHeaderCreamSrc = "/images/Logo_Figueiral_Header_cream.webp";
+
+/** Footer mantém o logótipo creme anterior (caixa própria com rácio 2176/1532). */
+export const figueiralLogoFooterSrc = "/images/RSTFI_logo_header-cream.webp";
 
 export const navItems = [
   { href: "/", labelKey: "home" },
@@ -51,8 +85,15 @@ export const images = {
   cocktail: "/images/bar/Expresso-martini-preparcao-1.webp",
   dessert: "/images/food/Profiteroles-chocolate.webp",
   /** Retrato família na secção Legado — adicionar ficheiro em `public/images/people/`. */
-  legacyOwners: "/images/people/Proprietarios.jpg"
+  legacyOwners: "/images/people/Proprietarios.webp"
 };
+
+export const homeHighlightImages = [
+  "/images/hero/Preparacao-picanha.webp",
+  "/images/wine/Vinho-garrafeira.webp",
+  "/images/hero/Alinhamento-mesas.webp",
+  "/images/people/Rececao-clientes.webp"
+] as const;
 
 export const galleryImages = [
   { src: "/images/hero/Preparacao-picanha.webp", alt: "Preparacao de picanha no Restaurante Figueiral", tall: true },

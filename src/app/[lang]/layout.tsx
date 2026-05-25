@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -9,35 +8,26 @@ import { MobileReservationBar } from "@/components/layout/MobileReservationBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
-import { pageMetadata, restaurantSchema } from "@/lib/seo";
+import { restaurantSchema } from "@/lib/seo";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
-  display: "swap"
+  weight: ["600", "700"],
+  display: "swap",
+  preload: true
 });
 
 const sans = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap"
+  weight: ["400", "600"],
+  display: "swap",
+  preload: true
 });
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
-  const locale: Locale = isLocale(lang) ? lang : "pt";
-  const dictionary = await getDictionary(locale);
-
-  return pageMetadata({
-    title: dictionary.meta.homeTitle,
-    description: dictionary.meta.homeDescription,
-    lang: locale
-  });
 }
 
 export default async function LocaleLayout({
