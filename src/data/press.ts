@@ -68,7 +68,7 @@ export const pressArticles: PressArticle[] = [
     },
     originalUrl:
       "https://theluxuryeditor.com/review/figueiral-restaurant-the-must-visit-family-owned-gastronomic-destination-near-quinta-do-lago-portugal/",
-    image: "/images/hero/Preparacao-picanha.webp",
+    image: "/images/press/luxury-editor-review.webp",
     imageAlt: {
       pt: "Picanha grelhada no Restaurante Figueiral — menção The Luxury Editor",
       en: "Grilled picanha at Restaurante Figueiral — The Luxury Editor feature"
@@ -116,7 +116,7 @@ export const pressArticles: PressArticle[] = [
       en: ["A must-stop for fire-grilled meat lovers."]
     },
     originalUrl: "https://magg.sapo.pt/viagens/travelmagg/artigos/a-melhor-picanha-do-algarve",
-    image: "/images/food/Picanha-grelha-1.webp",
+    image: "/images/press/magg-picanha.webp",
     imageAlt: {
       pt: "Picanha na grelha — artigo MAGG sobre o Figueiral",
       en: "Picanha on the grill — MAGG article on Figueiral"
@@ -159,7 +159,7 @@ export const pressArticles: PressArticle[] = [
     },
     originalUrl:
       "https://revistabica.com/restaurante-figueiral-convida-a-degustar-a-melhor-picanha-do-algarve/",
-    image: "/images/food/Picanha-fundo-branco.webp",
+    image: "/images/press/bica-picanha.webp",
     imageAlt: {
       pt: "Picanha — Revista Bica, Restaurante Figueiral",
       en: "Picanha — Revista Bica, Restaurante Figueiral"
@@ -202,7 +202,7 @@ export const pressArticles: PressArticle[] = [
     },
     originalUrl:
       "https://anoticia.pt/2024/10/09/em-almancil-e-possivel-degustar-aquela-que-e-considerada-a-melhor-picanha-do-algarve/",
-    image: "/images/hero/Preparacao-picanha.webp",
+    image: "/images/press/anoticia-picanha.webp",
     imageAlt: {
       pt: "Preparação de picanha — A Notícia, Figueiral Almancil",
       en: "Picanha preparation — A Notícia, Figueiral Almancil"
@@ -245,7 +245,7 @@ export const pressArticles: PressArticle[] = [
     },
     originalUrl:
       "https://observador.pt/2023/11/03/picanha-trufa-branca-e-uma-amizade-cantada-em-palco-12-coisas-para-fazer-no-fim-de-semana/",
-    image: "/images/food/Camarao-alho-fogo.webp",
+    image: "/images/press/observador-trufa.webp",
     imageAlt: {
       pt: "Fogo na cozinha — menção Observador, Figueiral",
       en: "Fire in the kitchen — Observador mention, Figueiral"
@@ -287,7 +287,7 @@ export const pressArticles: PressArticle[] = [
       en: ["More than serving — a house that cares for those who walk in for decades."]
     },
     originalUrl: "https://www.lux.iol.pt/lifestyle/09-10-2023/figueiral-o-restaurante-com-maior-tradicao-em-almancil",
-    image: "/images/people/Rececao-clientes.webp",
+    image: "/images/press/lux-almancil.webp",
     imageAlt: {
       pt: "Receção no Figueiral — artigo Lux",
       en: "Reception at Figueiral — Lux article"
@@ -329,7 +329,7 @@ export const pressArticles: PressArticle[] = [
       en: ["A story of consistency in a region in constant change."]
     },
     originalUrl: "https://www.theportugalnews.com/news/2022-10-14/the-key-to-success-figueiral-restaurant/71167",
-    image: "/images/people/Convicio-clientes-1.webp",
+    image: "/images/press/portugal-news-success.webp",
     imageAlt: {
       pt: "Convívio à mesa — The Portugal News",
       en: "Dining together — The Portugal News"
@@ -371,7 +371,7 @@ export const pressArticles: PressArticle[] = [
       en: ["An evening without hurry, between the grill and conversation."]
     },
     originalUrl: "https://www.theportugalnews.com/news/2022-10-28/a-figueiral-experience/71541",
-    image: "/images/wine/Vinho-garrafeira.webp",
+    image: "/images/press/portugal-news-experience.webp",
     imageAlt: {
       pt: "Garrafeira — The Portugal News, Figueiral",
       en: "Wine cellar — The Portugal News, Figueiral"
@@ -413,7 +413,7 @@ export const pressArticles: PressArticle[] = [
       en: ["A credible table between Almancil and the Algarve coast."]
     },
     originalUrl: "https://www.businesstraveller.com/sponsored/restaurant-guide-dine-in-style/",
-    image: "/images/terrace/Esplanada-1.webp",
+    image: "/images/press/business-traveller.webp",
     imageAlt: {
       pt: "Esplanada do Figueiral — Business Traveller",
       en: "Figueiral terrace — Business Traveller"
@@ -455,7 +455,7 @@ export const pressArticles: PressArticle[] = [
       en: ["A reference gastronomic venue in Almancil."]
     },
     originalUrl: "https://visitalgarve.pt/equipamento/9222/restaurante-figueiral",
-    image: "/images/terrace/Esplanada-2.webp",
+    image: "/images/press/visit-algarve.webp",
     imageAlt: {
       pt: "Esplanada — Visit Algarve, Figueiral",
       en: "Terrace — Visit Algarve, Figueiral"
@@ -497,7 +497,7 @@ export const pressArticles: PressArticle[] = [
       en: ["Worth the detour to Almancil."]
     },
     originalUrl: "https://viagensa4.com/restaurante-figueiral/",
-    image: "/images/wine/Vinho-detalhe-1.webp",
+    image: "/images/press/viagensa4.webp",
     imageAlt: {
       pt: "Vinho à mesa — ViagensA4, Figueiral",
       en: "Wine at the table — ViagensA4, Figueiral"
@@ -539,7 +539,7 @@ export const pressArticles: PressArticle[] = [
       en: ["Algarve roots, contemporary table."]
     },
     originalUrl: "https://evoquemagazine.pt/figueiral-tradition-and-modernity/",
-    image: "/images/people/Empratamento-1.webp",
+    image: "/images/press/evoque-modernity.webp",
     imageAlt: {
       pt: "Empratamento — Evoque Magazine, Figueiral",
       en: "Plating — Evoque Magazine, Figueiral"
@@ -581,7 +581,7 @@ export const pressArticles: PressArticle[] = [
       en: ["More than a restaurant — a story lived at the table."]
     },
     originalUrl: "https://evoquemagazine.pt/figueiral-a-passion-with-more-than-30-years/",
-    image: "/images/people/Proprietarios.webp",
+    image: "/images/press/evoque-passion.webp",
     imageAlt: {
       pt: "Proprietários do Figueiral — Evoque Magazine",
       en: "Figueiral owners — Evoque Magazine"

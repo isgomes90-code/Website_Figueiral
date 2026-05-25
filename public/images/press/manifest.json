@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-05-25T18:03:26.546Z",
+  "results": [
+    {
+      "slug": "anoticia-melhor-picanha-almancil",
+      "file": "anoticia-picanha.webp",
+      "imageUrl": "https://anoticia.pt/wp-content/uploads/2024/10/Almancil-Picanha.jpg"
+    },
+    {
+      "slug": "magg-melhor-picanha-algarve",
+      "file": "magg-picanha.webp",
+      "imageUrl": "https://thumbs.web.sapo.io/?W=1200&H=630&delay_optim=1&tv=1&crop=center&bottom_overlay=https%3A%2F%2Fmagg.sapo.pt%2Fassets%2Fimg%2Fmagg%2Ffacebook-overlay.png&epic=N2Y5E6r9yCkeOQKdMgAbzX5kHqZLJLs3wDHUw69TRcYjXOyJGqIGRH3WTU6W+W2wU4iC0lCiXmKpw8VzPZMpfTQ0wIBhGH/5iO6seK+VA1Xmh2I="
+    },
+    {
+      "slug": "revista-bica-melhor-picanha-algarve",
+      "file": "bica-picanha.webp",
+      "imageUrl": "https://revistabica.com/wp-content/uploads/2024/10/0-7.jpg"
+    },
+    {
+      "slug": "observador-picanha-fim-semana",
+      "file": "observador-trufa.webp",
+      "imageUrl": "https://wm.observador.pt/wm/l/https%3A%2F%2Fbordalo.observador.pt%2Fv2%2Frs%3Afill%3A770%3A403%2Fc%3A1920%3A1079%3Anowe%3A0%3A0%2Fq%3A70%2Ff%3Awebp%2Fplain%2Fhttps%3A%2F%2Fs3.observador.pt%2Fwp-content%2Fuploads%2F2023%2F11%2F02145607%2Fkuw-823-aspect16x9-2.jpg?layer=obstop:T"
+    },
+    {
+      "slug": "lux-figueiral-tradicao-almancil",
+      "file": "lux-almancil.webp",
+      "imageUrl": "https://img.iol.pt/image/id/6523c085d34e65afa2f6325c/"
+    },
+    {
+      "slug": "luxury-editor-must-visit",
+      "file": "luxury-editor-review.webp",
+      "imageUrl": "https://theluxuryeditor.com/wp-content/uploads/2024/04/Figueiral_CF025943CB.jpg"
+    },
+    {
+      "slug": "portugal-news-key-to-success",
+      "file": "portugal-news-success.webp",
+      "imageUrl": "https://d1mnxluw9mpf9w.cloudfront.net/media/7206/fig3.jpg"
+    },
+    {
+      "slug": "portugal-news-figueiral-experience",
+      "file": "portugal-news-experience.webp",
+      "imageUrl": "https://d1mnxluw9mpf9w.cloudfront.net/media/7472/Figueiral-photography-1.jpg"
+    },
+    {
+      "slug": "viagensa4-figueiral",
+      "file": "viagensa4.webp",
+      "imageUrl": "https://viagensa4.com/wp-content/uploads/2023/11/Figueiral-300dpi-20191015-15102019-137-min.jpg"
+    },
+    {
+      "slug": "evoque-tradition-modernity",
+      "file": "evoque-modernity.webp",
+      "imageUrl": "https://evoquemagazine.pt/wp-content/uploads/2023/09/355096722_760230339438427_3479461601491418220_n.jpg"
+    },
+    {
+      "slug": "evoque-passion-30-years",
+      "file": "evoque-passion.webp",
+      "imageUrl": "https://evoquemagazine.pt/wp-content/uploads/2023/09/323437186_1575791909606560_8597036235355862150_n.jpg"
+    }
+  ],
+  "failures": [
+    {
+      "slug": "business-traveller-restaurant-guide",
+      "error": "HTTP 403 for https://www.businesstraveller.com/sponsored/restaurant-guide-dine-in-style/"
+    },
+    {
+      "slug": "visit-algarve-figueiral",
+      "error": "No usable image found for visit-algarve-figueiral"
+    }
+  ]
+}
