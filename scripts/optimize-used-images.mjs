@@ -27,7 +27,7 @@ const jpgToWebp = [
   "images/food/Picanha-acompanhamentos.jpg",
   "images/people/Convicio-clientes-2.jpg",
   "images/food/Picanha-grelha-2.jpg",
-  "images/people/Eraldo.jpg"
+  "images/people/Eraldo.webp"
 ];
 
 async function optimizeWebp(rel, maxWidth) {
