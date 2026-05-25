@@ -50,7 +50,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         body={about.feature.body}
         image={images.family}
         alt={img.aboutFamily}
-        supportingImage="/images/people/Rececao-clientes.webp"
+        supportingImage="/images/people/Rececao-clientes-opt.webp"
         supportingAlt={img.aboutReception}
         faces={about.feature.faces}
         facesImageAltSuffix={about.feature.facesAltSuffix}

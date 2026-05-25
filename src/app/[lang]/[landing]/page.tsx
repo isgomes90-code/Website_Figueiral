@@ -21,13 +21,22 @@ export async function generateMetadata({
   const page = getEditorialPage(landing);
   if (!page) return {};
 
-  return pageMetadata({
+  const metadata = pageMetadata({
     title: t(page.meta.title, locale),
     description: t(page.meta.description, locale),
     keywords: t(page.meta.keywords, locale),
     path: `/${landing}`,
     lang: locale
   });
+
+  if (!isSeoLandingPage(page)) {
+    return {
+      ...metadata,
+      robots: { index: false, follow: false }
+    };
+  }
+
+  return metadata;
 }
 
 export default async function EditorialRoutePage({

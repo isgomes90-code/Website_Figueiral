@@ -45,7 +45,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   return (
     <>
-      <Hero dictionary={dictionary} lang={locale} slideAlts={dictionary.seo.images.heroSlides} />
+      <Hero hero={dictionary.hero} lang={locale} slideAlts={dictionary.seo.images.heroSlides} />
       <section className="editorial-paper relative py-[4.25rem] sm:py-[5.75rem] lg:py-[6.25rem]">
         <div className="section-shell relative z-10">
           <SectionIntro
@@ -69,8 +69,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     className={`object-cover ${imageToneEditorial} transition duration-[1350ms] ease-out group-hover:scale-[1.018] ${index === 0 ? "object-[center_48%]" : index === 1 ? "object-[center_22%]" : index === 2 ? "object-[center_72%]" : "object-[center_46%]"}`}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    quality={index === 0 ? 75 : 68}
+                    loading="lazy"
+                    quality={72}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(252,246,238,0.05),rgba(52,41,34,0.16))]" />
                 </div>
@@ -122,6 +122,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         note={home.meat.note}
         supportingImage="/images/food/Picanha-grelha-1.webp"
         supportingAlt={dictionary.seo.images.picanhaSupporting}
+        contextLink={{
+          ...home.meat.contextLink,
+          href: localizedPath(locale, "/best-picanha-algarve")
+        }}
         tone="warm"
         composition="panorama"
         eyebrowTone="institutional"
@@ -136,6 +140,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         note={home.wine.note}
         supportingImage="/images/wine/Vinho-detalhe-2.webp"
         supportingAlt={dictionary.seo.images.wineSupporting}
+        contextLink={{
+          ...home.wine.contextLink,
+          href: localizedPath(locale, "/wine-experience-algarve")
+        }}
         reverse
         tone="linen"
         composition="standard"
@@ -184,6 +192,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         alt={dictionary.seo.images.terrace}
         supportingImage={images.terraceAlt}
         supportingAlt={dictionary.seo.images.terraceAlt}
+        contextLink={{
+          ...home.terrace.contextLink,
+          href: localizedPath(locale, "/restaurant-quinta-do-lago")
+        }}
         quiet
         tone="linen"
         composition="intimate"

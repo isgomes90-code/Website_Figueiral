@@ -148,7 +148,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                       } ${
                         "imagePosition" in visual && visual.imagePosition ? visual.imagePosition : "object-center"
                       }`}
-                      quality={82}
+                      quality={72}
                     />
                     <div className="absolute inset-0" style={{ background: visual.overlay }} />
                     {"hideEditorial" in visual && visual.hideEditorial ? null : (
@@ -184,36 +184,12 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                     </div>
 
                     <div className={`w-full divide-y divide-walnut/10 ${isCompact ? "mt-6" : "mt-10"}`}>
-                      {category.items.map((item) => {
-                        const priced = item as typeof item & {
-                          prices?: { label: string; value: string }[];
-                          priceNote?: string;
-                        };
-                        return (
+                      {category.items.map((item) => (
                           <article key={item.name} className={`group ${isCompact ? "py-4 first:pt-0 last:pb-0 sm:py-[1.125rem]" : "py-7 first:pt-0 last:pb-0"}`}>
-                            <div className={`flex flex-col sm:flex-row sm:items-start sm:justify-between ${isCompact ? "gap-3 sm:gap-4" : "gap-4 sm:gap-6"}`}>
-                              <div className="min-w-0 flex-1">
-                                <h3 className={`text-charcoal transition group-hover:text-gold ${isCompact ? "text-[1.28rem] font-display font-semibold leading-snug tracking-[-0.01em]" : cardTitleClasses}`}>
-                                  {item.name}
-                                </h3>
-                                <p className={`text-pretty text-walnut ${isCompact ? "mt-2 text-[0.94rem] leading-[1.62]" : `mt-3 ${bodyTextClasses}`}`}>{item.description}</p>
-                                {priced.prices && priced.prices.length ? (
-                                  <div className={`w-full max-w-[28rem] space-y-1.5 sm:max-w-[32rem] ${isCompact ? "mt-3" : "mt-5"}`}>
-                                    {priced.prices.map((p) => (
-                                      <div key={p.label} className="flex items-baseline gap-3">
-                                        <span className={`shrink-0 text-walnut/85 ${bodyNoteClasses}`}>{p.label}</span>
-                                        <span className="h-px flex-1 translate-y-[-3px] bg-walnut/18" aria-hidden />
-                                        <span className="shrink-0 font-semibold tabular-nums text-charcoal">{p.value}</span>
-                                      </div>
-                                    ))}
-                                    {priced.priceNote ? (
-                                      <p className={`font-semibold uppercase tracking-[0.24em] text-walnut/65 ${isCompact ? "mt-2 text-[0.62rem]" : "mt-3 text-[0.68rem]"}`}>
-                                        {priced.priceNote}
-                                      </p>
-                                    ) : null}
-                                  </div>
-                                ) : null}
-                              </div>
+                            <div className={`flex items-start justify-between ${isCompact ? "gap-3" : "gap-4"}`}>
+                              <h3 className={`min-w-0 flex-1 text-charcoal transition group-hover:text-gold ${isCompact ? "text-[1.28rem] font-display font-semibold leading-snug tracking-[-0.01em]" : cardTitleClasses}`}>
+                                {item.name}
+                              </h3>
                               {item.tag ? (
                                 <span className={`w-fit shrink-0 rounded-full border border-gold/25 bg-gold/10 font-semibold uppercase tracking-[0.22em] text-gold ${isCompact ? "px-3 py-1 text-[0.58rem]" : "px-3.5 py-1.5 text-[0.62rem]"}`}>
                                   {item.tag}
@@ -224,9 +200,9 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                                 </span>
                               ) : null}
                             </div>
+                            <p className={`w-full text-walnut ${isCompact ? "mt-2 text-[0.94rem] leading-[1.62]" : `mt-3 ${bodyTextClasses}`}`}>{item.description}</p>
                           </article>
-                        );
-                      })}
+                      ))}
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { defaultLocale, locales, localizedPath, type Locale } from "@/i18n/config";
+import { GOOGLE_REVIEW_DATA } from "@/data/restaurant";
 import { isLocalTestSite, siteConfig } from "@/lib/site";
 
 const defaultKeywordsByLocale: Record<Locale, string[]> = {
@@ -50,7 +51,7 @@ export function pageMetadata({
     lang === "pt"
       ? "Restaurante Figueiral em Almancil, Algarve"
       : "Restaurante Figueiral in Almancil, Algarve";
-  const resolvedOgImage = ogImage ?? "/opengraph-image";
+  const resolvedOgImage = ogImage ?? `${localizedPath(lang)}/opengraph-image`;
   const resolvedOgImageAlt = ogImageAlt ?? defaultOgImageAlt;
 
   return {
@@ -129,7 +130,7 @@ export function pressArticleSchema({
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        url: `${siteConfig.url}/opengraph-image`
+        url: `${siteConfig.url}/${lang}/opengraph-image`
       }
     },
     mainEntityOfPage: {
@@ -174,7 +175,12 @@ export function menuSchema(
   };
 }
 
-export function restaurantSchema() {
+export function restaurantSchema(lang: Locale = defaultLocale) {
+  const descriptions: Record<Locale, string> = {
+    pt: "Restaurante familiar em Almancil, Algarve, desde 1986. Picanha ao estilo brasileiro, carnes na grelha e vinhos portugueses.",
+    en: "Family restaurant in Almancil, Algarve, since 1986. Brazilian-style picanha, fire-grilled meats and Portuguese wines."
+  };
+
   return {
     "@context": "https://schema.org",
     "@type": ["Restaurant", "LocalBusiness"],
@@ -183,15 +189,22 @@ export function restaurantSchema() {
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
-    description:
-      "Restaurante familiar em Almancil, Algarve, desde 1986. Picanha ao estilo brasileiro, carnes na grelha e vinhos portugueses.",
+    description: descriptions[lang],
+    inLanguage: lang === "pt" ? "pt-PT" : "en",
     servesCuisine: ["Portuguese", "Mediterranean", "Steakhouse", "Brazilian Picanha", "International"],
     priceRange: "€€€",
     acceptsReservations: true,
-    menu: `${siteConfig.url}/${defaultLocale}/menu`,
+    menu: `${siteConfig.url}/${lang}/menu`,
     foundingDate: siteConfig.founded,
-    image: `${siteConfig.url}/opengraph-image`,
+    image: `${siteConfig.url}/${lang}/opengraph-image`,
     hasMap: siteConfig.maps.placeUrl,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: GOOGLE_REVIEW_DATA.ratingValue,
+      reviewCount: GOOGLE_REVIEW_DATA.reviewCount,
+      bestRating: GOOGLE_REVIEW_DATA.bestRating,
+      worstRating: GOOGLE_REVIEW_DATA.worstRating
+    },
     areaServed: [
       {
         "@type": "City",
@@ -223,6 +236,6 @@ export function restaurantSchema() {
         closes: "22:00"
       }
     ],
-    sameAs: Object.values(siteConfig.socials)
+    sameAs: [...Object.values(siteConfig.socials), siteConfig.maps.placeUrl]
   };
 }

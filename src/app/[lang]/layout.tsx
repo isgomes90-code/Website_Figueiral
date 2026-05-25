@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -9,6 +10,17 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { restaurantSchema } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
+
+const HERO_LCP_IMAGE = "/images/hero/Preparacao-picanha.webp";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: [{ url: "/icon", type: "image/png" }],
+    apple: [{ url: "/apple-icon", type: "image/png" }]
+  }
+};
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -49,6 +61,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={htmlLang} className={`${display.variable} ${sans.variable}`}>
+      <head>
+        <link rel="preload" as="image" href={HERO_LCP_IMAGE} type="image/webp" fetchPriority="high" />
+      </head>
       <body className={`${sans.className} antialiased`}>
         <a
           href="#main-content"
@@ -56,8 +71,8 @@ export default async function LocaleLayout({
         >
           {locale === "pt" ? "Saltar para o conteúdo" : "Skip to content"}
         </a>
-        <JsonLd data={restaurantSchema()} />
-        <Header dictionary={dictionary} lang={locale} />
+        <JsonLd data={restaurantSchema(locale)} />
+        <Header navigation={dictionary.navigation} logoAlt={dictionary.seo.images.logoHeader} lang={locale} />
         <main id="main-content">{children}</main>
         <Footer dictionary={dictionary} lang={locale} />
         <MobileReservationBar dictionary={dictionary} lang={locale} />

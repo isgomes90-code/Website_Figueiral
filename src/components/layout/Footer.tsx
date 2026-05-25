@@ -68,6 +68,9 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
                   {navigation[item.labelKey]}
                 </Link>
               ))}
+              <Link href={localizedPath(lang, "/press")} className={footerLinkClass}>
+                {navigation.press}
+              </Link>
             </nav>
             <Link
               href={localizedPath(lang, "/reservations")}

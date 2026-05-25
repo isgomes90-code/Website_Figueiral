@@ -1,8 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { TeamEditorialGrid, type TeamFace } from "@/components/sections/TeamEditorialGrid";
-import { bodyNoteClasses } from "@/lib/sectionTitle";
+import { bodyLeadClasses, bodyNoteClasses } from "@/lib/sectionTitle";
+
+type ContextLink = {
+  before: string;
+  label: string;
+  after: string;
+  href: string;
+};
 
 type ImageFeatureProps = {
   eyebrow: string;
@@ -15,6 +23,7 @@ type ImageFeatureProps = {
   quiet?: boolean;
   supportingImage?: string;
   supportingAlt?: string;
+  contextLink?: ContextLink;
   faces?: TeamFace[];
   facesImageAltSuffix?: string;
   /** Fundo envolvente da faixa onde o bloco vive — alterna ritmo vertical da página. */
@@ -52,6 +61,7 @@ export function ImageFeature(props: ImageFeatureProps) {
     quiet = false,
     supportingImage,
     supportingAlt,
+    contextLink,
     faces,
     facesImageAltSuffix = "",
     tone = "none",
@@ -81,6 +91,18 @@ export function ImageFeature(props: ImageFeatureProps) {
             eyebrowTone={eyebrowTone}
             titleScale="feature"
           />
+          {contextLink ? (
+            <p className={`mt-6 max-w-[36rem] sm:mt-7 ${bodyLeadClasses} text-walnut`}>
+              {contextLink.before}
+              <Link
+                href={contextLink.href}
+                className="border-b border-brandGreen/35 text-charcoal transition hover:border-brandGreen/60 hover:text-brandGreen"
+              >
+                {contextLink.label}
+              </Link>
+              {contextLink.after}
+            </p>
+          ) : null}
           {note ? (
             <div className={`mt-9 max-w-sm border-l border-brandGreen/35 pl-5 tracking-[0.01em] text-walnut sm:mt-10 ${bodyNoteClasses}`}>
               {note}
@@ -100,6 +122,7 @@ export function ImageFeature(props: ImageFeatureProps) {
             sizes="(min-width: 1024px) 52vw, 100vw"
             className={`object-cover ${mainImageFit}`}
             loading="lazy"
+            quality={72}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/24 via-charcoal/5 to-transparent" />
           {supportingImage ? (
@@ -111,6 +134,7 @@ export function ImageFeature(props: ImageFeatureProps) {
                 sizes="200px"
                 className="object-cover"
                 loading="lazy"
+                quality={68}
               />
             </div>
           ) : null}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, type Locale } from "@/i18n/config";
@@ -27,23 +26,23 @@ export default async function GalleryPage({ params }: { params: Promise<{ lang: 
         <SectionIntro as="h1" eyebrow={gallery.intro.eyebrow} title={gallery.intro.title} body={gallery.intro.body} />
         <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3">
           {galleryImages.map((image, index) => (
-            <MotionReveal
+            <div
               key={image.src}
-              delay={(index % 3) * 0.06}
-              className="mb-5 break-inside-avoid overflow-hidden rounded-[1.6rem] shadow-[0_24px_80px_rgba(0,0,0,0.28)]"
+              className="mb-5 break-inside-avoid overflow-hidden rounded-[1.6rem] border border-walnut/10 shadow-[0_16px_48px_rgba(58,44,34,0.1)]"
             >
-              <div className={`grain relative border border-cream/60 ${image.tall ? "h-[520px]" : "h-[360px]"}`}>
+              <div className={`relative bg-sand/40 ${image.tall ? "h-[520px]" : "h-[360px]"}`}>
                 <Image
                   src={image.src}
                   alt={galleryAlts[index] ?? image.alt}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition duration-700 hover:scale-105"
+                  className="object-cover"
                   loading="lazy"
+                  quality={72}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/16 via-transparent to-transparent" />
               </div>
-            </MotionReveal>
+            </div>
           ))}
         </div>
       </div>

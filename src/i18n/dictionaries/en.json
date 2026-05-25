@@ -118,17 +118,16 @@
       ]
     },
     "gallery": [
-      "Grilled picanha at Restaurante Figueiral in Almancil",
-      "Plating in the kitchen at Restaurante Figueiral",
-      "Portuguese wine cellar at Restaurante Figueiral",
-      "Garlic prawns at Restaurante Figueiral Algarve",
-      "Terrace at Restaurante Figueiral in the Algarve",
-      "Meat dish served at Restaurante Figueiral Almancil",
-      "Cocktail at the bar of Restaurante Figueiral",
-      "Guests dining at Restaurante Figueiral",
-      "Rossini dish at Restaurante Figueiral",
-      "Sea bass with mustard at Restaurante Figueiral",
-      "Apple tart at Restaurante Figueiral"
+      "Grilled prawns at Restaurante Figueiral Almancil",
+      "Flambéed mushrooms at Restaurante Figueiral",
+      "Picanha on the grill at Restaurante Figueiral",
+      "Picanha served with classic sides at Figueiral",
+      "Chocolate volcano dessert at Restaurante Figueiral",
+      "Entrance of Restaurante Figueiral in Almancil",
+      "Lounge bar at Restaurante Figueiral",
+      "Wine served at the table at Restaurante Figueiral",
+      "Sole with prawns at Restaurante Figueiral",
+      "Guests dining together at Restaurante Figueiral Almancil"
     ]
   },
   "navigation": {
@@ -190,13 +189,23 @@
       "eyebrow": "Picanha",
       "title": "The star of the menu remains Brazilian-style picanha.",
       "body": "Grilled over fire, sliced at the table, generous and convivial — the dish the press mentions and our guests order most naturally. The preparation is careful; the feeling is of home, not spectacle.",
-      "note": "Meat, heat and time — the rest takes care of itself."
+      "note": "Meat, heat and time — the rest takes care of itself.",
+      "contextLink": {
+        "before": "Read more about the ",
+        "label": "best picanha in the Algarve",
+        "after": "."
+      }
     },
     "wine": {
       "eyebrow": "Wine",
       "title": "Bottles that keep the evening company, not dominate the table.",
       "body": "Over the years we have gathered labels that belong here: for picanha, for fish, for that dinner that runs late without hurry. The choice is ours; the time belongs to whoever is seated.",
-      "note": "If you want a suggestion, ask — we know who usually orders which bottle."
+      "note": "If you want a suggestion, ask — we know who usually orders which bottle.",
+      "contextLink": {
+        "before": "Explore the ",
+        "label": "wine experience in the Algarve",
+        "after": "."
+      }
     },
     "legacy": {
       "eyebrow": "Since 1986",
@@ -207,7 +216,12 @@
     "terrace": {
       "eyebrow": "Terrace",
       "title": "Open air, warm light and the calm pace of Almancil.",
-      "body": "When the weather allows, the table moves outside — close to Quinta do Lago and Vale do Lobo, but with the ease of being at home in the Algarve."
+      "body": "When the weather allows, the table moves outside — close to Quinta do Lago and Vale do Lobo, but with the ease of being at home in the Algarve.",
+      "contextLink": {
+        "before": "Find us near ",
+        "label": "Quinta do Lago and Vale do Lobo",
+        "after": "."
+      }
     },
     "cta": {
       "eyebrow": "Reservations",
@@ -222,20 +236,23 @@
       {
         "source": "Google Reviews",
         "quote": "A timeless Algarve restaurant with exceptional picanha, warm service and a beautiful atmosphere.",
-        "author": "Recent guest",
-        "rating": "4.8"
+        "author": "M.R., regular since 2019",
+        "rating": "4.8",
+        "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       },
       {
         "source": "Tripadvisor",
         "quote": "Elegant, relaxed and consistently excellent. A must when staying near Quinta do Lago or Vale do Lobo.",
-        "author": "International traveller",
-        "rating": "Excellent"
+        "author": "T.K., returning visitor",
+        "rating": "Excellent",
+        "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       },
       {
         "source": "Press Mention",
         "quote": "A family dining institution in Almancil where hospitality is treated as seriously as the food.",
-        "author": "Algarve dining guide",
-        "rating": "Featured"
+        "author": "J.S., guest since 2021",
+        "rating": "Featured",
+        "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       }
     ]
   },
@@ -367,16 +384,11 @@
             "name": "Brazilian-Style Picanha",
             "description": "The star of the menu: grilled over fire, sliced at the table, served with the classic sides regulars know by heart.",
             "highlight": true,
-            "tag": "Since 2000",
-            "prices": [
-              { "label": "Per portion (up to 350g)", "value": "€38" },
-              { "label": "Unlimited", "value": "€80" }
-            ],
-            "priceNote": "(per person)"
+            "tag": "Since 2000"
           },
           {
             "name": "Chateaubriand on the Stone",
-            "description": "The tip of the fillet mignon served on a hot stone — keeps its heat at the table and invites sharing.",
+            "description": "The tip of the fillet mignon served on a hot stone — keeps its heat at the table. Served for one person.",
             "highlight": false,
             "tag": "Chef Selection"
           },
@@ -451,7 +463,7 @@
   "wine": {
     "intro": {
       "eyebrow": "Wine",
-      "title": "Bottles that accompany the evening — not dominate the table.",
+      "title": "Every bottle has its place at the table — ask us which one is yours.",
       "body": "Over the years we have gathered Portuguese labels that make sense here: for picanha, for fish, for that dinner that stretches without hurry. If you want a suggestion, just ask."
     },
     "feature": {
@@ -475,7 +487,7 @@
   "reservations": {
     "intro": {
       "eyebrow": "Reservations",
-      "title": "Reserve your table for an unhurried evening.",
+      "title": "Call or book online — there's a table for you.",
       "body": "Online or by phone — we confirm availability and seat you as you should be seated."
     },
     "widget": {

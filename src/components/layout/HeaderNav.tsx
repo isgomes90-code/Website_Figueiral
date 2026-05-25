@@ -55,8 +55,15 @@ const deskNavTransparentGlass =
 const deskNavActivePaper = "text-charcoal after:!scale-x-100";
 const deskNavActiveGlass = "text-cream after:!scale-x-100";
 
-export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: Locale }) {
-  const navigation = dictionary.navigation;
+export function HeaderNav({
+  navigation,
+  logoAlt,
+  lang
+}: {
+  navigation: Dictionary["navigation"];
+  logoAlt: string;
+  lang: Locale;
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const panelId = useId();
@@ -194,7 +201,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
   const shellClasses =
     atTopChrome && !mobileOpen
       ? "border-b border-transparent bg-transparent shadow-none backdrop-blur-0"
-      : "border-b border-walnut/[0.1] bg-[rgba(253,251,246,0.92)] shadow-[0_8px_32px_rgba(45,37,31,0.04)] backdrop-blur-md";
+      : "border-b border-walnut/[0.1] bg-[rgba(253,251,246,0.96)] shadow-[0_8px_32px_rgba(45,37,31,0.04)]";
 
   const logoSrc = useTransparentHeroTone ? figueiralLogoHeaderCreamSrc : figueiralLogoSrc;
   const logoImageCls = useTransparentHeroTone ? "header-logo-image header-logo-image--cream" : "header-logo-image header-logo-image--paper";
@@ -219,7 +226,7 @@ export function HeaderNav({ dictionary, lang }: { dictionary: Dictionary; lang: 
               <span className="relative block h-[4.35rem] w-[7.45rem] sm:h-[4.85rem] sm:w-[8.27rem] min-[900px]:h-[5rem] min-[900px]:w-[8.55rem] xl:h-[5.85rem] xl:w-[9.98rem]">
                 <Image
                   src={logoSrc}
-                  alt={dictionary.seo.images.logoHeader}
+                  alt={logoAlt}
                   fill
                   priority
                   sizes="(max-width: 899px) 132px, (max-width: 1279px) 154px, 160px"

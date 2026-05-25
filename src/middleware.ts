@@ -21,6 +21,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  /** Exclui assets internos do Next, ficheiros estáticos e a rota da imagem Open Graph. */
-  matcher: ["/((?!_next|opengraph-image|.*\\.).*)"]
+  /** Exclui assets internos do Next, ícones dinâmicos, ficheiros estáticos e OG image. */
+  matcher: ["/((?!_next|opengraph-image|icon|apple-icon|.*\\.).*)"]
 };

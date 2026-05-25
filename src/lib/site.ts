@@ -74,11 +74,11 @@ export const navItems = [
 export const images = {
   hero: "/images/hero/Preparacao-picanha.webp",
   picanha: "/images/food/Picanha-fundo-branco.webp",
-  fire: "/images/food/Camarao-alho-fogo.webp",
+  fire: "/images/food/Camarao-alho-fogo-opt.webp",
   wine: "/images/wine/Vinho-detalhe-1.webp",
-  wineCellar: "/images/wine/Vinho-garrafeira.webp",
+  wineCellar: "/images/wine/Vinho-garrafeira-opt.webp",
   terrace: "/images/terrace/Esplanada-1.webp",
-  terraceAlt: "/images/terrace/Esplanada-2.webp",
+  terraceAlt: "/images/terrace/Esplanada-3.webp",
   family: "/images/people/Convicio-clientes-1.webp",
   dining: "/images/people/Empratamento-1.webp",
   bar: "/images/bar/Figueiral-0494-20191105-Web.webp",
@@ -90,21 +90,20 @@ export const images = {
 
 export const homeHighlightImages = [
   "/images/hero/Preparacao-picanha.webp",
-  "/images/wine/Vinho-garrafeira.webp",
+  "/images/wine/Vinho-garrafeira-opt.webp",
   "/images/hero/Alinhamento-mesas.webp",
-  "/images/people/Rececao-clientes.webp"
+  "/images/people/Rececao-clientes-opt.webp"
 ] as const;
 
 export const galleryImages = [
-  { src: "/images/hero/Preparacao-picanha.webp", alt: "Preparacao de picanha no Restaurante Figueiral", tall: true },
-  { src: "/images/people/Empratamento-1.webp", alt: "Empratamento cuidado na cozinha do Figueiral" },
-  { src: "/images/wine/Vinho-garrafeira.webp", alt: "Garrafeira e selecao de vinhos do Figueiral" },
-  { src: "/images/food/Camarao-alho-fogo.webp", alt: "Camarao ao alho com fogo e movimento" },
-  { src: "/images/terrace/Esplanada-1.webp", alt: "Esplanada do Restaurante Figueiral em Almancil", tall: true },
-  { src: "/images/food/Bife-cogumelos.webp", alt: "Prato de carne servido no Figueiral" },
-  { src: "/images/bar/Expresso-martini-preparcao-1.webp", alt: "Cocktail preparado no Figueiral" },
-  { src: "/images/people/Convicio-clientes-1.webp", alt: "Convivio de clientes no Figueiral" },
-  { src: "/images/food/Rossini.webp", alt: "Prato Rossini preparado no Figueiral" },
-  { src: "/images/food/Robalo-mustarda.webp", alt: "Robalo com mostarda no Figueiral" },
-  { src: "/images/food/Tarte-maca.webp", alt: "Tarte de maca do Figueiral" }
+  { src: "/images/hero/Camarao-grelha.webp", alt: "Camarao na grelha no Restaurante Figueiral", tall: true },
+  { src: "/images/food/cogumelos-com-alho-entrada-2-opt.webp", alt: "Cogumelos flambados no Restaurante Figueiral" },
+  { src: "/images/food/Picanha-grelha-4-opt.webp", alt: "Picanha na grelha no Restaurante Figueiral", tall: true },
+  { src: "/images/food/Picanha-acompanhamentos.webp", alt: "Picanha servida com acompanhamentos no Figueiral" },
+  { src: "/images/food/Vulcao-chocolate.webp", alt: "Vulcao de chocolate no Restaurante Figueiral" },
+  { src: "/images/hero/Entrada-restaurante.webp", alt: "Entrada do Restaurante Figueiral em Almancil" },
+  { src: "/images/hero/Lounge-bar-opt.webp", alt: "Lounge bar do Restaurante Figueiral" },
+  { src: "/images/wine/Vinho-mesa.webp", alt: "Vinho servido a mesa no Restaurante Figueiral" },
+  { src: "/images/food/Linguado-camarao.webp", alt: "Linguado com camarao no Restaurante Figueiral" },
+  { src: "/images/people/Convicio-clientes-2.webp", alt: "Convivio de clientes no Restaurante Figueiral" }
 ];

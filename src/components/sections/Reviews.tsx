@@ -6,9 +6,9 @@ import { bodyNoteClasses, displayFigureClasses, editorialEyebrowClasses, reviewQ
 
 const experienceImages = [
   "/images/people/Convicio-clientes-1.webp",
-  "/images/people/Convicio-clientes-3.webp",
-  "/images/people/Rececao-clientes.webp",
-  "/images/people/Empratamento-2.webp"
+  "/images/people/Convicio-clientes-3-opt.webp",
+  "/images/people/Rececao-clientes-opt.webp",
+  "/images/people/Empratamento-2-opt.webp"
 ];
 
 export function Reviews({ dictionary }: { dictionary: Dictionary }) {
@@ -65,7 +65,15 @@ export function Reviews({ dictionary }: { dictionary: Dictionary }) {
               <blockquote className={`flex-1 text-cream/[0.96] ${reviewQuoteClasses}`}>
                 &ldquo;{review.quote}&rdquo;
               </blockquote>
-              <p className={`mt-8 text-cream/[0.72] ${bodyNoteClasses}`}>{review.author}</p>
+              <p className={`mt-8 text-cream/[0.72] ${bodyNoteClasses}`}>
+                {"url" in review && review.url ? (
+                  <a href={review.url} target="_blank" rel="noopener noreferrer" className="transition hover:text-cream">
+                    {review.author}
+                  </a>
+                ) : (
+                  review.author
+                )}
+              </p>
             </MotionReveal>
           ))}
         </div>

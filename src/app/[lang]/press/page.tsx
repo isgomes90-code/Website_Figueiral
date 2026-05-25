@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { PressEditorial } from "@/components/sections/PressEditorial";
 import { getDictionary } from "@/i18n/getDictionary";
-import { isLocale, localizedPath, type Locale } from "@/i18n/config";
+import { isLocale, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -11,9 +11,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return pageMetadata({ ...dictionary.meta.pages.press, path: "/press", lang: locale });
 }
 
-/** Imprensa integrada em Sobre — redireciona para a secção correspondente. */
 export default async function PressPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const locale: Locale = isLocale(lang) ? lang : "pt";
-  redirect(`${localizedPath(locale, "/about")}#press`);
+  const dictionary = await getDictionary(locale);
+
+  return (
+    <div className="pt-36 sm:pt-44">
+      <PressEditorial dictionary={dictionary} lang={locale} />
+    </div>
+  );
 }

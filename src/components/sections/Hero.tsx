@@ -41,16 +41,17 @@ const SLIDE_OBJECT = [
 ] as const;
 
 export function Hero({
-  dictionary,
+  hero,
   lang,
   slideAlts
 }: {
-  dictionary: Dictionary;
+  hero: Dictionary["hero"];
   lang: Locale;
   slideAlts: string[];
 }) {
-  const hero = dictionary.hero;
   const [activeSlide, setActiveSlide] = useState(0);
+  const nextSlide = (activeSlide + 1) % SLIDE_COUNT;
+  const visibleSlides = activeSlide === nextSlide ? [activeSlide] : [activeSlide, nextSlide];
 
   useEffect(() => {
     if (SLIDE_COUNT <= 1) return;
@@ -65,23 +66,23 @@ export function Hero({
   return (
     <section className="grain hero-grain relative min-h-screen overflow-hidden bg-[#453528]">
       <div className="absolute inset-0 z-0" aria-hidden>
-        {HERO_SLIDE_SRC.map((src, i) => (
+        {visibleSlides.map((i) => (
           <div
-            key={src}
+            key={HERO_SLIDE_SRC[i]}
             className="absolute inset-0 transition-opacity duration-[1400ms] ease-in-out"
             style={{ opacity: activeSlide === i ? 1 : 0 }}
           >
             <Image
-              src={src}
+              src={HERO_SLIDE_SRC[i]}
               alt={slideAlts[i] ?? hero.slidesAlt[i] ?? ""}
               fill
               priority={i === 0}
-              fetchPriority={i === 0 ? "high" : "low"}
+              fetchPriority={i === 0 ? "high" : "auto"}
               loading={i === 0 ? "eager" : "lazy"}
               placeholder="blur"
               blurDataURL={heroSlideBlurs[i] ?? heroSlideBlurs[0]}
-              sizes={i === 0 ? "100vw" : "0px"}
-              quality={i === 0 ? 75 : 68}
+              sizes="100vw"
+              quality={i === 0 ? 72 : 68}
               className={`${SLIDE_OBJECT[i]} ${imageToneHero}`}
             />
           </div>

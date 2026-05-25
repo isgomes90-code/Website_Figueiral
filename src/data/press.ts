@@ -75,8 +75,8 @@ export const pressArticles: PressArticle[] = [
     },
     meta: {
       title: {
-        pt: "The Luxury Editor | Restaurante Figueiral Almancil",
-        en: "The Luxury Editor | Restaurante Figueiral Almancil"
+        pt: "O destino gastronómico familiar perto da Quinta do Lago — The Luxury Editor",
+        en: "The family-owned gastronomic destination near Quinta do Lago — The Luxury Editor"
       },
       description: {
         pt: "Menção editorial da The Luxury Editor ao Restaurante Figueiral, casa familiar em Almancil perto da Quinta do Lago.",
@@ -122,7 +122,7 @@ export const pressArticles: PressArticle[] = [
       en: "Picanha on the grill — MAGG article on Figueiral"
     },
     meta: {
-      title: { pt: "MAGG | A melhor picanha do Algarve — Figueiral", en: "MAGG | Best picanha in the Algarve — Figueiral" },
+      title: { pt: "A melhor picanha do Algarve — MAGG", en: "The best picanha in the Algarve — MAGG" },
       description: {
         pt: "Resumo editorial da menção MAGG ao Restaurante Figueiral e à picanha em Almancil.",
         en: "Editorial summary of MAGG coverage of Restaurante Figueiral and picanha in Almancil."
@@ -165,7 +165,7 @@ export const pressArticles: PressArticle[] = [
       en: "Picanha — Revista Bica, Restaurante Figueiral"
     },
     meta: {
-      title: { pt: "Revista Bica | Picanha do Figueiral", en: "Revista Bica | Figueiral picanha" },
+      title: { pt: "Convite a degustar a melhor picanha do Algarve — Revista Bica", en: "An invitation to taste the best picanha in the Algarve — Revista Bica" },
       description: {
         pt: "Menção da Revista Bica à picanha do Restaurante Figueiral em Almancil.",
         en: "Revista Bica mention of picanha at Restaurante Figueiral in Almancil."
@@ -208,7 +208,7 @@ export const pressArticles: PressArticle[] = [
       en: "Picanha preparation — A Notícia, Figueiral Almancil"
     },
     meta: {
-      title: { pt: "A Notícia | Picanha do Figueiral Almancil", en: "A Notícia | Figueiral picanha Almancil" },
+      title: { pt: "Degustar a melhor picanha do Algarve em Almancil — A Notícia", en: "Tasting the best picanha in the Algarve in Almancil — A Notícia" },
       description: {
         pt: "Resumo da menção da A Notícia ao Restaurante Figueiral e à picanha no Algarve.",
         en: "Summary of A Notícia coverage of Restaurante Figueiral and picanha in the Algarve."
@@ -251,7 +251,7 @@ export const pressArticles: PressArticle[] = [
       en: "Fire in the kitchen — Observador mention, Figueiral"
     },
     meta: {
-      title: { pt: "Observador | Figueiral no Algarve", en: "Observador | Figueiral in the Algarve" },
+      title: { pt: "Picanha e boa mesa no fim de semana algarvio — Observador", en: "Picanha and a good table for an Algarve weekend — Observador" },
       description: {
         pt: "Contexto editorial da menção do Observador ao Restaurante Figueiral.",
         en: "Editorial context of Observador mention of Restaurante Figueiral."
@@ -293,7 +293,7 @@ export const pressArticles: PressArticle[] = [
       en: "Reception at Figueiral — Lux article"
     },
     meta: {
-      title: { pt: "Lux | Tradição do Figueiral em Almancil", en: "Lux | Figueiral tradition in Almancil" },
+      title: { pt: "O restaurante com maior tradição em Almancil — Lux", en: "The restaurant with the longest tradition in Almancil — Lux" },
       description: {
         pt: "Resumo editorial da menção Lux ao Restaurante Figueiral.",
         en: "Editorial summary of Lux coverage of Restaurante Figueiral."
@@ -335,7 +335,7 @@ export const pressArticles: PressArticle[] = [
       en: "Dining together — The Portugal News"
     },
     meta: {
-      title: { pt: "The Portugal News | Figueiral", en: "The Portugal News | Figueiral" },
+      title: { pt: "A chave do sucesso do Restaurante Figueiral — The Portugal News", en: "The key to success at Restaurante Figueiral — The Portugal News" },
       description: {
         pt: "Menção The Portugal News ao Restaurante Figueiral em Almancil.",
         en: "The Portugal News mention of Restaurante Figueiral in Almancil."
@@ -377,7 +377,7 @@ export const pressArticles: PressArticle[] = [
       en: "Wine cellar — The Portugal News, Figueiral"
     },
     meta: {
-      title: { pt: "The Portugal News | Experiência Figueiral", en: "The Portugal News | Figueiral experience" },
+      title: { pt: "A experiência Figueiral — The Portugal News", en: "The Figueiral experience — The Portugal News" },
       description: {
         pt: "Resumo da segunda menção The Portugal News ao Figueiral.",
         en: "Summary of the second The Portugal News feature on Figueiral."
@@ -419,7 +419,7 @@ export const pressArticles: PressArticle[] = [
       en: "Figueiral terrace — Business Traveller"
     },
     meta: {
-      title: { pt: "Business Traveller | Figueiral", en: "Business Traveller | Figueiral" },
+      title: { pt: "Guia de restaurantes para jantar com estilo — Business Traveller", en: "Restaurant guide to dine in style — Business Traveller" },
       description: {
         pt: "Menção Business Traveller ao Restaurante Figueiral.",
         en: "Business Traveller mention of Restaurante Figueiral."
@@ -461,7 +461,7 @@ export const pressArticles: PressArticle[] = [
       en: "Terrace — Visit Algarve, Figueiral"
     },
     meta: {
-      title: { pt: "Visit Algarve | Restaurante Figueiral", en: "Visit Algarve | Restaurante Figueiral" },
+      title: { pt: "Restaurante Figueiral no guia oficial do Algarve — Visit Algarve", en: "Restaurante Figueiral in the official Algarve guide — Visit Algarve" },
       description: {
         pt: "Ficha Visit Algarve do Restaurante Figueiral em Almancil.",
         en: "Visit Algarve listing for Restaurante Figueiral in Almancil."
@@ -503,7 +503,7 @@ export const pressArticles: PressArticle[] = [
       en: "Wine at the table — ViagensA4, Figueiral"
     },
     meta: {
-      title: { pt: "ViagensA4 | Restaurante Figueiral", en: "ViagensA4 | Restaurante Figueiral" },
+      title: { pt: "Paragem gastronómica em Almancil — ViagensA4", en: "A gastronomic stop in Almancil — ViagensA4" },
       description: {
         pt: "Resumo da recomendação ViagensA4 ao Figueiral.",
         en: "Summary of ViagensA4 recommendation of Figueiral."
@@ -545,7 +545,7 @@ export const pressArticles: PressArticle[] = [
       en: "Plating — Evoque Magazine, Figueiral"
     },
     meta: {
-      title: { pt: "Evoque Magazine | Figueiral", en: "Evoque Magazine | Figueiral" },
+      title: { pt: "Tradição e modernidade no Figueiral — Evoque Magazine", en: "Tradition and modernity at Figueiral — Evoque Magazine" },
       description: {
         pt: "Menção Evoque Magazine ao Restaurante Figueiral.",
         en: "Evoque Magazine feature on Restaurante Figueiral."
@@ -587,7 +587,7 @@ export const pressArticles: PressArticle[] = [
       en: "Figueiral owners — Evoque Magazine"
     },
     meta: {
-      title: { pt: "Evoque Magazine | Paixão Figueiral", en: "Evoque Magazine | Figueiral passion" },
+      title: { pt: "Uma paixão com mais de 30 anos — Evoque Magazine", en: "A passion of more than 30 years — Evoque Magazine" },
       description: {
         pt: "Resumo Evoque sobre a história familiar do Figueiral.",
         en: "Evoque summary on the Figueiral family story."
