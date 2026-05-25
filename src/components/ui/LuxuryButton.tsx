@@ -40,8 +40,14 @@ export function LuxuryButton({
   const classNames = `${base} ${variants[variant]} ${className}`;
 
   if (href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("http")) {
+    const external = href.startsWith("http");
     return (
-      <a href={href} className={classNames} onClick={onClick}>
+      <a
+        href={href}
+        className={classNames}
+        onClick={onClick}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {children}
       </a>
     );
