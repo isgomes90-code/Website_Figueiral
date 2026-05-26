@@ -12,7 +12,7 @@ import { isLocale, locales, type Locale } from "@/i18n/config";
 import { restaurantSchema } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-const HERO_LCP_IMAGE = "/images/hero/Preparacao-picanha.webp";
+const HERO_LCP_IMAGE = "/images/hero/Esplanada-1.webp";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

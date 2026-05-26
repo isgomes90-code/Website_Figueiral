@@ -53,7 +53,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             title={home.intro.title}
             body={home.intro.body}
             align="center"
-            eyebrowTone="institutional"
           />
           <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-7 sm:mt-24 sm:grid-cols-2 sm:items-stretch sm:gap-8 lg:mt-28 lg:grid-cols-4 lg:gap-7">
             {home.highlights.map((item, index) => (
@@ -76,7 +75,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </div>
                 <div className="flex flex-1 flex-col px-8 pb-[1.85rem] pt-7 sm:px-9 sm:pb-[2.05rem] sm:pt-8">
                   <span
-                    className={`text-[1.1rem] text-brandGreen/[0.78] tracking-[0.2em] sm:text-[1.22rem] ${displayFigureClasses}`}
+                    className={`text-[1.1rem] text-gold/[0.88] tracking-[0.2em] sm:text-[1.22rem] ${displayFigureClasses}`}
                   >
                     0{index + 1}
                   </span>
@@ -128,7 +127,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         }}
         tone="warm"
         composition="panorama"
-        eyebrowTone="institutional"
       />
 
       <ImageFeature
@@ -148,7 +146,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         tone="linen"
         composition="standard"
         imageClassName="object-[center_20%] sm:object-[center_16%]"
-        eyebrowTone="institutional"
       />
 
       <section className="section-linen-breath relative py-[4rem] sm:py-[6rem] lg:py-[6.25rem]">
@@ -156,7 +153,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <MotionReveal className="atmospheric-panel rounded-[2.05rem] px-8 py-14 sm:rounded-[2.2rem] sm:px-12 sm:py-18 lg:px-[3.35rem] lg:py-[4.65rem]">
             <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-start lg:gap-[3.25rem] xl:gap-[3.75rem]">
               <div className="order-1 max-w-xl border-l-[3px] border-brandGreen/[0.22] pl-5 sm:pl-6 lg:max-w-none lg:border-l-0 lg:pl-0">
-                <p className={`text-oliveMuted/[0.85] ${editorialEyebrowClasses}`}>{home.legacy.eyebrow}</p>
+                <p className={`text-gold/80 ${editorialEyebrowClasses}`}>{home.legacy.eyebrow}</p>
                 <p className={`mt-[1.375rem] text-[4.5rem] text-charcoal/[0.95] sm:text-[6.25rem] ${displayFigureClasses}`}>1986</p>
                 <h2 className={`mt-9 max-w-[46rem] text-charcoal ${sectionTitleClasses}`}>
                   {home.legacy.title}
@@ -199,7 +196,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         quiet
         tone="linen"
         composition="intimate"
-        eyebrowTone="institutional"
       />
 
       <Reviews dictionary={dictionary} />

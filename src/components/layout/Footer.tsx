@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { localizedPath, type Locale } from "@/i18n/config";
 import { bodyNoteClasses, cardTitleClasses, editorialEyebrowClasses } from "@/lib/sectionTitle";
+import { FacebookIcon, InstagramIcon, TripAdvisorIcon } from "@/components/icons/social";
 import { imageToneLogoFooter } from "@/lib/imageTone";
 import { figueiralLogoFooterSrc, navItems, siteConfig, siteEmailHref, sitePhoneHref } from "@/lib/site";
 
@@ -10,6 +11,15 @@ const externalRel = "noopener noreferrer" as const;
 
 const footerLinkClass =
   "footer-link w-fit border-b border-transparent pb-px transition hover:border-brandGreen/55";
+
+const footerSocialLinkClass =
+  "footer-link inline-flex h-20 w-20 items-center justify-center rounded-full border border-transparent transition hover:border-brandGreen/40 hover:bg-white/[0.04] hover:text-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGreen/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#241f1b]";
+
+const footerSocialLinks = [
+  { hrefKey: "instagram" as const, label: "Instagram", Icon: InstagramIcon },
+  { hrefKey: "facebook" as const, label: "Facebook", Icon: FacebookIcon },
+  { hrefKey: "tripadvisor" as const, label: "TripAdvisor", Icon: TripAdvisorIcon }
+];
 
 export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Locale }) {
   const footer = dictionary.footer;
@@ -29,19 +39,19 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
           <div className="min-w-0 border-b border-white/[0.1] pb-12 lg:col-span-5 lg:border-b-0 lg:pb-0">
             <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-12">
               <div
-                className="relative h-[5.35rem] aspect-[2176/1532] shrink-0 sm:h-[6rem]"
+                className="relative h-[6.25rem] aspect-[2176/1532] shrink-0 sm:h-[7.25rem]"
                 aria-hidden
               >
                 <Image
                   src={figueiralLogoFooterSrc}
                   alt={dictionary.seo.images.logoFooter}
                   fill
-                  sizes="(max-width: 640px) 122px, 136px"
+                  sizes="(max-width: 640px) 140px, 156px"
                   className={imageToneLogoFooter}
                 />
               </div>
               <div className="min-w-0 space-y-4">
-                <p className={`footer-eyebrow ${editorialEyebrowClasses}`}>{footer.brandLine}</p>
+                <p className={`text-gold ${editorialEyebrowClasses}`}>{footer.brandLine}</p>
                 <p className={`text-cream ${cardTitleClasses}`}>{footer.legalName}</p>
                 <p className={`footer-note max-w-[26rem] tracking-[0.008em] ${bodyNoteClasses}`}>
                   {footer.description}
@@ -54,7 +64,7 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
           </div>
 
           <div className="min-w-0 lg:col-span-3">
-            <p className={`footer-eyebrow mb-6 ${editorialEyebrowClasses}`}>{footer.explore}</p>
+            <p className={`mb-6 text-gold ${editorialEyebrowClasses}`}>{footer.explore}</p>
             <nav
               className="grid gap-3.5 text-[0.88rem] leading-snug"
               aria-label={navigation.ariaMain}
@@ -81,7 +91,7 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
           </div>
 
           <div className="min-w-0 lg:col-span-4">
-            <p className={`footer-eyebrow mb-6 ${editorialEyebrowClasses}`}>{footer.visit}</p>
+            <p className={`mb-6 text-gold ${editorialEyebrowClasses}`}>{footer.visit}</p>
 
             <div className="footer-body space-y-10 text-[0.88rem] leading-[1.76]">
               <div>
@@ -128,27 +138,20 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
 
         <div className="mt-14 flex flex-col gap-10 border-t border-white/[0.09] pt-12 sm:flex-row sm:items-start sm:justify-between lg:mt-16 lg:pt-14">
           <div className="min-w-0">
-            <p className={`footer-eyebrow mb-5 ${editorialEyebrowClasses}`}>{footer.social}</p>
-            <div className="flex flex-wrap gap-x-10 gap-y-3 text-[0.88rem]">
-              <a
-                href={socials.instagram}
-                className={footerLinkClass}
-                target="_blank"
-                rel={externalRel}
-              >
-                Instagram
-              </a>
-              <a href={socials.facebook} className={footerLinkClass} target="_blank" rel={externalRel}>
-                Facebook
-              </a>
-              <a
-                href={socials.tripadvisor}
-                className={footerLinkClass}
-                target="_blank"
-                rel={externalRel}
-              >
-                TripAdvisor
-              </a>
+            <p className={`mb-5 text-gold ${editorialEyebrowClasses}`}>{footer.social}</p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:gap-x-5">
+              {footerSocialLinks.map(({ hrefKey, label, Icon }) => (
+                <a
+                  key={hrefKey}
+                  href={socials[hrefKey]}
+                  className={footerSocialLinkClass}
+                  target="_blank"
+                  rel={externalRel}
+                  aria-label={label}
+                >
+                  <Icon className="h-10 w-10" />
+                </a>
+              ))}
             </div>
           </div>
           <p className="footer-muted max-w-[17rem] text-[0.78rem] leading-[1.74] tracking-[0.015em]">

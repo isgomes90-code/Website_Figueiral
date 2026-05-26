@@ -34,7 +34,7 @@ export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/
 
       <div className="relative z-10 mx-auto flex min-h-[inherit] max-w-[82rem] items-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
         <div className="reveal-on-load max-w-xl">
-          <p className={`text-sage/[0.86] ${atmosphereEyebrowClasses}`}>{eyebrow}</p>
+          <p className={`text-gold/[0.82] ${atmosphereEyebrowClasses}`}>{eyebrow}</p>
           <h2
             id="atmosphere-moment-heading"
             className={`mt-6 text-cream sm:mt-8 ${statementTitleClasses}`}

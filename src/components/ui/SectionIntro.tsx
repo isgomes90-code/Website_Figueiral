@@ -37,7 +37,7 @@ export function SectionIntro({
         ? "text-sage/[0.82]"
         : "text-oliveMuted/[0.88]"
       : dark
-        ? "text-gold/72"
+        ? "text-gold"
         : "text-gold";
 
   const TitleTag = as;

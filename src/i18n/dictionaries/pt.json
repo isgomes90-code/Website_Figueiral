@@ -79,10 +79,11 @@
       "logoHeader": "Logótipo Restaurante Figueiral Almancil",
       "logoFooter": "Logótipo Restaurante Figueiral",
       "heroSlides": [
+        "Esplanada do Restaurante Figueiral no Algarve",
         "Picanha grelhada no Restaurante Figueiral em Almancil",
+        "Camarão na grelha no Restaurante Figueiral",
         "Sala de jantar do Restaurante Figueiral no Algarve",
-        "Carta de vinhos portugueses no Restaurante Figueiral",
-        "Convívio à mesa no Restaurante Figueiral em Almancil"
+        "Chateaubriand na pedra no Restaurante Figueiral"
       ],
       "highlightCards": [
         "Preparação de carne na grelha do Restaurante Figueiral",
@@ -158,10 +159,11 @@
     "keywords": ["Fogo", "Vinho", "Almancil"],
     "slidesAria": "Slides do hero",
     "slidesAlt": [
+      "Esplanada ao ar livre — noites quentes do Algarve no Figueiral.",
       "Fogo e preparação sobre a grelha assinatura do Figueiral.",
+      "Camarão na grelha — produto e fogo à mesa.",
       "Sala com mesas sob luz quente — convívio e serviço no Figueiral.",
-      "Detalhe de vinho, textura à mesa.",
-      "Hospitalidade prolongada ao redor das mesas com conversa e calor."
+      "Chateaubriand na pedra — assinatura da casa."
     ]
   },
   "home": {
@@ -226,7 +228,7 @@
     "cta": {
       "eyebrow": "Reservas",
       "title": "Reserve a sua mesa para uma noite sem pressa.",
-      "body": "Para jantar a dois, jantar em família ou receber amigos que ficam na zona. Ligue ou reserve online — tratamos de vos sentar como deve ser."
+      "body": "Para jantar a dois, jantar em família ou receber amigos que ficam na zona. Ligue ou reserve online — nós tratamos do resto."
     }
   },
   "reviews": {

@@ -217,10 +217,6 @@ a {
 }
 
 /** Tipografia do footer — paleta creme única (evita sage opaco no escuro). */
-.footer-eyebrow {
-  color: rgba(248, 243, 236, 0.7);
-}
-
 .footer-field-label {
   color: rgba(248, 243, 236, 0.58);
 }

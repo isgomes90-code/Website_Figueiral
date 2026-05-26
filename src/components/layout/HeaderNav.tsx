@@ -223,13 +223,13 @@ export function HeaderNav({
         <div className="header-inner relative mx-auto grid w-full max-w-[88rem] min-w-0 grid-cols-[auto_1fr_auto] items-center gap-x-3 px-5 pb-4 pt-[max(0.75rem,env(safe-area-inset-top))] sm:gap-x-4 sm:px-7 sm:pb-5 sm:pt-[max(0.85rem,env(safe-area-inset-top))] lg:gap-x-5 lg:px-11 xl:gap-x-6">
           <div className="header-logo relative z-[4] min-w-0 shrink-0 self-center">
             <Link href={localizedPath(lang)} className="header-logo-link" aria-label={siteConfig.name}>
-              <span className="relative block h-[4.35rem] w-[7.45rem] sm:h-[4.85rem] sm:w-[8.27rem] min-[900px]:h-[5rem] min-[900px]:w-[8.55rem] xl:h-[5.85rem] xl:w-[9.98rem]">
+              <span className="relative block h-[4.8rem] w-[8.05rem] sm:h-[5.35rem] sm:w-[9.1rem] min-[900px]:h-[5.5rem] min-[900px]:w-[9.4rem] xl:h-[6.45rem] xl:w-[10.95rem]">
                 <Image
                   src={logoSrc}
                   alt={logoAlt}
                   fill
                   priority
-                  sizes="(max-width: 899px) 132px, (max-width: 1279px) 154px, 160px"
+                  sizes="(max-width: 899px) 145px, (max-width: 1279px) 170px, 176px"
                   className={logoImageCls}
                 />
               </span>

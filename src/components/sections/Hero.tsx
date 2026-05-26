@@ -10,12 +10,13 @@ import { editorialEyebrowClasses, heroDisplayTitleClasses, heroLeadClasses } fro
 import { imageToneHero } from "@/lib/imageTone";
 import { heroSlideBlurs } from "@/lib/imagePlaceholders";
 
-/** Narrativa: fogo → sala/mesas → vinho → hospitalidade */
+/** Narrativa: esplanada → fogo → mar → sala → assinatura */
 const HERO_SLIDE_SRC = [
+  "/images/hero/Esplanada-1.webp",
   "/images/hero/Preparacao-picanha.webp",
+  "/images/hero/Camarao-grelha.webp",
   "/images/hero/Alinhamento-mesas.webp",
-  "/images/wine/Vinho-detalhe-2.webp",
-  "/images/people/Convicio-clientes-1.webp"
+  "/images/hero/Chateaubriand-opt.webp"
 ] as const;
 
 const SLIDE_COUNT = HERO_SLIDE_SRC.length;
@@ -32,12 +33,13 @@ const readingOverlayStyle: CSSProperties = {
   )`
 };
 
-/** Recorte por slide — mesas mais baixo no quadro; vinho com foco ao centro-baixo */
+/** Recorte por slide — esplanada ampla; mesas mais baixo no quadro; pratos com foco ao centro */
 const SLIDE_OBJECT = [
+  "object-cover object-[62%_42%]",
   "object-cover object-[center_48%]",
+  "object-cover object-[center_45%]",
   "object-cover object-[center_74%]",
-  "object-cover object-[center_38%]",
-  "object-cover object-[center_42%]"
+  "object-cover object-[center_52%]"
 ] as const;
 
 export function Hero({

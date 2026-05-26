@@ -8,5 +8,10 @@ export const blurWarmAmber =
 export const blurDeepBrown =
   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tLC0MCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=";
 
-/** Hero slide placeholders matched to narrative order. */
-export const heroSlideBlurs = [blurWarmWalnut, blurWarmAmber, blurDeepBrown, blurWarmWalnut] as const;
+export const heroSlideBlurs = [
+  blurWarmWalnut,
+  blurWarmWalnut,
+  blurWarmAmber,
+  blurWarmAmber,
+  blurDeepBrown
+] as const;

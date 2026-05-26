@@ -24,7 +24,6 @@ export function Reviews({ dictionary }: { dictionary: Dictionary }) {
           title={reviews.title}
           align="center"
           theme="dusk"
-          eyebrowTone="institutional"
         />
         <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-20 lg:grid-cols-4 lg:gap-7">
           {experienceImages.map((image, index) => (

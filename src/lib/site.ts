@@ -72,7 +72,7 @@ export const navItems = [
 ] as const;
 
 export const images = {
-  hero: "/images/hero/Preparacao-picanha.webp",
+  hero: "/images/hero/Esplanada-1.webp",
   picanha: "/images/food/Picanha-fundo-branco.webp",
   fire: "/images/food/Camarao-alho-fogo-opt.webp",
   wine: "/images/wine/Vinho-detalhe-1.webp",

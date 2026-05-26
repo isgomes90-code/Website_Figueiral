@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { MotionReveal } from "@/components/ui/MotionReveal";
+import { MenuContextCard } from "@/components/menu/MenuContextCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { categoryVisuals, menuAtTableImage, menuHeroImage } from "@/data/menu";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -153,11 +154,11 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                     <div className="absolute inset-0" style={{ background: visual.overlay }} />
                     {"hideEditorial" in visual && visual.hideEditorial ? null : (
                     <div className={`absolute inset-x-7 bottom-7 sm:inset-x-9 sm:bottom-9 ${isCompact ? "!inset-x-5 !bottom-5 sm:!inset-x-6 sm:!bottom-6" : ""}`}>
-                      <div className={`max-w-xs rounded-[1.2rem] border border-cream/45 bg-cream/85 shadow-[0_18px_55px_rgba(82,58,39,0.14)] ${isCompact ? "p-4" : "p-5"}`}>
-                        <p className={`text-gold ${editorialEyebrowClasses}`}>{category.editorial.label}</p>
-                        <p className={`mt-2 text-charcoal ${isCompact ? "text-[1.35rem] leading-snug" : cardTitleClasses}`}>{category.editorial.value}</p>
-                        <p className={`mt-3 text-walnut ${isCompact ? "text-[0.88rem] leading-relaxed" : bodyNoteClasses}`}>{category.editorial.note}</p>
-                      </div>
+                        <MenuContextCard
+                          eyebrow={category.editorial.label}
+                          title={category.editorial.value}
+                          body={category.editorial.note}
+                        />
                     </div>
                     )}
                     {visual.mini ? (
@@ -187,7 +188,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
                       {category.items.map((item) => (
                           <article key={item.name} className={`group ${isCompact ? "py-4 first:pt-0 last:pb-0 sm:py-[1.125rem]" : "py-7 first:pt-0 last:pb-0"}`}>
                             <div className={`flex items-start justify-between ${isCompact ? "gap-3" : "gap-4"}`}>
-                              <h3 className={`min-w-0 flex-1 text-charcoal transition group-hover:text-gold ${isCompact ? "text-[1.28rem] font-display font-semibold leading-snug tracking-[-0.01em]" : cardTitleClasses}`}>
+                              <h3 className={`min-w-0 flex-1 text-charcoal transition group-hover:text-gold ${cardTitleClasses}`}>
                                 {item.name}
                               </h3>
                               {item.tag ? (
