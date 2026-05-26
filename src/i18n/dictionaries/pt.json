@@ -218,10 +218,10 @@
     "terrace": {
       "eyebrow": "Esplanada",
       "title": "Ar livre, luz quente e o ritmo calmo de Almancil.",
-      "body": "Quando o tempo ajuda, a mesa estende-se para fora — perto da Quinta do Lago e Vale do Lobo, mas com a naturalidade de quem está em casa no Algarve.",
+      "body": "Quando o tempo ajuda, a mesa estende-se para fora — perto da Quinta do Lago, Vale do Lobo, Vilamoura e Quarteira, mas com a naturalidade de quem está em casa no Algarve.",
       "contextLink": {
         "before": "Saiba como nos encontrar perto da ",
-        "label": "Quinta do Lago e Vale do Lobo",
+        "label": "Quinta do Lago, Vale do Lobo, Vilamoura e Quarteira",
         "after": "."
       }
     },
@@ -530,6 +530,6 @@
     "reservations": "Reservar mesa",
     "social": "Redes sociais",
     "rights": "Todos os direitos reservados.",
-    "locationNote": "Em Almancil, entre a Quinta do Lago e Vale do Lobo."
+    "locationNote": "Em Almancil, entre a Quinta do Lago, Vale do Lobo, Vilamoura e Quarteira."
   }
 }

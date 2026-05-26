@@ -129,6 +129,66 @@ export const seoLandingPages: SeoLandingPage[] = [
     }
   },
   {
+    slug: "restaurant-near-vilamoura",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/contact", labelKey: "contact" },
+    meta: {
+      title: {
+        pt: "Restaurante perto de Vilamoura | Restaurante Figueiral Almancil",
+        en: "Restaurant near Vilamoura | Restaurante Figueiral Almancil"
+      },
+      description: {
+        pt: "A 15 minutos de Vilamoura: carnes na grelha, picanha brasileira e vinho português em ambiente familiar. Restaurante Figueiral, Almancil.",
+        en: "15 minutes from Vilamoura: fire-grilled meats, Brazilian picanha and Portuguese wine in a family setting. Restaurante Figueiral, Almancil."
+      },
+      keywords: {
+        pt: ["restaurante perto de Vilamoura", "jantar Vilamoura", "restaurante Almancil Vilamoura", "picanha Vilamoura", "steakhouse Vilamoura"],
+        en: ["restaurant near Vilamoura", "dinner Vilamoura", "restaurant Almancil Vilamoura", "picanha Vilamoura", "steakhouse Vilamoura"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Perto de Vilamoura", en: "Near Vilamoura" },
+      title: {
+        pt: "A 15 minutos de Vilamoura, uma mesa que fica na memória.",
+        en: "15 minutes from Vilamoura, a table worth remembering."
+      },
+      body: {
+        pt: "Muitos dos nossos clientes vêm de Vilamoura — depois do golfe, depois da marina, depois de um dia longo que pede uma boa noite para fechar. Trazem a família, trazem amigos, ficam mais tempo do que planeavam. É isso que acontece quando a mesa é boa e não há pressa.",
+        en: "Many of our guests come from Vilamoura — after golf, after the marina, after a long day that calls for a good evening to close it. They bring family, bring friends, stay longer than they planned. That is what happens when the table is good and there is no rush."
+      }
+    }
+  },
+  {
+    slug: "restaurant-near-quarteira",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/contact", labelKey: "contact" },
+    meta: {
+      title: {
+        pt: "Restaurante perto de Quarteira | Restaurante Figueiral Almancil",
+        en: "Restaurant near Quarteira | Restaurante Figueiral Almancil"
+      },
+      description: {
+        pt: "A 10 minutos de Quarteira: grelhados, picanha e vinho português num restaurante familiar em Almancil desde 1986.",
+        en: "10 minutes from Quarteira: grilled meats, picanha and Portuguese wine in a family restaurant in Almancil since 1986."
+      },
+      keywords: {
+        pt: ["restaurante perto de Quarteira", "jantar Quarteira", "restaurante Almancil Quarteira", "picanha Quarteira", "grelhados Quarteira"],
+        en: ["restaurant near Quarteira", "dinner Quarteira", "restaurant Almancil Quarteira", "picanha Quarteira", "grilled meats Quarteira"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Perto de Quarteira", en: "Near Quarteira" },
+      title: {
+        pt: "A 10 minutos de Quarteira, desde 1986 na mesma mesa.",
+        en: "10 minutes from Quarteira, at the same table since 1986."
+      },
+      body: {
+        pt: "Almancil fica a dez minutos de Quarteira — distância curta para uma noite diferente. No Figueiral não há surpresas de menu ou conceitos a explicar: há grelhados no fogo, picanha fatiada à mesa, vinho que acompanha e uma equipa que trata de tudo com naturalidade. Simples, como deve ser.",
+        en: "Almancil is ten minutes from Quarteira — a short drive for a different kind of evening. At Figueiral there are no menu surprises or concepts to explain: there are fire grills, picanha sliced at the table, wine that flows and a team that handles everything naturally. Simple, as it should be."
+      }
+    }
+  },
+  {
     slug: "wine-experience-algarve",
     primaryCta: { href: "/wine-experience", labelKey: "wine" },
     secondaryCta: { href: "/reservations", labelKey: "reserve" },
