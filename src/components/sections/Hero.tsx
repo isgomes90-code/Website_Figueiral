@@ -22,14 +22,14 @@ const HERO_SLIDE_SRC = [
 const SLIDE_COUNT = HERO_SLIDE_SRC.length;
 const SLIDE_INTERVAL_MS = 6500;
 
-/** Overlay estável entre slides — leitura consistente sem excesso de escuridão */
+/** Overlay estável entre slides — leitura consistente, menos dramático */
 const readingOverlayStyle: CSSProperties = {
   background: `linear-gradient(
     92deg,
-    rgba(20, 15, 12, 0.78) 0%,
-    rgba(21, 17, 14, 0.58) 38%,
-    rgba(20, 22, 19, 0.28) 66%,
-    rgba(18, 16, 14, 0.06) 100%
+    rgba(20, 15, 12, 0.58) 0%,
+    rgba(21, 17, 14, 0.42) 38%,
+    rgba(20, 22, 19, 0.18) 66%,
+    rgba(18, 16, 14, 0.04) 100%
   )`
 };
 
@@ -66,7 +66,7 @@ export function Hero({
   }, []);
 
   return (
-    <section className="grain hero-grain relative min-h-screen overflow-hidden bg-[#453528]">
+    <section className="grain hero-grain relative min-h-[88vh] max-h-[980px] overflow-hidden bg-[#453528] lg:min-h-[86vh]">
       <div className="absolute inset-0 z-0" aria-hidden>
         {visibleSlides.map((i) => (
           <div
@@ -93,29 +93,27 @@ export function Hero({
 
       <div className="pointer-events-none absolute inset-0 z-[2]" style={readingOverlayStyle} aria-hidden />
 
-      <div className="section-shell relative z-10 flex min-h-screen items-center pt-[8.75rem] pb-32 sm:pt-36 sm:pb-36 xl:pt-32 xl:pb-44">
-        <div className="w-full max-w-[54rem]">
+      <div className="section-shell relative z-10 flex min-h-[88vh] max-h-[980px] items-center pt-[8.25rem] pb-24 sm:pt-32 sm:pb-28 lg:min-h-[86vh] xl:pt-28 xl:pb-32">
+        <div className="w-full max-w-[50rem]">
           <p
-            className={`mb-6 text-gold sm:mb-7 ${editorialEyebrowClasses} tracking-[0.38em] sm:tracking-[0.4em]`}
-            style={{ textShadow: "0 1px 12px rgba(10, 7, 5, 0.55)" }}
+            className={`mb-5 text-gold sm:mb-6 ${editorialEyebrowClasses} tracking-[0.38em] sm:tracking-[0.4em]`}
+            style={{ textShadow: "0 1px 8px rgba(10, 7, 5, 0.35)" }}
           >
             {hero.eyebrow}
           </p>
           <h1
             className={`${heroDisplayTitleClasses} text-cream`}
-            style={{ textShadow: "0 2px 32px rgba(10, 7, 5, 0.58), 0 1px 3px rgba(10, 7, 5, 0.42)" }}
+            style={{ textShadow: "0 1px 22px rgba(10, 7, 5, 0.42)" }}
           >
             {hero.title}
           </h1>
           <p
-            className={`mt-10 max-w-[38rem] text-cream/[0.9] sm:mt-12 lg:mt-14 ${heroLeadClasses}`}
-            style={{
-              textShadow: "0 1px 18px rgba(10, 7, 5, 0.62)"
-            }}
+            className={`mt-8 max-w-[34rem] text-cream/[0.88] sm:mt-9 lg:mt-10 ${heroLeadClasses}`}
+            style={{ textShadow: "0 1px 12px rgba(10, 7, 5, 0.38)" }}
           >
             {hero.subtitle}
           </p>
-          <div className="mt-11 flex flex-col gap-4 sm:mt-12 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-4 sm:mt-10 sm:flex-row">
             <LuxuryButton
               href={localizedPath(lang, "/reservations")}
               className="border-[1.5px] border-cream/80 bg-[rgba(156,121,87,1)] shadow-[0_16px_38px_rgba(10,7,5,0.55)] hover:border-cream"
@@ -134,8 +132,8 @@ export function Hero({
       </div>
 
       <div className="absolute inset-x-0 bottom-0 z-10">
-        <div className="section-shell">
-          <div className="flex justify-center gap-2 pb-4 sm:gap-2.5" role="group" aria-label={hero.slidesAria}>
+        <div className="section-shell pb-5 sm:pb-6">
+          <div className="flex justify-center gap-2 sm:gap-2.5" role="group" aria-label={hero.slidesAria}>
             {HERO_SLIDE_SRC.map((_, i) => (
               <button
                 key={i}
@@ -147,14 +145,6 @@ export function Hero({
                 }`}
                 onClick={() => setActiveSlide(i)}
               />
-            ))}
-          </div>
-          <div className="hairline" />
-          <div className="flex flex-col gap-3 py-5 text-[0.62rem] uppercase tracking-[0.3em] text-cream/58 sm:flex-row sm:justify-between">
-            {hero.keywords.map((keyword, i) => (
-              <span key={keyword} className={i === 1 ? "sm:text-center text-sage/85" : undefined}>
-                {keyword}
-              </span>
             ))}
           </div>
         </div>

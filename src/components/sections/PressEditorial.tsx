@@ -125,7 +125,7 @@ export function PressEditorial({ dictionary, lang }: PressEditorialProps) {
 
         <div className="mt-12 lg:mt-14">
           <p className={`mb-5 text-center text-gold/90 ${editorialEyebrowClasses}`}>{press.featuredLabel}</p>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5 lg:gap-5">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-5">
             <PressArchiveCard article={featured} lang={lang} readLabel={press.readArticle} featured />
             {rest.map((article) => (
               <PressArchiveCard key={article.slug} article={article} lang={lang} readLabel={press.readArticle} />

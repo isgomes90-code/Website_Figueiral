@@ -150,8 +150,8 @@
   },
   "hero": {
     "eyebrow": "Almancil, Algarve — desde 1986",
-    "title": "Noites quentes do Algarve, à volta do fogo e da mesa.",
-    "subtitle": "Desde 1986 abrimos a porta em Almancil para quem procura uma boa mesa, boa conversa e a picanha que muitos clientes nos pedem de volta, noite após noite. Aqui conhece-se quem serve, quem volta e quem fica.",
+    "title": "Noites quentes em Almancil.",
+    "subtitle": "Desde 1986. Picanha na grelha, mesas cheias e rostos que já conhecemos de vista.",
     "primaryCta": "Reservar Mesa",
     "secondaryCta": "Ver Menu",
     "sideTitle": "Há décadas que cuidamos de quem entra por esta porta.",
@@ -169,8 +169,8 @@
   "home": {
     "intro": {
       "eyebrow": "Uma casa em Almancil",
-      "title": "Mais do que servir — cuidamos da mesa, da equipa e de quem regressa.",
-      "body": "Em 1986 sonhámos com um restaurante de cozinha internacional com alma algarvia: produtos da região, fogo na grelha e uma sala onde se sente acolhimento. Quatro décadas depois, muitos dos rostos à mesa são habituais — e isso diz-nos tudo."
+      "title": "Uma casa onde a mesa conhece quem volta.",
+      "body": "Em 1986 abrimos em Almancil com produto da região, fogo na grelha e uma sala acolhedora. Quatro décadas depois, muitos rostos à mesa são habituais — e isso diz-nos tudo."
     },
     "highlights": [
       "Fogo na grelha e pratos que chegam quentes à mesa",
@@ -184,14 +184,14 @@
     },
     "atmosphere": {
       "eyebrow": "À mesa",
-      "line": "Mesas que se prolongam pela noite.",
+      "line": "Mesas cheias. Relógios esquecidos.",
       "imageAlt": "Luz quente sobre o salão: convívio prolongado no Restaurante Figueiral."
     },
     "meat": {
       "eyebrow": "Picanha",
-      "title": "A estrela da carta continua a ser a picanha ao estilo brasileiro.",
-      "body": "Grelhada no fogo, fatiada à mesa, generosa e convivial — é o prato que a imprensa cita e que os nossos clientes pedem com mais naturalidade. A preparação é cuidada; a sensação é de casa, não de espetáculo.",
-      "note": "Carne, calor e tempo — o resto deixa-se estar.",
+      "title": "Picanha brasileira — grelhada, fatiada à mesa.",
+      "body": "O prato que a imprensa cita e que os clientes pedem quase por reflexo. Preparação cuidada, sensação de casa — carne generosa, fogo visível, conversa à volta.",
+      "note": "Carne, calor e tempo. O resto deixa-se estar.",
       "contextLink": {
         "before": "Leia mais sobre a ",
         "label": "melhor picanha do Algarve",
@@ -201,8 +201,8 @@
     "wine": {
       "eyebrow": "Vinhos",
       "title": "Garrafas que acompanham a noite, não que dominam a mesa.",
-      "body": "Ao longo dos anos fomos juntando rótulos que fazem sentido aqui: para a picanha, para o peixe, para aquele jantar que se prolonga sem pressa. A escolha é nossa; o tempo é de quem está sentado.",
-      "note": "Se quiser sugestão, pergunte — conhecemos quem costuma pedir cada garrafa.",
+      "body": "Rótulos escolhidos ao longo dos anos — para a picanha, para o peixe, para o jantar que se prolonga. Se quiser sugestão, pergunte: conhecemos os habituais de cor.",
+      "note": "Vinho por copo ou garrafa — o que mantiver a conversa.",
       "contextLink": {
         "before": "Explore a ",
         "label": "experiência de vinho no Algarve",
@@ -212,7 +212,7 @@
     "legacy": {
       "eyebrow": "Desde 1986",
       "title": "Uma casa que cresceu com quem voltou.",
-      "body": "Abrir portas em 1986 foi acreditar que Almancil podia ter um refúgio para a cozinha internacional sem perder o calor de uma mesa familiar. Hoje, parte do que somos são os clientes que nos acompanham há anos — e a equipa que aprende os nomes, os pratos e as pequenas preferências.",
+      "body": "Abrir em 1986 foi acreditar que Almancil podia ter cozinha internacional com calor de mesa familiar. Hoje, parte do que somos são os clientes de há anos — e a equipa que aprende nomes e preferências.",
       "imageAlt": "Ivan e Cláudia na receção do Restaurante Figueiral."
     },
     "terrace": {
@@ -232,28 +232,28 @@
     }
   },
   "reviews": {
-    "eyebrow": "Confiança dos clientes",
-    "title": "Hospitalidade de longa data, lembrada muito depois da noite terminar.",
+    "eyebrow": "Quem come, fala",
+    "title": "Palavras de quem volta há anos.",
     "items": [
       {
         "source": "Google Reviews",
-        "quote": "Um restaurante intemporal no Algarve, com picanha excecional, serviço caloroso e uma atmosfera bonita.",
+        "quote": "Picanha como deve ser, serviço atento e uma sala onde se fica mais tempo do que se planear.",
         "author": "M.R., habitué desde 2019",
         "rating": "4.8",
         "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       },
       {
         "source": "Tripadvisor",
-        "quote": "Elegante, descontraído e consistentemente excelente. Obrigatório para quem fica perto da Quinta do Lago ou Vale do Lobo.",
+        "quote": "Voltamos sempre que estamos na Quinta. Nunca falha — picanha, camarão, garrafa aberta.",
         "author": "T.K., visitante habitual",
         "rating": "Excelente",
         "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       },
       {
-        "source": "Menção editorial",
-        "quote": "Uma instituição familiar em Almancil onde a hospitalidade é tratada com tanta seriedade como a comida.",
+        "source": "Google Reviews",
+        "quote": "Conhecemos o Ivan há anos. Sente-se sempre em casa, mesmo num sábado cheio.",
         "author": "J.S., cliente desde 2021",
-        "rating": "Destaque",
+        "rating": "4.9",
         "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       }
     ]
@@ -326,14 +326,14 @@
   "menu": {
     "intro": {
       "eyebrow": "Menu",
-      "title": "Fogo, produto e mesa partilhada — como cozinhamos há décadas.",
-      "body": "A carta nasce na grelha e termina à mesa, com pratos para dividir, vinho por copo ou garrafa e o ritmo calmo de quem não tem pressa de levantar."
+      "title": "Fogo primeiro. Conversa depois.",
+      "body": "Carta feita na grelha — pratos para dividir, garrafa aberta, ritmo calmo de quem não tem pressa de levantar."
     },
     "hero": {
       "eyebrow": "À carta",
       "title": "A cozinha começa no fogo e acaba na conversa.",
-      "body": "Picanha fatiada, camarão ao alho, peixe do dia, sobremesas da casa — pratos que conhecemos de cor e que os clientes pedem com confiança. Não é menu para impressionar; é menu para voltar.",
-      "note": "Escolha um prato de fogo, abra uma garrafa e deixe a noite seguir o seu tempo."
+      "body": "Picanha fatiada, camarão ao alho, peixe do dia — pratos que conhecemos de cor e que os clientes pedem com confiança. Não é carta para impressionar; é carta para voltar.",
+      "note": "Escolha um prato de fogo, abra uma garrafa e deixe a noite seguir."
     },
     "signature": "Assinatura",
     "interludes": [

@@ -150,8 +150,8 @@
   },
   "hero": {
     "eyebrow": "Almancil, Algarve — since 1986",
-    "title": "Warm Algarve evenings, around the fire and the table.",
-    "subtitle": "Since 1986 we have opened our door in Almancil for a good meal, good conversation and the picanha many guests ask for again, night after night. Here you get to know who serves, who returns and who stays.",
+    "title": "Warm evenings in Almancil.",
+    "subtitle": "Since 1986. Picanha on the grill, full tables and faces we already know by sight.",
     "primaryCta": "Reserve Table",
     "secondaryCta": "View Menu",
     "sideTitle": "For decades we have looked after everyone who walks through this door.",
@@ -169,8 +169,8 @@
   "home": {
     "intro": {
       "eyebrow": "A house in Almancil",
-      "title": "More than serving — we look after the table, the team and those who return.",
-      "body": "In 1986 we dreamed of an international kitchen with an Algarve soul: regional produce, fire on the grill and a dining room that feels welcoming. Four decades on, many of the faces at the table are regulars — and that says everything."
+      "title": "A house where the table knows who returns.",
+      "body": "In 1986 we opened in Almancil with regional produce, fire on the grill and a welcoming room. Four decades on, many faces at the table are regulars — and that says everything."
     },
     "highlights": [
       "Fire on the grill and plates that arrive hot at the table",
@@ -184,14 +184,14 @@
     },
     "atmosphere": {
       "eyebrow": "At the table",
-      "line": "Tables that linger deep into the night.",
+      "line": "Full tables. Forgotten clocks.",
       "imageAlt": "Warm light across the dining room as the evening stretches at Restaurante Figueiral."
     },
     "meat": {
       "eyebrow": "Picanha",
-      "title": "The star of the menu remains Brazilian-style picanha.",
-      "body": "Grilled over fire, sliced at the table, generous and convivial — the dish the press mentions and our guests order most naturally. The preparation is careful; the feeling is of home, not spectacle.",
-      "note": "Meat, heat and time — the rest takes care of itself.",
+      "title": "Brazilian picanha — grilled, sliced at the table.",
+      "body": "The dish the press cites and guests order almost by reflex. Careful preparation, the feeling of home — generous meat, visible fire, conversation around it.",
+      "note": "Meat, heat and time. The rest takes care of itself.",
       "contextLink": {
         "before": "Read more about the ",
         "label": "best picanha in the Algarve",
@@ -201,8 +201,8 @@
     "wine": {
       "eyebrow": "Wine",
       "title": "Bottles that keep the evening company, not dominate the table.",
-      "body": "Over the years we have gathered labels that belong here: for picanha, for fish, for that dinner that runs late without hurry. The choice is ours; the time belongs to whoever is seated.",
-      "note": "If you want a suggestion, ask — we know who usually orders which bottle.",
+      "body": "Labels gathered over the years — for picanha, for fish, for the dinner that runs late. If you want a suggestion, ask: we know the regulars by heart.",
+      "note": "Wine by the glass or bottle — whatever keeps the table talking.",
       "contextLink": {
         "before": "Explore the ",
         "label": "wine experience in the Algarve",
@@ -212,7 +212,7 @@
     "legacy": {
       "eyebrow": "Since 1986",
       "title": "A house that grew with those who came back.",
-      "body": "Opening in 1986 meant believing Almancil could have a home for international cooking without losing the warmth of a family table. Today, part of who we are is the guests who have stayed with us for years — and the team that learns names, dishes and small preferences.",
+      "body": "Opening in 1986 meant believing Almancil could have international cooking with the warmth of a family table. Today, part of who we are is the guests who have stayed with us for years — and the team that learns names and preferences.",
       "imageAlt": "Ivan and Cláudia at the reception of Restaurante Figueiral."
     },
     "terrace": {
@@ -232,28 +232,28 @@
     }
   },
   "reviews": {
-    "eyebrow": "Trusted by guests",
-    "title": "Long-standing hospitality, remembered long after the evening ends.",
+    "eyebrow": "From our guests",
+    "title": "Words from those who keep coming back.",
     "items": [
       {
         "source": "Google Reviews",
-        "quote": "A timeless Algarve restaurant with exceptional picanha, warm service and a beautiful atmosphere.",
+        "quote": "Picanha as it should be, attentive service and a room where you stay longer than planned.",
         "author": "M.R., regular since 2019",
         "rating": "4.8",
         "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       },
       {
         "source": "Tripadvisor",
-        "quote": "Elegant, relaxed and consistently excellent. A must when staying near Quinta do Lago or Vale do Lobo.",
+        "quote": "We always return when we are at Quinta. Never fails — picanha, prawns, bottle open.",
         "author": "T.K., returning visitor",
         "rating": "Excellent",
         "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       },
       {
-        "source": "Press Mention",
-        "quote": "A family dining institution in Almancil where hospitality is treated as seriously as the food.",
+        "source": "Google Reviews",
+        "quote": "We have known Ivan for years. Always feels like home, even on a busy Saturday.",
         "author": "J.S., guest since 2021",
-        "rating": "Featured",
+        "rating": "4.9",
         "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
       }
     ]
@@ -326,14 +326,14 @@
   "menu": {
     "intro": {
       "eyebrow": "Menu",
-      "title": "Fire, produce and a shared table — how we have cooked for decades.",
-      "body": "The menu starts at the grill and ends at the table, with dishes to share, wine by the glass or bottle and the calm pace of those in no hurry to leave."
+      "title": "Fire first. Conversation after.",
+      "body": "A grill-led menu — dishes to share, bottle open, the calm pace of those in no hurry to leave."
     },
     "hero": {
       "eyebrow": "À la carte",
       "title": "The cooking begins at the fire and ends in conversation.",
-      "body": "Sliced picanha, garlic prawns, fish of the day, house desserts — dishes we know by heart and guests order with confidence. Not a menu to impress; a menu to return to.",
-      "note": "Choose something from the fire, open a bottle and let the evening find its own time."
+      "body": "Sliced picanha, garlic prawns, fish of the day — dishes we know by heart and guests order with confidence. Not a menu to impress; a menu to return to.",
+      "note": "Pick something from the fire, open a bottle and let the evening unfold."
     },
     "signature": "Signature",
     "interludes": [

@@ -11,7 +11,7 @@ type AtmosphereMomentProps = {
 
 export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/hero/Alinhamento-mesas.webp" }: AtmosphereMomentProps) {
   return (
-    <section className="relative min-h-[58vh] w-full overflow-hidden sm:min-h-[62vh] lg:min-h-[72vh]" aria-labelledby="atmosphere-moment-heading">
+    <section className="relative min-h-[50vh] w-full overflow-hidden sm:min-h-[52vh] lg:min-h-[58vh]" aria-labelledby="atmosphere-moment-heading">
       {/*
         TODO (editorial): Substituir fotografia diurna da sala por imagem noturna com iluminação ambiente.
         Contexto: a narrativa do hero é «noites quentes do Algarve» — esta cena diurna quebra o ritmo emocional.
@@ -32,7 +32,7 @@ export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/
       />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_120%_at_22%_55%,transparent_0%,rgba(24,26,22,0.2)_100%)]" aria-hidden />
 
-      <div className="relative z-10 mx-auto flex min-h-[inherit] max-w-[82rem] items-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
+      <div className="relative z-10 mx-auto flex min-h-[inherit] max-w-[82rem] items-end px-5 pb-12 pt-24 sm:px-8 sm:pb-16 sm:pt-28 lg:px-12 lg:pb-20 lg:pt-32">
         <div className="reveal-on-load max-w-xl">
           <p className={`text-gold/[0.82] ${atmosphereEyebrowClasses}`}>{eyebrow}</p>
           <h2

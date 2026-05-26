@@ -46,7 +46,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   return (
     <>
       <Hero hero={dictionary.hero} lang={locale} slideAlts={dictionary.seo.images.heroSlides} />
-      <section className="editorial-paper relative py-[4.25rem] sm:py-[5.75rem] lg:py-[6.25rem]">
+      <section className="editorial-paper relative py-[3.25rem] sm:py-[4.5rem] lg:py-[5rem]">
         <div className="section-shell relative z-10">
           <SectionIntro
             eyebrow={home.intro.eyebrow}
@@ -54,7 +54,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             body={home.intro.body}
             align="center"
           />
-          <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-7 sm:mt-24 sm:grid-cols-2 sm:items-stretch sm:gap-8 lg:mt-28 lg:grid-cols-4 lg:gap-7">
+          <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 sm:items-stretch sm:gap-7 lg:mt-20 lg:grid-cols-4 lg:gap-6">
             {home.highlights.map((item, index) => (
               <MotionReveal
                 key={item}
@@ -73,7 +73,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(252,246,238,0.05),rgba(52,41,34,0.16))]" />
                 </div>
-                <div className="flex flex-1 flex-col px-8 pb-[1.85rem] pt-7 sm:px-9 sm:pb-[2.05rem] sm:pt-8">
+                <div className="flex flex-1 flex-col px-7 pb-6 pt-6 sm:px-8 sm:pb-7 sm:pt-7">
                   <span
                     className={`text-[1.1rem] text-gold/[0.88] tracking-[0.2em] sm:text-[1.22rem] ${displayFigureClasses}`}
                   >
@@ -91,10 +91,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="section-dusk grain relative py-[4.5rem] sm:py-[6.25rem] lg:py-[6.75rem]" aria-labelledby="home-statement">
+      <section className="section-dusk grain relative py-[3.5rem] sm:py-[5rem] lg:py-[5.5rem]" aria-labelledby="home-statement">
         <div className="section-shell">
           <MotionReveal className="mx-auto max-w-5xl text-center">
-            <div className="hairline-dusk mb-[2.85rem]" />
+            <div className="hairline-dusk mb-8 sm:mb-10" />
             <h2 id="home-statement" className={`${statementTitleClasses} text-cream/[0.94]`}>
               {home.statement.text}
             </h2>
@@ -127,6 +127,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         }}
         tone="warm"
         composition="panorama"
+        density="compact"
       />
 
       <ImageFeature
@@ -136,22 +137,21 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         image={images.wine}
         alt={dictionary.seo.images.wineFeature}
         note={home.wine.note}
-        supportingImage="/images/wine/Vinho-detalhe-2.webp"
-        supportingAlt={dictionary.seo.images.wineSupporting}
         contextLink={{
           ...home.wine.contextLink,
           href: localizedPath(locale, "/wine-experience-algarve")
         }}
-        reverse
         tone="linen"
         composition="standard"
+        layout="stacked"
+        density="compact"
         imageClassName="object-[center_20%] sm:object-[center_16%]"
       />
 
-      <section className="section-linen-breath relative py-[4rem] sm:py-[6rem] lg:py-[6.25rem]">
+      <section className="section-linen-breath relative py-[3rem] sm:py-[4.5rem] lg:py-[5rem]">
         <div className="section-shell">
-          <MotionReveal className="atmospheric-panel rounded-[2.05rem] px-8 py-14 sm:rounded-[2.2rem] sm:px-12 sm:py-18 lg:px-[3.35rem] lg:py-[4.65rem]">
-            <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-start lg:gap-[3.25rem] xl:gap-[3.75rem]">
+          <MotionReveal className="atmospheric-panel rounded-[2.05rem] px-8 py-11 sm:rounded-[2.2rem] sm:px-12 sm:py-14 lg:px-[3.35rem] lg:py-[3.75rem]">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-start lg:gap-[2.75rem] xl:gap-[3.25rem]">
               <div className="order-1 max-w-xl border-l-[3px] border-brandGreen/[0.22] pl-5 sm:pl-6 lg:max-w-none lg:border-l-0 lg:pl-0">
                 <p className={`text-gold/80 ${editorialEyebrowClasses}`}>{home.legacy.eyebrow}</p>
                 <p className={`mt-[1.375rem] text-[4.5rem] text-charcoal/[0.95] sm:text-[6.25rem] ${displayFigureClasses}`}>1986</p>
@@ -181,28 +181,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <ImageFeature
-        eyebrow={home.terrace.eyebrow}
-        title={home.terrace.title}
-        body={home.terrace.body}
-        image={images.terrace}
-        alt={dictionary.seo.images.terrace}
-        supportingImage={images.terraceAlt}
-        supportingAlt={dictionary.seo.images.terraceAlt}
-        contextLink={{
-          ...home.terrace.contextLink,
-          href: localizedPath(locale, "/restaurant-quinta-do-lago")
-        }}
-        quiet
-        tone="linen"
-        composition="intimate"
-      />
-
       <Reviews dictionary={dictionary} />
 
-      <section className="section-linen-breath py-[4.5rem] sm:py-[7rem] lg:py-[7.5rem]">
+      <section className="section-linen-breath py-[3.5rem] sm:py-[5rem] lg:py-[5.5rem]">
         <div className="section-shell">
-          <MotionReveal className="section-finale-panel rounded-[2rem] px-8 py-16 text-center sm:rounded-[2.35rem] sm:px-14 sm:py-[5.25rem] lg:px-20 lg:py-[6rem]">
+          <MotionReveal className="section-finale-panel rounded-[2rem] px-8 py-14 text-center sm:rounded-[2.35rem] sm:px-14 sm:py-[4.25rem] lg:px-20 lg:py-[4.75rem]">
             <p className={`text-gold/[0.78] ${editorialEyebrowClasses}`}>{home.cta.eyebrow}</p>
             <h2 className={`mx-auto mt-7 max-w-[34rem] text-cream/[0.94] sm:mt-[2rem] sm:max-w-[40rem] ${sectionTitleClasses}`}>
               {home.cta.title}

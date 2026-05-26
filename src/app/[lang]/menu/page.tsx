@@ -53,7 +53,7 @@ export default async function MenuPage({ params }: { params: Promise<{ lang: str
     <>
       <JsonLd data={schema} />
       <JsonLd data={breadcrumbs} />
-      <section className="pt-36 pb-24 sm:pt-44">
+      <section className="pt-32 pb-20 sm:pt-40">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-[0.78fr_1.05fr] lg:items-end">
           <MotionReveal className="max-w-[42rem]">
