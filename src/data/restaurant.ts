@@ -3,9 +3,9 @@
  * URL: https://business.google.com/
  */
 export const GOOGLE_REVIEW_DATA = {
-  ratingValue: "4.8",
+  ratingValue: "4.6",
   /** ← ATUALIZAR com número real de reviews no Google Business */
-  reviewCount: "312",
+  reviewCount: "375",
   bestRating: "5",
   worstRating: "1",
   lastUpdated: "2025-05"
