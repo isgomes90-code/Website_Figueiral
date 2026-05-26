@@ -24,7 +24,7 @@ export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/
         sizes="100vw"
         loading="lazy"
         className={`object-cover object-[center_56%] sm:object-[center_60%] lg:object-[center_63%] xl:object-[center_64%] ${imageToneAtmosphere} scale-[1.05] translate-y-[2.5%]`}
-        quality={72}
+        quality={68}
       />
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(22,19,16,0.5)_0%,rgba(26,23,18,0.27)_48%,rgba(28,26,22,0.13)_100%)]"

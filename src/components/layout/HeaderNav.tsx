@@ -304,8 +304,9 @@ export function HeaderNav({
                   src={logoSrc}
                   alt={logoAlt}
                   fill
-                  priority
                   sizes="(max-width: 899px) 145px, (max-width: 1279px) 170px, 176px"
+                  loading="eager"
+                  fetchPriority="low"
                   className={logoImageCls}
                 />
               </span>

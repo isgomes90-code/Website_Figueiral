@@ -14,8 +14,46 @@ type MotionRevealProps = Omit<ComponentPropsWithoutRef<"div">, "children"> & {
   delay?: number;
 };
 
+const revealCallbacks = new WeakMap<Element, () => void>();
+let sharedRevealObserver: IntersectionObserver | null = null;
+
+function getSharedRevealObserver() {
+  if (typeof window === "undefined") return null;
+  if (sharedRevealObserver) return sharedRevealObserver;
+
+  sharedRevealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        revealCallbacks.get(entry.target)?.();
+        revealCallbacks.delete(entry.target);
+        sharedRevealObserver?.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "80px 0px", threshold: 0.025 }
+  );
+
+  return sharedRevealObserver;
+}
+
+function observeReveal(el: Element, onReveal: () => void) {
+  const observer = getSharedRevealObserver();
+  if (!observer) {
+    onReveal();
+    return () => {};
+  }
+
+  revealCallbacks.set(el, onReveal);
+  observer.observe(el);
+
+  return () => {
+    revealCallbacks.delete(el);
+    observer.unobserve(el);
+  };
+}
+
 /**
- * Revelação ao scroll sem Framer Motion — menos JS no bundle e compilador mais rápido em dev.
+ * Revelação ao scroll sem Framer Motion — observer partilhado para reduzir TBT.
  */
 export function MotionReveal({ children, className = "", delay = 0, style, ...rest }: MotionRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,15 +61,19 @@ export function MotionReveal({ children, className = "", delay = 0, style, ...re
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || typeof IntersectionObserver === "undefined") {
-      setRevealed(true);
-      return;
-    }
+    if (!el) return;
 
     let cancel = false;
 
     function revealNow() {
       if (!cancel) setRevealed(true);
+    }
+
+    if (typeof IntersectionObserver === "undefined") {
+      revealNow();
+      return () => {
+        cancel = true;
+      };
     }
 
     const mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -42,20 +84,10 @@ export function MotionReveal({ children, className = "", delay = 0, style, ...re
       };
     }
 
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry?.isIntersecting) return;
-          obs.disconnect();
-          revealNow();
-        });
-      },
-      { rootMargin: "80px 0px", threshold: 0.025 }
-    );
-    obs.observe(el);
+    const cleanup = observeReveal(el, revealNow);
     return () => {
       cancel = true;
-      obs.disconnect();
+      cleanup();
     };
   }, []);
 

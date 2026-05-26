@@ -59,10 +59,35 @@ export function Hero({
     if (SLIDE_COUNT <= 1) return;
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) return;
-    const id = window.setInterval(() => {
-      setActiveSlide((i) => (i + 1) % SLIDE_COUNT);
-    }, SLIDE_INTERVAL_MS);
-    return () => window.clearInterval(id);
+
+    let intervalId: number | undefined;
+
+    const startSlideshow = () => {
+      intervalId = window.setInterval(() => {
+        setActiveSlide((i) => (i + 1) % SLIDE_COUNT);
+      }, SLIDE_INTERVAL_MS);
+    };
+
+    let idleId: number | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(startSlideshow, { timeout: 2500 });
+    } else {
+      timeoutId = setTimeout(startSlideshow, 1500);
+    }
+
+    return () => {
+      if (idleId !== undefined && typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== undefined) {
+        clearTimeout(timeoutId);
+      }
+      if (intervalId !== undefined) {
+        window.clearInterval(intervalId);
+      }
+    };
   }, []);
 
   return (

@@ -47,6 +47,7 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
                   alt={dictionary.seo.images.logoFooter}
                   fill
                   sizes="(max-width: 640px) 140px, 156px"
+                  loading="lazy"
                   className={imageToneLogoFooter}
                 />
               </div>

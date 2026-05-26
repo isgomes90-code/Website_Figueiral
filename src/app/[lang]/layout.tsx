@@ -12,8 +12,6 @@ import { isLocale, locales, type Locale } from "@/i18n/config";
 import { restaurantSchema } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-const HERO_LCP_IMAGE = "/images/hero/Esplanada-1.webp";
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   verification: {
@@ -30,7 +28,8 @@ const display = Cormorant_Garamond({
   variable: "--font-display",
   weight: ["600", "700"],
   display: "swap",
-  preload: true
+  preload: false,
+  adjustFontFallback: true
 });
 
 const sans = Manrope({
@@ -38,7 +37,8 @@ const sans = Manrope({
   variable: "--font-sans",
   weight: ["400", "600"],
   display: "swap",
-  preload: true
+  preload: true,
+  adjustFontFallback: true
 });
 
 export function generateStaticParams() {
@@ -64,9 +64,6 @@ export default async function LocaleLayout({
 
   return (
     <html lang={htmlLang} className={`${display.variable} ${sans.variable}`}>
-      <head>
-        <link rel="preload" as="image" href={HERO_LCP_IMAGE} type="image/webp" fetchPriority="high" />
-      </head>
       <body className={`${sans.className} antialiased`}>
         <a
           href="#main-content"
