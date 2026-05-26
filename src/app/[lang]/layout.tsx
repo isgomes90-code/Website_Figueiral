@@ -16,6 +16,9 @@ const HERO_LCP_IMAGE = "/images/hero/Esplanada-1.webp";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  verification: {
+    google: "Ug3eawv8aucN7Q93Sd2_z1mr1PClII5Ed6tMQHeowus"
+  },
   icons: {
     icon: [{ url: "/icon", type: "image/png" }],
     apple: [{ url: "/apple-icon", type: "image/png" }]
