@@ -214,8 +214,8 @@ export function HeaderNav({
 
   const shellClasses =
     atTopChrome && !mobileOpen
-      ? "border-b border-transparent bg-transparent shadow-none backdrop-blur-0"
-      : "border-b border-walnut/[0.1] bg-[rgba(253,251,246,0.96)] shadow-[0_8px_32px_rgba(45,37,31,0.04)]";
+      ? "bg-transparent shadow-none backdrop-blur-0"
+      : "bg-[rgba(253,251,246,0.96)] shadow-[0_8px_32px_rgba(45,37,31,0.04)]";
 
   const logoSrc = useTransparentHeroTone ? figueiralLogoHeaderCreamSrc : figueiralLogoSrc;
   const logoImageCls = useTransparentHeroTone ? "header-logo-image header-logo-image--cream" : "header-logo-image header-logo-image--paper";
