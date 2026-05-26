@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { figueiralLogoHeaderCreamSrc, figueiralLogoSrc, navItems, siteConfig } from "@/lib/site";
@@ -65,6 +66,7 @@ export function HeaderNav({
   lang: Locale;
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const panelId = useId();
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -79,6 +81,10 @@ export function HeaderNav({
 
   /** Navegação clara sobre o hero apenas no topo inicial; sempre legível quando o bar está em modo sólido. */
   const useTransparentHeroTone = isHomeHero && atTopChrome;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -137,10 +143,18 @@ export function HeaderNav({
 
   useEffect(() => {
     if (!mobileOpen) return;
-    const prev = document.body.style.overflow;
+    const prevOverflow = document.body.style.overflow;
+    const prevPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
     document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
     return () => {
-      document.body.style.overflow = prev;
+      document.body.style.overflow = prevOverflow;
+      document.body.style.paddingRight = prevPaddingRight;
     };
   }, [mobileOpen]);
 
@@ -212,9 +226,71 @@ export function HeaderNav({
     useTransparentHeroTone ? "focus-visible:ring-cream/35 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" : "focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
   }`;
 
+  const mobileMenu =
+    mobileOpen && mounted ? (
+      <div className="fixed inset-0 z-[9999] min-[900px]:hidden" role="presentation">
+        <div
+          className="animate-mobile-nav-backdrop-in absolute inset-0 cursor-pointer bg-charcoal/[0.48] backdrop-blur-[2px]"
+          aria-hidden="true"
+          onClick={() => setMobileOpen(false)}
+        />
+        <div
+          id={panelId}
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={navigation.ariaMain}
+          className="animate-mobile-nav-panel-in absolute left-4 right-4 z-[10000] mx-auto max-h-[calc(100dvh-7rem)] max-w-[88rem] origin-top overflow-hidden rounded-b-[1.35rem] border border-walnut/20 bg-[#F4EFE8] shadow-[0_28px_70px_rgba(55,42,34,0.22)] sm:left-6 sm:right-6"
+          style={{ top: navbarBottom }}
+        >
+          <div className="max-h-[calc(100dvh-7.75rem)] overflow-y-auto overflow-x-hidden overscroll-contain px-5 pb-8 pt-6 sm:pb-10 sm:pt-8">
+            <nav className="flex flex-col gap-0 border-b border-walnut/18 pb-6" aria-label={navigation.ariaMain}>
+              {navItems.map((item) => {
+                const active = isNavItemActive(pathname, lang, item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={localizedPath(lang, item.href)}
+                    className={`rounded-r-xl px-4 py-4 text-[1.05rem] leading-snug outline-none ring-offset-[#F4EFE8] transition-colors sm:py-3.5 ${
+                      active
+                        ? "border-l-[3px] border-brandGreen bg-[rgba(88,96,86,0.1)] font-semibold text-charcoal focus-visible:ring-2 focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2"
+                        : "border-l-[3px] border-transparent font-medium text-charcoal hover:bg-[rgba(111,121,108,0.11)] active:bg-[rgba(111,121,108,0.15)] focus-visible:ring-2 focus-visible:ring-brandGreen/40 focus-visible:ring-offset-2"
+                    }`}
+                    onClick={() => setMobileOpen(false)}
+                    {...(active ? { "aria-current": "page" as const } : {})}
+                  >
+                    {navigation[item.labelKey]}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-walnut/18 py-6">
+              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-charcoal">{navigation.language}</span>
+              <LanguageSwitcher variant="drawer" lang={lang} ariaLabel={navigation.language} />
+            </div>
+
+            <div className="pt-7">
+              <LuxuryButton
+                href={reserveHref}
+                className="flex w-full !min-h-[3.25rem] justify-center whitespace-nowrap"
+                onClick={() => setMobileOpen(false)}
+                ariaCurrent={reserveAriaPageDrawer}
+              >
+                {navigation.reserve}
+              </LuxuryButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    ) : null;
+
   return (
+    <>
     <header
-      className={`fixed inset-x-0 top-0 z-[100] min-w-0 overflow-x-hidden transition-[transform] duration-[480ms] ease-[cubic-bezier(0.22,1,0.36,1)] min-[900px]:overflow-visible ${
+      className={`fixed inset-x-0 top-0 min-w-0 overflow-x-hidden transition-[transform] duration-[480ms] ease-[cubic-bezier(0.22,1,0.36,1)] min-[900px]:overflow-visible ${
+        mobileOpen ? "z-[10001]" : "z-[9000]"
+      } ${
         headerVisible ? "translate-y-0" : "-translate-y-[110%]"
       }`}
       data-header-state={headerVisible ? "visible" : "hidden"}
@@ -290,66 +366,8 @@ export function HeaderNav({
           </div>
         </div>
       </div>
-
-      <div className="min-[900px]:hidden" aria-live="polite">
-        {mobileOpen ? (
-          <div className="fixed inset-0 z-[95]" role="presentation">
-            <div
-              className="animate-mobile-nav-backdrop-in fixed inset-0 z-[96] cursor-pointer bg-charcoal/[0.48]"
-              aria-hidden="true"
-              onClick={() => setMobileOpen(false)}
-            />
-            <div
-              id={panelId}
-              ref={panelRef}
-              role="dialog"
-              aria-modal="true"
-              aria-label={navigation.ariaMain}
-              className="animate-mobile-nav-panel-in fixed left-4 right-4 z-[99] mx-auto max-h-[calc(100dvh-7rem)] max-w-[88rem] origin-top overflow-hidden rounded-b-[1.35rem] border border-walnut/20 bg-[#F4EFE8] shadow-[0_28px_70px_rgba(55,42,34,0.22)] sm:left-6 sm:right-6"
-              style={{ top: navbarBottom }}
-            >
-              <div className="max-h-[calc(100dvh-7.75rem)] overflow-y-auto overflow-x-hidden overscroll-contain px-5 pb-8 pt-6 sm:pb-10 sm:pt-8">
-                <nav className="flex flex-col gap-0 border-b border-walnut/18 pb-6" aria-label={navigation.ariaMain}>
-                  {navItems.map((item) => {
-                    const active = isNavItemActive(pathname, lang, item.href);
-                    return (
-                      <Link
-                        key={item.href}
-                        href={localizedPath(lang, item.href)}
-                        className={`rounded-r-xl px-4 py-4 text-[1.05rem] leading-snug outline-none ring-offset-[#F4EFE8] transition-colors sm:py-3.5 ${
-                          active
-                            ? "border-l-[3px] border-brandGreen bg-[rgba(88,96,86,0.1)] font-semibold text-charcoal focus-visible:ring-2 focus-visible:ring-brandGreen/45 focus-visible:ring-offset-2"
-                            : "border-l-[3px] border-transparent font-medium text-charcoal hover:bg-[rgba(111,121,108,0.11)] active:bg-[rgba(111,121,108,0.15)] focus-visible:ring-2 focus-visible:ring-brandGreen/40 focus-visible:ring-offset-2"
-                        }`}
-                        onClick={() => setMobileOpen(false)}
-                        {...(active ? { "aria-current": "page" as const } : {})}
-                      >
-                        {navigation[item.labelKey]}
-                      </Link>
-                    );
-                  })}
-                </nav>
-
-                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-walnut/18 py-6">
-                  <span className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-charcoal">{navigation.language}</span>
-                  <LanguageSwitcher variant="drawer" lang={lang} ariaLabel={navigation.language} />
-                </div>
-
-                <div className="pt-7">
-                  <LuxuryButton
-                    href={reserveHref}
-                    className="flex w-full !min-h-[3.25rem] justify-center whitespace-nowrap"
-                    onClick={() => setMobileOpen(false)}
-                    ariaCurrent={reserveAriaPageDrawer}
-                  >
-                    {navigation.reserve}
-                  </LuxuryButton>
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : null}
-      </div>
     </header>
+    {mobileMenu ? createPortal(mobileMenu, document.body) : null}
+    </>
   );
 }
