@@ -35,7 +35,7 @@ export function EditorialLandingPage({ page, lang, dictionary }: EditorialPagePr
   const isLive = isSeoLandingPage(page);
 
   return (
-    <section className="editorial-paper pt-36 pb-24 sm:pt-44 sm:pb-28">
+    <section className="editorial-paper editorial-paper--plain pt-36 pb-24 sm:pt-44 sm:pb-28">
       <div className="section-shell">
         <article className="mx-auto max-w-3xl text-center">
           <p className={`text-gold ${editorialEyebrowClasses}`}>{t(page.content.eyebrow, lang)}</p>
