@@ -279,6 +279,96 @@ export const seoLandingPages: SeoLandingPage[] = [
     }
   },
   {
+    slug: "restaurant-near-portimao",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/contact", labelKey: "contact" },
+    meta: {
+      title: {
+        pt: "Restaurante Perto de Portimão | Figueiral Almancil",
+        en: "Restaurant Near Portimão | Figueiral Almancil"
+      },
+      description: {
+        pt: "À procura de um restaurante perto de Portimão? O Figueiral fica a 45 minutos, em Almancil. Picanha brasileira, grelhados e ambiente familiar desde 1986. Reserve já.",
+        en: "Looking for a restaurant near Portimão? Figueiral is 45 minutes away in Almancil. Brazilian picanha, grills and a family atmosphere since 1986. Book now."
+      },
+      keywords: {
+        pt: ["restaurante perto de Portimão", "jantar Portimão", "restaurante Almancil Portimão", "picanha Portimão", "grelhados barlavento"],
+        en: ["restaurant near Portimão", "dinner Portimão", "restaurant Almancil Portimão", "picanha Portimão", "western Algarve restaurant"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Perto de Portimão", en: "Near Portimão" },
+      title: {
+        pt: "A 45 minutos de Portimão, uma mesa que vale a viagem.",
+        en: "45 minutes from Portimão, a table worth the drive."
+      },
+      body: {
+        pt: "Portimão fica a cerca de 45 minutos pela A22 — tempo suficiente para deixar a pressa para trás e chegar com apetite. Muitos dos nossos clientes vêm do barlavento à procura de picanha fatiada na hora, grelhados no fogo e de uma receção que se lembra do seu nome.",
+        en: "Portimão is around 45 minutes via the A22 — just enough time to leave the rush behind and arrive with an appetite. Many of our guests come from the western Algarve in search of picanha carved at the table, charcoal grills and a welcome that remembers your face."
+      }
+    }
+  },
+  {
+    slug: "restaurant-near-lagos",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/contact", labelKey: "contact" },
+    meta: {
+      title: {
+        pt: "Restaurante Perto de Lagos | Figueiral Almancil",
+        en: "Restaurant Near Lagos | Figueiral Almancil"
+      },
+      description: {
+        pt: "À procura de um restaurante perto de Lagos? O Figueiral fica a menos de 1 hora, em Almancil. Picanha brasileira e grelhados desde 1986. Reserve já.",
+        en: "Looking for a restaurant near Lagos? Figueiral is less than 1 hour away in Almancil. Brazilian picanha and grills since 1986. Book now."
+      },
+      keywords: {
+        pt: ["restaurante perto de Lagos", "jantar Lagos", "restaurante Almancil Lagos", "picanha Lagos", "grelhados barlavento"],
+        en: ["restaurant near Lagos", "dinner Lagos", "restaurant Almancil Lagos", "picanha Lagos", "western Algarve dinner"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Perto de Lagos", en: "Near Lagos" },
+      title: {
+        pt: "A menos de uma hora de Lagos, o sabor que fica.",
+        en: "Less than an hour from Lagos, the flavour that stays with you."
+      },
+      body: {
+        pt: "Lagos fica a pouco menos de uma hora pela A22 — uma viagem curta para quem quer terminar o dia com uma refeição à altura das falésias douradas do barlavento. No Figueiral, em Almancil, servimos picanha brasileira e grelhados no fogo desde 1986, com a mesma receção de sempre: familiar, sem pressa, com gosto.",
+        en: "Lagos is just under an hour via the A22 — a short drive for anyone wanting to end the day with a meal worthy of the western Algarve's golden cliffs. At Figueiral, in Almancil, we have been serving Brazilian picanha and charcoal grills since 1986, with the same welcome as always: warm, unhurried and full of flavour."
+      }
+    }
+  },
+  {
+    slug: "restaurant-near-tavira",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/contact", labelKey: "contact" },
+    meta: {
+      title: {
+        pt: "Restaurante Perto de Tavira | Figueiral Almancil",
+        en: "Restaurant Near Tavira | Figueiral Almancil"
+      },
+      description: {
+        pt: "À procura de um restaurante perto de Tavira? O Figueiral fica a 30 minutos, em Almancil. Picanha brasileira, grelhados e ambiente familiar desde 1986. Reserve já.",
+        en: "Looking for a restaurant near Tavira? Figueiral is 30 minutes away in Almancil. Brazilian picanha and grills since 1986. Book now."
+      },
+      keywords: {
+        pt: ["restaurante perto de Tavira", "jantar Tavira", "restaurante Almancil Tavira", "picanha Tavira", "grelhados sotavento"],
+        en: ["restaurant near Tavira", "dinner Tavira", "restaurant Almancil Tavira", "picanha Tavira", "eastern Algarve restaurant"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Perto de Tavira", en: "Near Tavira" },
+      title: {
+        pt: "A meia hora de Tavira, uma mesa com história.",
+        en: "Half an hour from Tavira, a table with nearly 40 years of history."
+      },
+      body: {
+        pt: "Tavira fica a cerca de 30 minutos pela A22 — distância curta para quem quer sair das margens do Gilão e sentar-se numa mesa com quase 40 anos de história. Muitos dos nossos clientes vêm do sotavento à procura de picanha fatiada à mesa, grelhados no fogo e de uma cozinha que respeita o produto e quem o come.",
+        en: "Tavira is around 30 minutes via the A22 — a short drive for anyone wanting to leave the banks of the Gilão behind and sit down at a table with nearly four decades of history. Many of our guests come from the eastern Algarve in search of picanha carved at the table, charcoal grills and a kitchen that respects both the ingredients and the people who eat them."
+      }
+    }
+  },
+  {
     slug: "wine-experience-algarve",
     primaryCta: { href: "/wine-experience", labelKey: "wine" },
     secondaryCta: { href: "/reservations", labelKey: "reserve" },
