@@ -189,6 +189,96 @@ export const seoLandingPages: SeoLandingPage[] = [
     }
   },
   {
+    slug: "restaurant-loule",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/contact", labelKey: "contact" },
+    meta: {
+      title: {
+        pt: "Restaurante perto de Loulé | Restaurante Figueiral Almancil",
+        en: "Restaurant near Loulé | Restaurante Figueiral Almancil"
+      },
+      description: {
+        pt: "A cerca de 10 km de Loulé: carnes na grelha, picanha brasileira e vinho português num restaurante familiar em Almancil desde 1986.",
+        en: "About 10 km from Loulé: fire-grilled meats, Brazilian picanha and Portuguese wine in a family restaurant in Almancil since 1986."
+      },
+      keywords: {
+        pt: ["restaurante perto de Loulé", "jantar Loulé", "restaurante Almancil Loulé", "picanha Loulé", "grelhados Loulé"],
+        en: ["restaurant near Loulé", "dinner Loulé", "restaurant Almancil Loulé", "picanha Loulé", "grilled meats Loulé"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Perto de Loulé", en: "Near Loulé" },
+      title: {
+        pt: "A poucos minutos de Loulé, uma mesa fora do ruído do centro.",
+        en: "Minutes from Loulé, a table away from the bustle of town."
+      },
+      body: {
+        pt: "Loulé fica a cerca de dez quilómetros — distância curta para quem quer sair do centro, do mercado ou de um dia na serra e jantar com calma. Muitos clientes nossos vêm de Loulé à procura de grelhados no fogo, picanha fatiada à mesa e uma receção que conhece quem volta.",
+        en: "Loulé is about ten kilometres away — a short drive for those who want to leave the market, the old town or a day in the hills and dine at an easy pace. Many of our guests come from Loulé looking for fire-grilled meats, picanha sliced at the table and a welcome that remembers who returns."
+      }
+    }
+  },
+  {
+    slug: "restaurant-faro",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/contact", labelKey: "contact" },
+    meta: {
+      title: {
+        pt: "Restaurante perto de Faro | Restaurante Figueiral Almancil",
+        en: "Restaurant near Faro | Restaurante Figueiral Almancil"
+      },
+      description: {
+        pt: "A cerca de 30 km de Faro: picanha na grelha, vinho português e hospitalidade familiar em Almancil — ideal para uma noite fora da cidade.",
+        en: "About 30 km from Faro: fire-grilled picanha, Portuguese wine and family hospitality in Almancil — ideal for an evening away from the city."
+      },
+      keywords: {
+        pt: ["restaurante perto de Faro", "jantar Faro", "restaurante Almancil Faro", "picanha Faro", "jantar Algarve Faro"],
+        en: ["restaurant near Faro", "dinner Faro", "restaurant Almancil Faro", "picanha Faro", "Algarve dinner Faro"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Perto de Faro", en: "Near Faro" },
+      title: {
+        pt: "A meia hora de Faro, uma noite que compensa o caminho.",
+        en: "Half an hour from Faro, an evening worth the drive."
+      },
+      body: {
+        pt: "Quem vive ou visita Faro — Cidade Velha, marina ou aeroporto — às vezes quer uma noite diferente da rotina urbana. Almancil fica a cerca de trinta quilómetros: mesa generosa, fogo na grelha, garrafa aberta e o ritmo calmo de quem não tem pressa de levantar.",
+        en: "Those who live in or visit Faro — the old town, marina or airport — sometimes want an evening unlike the urban routine. Almancil is about thirty kilometres away: a generous table, fire on the grill, a bottle open and the calm pace of those in no hurry to leave."
+      }
+    }
+  },
+  {
+    slug: "restaurant-albufeira",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/contact", labelKey: "contact" },
+    meta: {
+      title: {
+        pt: "Restaurante perto de Albufeira | Restaurante Figueiral Almancil",
+        en: "Restaurant near Albufeira | Restaurante Figueiral Almancil"
+      },
+      description: {
+        pt: "A cerca de 25 km de Albufeira: grelhados, picanha e vinho português num restaurante familiar em Almancil — alternativa à mesa de praia.",
+        en: "About 25 km from Albufeira: grilled meats, picanha and Portuguese wine in a family restaurant in Almancil — an alternative to the beach-front table."
+      },
+      keywords: {
+        pt: ["restaurante perto de Albufeira", "jantar Albufeira", "restaurante Almancil Albufeira", "picanha Albufeira", "jantar fora Albufeira"],
+        en: ["restaurant near Albufeira", "dinner Albufeira", "restaurant Almancil Albufeira", "picanha Albufeira", "dinner outside Albufeira"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Perto de Albufeira", en: "Near Albufeira" },
+      title: {
+        pt: "A cerca de 25 km de Albufeira, jantar com outro ritmo.",
+        en: "About 25 km from Albufeira, dinner at a different pace."
+      },
+      body: {
+        pt: "Depois de um dia na praia, na marina ou nas ruas cheias de Albufeira, muitos clientes preferem uma mesa mais tranquila — a vinte e cinco quilómetros, em Almancil. Picanha na grelha, pratos para dividir, vinho português e uma equipa que trata de tudo com naturalidade.",
+        en: "After a day on the beach, at the marina or in Albufeira's busy streets, many guests prefer a quieter table — twenty-five kilometres away, in Almancil. Picanha on the grill, dishes to share, Portuguese wine and a team that handles everything naturally."
+      }
+    }
+  },
+  {
     slug: "wine-experience-algarve",
     primaryCta: { href: "/wine-experience", labelKey: "wine" },
     secondaryCta: { href: "/reservations", labelKey: "reserve" },
