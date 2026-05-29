@@ -3,6 +3,12 @@ import { defaultLocale, locales, localizedPath, type Locale } from "@/i18n/confi
 import { GOOGLE_REVIEW_DATA } from "@/data/restaurant";
 import { isLocalTestSite, siteConfig } from "@/lib/site";
 
+/** Canonical e hreflang sem barra final (ex.: /en, não /en/). */
+function canonicalPath(lang: Locale, path = "") {
+  const localized = localizedPath(lang, path);
+  return localized.length > 1 && localized.endsWith("/") ? localized.slice(0, -1) : localized;
+}
+
 const defaultKeywordsByLocale: Record<Locale, string[]> = {
   pt: [
     "restaurante Almancil",
@@ -41,11 +47,11 @@ export function pageMetadata({
   ogImageAlt?: string;
   ogType?: "website" | "article";
 }): Metadata {
-  const localized = localizedPath(lang, path);
+  const localized = canonicalPath(lang, path);
   const url = new URL(localized, siteConfig.url).toString();
   const resolvedKeywords = keywords ?? defaultKeywordsByLocale[lang];
   const languages = Object.fromEntries(
-    locales.map((locale) => [locale === "pt" ? "pt-PT" : "en", localizedPath(locale, path)])
+    locales.map((locale) => [locale === "pt" ? "pt-PT" : "en", canonicalPath(locale, path)])
   );
   const defaultOgImageAlt =
     lang === "pt"
@@ -64,7 +70,7 @@ export function pageMetadata({
       canonical: localized,
       languages: {
         ...languages,
-        "x-default": localizedPath(defaultLocale, path)
+        "x-default": canonicalPath(defaultLocale, path)
       }
     },
     openGraph: {

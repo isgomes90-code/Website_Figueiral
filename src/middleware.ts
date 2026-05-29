@@ -11,9 +11,21 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const hasLocale = locales.some(
-    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+    (locale) =>
+      pathname === `/${locale}` ||
+      pathname === `/${locale}/` ||
+      pathname.startsWith(`/${locale}/`)
   );
-  if (hasLocale) return NextResponse.next();
+
+  if (hasLocale) {
+    const localeOnlyTrailingSlash = locales.find((locale) => pathname === `/${locale}/`);
+    if (localeOnlyTrailingSlash) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/${localeOnlyTrailingSlash}`;
+      return NextResponse.redirect(url, 308);
+    }
+    return NextResponse.next();
+  }
 
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
