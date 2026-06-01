@@ -1,41 +1,60 @@
 import type { MetadataRoute } from "next";
-import { locales, localizedPath } from "@/i18n/config";
+import { locales, localizedPath, type Locale } from "@/i18n/config";
 import { getAllPressSlugs } from "@/data/press";
 import { getAllSeoLandingSlugs } from "@/data/seo";
 import { siteConfig } from "@/lib/site";
 
+const CORE_ROUTES = ["/menu", "/gallery", "/contact", "/reservations"] as const;
+const SECONDARY_ROUTES = ["/wine-experience", "/about", "/press"] as const;
+
+function sitemapPath(locale: Locale, route: string) {
+  const path = localizedPath(locale, route);
+  return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
+}
+
+function sitemapUrl(locale: Locale, route: string) {
+  return `${siteConfig.url}${sitemapPath(locale, route)}`;
+}
+
+function getPriority(route: string, seoSlugs: ReadonlySet<string>): number {
+  if (route === "") return 1;
+  const slug = route.replace(/^\//, "");
+  if (seoSlugs.has(slug)) return 0.9;
+  if (route.includes("/about/press/")) return 0.6;
+  if (CORE_ROUTES.includes(route as (typeof CORE_ROUTES)[number])) return 0.8;
+  if (SECONDARY_ROUTES.includes(route as (typeof SECONDARY_ROUTES)[number])) return 0.7;
+  return 0.7;
+}
+
+function getChangeFrequency(route: string): MetadataRoute.Sitemap[number]["changeFrequency"] {
+  if (route === "") return "weekly";
+  if (route.includes("/about/press/")) return "yearly";
+  return "monthly";
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    "",
-    "/menu",
-    "/wine-experience",
-    "/about",
-    "/gallery",
-    "/reservations",
-    "/contact",
-    "/press"
-  ];
-
+  const seoSlugs = new Set(getAllSeoLandingSlugs());
+  const seoRoutes = getAllSeoLandingSlugs().map((slug) => `/${slug}`);
   const pressRoutes = getAllPressSlugs().map((slug) => `/about/press/${slug}`);
-  const editorialRoutes = getAllSeoLandingSlugs().map((slug) => `/${slug}`);
 
-  const allRoutes = [...routes, ...pressRoutes, ...editorialRoutes];
+  const allRoutes = [...new Set(["", ...CORE_ROUTES, ...SECONDARY_ROUTES, ...pressRoutes, ...seoRoutes])];
+  const lastModified = new Date();
 
   return locales.flatMap((locale) =>
     allRoutes.map((route) => ({
-      url: `${siteConfig.url}${localizedPath(locale, route)}`,
-      lastModified: new Date(),
-      changeFrequency: route === "" ? "weekly" : route.includes("/about/press/") ? "monthly" : "monthly",
-      priority: route === "" ? 1 : route.includes("/about/press/") ? 0.7 : 0.8,
+      url: sitemapUrl(locale, route),
+      lastModified,
+      changeFrequency: getChangeFrequency(route),
+      priority: getPriority(route, seoSlugs),
       alternates: {
         languages: {
           ...Object.fromEntries(
             locales.map((alternateLocale) => [
               alternateLocale === "pt" ? "pt-PT" : "en",
-              `${siteConfig.url}${localizedPath(alternateLocale, route)}`
+              sitemapUrl(alternateLocale, route)
             ])
           ),
-          "x-default": `${siteConfig.url}${localizedPath("pt", route)}`
+          "x-default": sitemapUrl("pt", route)
         }
       }
     }))
