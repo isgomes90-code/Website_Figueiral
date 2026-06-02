@@ -35,7 +35,7 @@ export const siteConfig = {
       "https://www.google.com/maps/place/Figueiral/@37.0830545,-8.0334457,17z/data=!3m1!4b1!4m6!3m5!1s0xd1ab3c1f80e254f:0xb24015ac29588ac8!8m2!3d37.0830545!4d-8.0334457!16s%2Fg%2F1tgxvtms"
   },
   booking: {
-    widgetUrl: "https://booking.resdiary.com/widget/Standard/RestauranteFigueiral/33271"
+    widgetUrl: "https://booking.resdiary.com/widget/Standard/RestauranteFigueiral/13421"
   },
   socials: {
     instagram: "https://www.instagram.com/restaurantefigueiral/",
