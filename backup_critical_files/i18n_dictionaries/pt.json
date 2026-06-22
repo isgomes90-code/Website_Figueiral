@@ -1,0 +1,535 @@
+{
+  "meta": {
+    "homeTitle": "Restaurante Figueiral | Restaurante Premium em Almancil, Algarve",
+    "homeDescription": "Carnes na grelha, vinho português e hospitalidade familiar desde 1986. Restaurante em Almancil perto da Quinta do Lago e Vale do Lobo.",
+    "homeKeywords": [
+      "restaurante Almancil",
+      "restaurante premium Algarve",
+      "melhor picanha Algarve",
+      "Restaurante Figueiral",
+      "restaurante Quinta do Lago",
+      "restaurante Vale do Lobo"
+    ],
+    "pages": {
+      "about": {
+        "title": "Sobre o Restaurante Figueiral | Almancil Desde 1986",
+        "description": "Conheça a história do Restaurante Figueiral, uma casa familiar em Almancil marcada pelo fogo, vinho e hospitalidade algarvia.",
+        "keywords": [
+          "sobre Restaurante Figueiral",
+          "restaurante familiar Almancil",
+          "história restaurante Algarve",
+          "restaurante desde 1986"
+        ]
+      },
+      "menu": {
+        "title": "Menu | Restaurante Figueiral Almancil",
+        "description": "Picanha, carnes maturadas, peixe fresco e sobremesas clássicas num restaurante premium em Almancil, Algarve.",
+        "keywords": [
+          "menu Figueiral",
+          "picanha Almancil",
+          "menu restaurante Algarve",
+          "carne grelhada Almancil"
+        ]
+      },
+      "wine": {
+        "title": "Carta de Vinhos | Restaurante Figueiral",
+        "description": "Vinhos portugueses escolhidos para acompanhar carnes na grelha e jantares longos no Algarve.",
+        "keywords": [
+          "carta de vinhos Almancil",
+          "vinho português Algarve",
+          "harmonização carnes Figueiral"
+        ]
+      },
+      "gallery": {
+        "title": "Galeria | Restaurante Figueiral Almancil",
+        "description": "Fotografias do Restaurante Figueiral em Almancil: grelha, esplanada, vinho e convívio no Algarve.",
+        "keywords": [
+          "galeria Restaurante Figueiral",
+          "esplanada Almancil",
+          "ambiente restaurante Algarve"
+        ]
+      },
+      "press": {
+        "title": "Imprensa | Restaurante Figueiral Algarve",
+        "description": "Arquivo de imprensa e menções do Restaurante Figueiral em Almancil, Algarve.",
+        "keywords": ["imprensa Restaurante Figueiral", "restaurante Almancil imprensa"]
+      },
+      "reservations": {
+        "title": "Reservas | Restaurante Figueiral Almancil",
+        "description": "Reserve mesa no Restaurante Figueiral em Almancil, perto da Quinta do Lago e Vale do Lobo.",
+        "keywords": [
+          "reservar mesa Almancil",
+          "reservas Restaurante Figueiral",
+          "jantar Quinta do Lago"
+        ]
+      },
+      "contact": {
+        "title": "Contacto e Reservas | Restaurante Figueiral",
+        "description": "Reserve mesa no Restaurante Figueiral em Almancil. Contactos, localização e horários.",
+        "keywords": [
+          "contacto Restaurante Figueiral",
+          "restaurante Almancil morada",
+          "horário Figueiral"
+        ]
+      }
+    }
+  },
+  "seo": {
+    "images": {
+      "logoHeader": "Logótipo Restaurante Figueiral Almancil",
+      "logoFooter": "Logótipo Restaurante Figueiral",
+      "heroSlides": [
+        "Esplanada do Restaurante Figueiral no Algarve",
+        "Picanha grelhada no Restaurante Figueiral em Almancil",
+        "Camarão na grelha no Restaurante Figueiral",
+        "Sala de jantar do Restaurante Figueiral no Algarve",
+        "Chateaubriand na pedra no Restaurante Figueiral"
+      ],
+      "highlightCards": [
+        "Preparação de carne na grelha do Restaurante Figueiral",
+        "Garrafeira de vinhos portugueses no Restaurante Figueiral",
+        "Mesa preparada na sala do Restaurante Figueiral Almancil",
+        "Receção de clientes no Restaurante Figueiral"
+      ],
+      "picanhaFeature": "Picanha grelhada no Restaurante Figueiral em Almancil",
+      "picanhaSupporting": "Picanha na grelha no Restaurante Figueiral",
+      "wineFeature": "Carta de vinhos portugueses no Restaurante Figueiral",
+      "wineSupporting": "Detalhe de vinho servido no Restaurante Figueiral",
+      "terrace": "Esplanada do Restaurante Figueiral no Algarve",
+      "terraceAlt": "Esplanada do Restaurante Figueiral em Almancil",
+      "legacyOwners": "Ivan e Cláudia, anfitriões do Restaurante Figueiral em Almancil",
+      "aboutFamily": "Hospitalidade familiar no Restaurante Figueiral Almancil",
+      "aboutReception": "Receção de clientes no Restaurante Figueiral",
+      "menuHero": "Preparação de picanha no Restaurante Figueiral em Almancil",
+      "menuCategories": [
+        "Entradas de camarão no Restaurante Figueiral",
+        "Carne grelhada no Restaurante Figueiral Almancil",
+        "Empratamento no Restaurante Figueiral Almancil",
+        "Sobremesas da casa no Restaurante Figueiral"
+      ],
+      "menuInterludes": ["Convívio à mesa no Restaurante Figueiral Almancil"],
+      "wineCellar": "Garrafeira do Restaurante Figueiral em Almancil",
+      "wineDetail": "Detalhe de vinho português no Restaurante Figueiral",
+      "reviews": "Clientes à mesa no Restaurante Figueiral Almancil",
+      "reviewMosaic": [
+        "Convívio à mesa no Restaurante Figueiral Almancil",
+        "Clientes no Restaurante Figueiral no Algarve",
+        "Receção de clientes no Restaurante Figueiral",
+        "Empratamento no Restaurante Figueiral Almancil"
+      ]
+    },
+    "gallery": [
+      "Camarão na grelha no Restaurante Figueiral Almancil",
+      "Cogumelos flambados no Restaurante Figueiral",
+      "Picanha na grelha no Restaurante Figueiral",
+      "Picanha servida com acompanhamentos no Figueiral",
+      "Vulcão de chocolate no Restaurante Figueiral",
+      "Entrada do Restaurante Figueiral em Almancil",
+      "Lounge bar do Restaurante Figueiral",
+      "Vinho servido à mesa no Restaurante Figueiral",
+      "Linguado com camarão no Restaurante Figueiral",
+      "Convívio de clientes no Restaurante Figueiral Almancil"
+    ]
+  },
+  "navigation": {
+    "home": "Início",
+    "menu": "Menu",
+    "wine": "Vinho",
+    "about": "Sobre",
+    "gallery": "Galeria",
+    "press": "Imprensa",
+    "contact": "Contacto",
+    "reserve": "Reservar",
+    "reserveTable": "Reservar Mesa",
+    "ariaMain": "Navegação principal",
+    "ariaMobile": "Navegação mobile",
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu",
+    "language": "Idioma",
+    "brandLine": "Almancil desde 1986"
+  },
+  "hero": {
+    "eyebrow": "Almancil, Algarve — desde 1986",
+    "title": "Noites quentes do Algarve, à volta do fogo e da mesa.",
+    "subtitle": "Desde 1986 abrimos a porta em Almancil para quem procura uma boa mesa, boa conversa e a picanha que muitos clientes nos pedem de volta, noite após noite. Aqui conhece-se quem serve, quem volta e quem fica.",
+    "primaryCta": "Reservar Mesa",
+    "secondaryCta": "Ver Menu",
+    "sideTitle": "Há décadas que cuidamos de quem entra por esta porta.",
+    "sideText": "Famílias de Almancil, habitués de há anos e visitantes da Quinta do Lago ou Vale do Lobo encontram a mesma receção, a mesma atenção e o mesmo ritmo descontraído.",
+    "keywords": ["Fogo", "Vinho", "Almancil"],
+    "slidesAria": "Slides do hero",
+    "slidesAlt": [
+      "Esplanada ao ar livre — noites quentes do Algarve no Figueiral.",
+      "Fogo e preparação sobre a grelha assinatura do Figueiral.",
+      "Camarão na grelha — produto e fogo à mesa.",
+      "Sala com mesas sob luz quente — convívio e serviço no Figueiral.",
+      "Chateaubriand na pedra — assinatura da casa."
+    ]
+  },
+  "home": {
+    "intro": {
+      "eyebrow": "Uma casa em Almancil",
+      "title": "Mais do que servir — cuidamos da mesa, da equipa e de quem regressa.",
+      "body": "Em 1986 sonhámos com um restaurante de cozinha internacional com alma algarvia: produtos da região, fogo na grelha e uma sala onde se sente acolhimento. Quatro décadas depois, muitos dos rostos à mesa são habituais — e isso diz-nos tudo."
+    },
+    "highlights": [
+      "Fogo na grelha e pratos que chegam quentes à mesa",
+      "Garrafas escolhidas ao longo dos anos para acompanhar a conversa",
+      "Clientes que nos visitam há uma, duas ou três décadas",
+      "Uma equipa que os habitués já conhecem quase de vista"
+    ],
+    "statement": {
+      "text": "O Figueiral não se construiu num ano. Construiu-se com jantares repetidos, rostos familiares e a certeza de que receber bem é cuidar do pormenor.",
+      "caption": "Em Almancil, há quem nos chame simplesmente «o nosso restaurante»"
+    },
+    "atmosphere": {
+      "eyebrow": "À mesa",
+      "line": "Mesas que se prolongam pela noite.",
+      "imageAlt": "Luz quente sobre o salão: convívio prolongado no Restaurante Figueiral."
+    },
+    "meat": {
+      "eyebrow": "Picanha",
+      "title": "A estrela da carta continua a ser a picanha ao estilo brasileiro.",
+      "body": "Grelhada no fogo, fatiada à mesa, generosa e convivial — é o prato que a imprensa cita e que os nossos clientes pedem com mais naturalidade. A preparação é cuidada; a sensação é de casa, não de espetáculo.",
+      "note": "Carne, calor e tempo — o resto deixa-se estar.",
+      "contextLink": {
+        "before": "Leia mais sobre a ",
+        "label": "melhor picanha do Algarve",
+        "after": "."
+      }
+    },
+    "wine": {
+      "eyebrow": "Vinhos",
+      "title": "Garrafas que acompanham a noite, não que dominam a mesa.",
+      "body": "Ao longo dos anos fomos juntando rótulos que fazem sentido aqui: para a picanha, para o peixe, para aquele jantar que se prolonga sem pressa. A escolha é nossa; o tempo é de quem está sentado.",
+      "note": "Se quiser sugestão, pergunte — conhecemos quem costuma pedir cada garrafa.",
+      "contextLink": {
+        "before": "Explore a ",
+        "label": "experiência de vinho no Algarve",
+        "after": "."
+      }
+    },
+    "legacy": {
+      "eyebrow": "Desde 1986",
+      "title": "Uma casa que cresceu com quem voltou.",
+      "body": "Abrir portas em 1986 foi acreditar que Almancil podia ter um refúgio para a cozinha internacional sem perder o calor de uma mesa familiar. Hoje, parte do que somos são os clientes que nos acompanham há anos — e a equipa que aprende os nomes, os pratos e as pequenas preferências.",
+      "imageAlt": "Ivan e Cláudia na receção do Restaurante Figueiral."
+    },
+    "terrace": {
+      "eyebrow": "Esplanada",
+      "title": "Ar livre, luz quente e o ritmo calmo de Almancil.",
+      "body": "Quando o tempo ajuda, a mesa estende-se para fora — perto da Quinta do Lago e Vale do Lobo, mas com a naturalidade de quem está em casa no Algarve.",
+      "contextLink": {
+        "before": "Saiba como nos encontrar perto da ",
+        "label": "Quinta do Lago e Vale do Lobo",
+        "after": "."
+      }
+    },
+    "cta": {
+      "eyebrow": "Reservas",
+      "title": "Reserve a sua mesa para uma noite sem pressa.",
+      "body": "Para jantar a dois, jantar em família ou receber amigos que ficam na zona. Ligue ou reserve online — nós tratamos do resto."
+    }
+  },
+  "reviews": {
+    "eyebrow": "Confiança dos clientes",
+    "title": "Hospitalidade de longa data, lembrada muito depois da noite terminar.",
+    "items": [
+      {
+        "source": "Google Reviews",
+        "quote": "Um restaurante intemporal no Algarve, com picanha excecional, serviço caloroso e uma atmosfera bonita.",
+        "author": "M.R., habitué desde 2019",
+        "rating": "4.8",
+        "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
+      },
+      {
+        "source": "Tripadvisor",
+        "quote": "Elegante, descontraído e consistentemente excelente. Obrigatório para quem fica perto da Quinta do Lago ou Vale do Lobo.",
+        "author": "T.K., visitante habitual",
+        "rating": "Excelente",
+        "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
+      },
+      {
+        "source": "Menção editorial",
+        "quote": "Uma instituição familiar em Almancil onde a hospitalidade é tratada com tanta seriedade como a comida.",
+        "author": "J.S., cliente desde 2021",
+        "rating": "Destaque",
+        "url": "https://www.google.com/maps/place/Restaurante+Figueiral"
+      }
+    ]
+  },
+  "about": {
+    "intro": {
+      "eyebrow": "Desde 1986",
+      "title": "Mais do que servir — há décadas que cuidamos de quem se senta à nossa mesa.",
+      "body": "A nossa origem remonta a 1986, quando o sonho era simples: um espaço de referência na cozinha internacional, sim, mas sobretudo um lugar de acolhimento em Almancil. Produto da região, atenção ao detalhe e a simpatia de sempre — é assim que a história continua."
+    },
+    "feature": {
+      "eyebrow": "Mesa e equipa",
+      "title": "O segredo de uma boa casa está na mesa e na equipa.",
+      "body": "Quem nos visita há mais tempo já conhece os rostos que nos acompanham no serviço. Atender bem não é teatro: é memória — saber quando alguém prefere a mesa habitual, quando a noite pede mais tempo, quando a criança precisa de um prato simples. A dedicação de cada um permite que a cozinha surpreenda sem perder a consistência.",
+      "facesAltSuffix": "Restaurante Figueiral Almancil",
+      "faces": [
+        {
+          "name": "Olivia",
+          "role": "Responsável de Sala",
+          "quote": "Presença discreta, memória de clientes e atenção ao detalhe.",
+          "image": "/images/people/Olivia.webp"
+        },
+        {
+          "name": "Eraldo",
+          "role": "Chefe de Picanha",
+          "quote": "O ritmo da grelha, servido com precisão e consistência.",
+          "image": "/images/people/Eraldo.webp"
+        },
+        {
+          "name": "Ivonaldo",
+          "role": "Sub-chefe de Picanha",
+          "quote": "Fogo, preparação e continuidade de uma tradição da casa.",
+          "image": "/images/people/Ivonaldo.webp"
+        }
+      ]
+    },
+    "cards": [
+      {
+        "title": "Rostos que se repetem",
+        "body": "Habituaés, famílias algarvias e visitantes internacionais que voltaram vezes suficientes para já não precisarem de menu."
+      },
+      {
+        "title": "Detalhe no quotidiano",
+        "body": "Da disposição da sala à conjugação no prato — procuramos que cada jantar corra como deve ser, sem formalidade desnecessária."
+      },
+      {
+        "title": "Equipa com memória",
+        "body": "Quem trabalha connosco sabe o ritmo da casa, conhece as mesas, conhece os clientes e trata cada noite com a mesma dedicação."
+      }
+    ],
+    "press": {
+      "intro": {
+        "eyebrow": "Imprensa",
+        "title": "Um arquivo de reputação construído ao longo de décadas.",
+        "lead": "Ao longo dos anos, o Figueiral foi mencionado por publicações ligadas à gastronomia, viagem, lifestyle e cultura algarvia — refletindo a consistência de uma casa construída em Almancil desde 1986."
+      },
+      "featuredLabel": "Em destaque",
+      "readArticle": "Ler artigo →",
+      "viewOriginal": "Ver artigo original",
+      "backToArchive": "Voltar ao arquivo de imprensa",
+      "editorialNote": "Este texto é um resumo editorial preparado pelo Restaurante Figueiral. Para ler a peça completa, consulte o artigo original na publicação.",
+      "categories": {
+        "gastronomia": "Gastronomia",
+        "lifestyle": "Lifestyle & Luxury",
+        "turismo": "Turismo & Algarve",
+        "internacional": "Publicações Internacionais"
+      }
+    }
+  },
+  "menu": {
+    "intro": {
+      "eyebrow": "Menu",
+      "title": "Fogo, produto e mesa partilhada — como cozinhamos há décadas.",
+      "body": "A carta nasce na grelha e termina à mesa, com pratos para dividir, vinho por copo ou garrafa e o ritmo calmo de quem não tem pressa de levantar."
+    },
+    "hero": {
+      "eyebrow": "À carta",
+      "title": "A cozinha começa no fogo e acaba na conversa.",
+      "body": "Picanha fatiada, camarão ao alho, peixe do dia, sobremesas da casa — pratos que conhecemos de cor e que os clientes pedem com confiança. Não é menu para impressionar; é menu para voltar.",
+      "note": "Escolha um prato de fogo, abra uma garrafa e deixe a noite seguir o seu tempo."
+    },
+    "signature": "Assinatura",
+    "interludes": [
+      {
+        "eyebrow": "À mesa",
+        "title": "Pão quente, garrafa aberta e pratos a partilhar.",
+        "body": "O jantar ganha outro ritmo quando a mesa fica cheia de pratos no meio e a conversa deixa de ter hora para acabar."
+      }
+    ],
+    "categories": [
+      {
+        "title": "Para Começar",
+        "description": "Para abrir a mesa: pão quente, azeite, enchidos, legumes — o primeiro gesto antes da grelha.",
+        "editorial": {
+          "label": "À chegada",
+          "value": "Partilha",
+          "note": "Entradas para pôr conversa e apetite a andar ao mesmo tempo."
+        },
+        "items": [
+          {
+            "name": "Camarão com alho",
+            "description": "Camarão quente em alho e azeite, com lume na frigideira — um dos pratos que mais pedem para dividir.",
+            "highlight": false,
+            "tag": "Mais Pedido"
+          },
+          {
+            "name": "Queijo de cabra com maçã, mel e nozes",
+            "description": "Queijo de cabra cremoso com maçã, mel e nozes — doce e salgado para abrir a mesa em boa conversa.",
+            "highlight": false,
+            "tag": ""
+          },
+          {
+            "name": "Salmão fumado com queijo fresco",
+            "description": "Salmão fumado com queijo fresco — leve, directo, ideal para partilhar antes da grelha.",
+            "highlight": false,
+            "tag": ""
+          }
+        ]
+      },
+      {
+        "title": "Carne Assinatura",
+        "description": "Cortes para a grelha, molhos quentes e acompanhamentos que fazem sentido à mesa — com a picanha ao centro, como há muitos anos.",
+        "editorial": {
+          "label": "Na brasa",
+          "value": "Fogo e repouso",
+          "note": "Carne grelhada, fatiada e servida generosa — o coração da casa."
+        },
+        "items": [
+          {
+            "name": "Picanha ao Estilo Brasileiro",
+            "description": "A estrela da carta: grelhada no fogo, fatiada à mesa, servida com os acompanhamentos clássicos que os habitués conhecem de cor.",
+            "highlight": true,
+            "tag": "Desde 2000"
+          },
+          {
+            "name": "Chateaubriand na pedra",
+            "description": "A ponta do Filet Mignon servida na pedra quente — mantém o calor à mesa. Servido para 1 pessoa.",
+            "highlight": false,
+            "tag": "Escolha do Chef"
+          },
+          {
+            "name": "Tornedó com molho Queijo Roquefort",
+            "description": "Bife tenro com molho cremoso de queijo Roquefort — um clássico de mesa para quem gosta de carne com sabor marcado.",
+            "highlight": false,
+            "tag": ""
+          }
+        ]
+      },
+      {
+        "title": "Do Algarve",
+        "description": "Peixe, marisco e frescura costeira para equilibrar a mesa — produto da região, preparado com simplicidade.",
+        "editorial": {
+          "label": "Origem",
+          "value": "Mar algarvio",
+          "note": "Azeite, limão e ervas — o mar como deve ser, sem excesso de adorno."
+        },
+        "items": [
+          {
+            "name": "Robalo Grelhado",
+            "description": "Robalo na grelha, azeite algarvio, ervas e limão — leve, directo, feito para a mesa partilhar.",
+            "highlight": false,
+            "tag": "Sazonal"
+          },
+          {
+            "name": "Linguado com camarão",
+            "description": "Linguado fresco com camarão — leve, directo, típico do Algarve.",
+            "highlight": false,
+            "tag": "Mais Pedido"
+          },
+          {
+            "name": "Filete de robalo com mostarda",
+            "description": "Filete de robalo com molho de mostarda — um clássico da casa, suave e com personalidade.",
+            "highlight": false,
+            "tag": ""
+          }
+        ]
+      },
+      {
+        "title": "Sobremesas",
+        "description": "Finais doce para fechar a noite — ou desculpa para ficar mais um pouco à mesa.",
+        "editorial": {
+          "label": "Final",
+          "value": "Doce e copo",
+          "note": "Para dividir, ou acompanhar com um vinho do Porto pequeno no fim."
+        },
+        "items": [
+          {
+            "name": "Creme Brulee Caramelizado",
+            "description": "Creme sedoso, açúcar queimado na hora — simples, clássico, reconfortante.",
+            "highlight": false,
+            "tag": ""
+          },
+          {
+            "name": "Profiteroles",
+            "description": "Profiteroles recheados com cobertura de chocolate — leves, indulgentes, um clássico que muitos habitués pedem.",
+            "highlight": false,
+            "tag": "Mais Pedido"
+          },
+          {
+            "name": "Tarte de maçã",
+            "description": "Tarte quente de maçã, servida com calma — doce de casa que fecha a noite bem.",
+            "highlight": false,
+            "tag": "Desde 1986"
+          }
+        ]
+      }
+    ]
+  },
+  "wine": {
+    "intro": {
+      "eyebrow": "Vinhos",
+      "title": "Cada garrafa tem o seu lugar à mesa — pergunte-nos qual é a sua.",
+      "body": "Ao longo dos anos fomos juntando rótulos portugueses que fazem sentido aqui: para a picanha, para o peixe, para aquele jantar que se prolonga sem pressa. Se quiser sugestão, basta perguntar."
+    },
+    "feature": {
+      "eyebrow": "Garrafeira",
+      "title": "Vinhos escolhidos para a mesa — carne, peixe e conversa.",
+      "body": "Tintos para a grelha, brancos para o peixe do dia, garrafas para celebrar sem teatro. A carta cresceu com os clientes e com as noites que se repetem."
+    },
+    "moments": [
+      "Tintos portugueses para picanha e carnes na grelha",
+      "Brancos frescos para peixe algarvio e almoços de esplanada",
+      "Garrafas para jantares em família e ocasiões que pedem tempo"
+    ]
+  },
+  "gallery": {
+    "intro": {
+      "eyebrow": "Galeria",
+      "title": "O Figueiral em imagens — fogo, mesa, esplanada.",
+      "body": "Fotografias reais da casa: a grelha, a garrafeira, clientes à mesa e a luz quente de Almancil."
+    }
+  },
+  "reservations": {
+    "intro": {
+      "eyebrow": "Reservas",
+      "title": "Ligue ou reserve online — há mesa para si.",
+      "body": "Online ou por telefone — confirmamos disponibilidade e tratamos de vos sentar como deve ser."
+    },
+    "widget": {
+      "eyebrow": "Reservas online",
+      "title": "Reservar mesa — Restaurante Figueiral",
+      "fallbackTitle": "Prefere falar connosco?",
+      "fallbackBody": "Ligue ou envie-nos para o contacto se precisar de ajuda com grupos, ocasiões especiais ou alterações.",
+      "call": "Ligar Agora",
+      "contact": "Contacto"
+    }
+  },
+  "contact": {
+    "intro": {
+      "eyebrow": "Contacto",
+      "title": "Encontre-nos em Almancil, perto da Quinta do Lago e Vale do Lobo.",
+      "body": "Planeie a sua visita para picanha premium, vinho e hospitalidade familiar no coração do Algarve."
+    },
+    "details": "Detalhes",
+    "openingHours": "Horário",
+    "hours": [
+      "Segunda a Sábado: 19:00 - 22:00",
+      "Domingo: Encerrado"
+    ],
+    "parking": "Estacionamento",
+    "parkingText": "Estacionamento gratuito disponível para clientes.",
+    "reserve": "Reservar",
+    "emailUs": "Enviar Email",
+    "getDirections": "Como chegar (Google Maps)"
+  },
+  "footer": {
+    "brandLine": "Almancil desde 1986",
+    "closingPhrase": "Uma casa em Almancil — fogo, vinho e mesas que muitos já consideram suas.",
+    "legalName": "Restaurante Figueiral",
+    "description": "Desde 1986, o Figueiral é fogo na grelha, garrafa partilhada e a certeza de que quem entra uma vez, muitas vezes volta.",
+    "explore": "Explorar",
+    "visit": "Visitar",
+    "addressLabel": "Morada",
+    "reservations": "Reservar mesa",
+    "social": "Redes sociais",
+    "rights": "Todos os direitos reservados.",
+    "locationNote": "Em Almancil, entre a Quinta do Lago e Vale do Lobo."
+  }
+}
