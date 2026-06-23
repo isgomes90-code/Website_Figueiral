@@ -18,8 +18,14 @@ export const metadata: Metadata = {
     google: "Ug3eawv8aucN7Q93Sd2_z1mr1PClII5Ed6tMQHeowus"
   },
   icons: {
-    icon: [{ url: "/icon", type: "image/png" }],
-    apple: [{ url: "/apple-icon", type: "image/png" }]
+    icon: [
+      {
+        url: "/images/Logo_favicon_figueiral.png",
+        type: "image/png"
+      }
+    ],
+    shortcut: "/images/Logo_favicon_figueiral.png",
+    apple: [{ url: "/images/Logo_favicon_figueiral.png", type: "image/png" }]
   }
 };
 
