@@ -11,11 +11,11 @@ const copy: Record<
 > = {
   pt: {
     location: "Almancil · Algarve · Desde 1986",
-    tagline: "Picanha premium, vinho e hospitalidade mediterrânica."
+    tagline: "Picanha e grelhados no coração do Algarve"
   },
   en: {
     location: "Almancil · Algarve · Since 1986",
-    tagline: "Premium picanha, wine and Mediterranean hospitality."
+    tagline: "Picanha and grilled meats in the heart of the Algarve"
   }
 };
 
