@@ -14,6 +14,15 @@ O ficheiro `.env.production` na raiz do repositório já contém este valor para
 
 Se `NEXT_PUBLIC_SITE_URL` não estiver definida, o código em `src/lib/site.ts` usa `http://localhost:3000` e activa `noindex` via `isLocalTestSite`.
 
+## ⚠️ DNS / Email — não tocar durante deploys
+
+O deploy do site é independente do DNS. Email (info@figueiral.pt) e registos de autenticação vivem no cPanel (Domínios.pt).
+
+- **NUNCA mudar nameservers** (ns1/ns2/ns3.dnscpanel.com) — parte o email.
+- Alterações a DNS fazem-se **registo a registo no cPanel Zone Editor**, nunca por troca de nameservers.
+- Não tocar em registos MX.
+- O domínio é gerido em Domínios.pt; o site em Vercel. Apontamentos do domínio para a Vercel fazem-se por registos individuais (A/CNAME), confirmando sempre que não se afecta MX/SPF/DKIM do email.
+
 ## Checklist pós-deploy
 
 - [ ] `NEXT_PUBLIC_SITE_URL=https://www.figueiral.pt` no painel Vercel/Netlify
@@ -23,3 +32,4 @@ Se `NEXT_PUBLIC_SITE_URL` não estiver definida, o código em `src/lib/site.ts` 
 - [ ] Validar [Rich Results Test](https://search.google.com/test/rich-results)
 - [ ] Confirmar sitemap: `https://www.figueiral.pt/sitemap.xml`
 - [ ] Confirmar `/pt/press` e favicon no browser
+- [ ] Confirmar que o deploy não alterou registos DNS de email (MX/SPF/DKIM intactos)
