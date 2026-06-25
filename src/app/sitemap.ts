@@ -5,7 +5,7 @@ import { getAllSeoLandingSlugs } from "@/data/seo";
 import { siteConfig } from "@/lib/site";
 
 const CORE_ROUTES = ["/menu", "/gallery", "/contact", "/reservations"] as const;
-const SECONDARY_ROUTES = ["/wine-experience", "/about", "/press"] as const;
+const SECONDARY_ROUTES = ["/wine-experience", "/about", "/press", "/privacy"] as const;
 
 function sitemapPath(locale: Locale, route: string) {
   const path = localizedPath(locale, route);

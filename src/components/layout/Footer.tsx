@@ -1,3 +1,4 @@
+import { ManageCookiesLink } from "@/components/consent/ManageCookiesLink";
 import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
@@ -165,6 +166,12 @@ export function Footer({ dictionary, lang }: { dictionary: Dictionary; lang: Loc
           <p className="text-[0.68rem] uppercase tracking-[0.18em] sm:tracking-[0.22em]">
             © {new Date().getFullYear()} {siteConfig.name}. {footer.rights}
           </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.68rem] uppercase tracking-[0.16em] sm:tracking-[0.18em]">
+            <Link href={localizedPath(lang, "/privacy")} className={footerLinkClass}>
+              {footer.privacy}
+            </Link>
+            <ManageCookiesLink label={footer.manageCookies} className={footerLinkClass} />
+          </div>
         </div>
       </div>
     </footer>

@@ -71,6 +71,15 @@
           "Almancil restaurant address",
           "Figueiral opening hours"
         ]
+      },
+      "privacy": {
+        "title": "Privacy & Cookies | Restaurante Figueiral",
+        "description": "Information about cookies, Google Analytics, Google Ads and Meta Pixel used on figueiral.pt.",
+        "keywords": [
+          "Figueiral cookie policy",
+          "restaurant website privacy",
+          "figueiral.pt cookies"
+        ]
       }
     }
   },
@@ -530,6 +539,63 @@
     "reservations": "Reserve a table",
     "social": "Social",
     "rights": "All rights reserved.",
-    "locationNote": "In Almancil, between Quinta do Lago, Vale do Lobo, Vilamoura and Quarteira."
+    "locationNote": "In Almancil, between Quinta do Lago, Vale do Lobo, Vilamoura and Quarteira.",
+    "privacy": "Privacy & cookies",
+    "manageCookies": "Manage cookies"
+  },
+  "consent": {
+    "eyebrow": "Cookies & privacy",
+    "bannerTitle": "We use cookies to measure site performance and advertising campaigns",
+    "bannerBody": "Strictly necessary cookies keep the site working. With your consent, we also use analytics cookies (Google Analytics 4) and marketing cookies (Google Ads and Meta Pixel) for statistics, conversions and retargeting.",
+    "bannerNote": "You can accept, reject non-essential cookies or manage preferences. Read more in our",
+    "privacyLink": "privacy and cookie policy",
+    "acceptAll": "Accept all",
+    "rejectNonEssential": "Reject non-essential",
+    "managePreferences": "Manage preferences",
+    "preferencesTitle": "Cookie preferences",
+    "preferencesIntro": "Choose the categories you allow. You can change this decision at any time via the “Manage cookies” link in the footer.",
+    "savePreferences": "Save preferences",
+    "close": "Close",
+    "categories": {
+      "necessary": {
+        "title": "Necessary",
+        "description": "Essential for the site to work and to remember your cookie choice. These cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Google Analytics 4 (GA4) — aggregated statistics on visits and site usage, to improve content and experience."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "description": "Google Ads (AW-624854441) and Meta Pixel (1825830558822025) — conversion measurement, remarketing and advertising campaigns."
+      }
+    }
+  },
+  "privacy": {
+    "eyebrow": "Privacy & cookies",
+    "title": "Privacy and cookie policy",
+    "intro": "This page factually describes how figueiral.pt uses cookies and similar technologies. The data controller is Restaurante Figueiral (info@figueiral.pt).",
+    "sections": {
+      "necessary": {
+        "title": "Necessary cookies",
+        "body": "These include storing your consent preference (first-party localStorage). They allow the site to function and honour your choice on future visits."
+      },
+      "analytics": {
+        "title": "Google Analytics 4",
+        "body": "Measures in aggregate how visitors use the site (pages viewed, traffic source, device). Only activated with consent in the Analytics category. Uses Google Consent Mode v2 (analytics_storage)."
+      },
+      "marketing": {
+        "title": "Google Ads and Meta Pixel",
+        "body": "Google Ads (ID AW-624854441) records conversions and campaign events, including “Reserve” clicks and visits to the reservations page. Meta Pixel (ID 1825830558822025) measures visits and enables retargeting on Meta platforms. Both are only activated with consent in the Marketing category (ad_storage, ad_user_data, ad_personalization)."
+      },
+      "control": {
+        "title": "How to change or withdraw consent",
+        "body": "Reopen the cookie panel via the “Manage cookies” link in the site footer, change categories or reject non-essential cookies. You can also clear cookies in your browser or use blocking extensions."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "For privacy or cookie questions: info@figueiral.pt."
+      }
+    }
   }
 }
