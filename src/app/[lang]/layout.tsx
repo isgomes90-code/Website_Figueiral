@@ -7,6 +7,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileReservationBar } from "@/components/layout/MobileReservationBar";
 import { GoogleAdsTag } from "@/components/analytics/GoogleAdsTag";
+import { MetaPixel } from "@/components/analytics/MetaPixel";
+import { MetaPixelPageView } from "@/components/analytics/MetaPixelPageView";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
@@ -63,6 +65,8 @@ export default async function LocaleLayout({
     <html lang={htmlLang} className={`${display.variable} ${sans.variable}`}>
       <body className={`${sans.className} antialiased`}>
         <GoogleAdsTag />
+        <MetaPixel />
+        <MetaPixelPageView />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-cream focus:px-5 focus:py-3 focus:text-[0.7rem] focus:font-semibold focus:uppercase focus:tracking-[0.2em] focus:text-charcoal focus:shadow-luxury focus:outline-none focus:ring-2 focus:ring-gold"
