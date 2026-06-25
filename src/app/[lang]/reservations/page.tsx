@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReservationsConversionTracker } from "@/components/analytics/ReservationsConversionTracker";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
@@ -22,7 +23,9 @@ export default async function ReservationsPage({ params }: { params: Promise<{ l
   const reservations = dictionary.reservations;
 
   return (
-    <section className="pt-36 pb-24 sm:pt-44">
+    <>
+      <ReservationsConversionTracker />
+      <section className="pt-36 pb-24 sm:pt-44">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <SectionIntro
           as="h1"
@@ -55,5 +58,6 @@ export default async function ReservationsPage({ params }: { params: Promise<{ l
         </MotionReveal>
       </div>
     </section>
+    </>
   );
 }

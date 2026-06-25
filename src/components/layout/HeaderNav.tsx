@@ -10,6 +10,7 @@ import { figueiralLogoHeaderCreamSrc, figueiralLogoSrc, navItems, siteConfig } f
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { trackReserveMenuClick } from "@/lib/gtag";
 
 /** Concordante com classes `min-[900px]:*` — abaixo disso usa-se o menu mobile. */
 export const HEADER_DESKTOP_NAV_PX = 900;
@@ -209,6 +210,10 @@ export function HeaderNav({
   const reserveHref = localizedPath(lang, "/reservations");
   const navbarBottom = "calc(max(0.5rem, env(safe-area-inset-top, 0px)) + 5.25rem)";
 
+  function handleReserveMenuClick() {
+    trackReserveMenuClick();
+  }
+
   const deskBase = useTransparentHeroTone ? deskNavTransparentGlass : deskNavElevatedPaper;
   const deskActive = useTransparentHeroTone ? deskNavActiveGlass : deskNavActivePaper;
 
@@ -274,7 +279,10 @@ export function HeaderNav({
               <LuxuryButton
                 href={reserveHref}
                 className="flex w-full !min-h-[3.25rem] justify-center whitespace-nowrap"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  handleReserveMenuClick();
+                  setMobileOpen(false);
+                }}
                 ariaCurrent={reserveAriaPageDrawer}
               >
                 {navigation.reserve}
@@ -319,6 +327,7 @@ export function HeaderNav({
               href={reserveHref}
               className="hidden !min-h-[2.5rem] !min-w-0 whitespace-nowrap !px-4 !py-2 !text-[0.625rem] !tracking-[0.18em] min-[460px]:inline-flex"
               ariaCurrent={reserveAriaPageBar}
+              onClick={handleReserveMenuClick}
             >
               {navigation.reserve}
             </LuxuryButton>
@@ -361,7 +370,13 @@ export function HeaderNav({
           <div className="header-actions relative z-[2] col-start-3 hidden shrink-0 flex-nowrap items-center justify-end gap-x-4 min-[900px]:flex lg:gap-x-5 xl:gap-x-7">
             <LanguageSwitcher variant="header" lang={lang} ariaLabel={navigation.language} inverse={useTransparentHeroTone} />
             <span className={`h-5 w-px shrink-0 ${useTransparentHeroTone ? "bg-cream/[0.32]" : "bg-walnut/25"}`} aria-hidden />
-            <LuxuryButton density="headerReserve" href={reserveHref} className="whitespace-nowrap" ariaCurrent={reserveAriaPageBar}>
+            <LuxuryButton
+              density="headerReserve"
+              href={reserveHref}
+              className="whitespace-nowrap"
+              ariaCurrent={reserveAriaPageBar}
+              onClick={handleReserveMenuClick}
+            >
               {navigation.reserve}
             </LuxuryButton>
           </div>
