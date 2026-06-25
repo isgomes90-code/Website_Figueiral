@@ -71,6 +71,15 @@
           "restaurante Almancil morada",
           "horário Figueiral"
         ]
+      },
+      "privacy": {
+        "title": "Privacidade e Cookies | Restaurante Figueiral",
+        "description": "Informação sobre cookies, Google Analytics, Google Ads e Meta Pixel utilizados no website figueiral.pt.",
+        "keywords": [
+          "política cookies Figueiral",
+          "privacidade website restaurante",
+          "cookies figueiral.pt"
+        ]
       }
     }
   },
@@ -530,6 +539,63 @@
     "reservations": "Reservar mesa",
     "social": "Redes sociais",
     "rights": "Todos os direitos reservados.",
-    "locationNote": "Em Almancil, entre a Quinta do Lago, Vale do Lobo, Vilamoura e Quarteira."
+    "locationNote": "Em Almancil, entre a Quinta do Lago, Vale do Lobo, Vilamoura e Quarteira.",
+    "privacy": "Privacidade e cookies",
+    "manageCookies": "Gerir cookies"
+  },
+  "consent": {
+    "eyebrow": "Cookies e privacidade",
+    "bannerTitle": "Utilizamos cookies para medir o desempenho do site e campanhas publicitárias",
+    "bannerBody": "Cookies estritamente necessários mantêm o site funcional. Com o seu consentimento, utilizamos também cookies analíticos (Google Analytics 4) e de marketing (Google Ads e Meta Pixel) para estatísticas, conversões e retargeting.",
+    "bannerNote": "Pode aceitar, rejeitar cookies não essenciais ou gerir preferências. Saiba mais na nossa",
+    "privacyLink": "política de privacidade e cookies",
+    "acceptAll": "Aceitar todos",
+    "rejectNonEssential": "Rejeitar não essenciais",
+    "managePreferences": "Gerir preferências",
+    "preferencesTitle": "Preferências de cookies",
+    "preferencesIntro": "Escolha as categorias que autoriza. Pode alterar esta decisão a qualquer momento através do link «Gerir cookies» no rodapé.",
+    "savePreferences": "Guardar preferências",
+    "close": "Fechar",
+    "categories": {
+      "necessary": {
+        "title": "Necessários",
+        "description": "Essenciais ao funcionamento do site e à memorização da sua escolha de cookies. Não podem ser desativados."
+      },
+      "analytics": {
+        "title": "Analítica",
+        "description": "Google Analytics 4 (GA4) — estatísticas agregadas sobre visitas e utilização do site, para melhorar conteúdos e experiência."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "description": "Google Ads (AW-624854441) e Meta Pixel (1825830558822025) — medição de conversões, remarketing e campanhas publicitárias."
+      }
+    }
+  },
+  "privacy": {
+    "eyebrow": "Privacidade e cookies",
+    "title": "Política de privacidade e cookies",
+    "intro": "Esta página descreve de forma factual como o website figueiral.pt utiliza cookies e tecnologias semelhantes. O responsável pelo tratamento é o Restaurante Figueiral (info@figueiral.pt).",
+    "sections": {
+      "necessary": {
+        "title": "Cookies necessários",
+        "body": "Incluem a memorização da sua preferência de consentimento (localStorage first-party). Permitem que o site funcione e que a sua escolha seja respeitada em visitas futuras."
+      },
+      "analytics": {
+        "title": "Google Analytics 4",
+        "body": "Mede de forma agregada como os visitantes utilizam o site (páginas vistas, origem de tráfego, dispositivo). Só é activado com consentimento na categoria Analítica. Utiliza Google Consent Mode v2 (analytics_storage)."
+      },
+      "marketing": {
+        "title": "Google Ads e Meta Pixel",
+        "body": "Google Ads (ID AW-624854441) regista conversões e eventos de campanha, incluindo cliques em «Reservar» e visitas à página de reservas. Meta Pixel (ID 1825830558822025) mede visitas e permite retargeting em plataformas Meta. Ambos só são activados com consentimento na categoria Marketing (ad_storage, ad_user_data, ad_personalization)."
+      },
+      "control": {
+        "title": "Como alterar ou retirar o consentimento",
+        "body": "Pode reabrir o painel de cookies através do link «Gerir cookies» no rodapé do site, alterar categorias ou rejeitar cookies não essenciais. Também pode limpar cookies no browser ou utilizar extensões de bloqueio."
+      },
+      "contact": {
+        "title": "Contacto",
+        "body": "Para questões sobre privacidade ou cookies: info@figueiral.pt."
+      }
+    }
   }
 }
