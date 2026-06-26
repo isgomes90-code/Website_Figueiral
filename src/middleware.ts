@@ -10,6 +10,16 @@ import { defaultLocale, locales } from "@/i18n/config";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  /** Rota neutra ResDiary — sem prefixo /pt ou /en. */
+  if (pathname === "/booking-successful" || pathname === "/booking-successful/") {
+    if (pathname.endsWith("/") && pathname.length > 1) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/booking-successful";
+      return NextResponse.redirect(url, 308);
+    }
+    return NextResponse.next();
+  }
+
   const hasLocale = locales.some(
     (locale) =>
       pathname === `/${locale}` ||
