@@ -36,8 +36,6 @@ export const siteConfig = {
   },
   booking: {
     widgetUrl: "https://booking.resdiary.com/widget/Standard/RestauranteFigueiral/13421",
-    widgetEmbedUrl:
-      "https://booking.resdiary.com/widget/Standard/RestauranteFigueiral/13421?includeJquery=false",
     widgetLoaderScript: "https://booking.resdiary.com/bundles/WidgetV2Loader.js",
     successPath: "/booking-successful"
   },

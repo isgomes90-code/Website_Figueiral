@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import type { Locale } from "@/i18n/config";
+import { getResDiaryWidgetEmbedUrl } from "@/lib/resdiary";
 import { siteConfig } from "@/lib/site";
 
 const LOADER_SCRIPT_ID = "resdiary-widget-v2-loader";
@@ -32,25 +34,27 @@ function ensureResDiaryLoader(onReady: () => void) {
  * ResDiary standard widget embed (WidgetV2Loader.js).
  * Substitui iframe — permite redirect interno para página de sucesso.
  */
-export function ResDiaryWidget({ className = "" }: { className?: string }) {
+export function ResDiaryWidget({ className = "", lang }: { className?: string; lang: Locale }) {
+  const widgetUrl = getResDiaryWidgetEmbedUrl(lang);
+
   useEffect(() => {
-    if (!document.getElementById("rd-widget-frame") || !document.getElementById("rdwidgeturl")) {
+    const frame = document.getElementById("rd-widget-frame");
+    const urlInput = document.getElementById("rdwidgeturl") as HTMLInputElement | null;
+
+    if (!frame || !urlInput) {
       return;
     }
 
+    urlInput.value = widgetUrl;
+    frame.innerHTML = "";
+
     ensureResDiaryLoader(triggerResDiaryLoader);
-  }, []);
+  }, [widgetUrl]);
 
   return (
     <>
       <div id="rd-widget-frame" className={className} />
-      <input
-        id="rdwidgeturl"
-        name="rdwidgeturl"
-        type="hidden"
-        value={siteConfig.booking.widgetEmbedUrl}
-        readOnly
-      />
+      <input id="rdwidgeturl" name="rdwidgeturl" type="hidden" value={widgetUrl} readOnly />
     </>
   );
 }

@@ -36,7 +36,7 @@ export default async function ReservationsPage({ params }: { params: Promise<{ l
         />
         <MotionReveal className="luxury-card rounded-[2rem] p-4 sm:p-6">
           <div className="overflow-hidden rounded-[1.4rem] border border-walnut/10 bg-cream/40">
-            <ResDiaryWidget className="min-h-[560px] w-full" />
+            <ResDiaryWidget className="min-h-[560px] w-full" lang={locale} />
           </div>
           <div className="mt-6 rounded-[1.2rem] border border-dashed border-gold/30 bg-cream/55 p-6 text-center sm:p-8">
             <p className={`text-gold ${editorialEyebrowClasses}`}>{reservations.widget.eyebrow}</p>
