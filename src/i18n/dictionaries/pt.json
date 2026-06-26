@@ -80,6 +80,11 @@
           "privacidade website restaurante",
           "cookies figueiral.pt"
         ]
+      },
+      "bookingSuccess": {
+        "title": "Reserva Confirmada | Restaurante Figueiral",
+        "description": "A sua mesa no Restaurante Figueiral está reservada. Receberá confirmação por email.",
+        "keywords": ["reserva confirmada Figueiral", "booking confirmed Almancil"]
       }
     }
   },
@@ -509,6 +514,12 @@
       "call": "Ligar Agora",
       "contact": "Contacto"
     }
+  },
+  "bookingSuccess": {
+    "eyebrow": "Reserva confirmada",
+    "title": "A sua mesa está reservada.",
+    "body": "Esperamos por si no Figueiral. Receberá a confirmação por email. Até breve.",
+    "cta": "Voltar ao início"
   },
   "contact": {
     "intro": {
