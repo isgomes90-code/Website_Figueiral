@@ -1,5 +1,6 @@
-import type { ReactNode } from "react";
-import { notFound } from "next/navigation";
+"use client";
+
+import { useEffect, useState, type ReactNode } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileReservationBar } from "@/components/layout/MobileReservationBar";
@@ -8,29 +9,25 @@ import { MetaPixel } from "@/components/analytics/MetaPixel";
 import { MetaPixelPageView } from "@/components/analytics/MetaPixelPageView";
 import { ConsentProvider } from "@/components/consent/ConsentProvider";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { getDictionary } from "@/i18n/getDictionary";
-import { isLocale, locales, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/getDictionary";
+import type { Locale } from "@/i18n/config";
+import { detectBrowserLocale } from "@/lib/booking-success";
 import { restaurantSchema } from "@/lib/seo";
+import pt from "@/i18n/dictionaries/pt.json";
+import en from "@/i18n/dictionaries/en.json";
 
-export function generateStaticParams() {
-  return locales.map((lang) => ({ lang }));
-}
+const dictionaries: Record<Locale, Dictionary> = { pt, en };
 
-export default async function LocaleLayout({
-  children,
-  params
-}: {
-  children: ReactNode;
-  params: Promise<{ lang: string }>;
-}) {
-  const { lang } = await params;
+export function NeutralBookingSuccessShell({ children }: { children: ReactNode }) {
+  const [locale, setLocale] = useState<Locale>("en");
 
-  if (!isLocale(lang)) {
-    notFound();
-  }
+  useEffect(() => {
+    const detected = detectBrowserLocale();
+    setLocale(detected);
+    document.documentElement.lang = detected === "pt" ? "pt-PT" : "en";
+  }, []);
 
-  const locale = lang as Locale;
-  const dictionary = await getDictionary(locale);
+  const dictionary = dictionaries[locale];
 
   return (
     <ConsentProvider labels={dictionary.consent} locale={locale}>
