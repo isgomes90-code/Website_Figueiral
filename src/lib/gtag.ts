@@ -9,6 +9,10 @@ export const GOOGLE_ANALYTICS_ID = process.env.NEXT_PUBLIC_GA4_ID?.trim() ?? "";
 export const GOOGLE_ADS_RESERVATION_CONVERSION =
   "AW-624854441/ltOcCKv_s8UcEKmL-qkC";
 
+/** Conversão real: reserva concluída (página /booking-successful). */
+export const GOOGLE_ADS_BOOKING_COMPLETED_CONVERSION =
+  "AW-624854441/Bq4VCI-Zr8UcEKmL-qkC";
+
 /** ID principal para carregar gtag.js (GA4 se configurado, senão Google Ads). */
 export function getGoogleTagLoaderId() {
   return GOOGLE_ANALYTICS_ID || GOOGLE_ADS_ID;
@@ -31,6 +35,17 @@ export function trackReservationPageConversion() {
 
   gtagEvent("event", "conversion", {
     send_to: GOOGLE_ADS_RESERVATION_CONVERSION
+  });
+}
+
+/** Conversão real: reserva concluída via ResDiary (página de sucesso). */
+export function trackBookingCompletedConversion() {
+  if (!hasMarketingConsent()) {
+    return;
+  }
+
+  gtagEvent("event", "conversion", {
+    send_to: GOOGLE_ADS_BOOKING_COMPLETED_CONVERSION
   });
 }
 
