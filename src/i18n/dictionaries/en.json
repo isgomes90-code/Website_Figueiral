@@ -85,6 +85,16 @@
         "title": "Booking Confirmed | Restaurante Figueiral",
         "description": "Your table at Restaurante Figueiral is booked. You will receive confirmation by email.",
         "keywords": ["booking confirmed Figueiral", "table reserved Almancil"]
+      },
+      "subscriptionPending": {
+        "title": "Confirm your subscription | Restaurante Figueiral",
+        "description": "Please confirm your email to complete your subscription to Restaurante Figueiral.",
+        "keywords": ["Figueiral newsletter", "confirm subscription"]
+      },
+      "subscriptionConfirmed": {
+        "title": "Subscription Confirmed | Restaurante Figueiral",
+        "description": "Your subscription to Restaurante Figueiral is confirmed.",
+        "keywords": ["Figueiral newsletter", "subscription confirmed"]
       }
     }
   },
@@ -520,6 +530,18 @@
     "title": "Your table is booked.",
     "body": "We look forward to welcoming you at Figueiral. You'll receive your confirmation by email. See you soon.",
     "cta": "Back to home"
+  },
+  "subscriptionPending": {
+    "title": "Confirm your subscription",
+    "body1": "Please confirm your email to complete your subscription.",
+    "body2": "Click the link in the email we've just sent you.",
+    "footnote": "Your subscription won't be complete until you click the confirmation link."
+  },
+  "subscriptionConfirmed": {
+    "title": "Subscription confirmed",
+    "body1": "Thank you for confirming. From now on, you'll receive news from Restaurante Figueiral.",
+    "footnote": "Seasonal menus, evenings on the terrace and moments from the restaurant.",
+    "cta": "Visit the website"
   },
   "contact": {
     "intro": {

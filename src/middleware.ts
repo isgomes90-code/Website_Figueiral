@@ -10,11 +10,14 @@ import { defaultLocale, locales } from "@/i18n/config";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  /** Rota neutra ResDiary — sem prefixo /pt ou /en. */
-  if (pathname === "/booking-successful" || pathname === "/booking-successful/") {
+  /** Rotas neutras (ResDiary, Brevo) — sem prefixo /pt ou /en. */
+  const neutralRoutes = ["/booking-successful", "/subscription-pending", "/subscription-confirmed"] as const;
+  const neutralRoute = neutralRoutes.find((route) => pathname === route || pathname === `${route}/`);
+
+  if (neutralRoute) {
     if (pathname.endsWith("/") && pathname.length > 1) {
       const url = request.nextUrl.clone();
-      url.pathname = "/booking-successful";
+      url.pathname = neutralRoute;
       return NextResponse.redirect(url, 308);
     }
     return NextResponse.next();
