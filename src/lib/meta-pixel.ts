@@ -1,7 +1,7 @@
 import { clearMetaCookies, hasMarketingConsent } from "@/lib/consent";
 
 /** Meta Pixel — conjunto de dados Figueiral Reviews (Events Manager). */
-export const META_PIXEL_ID = "1825830558822025";
+export const META_PIXEL_ID = "1942926293087749";
 
 const META_SCRIPT_SRC = "https://connect.facebook.net/en_US/fbevents.js";
 
