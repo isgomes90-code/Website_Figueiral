@@ -1,4 +1,4 @@
-import { clearMetaCookies } from "@/lib/consent";
+import { clearMetaCookies, hasMarketingConsent } from "@/lib/consent";
 
 /** Meta Pixel — conjunto de dados Figueiral Reviews (Events Manager). */
 export const META_PIXEL_ID = "1825830558822025";
@@ -28,6 +28,15 @@ export function trackMetaPageView() {
   }
 
   callFbq("track", "PageView");
+}
+
+/** Lead — reserva concluída (página /booking-successful). Só com consentimento Marketing. */
+export function trackMetaLead() {
+  if (!hasMarketingConsent()) {
+    return;
+  }
+
+  callFbq("track", "Lead");
 }
 
 /** Carrega fbevents.js, init único e PageView inicial. */

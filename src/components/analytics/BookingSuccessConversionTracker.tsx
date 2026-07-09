@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { trackBookingCompletedConversion } from "@/lib/gtag";
+import { trackMetaLead } from "@/lib/meta-pixel";
 
 /**
  * Conversão real Google Ads — reserva concluída (redirect ResDiary).
@@ -14,6 +15,7 @@ export function BookingSuccessConversionTracker() {
     if (firedRef.current) return;
     firedRef.current = true;
     trackBookingCompletedConversion();
+    trackMetaLead();
   }, []);
 
   return null;
