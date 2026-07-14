@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { BookingSuccessConversionTracker } from "@/components/analytics/BookingSuccessConversionTracker";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { MotionReveal } from "@/components/ui/MotionReveal";
@@ -32,7 +33,9 @@ export function BookingSuccessView({
 }) {
   return (
     <>
-      <BookingSuccessConversionTracker />
+      <Suspense fallback={null}>
+        <BookingSuccessConversionTracker />
+      </Suspense>
       <section className="pt-36 pb-24 sm:pt-44">
         <div className="section-shell max-w-2xl">
           <MotionReveal className="luxury-card rounded-[2rem] px-6 py-12 text-center sm:px-10 sm:py-14">

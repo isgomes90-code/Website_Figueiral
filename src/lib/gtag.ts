@@ -32,15 +32,21 @@ export function trackReservationPageConversion() {
 }
 
 /** Conversão real: reserva concluída via ResDiary (página de sucesso). */
-export function trackBookingCompletedConversion() {
+export function trackBookingCompletedConversion(bookingReference: string) {
   if (!hasMarketingConsent()) {
+    return;
+  }
+
+  const reference = bookingReference.trim();
+  if (!reference) {
     return;
   }
 
   gtagEvent("event", "conversion", {
     send_to: GOOGLE_ADS_BOOKING_COMPLETED_CONVERSION,
     value: 230.0,
-    currency: "EUR"
+    currency: "EUR",
+    transaction_id: reference
   });
 }
 
