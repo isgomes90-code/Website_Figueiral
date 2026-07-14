@@ -1,17 +1,14 @@
 import { hasAnalyticsConsent, hasMarketingConsent } from "@/lib/consent";
 
 /** Google Ads — etiqueta base e conversões. */
-export const GOOGLE_ADS_ID = "AW-624854441";
+export const GOOGLE_ADS_ID = "AW-18309325247";
 
 /** Google Analytics 4 — definir em NEXT_PUBLIC_GA4_ID (Vercel / .env.local). */
 export const GOOGLE_ANALYTICS_ID = process.env.NEXT_PUBLIC_GA4_ID?.trim() ?? "";
 
-export const GOOGLE_ADS_RESERVATION_CONVERSION =
-  "AW-624854441/ltOcCKv_s8UcEKmL-qkC";
-
 /** Conversão real: reserva concluída (página /booking-successful). */
 export const GOOGLE_ADS_BOOKING_COMPLETED_CONVERSION =
-  "AW-624854441/Bq4VCI-Zr8UcEKmL-qkC";
+  "AW-18309325247/BV6XCNjqzNAcEL_DyJpE";
 
 /** ID principal para carregar gtag.js (GA4 se configurado, senão Google Ads). */
 export function getGoogleTagLoaderId() {
@@ -32,10 +29,6 @@ export function trackReservationPageConversion() {
   if (!hasMarketingConsent()) {
     return;
   }
-
-  gtagEvent("event", "conversion", {
-    send_to: GOOGLE_ADS_RESERVATION_CONVERSION
-  });
 }
 
 /** Conversão real: reserva concluída via ResDiary (página de sucesso). */
@@ -45,7 +38,9 @@ export function trackBookingCompletedConversion() {
   }
 
   gtagEvent("event", "conversion", {
-    send_to: GOOGLE_ADS_BOOKING_COMPLETED_CONVERSION
+    send_to: GOOGLE_ADS_BOOKING_COMPLETED_CONVERSION,
+    value: 230.0,
+    currency: "EUR"
   });
 }
 
