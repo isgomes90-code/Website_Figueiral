@@ -3,9 +3,10 @@
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { trackBookingCompletedConversion } from "@/lib/gtag";
+import { trackMetaLead } from "@/lib/meta-pixel";
 
 /**
- * Conversão real Google Ads — reserva concluída (redirect ResDiary).
+ * Conversão Google Ads + Lead Meta — reserva concluída (redirect ResDiary).
  * Só dispara com consentimento Marketing e bookingReference válido na URL.
  */
 export function BookingSuccessConversionTracker() {
@@ -20,6 +21,7 @@ export function BookingSuccessConversionTracker() {
 
     firedRef.current = true;
     trackBookingCompletedConversion(bookingReference);
+    trackMetaLead(bookingReference);
   }, [searchParams]);
 
   return null;

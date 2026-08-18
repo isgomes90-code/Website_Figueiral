@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import type { Locale } from "@/i18n/config";
 import { getResDiaryWidgetEmbedUrl } from "@/lib/resdiary";
 import { siteConfig } from "@/lib/site";
@@ -35,7 +36,9 @@ function ensureResDiaryLoader(onReady: () => void) {
  * Substitui iframe — permite redirect interno para página de sucesso.
  */
 export function ResDiaryWidget({ className = "", lang }: { className?: string; lang: Locale }) {
-  const widgetUrl = getResDiaryWidgetEmbedUrl(lang);
+  const searchParams = useSearchParams();
+  const channel = searchParams.get("channel");
+  const widgetUrl = getResDiaryWidgetEmbedUrl(lang, channel);
 
   useEffect(() => {
     const frame = document.getElementById("rd-widget-frame");

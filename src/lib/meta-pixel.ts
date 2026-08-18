@@ -1,9 +1,10 @@
-import { clearMetaCookies } from "@/lib/consent";
+import { clearMetaCookies, hasMarketingConsent } from "@/lib/consent";
 
 /** Meta Pixel — conjunto de dados Figueiral Reviews (Events Manager). */
 export const META_PIXEL_ID = "1942926293087749";
 
 const META_SCRIPT_SRC = "https://connect.facebook.net/en_US/fbevents.js";
+const META_LEAD_SENT_STORAGE_KEY = "figueiral_meta_lead_sent";
 
 let metaPixelInitialized = false;
 let marketingConsentActive = false;
@@ -14,6 +15,41 @@ function callFbq(...args: unknown[]) {
   const fbq = (window as Window & { fbq?: FbqFn }).fbq;
   if (typeof fbq === "function") {
     fbq(...args);
+  }
+}
+
+function hasMetaLeadBeenSent(bookingReference: string): boolean {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  try {
+    const raw = window.sessionStorage.getItem(META_LEAD_SENT_STORAGE_KEY);
+    if (!raw) {
+      return false;
+    }
+
+    const sent = JSON.parse(raw) as string[];
+    return Array.isArray(sent) && sent.includes(bookingReference);
+  } catch {
+    return false;
+  }
+}
+
+function markMetaLeadSent(bookingReference: string) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  try {
+    const raw = window.sessionStorage.getItem(META_LEAD_SENT_STORAGE_KEY);
+    const sent = raw ? (JSON.parse(raw) as string[]) : [];
+    if (!sent.includes(bookingReference)) {
+      sent.push(bookingReference);
+      window.sessionStorage.setItem(META_LEAD_SENT_STORAGE_KEY, JSON.stringify(sent));
+    }
+  } catch {
+    window.sessionStorage.setItem(META_LEAD_SENT_STORAGE_KEY, JSON.stringify([bookingReference]));
   }
 }
 
@@ -28,6 +64,30 @@ export function trackMetaPageView() {
   }
 
   callFbq("track", "PageView");
+}
+
+/** Lead — reserva concluída (página /booking-successful). Só com consentimento Marketing. */
+export function trackMetaLead(bookingReference: string): boolean {
+  if (!hasMarketingConsent()) {
+    return false;
+  }
+
+  const reference = bookingReference.trim();
+  if (!reference) {
+    return false;
+  }
+
+  if (hasMetaLeadBeenSent(reference)) {
+    return false;
+  }
+
+  if (!isMetaPixelActive()) {
+    initMetaPixel();
+  }
+
+  callFbq("track", "Lead", { value: 230.0, currency: "EUR" }, { eventID: reference });
+  markMetaLeadSent(reference);
+  return true;
 }
 
 /** Carrega fbevents.js, init único e PageView inicial. */

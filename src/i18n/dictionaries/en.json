@@ -600,7 +600,7 @@
       },
       "marketing": {
         "title": "Marketing",
-        "description": "Google Ads (AW-624854441) and Meta Pixel (1942926293087749) — conversion measurement, remarketing and advertising campaigns."
+        "description": "Google Ads (AW-18309325247) and Meta Pixel (1942926293087749) — conversion measurement, remarketing and advertising campaigns."
       }
     }
   },
@@ -619,7 +619,7 @@
       },
       "marketing": {
         "title": "Google Ads and Meta Pixel",
-        "body": "Google Ads (ID AW-624854441) records conversions and campaign events, including “Reserve” clicks and visits to the reservations page. Meta Pixel (ID 1942926293087749) measures visits and enables retargeting on Meta platforms. Both are only activated with consent in the Marketing category (ad_storage, ad_user_data, ad_personalization)."
+        "body": "Google Ads (ID AW-18309325247) records conversions and campaign events, including “Reserve” clicks and visits to the reservations page. Meta Pixel (ID 1942926293087749) measures visits and enables retargeting on Meta platforms. Both are only activated with consent in the Marketing category (ad_storage, ad_user_data, ad_personalization)."
       },
       "control": {
         "title": "How to change or withdraw consent",
