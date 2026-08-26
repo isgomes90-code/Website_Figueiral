@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/config";
+import { localLandingContent, type LocalLandingContent } from "@/data/localLandings";
 
 type Localized<T> = Record<Locale, T>;
 
@@ -17,6 +18,7 @@ export type SeoLandingPage = {
     body: Localized<string>;
     note?: Localized<string>;
   };
+  local?: LocalLandingContent;
 };
 
 export type FutureEditorialPage = {
@@ -101,62 +103,95 @@ export const seoLandingPages: SeoLandingPage[] = [
   {
     slug: "restaurant-quinta-do-lago",
     primaryCta: { href: "/reservations", labelKey: "reserve" },
-    secondaryCta: { href: "/contact", labelKey: "contact" },
+    secondaryCta: { href: "/menu", labelKey: "menu" },
     meta: {
       title: {
-        pt: "Restaurante perto da Quinta do Lago | Restaurante Figueiral",
-        en: "Restaurant near Quinta do Lago | Restaurante Figueiral"
+        pt: "Restaurante perto da Quinta do Lago | Figueiral Almancil",
+        en: "Restaurant near Quinta do Lago | Figueiral Almancil"
       },
       description: {
-        pt: "A cinco minutos da Quinta do Lago e Vale do Lobo: carnes na grelha, vinho português e hospitalidade familiar em Almancil.",
-        en: "Five minutes from Quinta do Lago and Vale do Lobo: fire-grilled meats, Portuguese wine and family hospitality in Almancil."
+        pt: "Restaurante perto da Quinta do Lago, em Almancil: picanha na grelha, vinho português e uma mesa familiar desde 1986. Reserve já.",
+        en: "Restaurant near Quinta do Lago, in Almancil: fire-grilled picanha, Portuguese wine and a family table since 1986. Book now."
       },
       keywords: {
-        pt: ["restaurante Quinta do Lago", "jantar Quinta do Lago", "restaurante Vale do Lobo", "Almancil"],
-        en: ["restaurant Quinta do Lago", "dinner Quinta do Lago", "restaurant Vale do Lobo", "Almancil"]
+        pt: ["restaurante Quinta do Lago", "restaurante perto da Quinta do Lago", "jantar Quinta do Lago", "Almancil"],
+        en: ["restaurant Quinta do Lago", "restaurant near Quinta do Lago", "dinner Quinta do Lago", "Almancil"]
       }
     },
     content: {
-      eyebrow: { pt: "Perto da Quinta do Lago", en: "Near Quinta do Lago" },
+      eyebrow: { pt: "Quinta do Lago", en: "Quinta do Lago" },
       title: {
-        pt: "O refúgio de mesa para quem fica na zona — sem formalidade desnecessária.",
-        en: "A dining refuge for those staying in the area — without unnecessary formality."
+        pt: "Restaurante perto da Quinta do Lago",
+        en: "Restaurant near Quinta do Lago"
       },
       body: {
-        pt: "Muitos dos nossos clientes vêm da Quinta do Lago, Vale do Lobo ou hotéis vizinhos. Procuram uma noite boa, bem servida, com a naturalidade de quem está em casa no Algarve — e é isso que tratamos de oferecer.",
-        en: "Many of our guests come from Quinta do Lago, Vale do Lobo or nearby hotels. They want a good night, well served, with the ease of being at home in the Algarve — and that is what we aim to offer."
+        pt: "Picanha na grelha, vinho português e o ritmo calmo de uma casa em Almancil — para terminar o dia depois do golfe, da praia ou do resort.",
+        en: "Fire-grilled picanha, Portuguese wine and the calm pace of a house in Almancil — to end the day after golf, the beach or the resort."
       }
-    }
+    },
+    local: localLandingContent["restaurant-quinta-do-lago"]
+  },
+  {
+    slug: "restaurant-near-vale-do-lobo",
+    primaryCta: { href: "/reservations", labelKey: "reserve" },
+    secondaryCta: { href: "/menu", labelKey: "menu" },
+    meta: {
+      title: {
+        pt: "Restaurante perto de Vale do Lobo | Figueiral Almancil",
+        en: "Restaurant near Vale do Lobo | Figueiral Almancil"
+      },
+      description: {
+        pt: "Restaurante perto de Vale do Lobo, em Almancil: picanha na grelha, ambiente familiar e uma mesa para casais e famílias. Reserve já.",
+        en: "Restaurant near Vale do Lobo, in Almancil: fire-grilled picanha, a family setting and a table for couples and families. Book now."
+      },
+      keywords: {
+        pt: ["restaurante Vale do Lobo", "restaurante perto de Vale do Lobo", "jantar Vale do Lobo", "Almancil"],
+        en: ["restaurant Vale do Lobo", "restaurant near Vale do Lobo", "dinner Vale do Lobo", "Almancil"]
+      }
+    },
+    content: {
+      eyebrow: { pt: "Vale do Lobo", en: "Vale do Lobo" },
+      title: {
+        pt: "Restaurante perto de Vale do Lobo",
+        en: "Restaurant near Vale do Lobo"
+      },
+      body: {
+        pt: "Uma mesa requintada e sem pressa, em Almancil — para casais e famílias que querem terminar o dia fora do resort.",
+        en: "A refined, unhurried table in Almancil — for couples and families who want to end the day away from the resort."
+      }
+    },
+    local: localLandingContent["restaurant-near-vale-do-lobo"]
   },
   {
     slug: "restaurant-near-vilamoura",
     primaryCta: { href: "/reservations", labelKey: "reserve" },
-    secondaryCta: { href: "/contact", labelKey: "contact" },
+    secondaryCta: { href: "/menu", labelKey: "menu" },
     meta: {
       title: {
-        pt: "Restaurante perto de Vilamoura | Restaurante Figueiral Almancil",
-        en: "Restaurant near Vilamoura | Restaurante Figueiral Almancil"
+        pt: "Restaurante perto de Vilamoura | Figueiral Almancil",
+        en: "Restaurant near Vilamoura | Figueiral Almancil"
       },
       description: {
-        pt: "A 15 minutos de Vilamoura: carnes na grelha, picanha brasileira e vinho português em ambiente familiar. Restaurante Figueiral, Almancil.",
-        en: "15 minutes from Vilamoura: fire-grilled meats, Brazilian picanha and Portuguese wine in a family setting. Restaurante Figueiral, Almancil."
+        pt: "Restaurante perto de Vilamoura, em Almancil: depois da marina, do golfe ou da praia, picanha na grelha e uma mesa com outro ritmo. Reserve já.",
+        en: "Restaurant near Vilamoura, in Almancil: after the marina, golf or the beach, fire-grilled picanha and a table at a different pace. Book now."
       },
       keywords: {
-        pt: ["restaurante perto de Vilamoura", "jantar Vilamoura", "restaurante Almancil Vilamoura", "picanha Vilamoura", "steakhouse Vilamoura"],
-        en: ["restaurant near Vilamoura", "dinner Vilamoura", "restaurant Almancil Vilamoura", "picanha Vilamoura", "steakhouse Vilamoura"]
+        pt: ["restaurante perto de Vilamoura", "jantar Vilamoura", "restaurante Almancil Vilamoura", "picanha Vilamoura"],
+        en: ["restaurant near Vilamoura", "dinner Vilamoura", "restaurant Almancil Vilamoura", "picanha Vilamoura"]
       }
     },
     content: {
-      eyebrow: { pt: "Perto de Vilamoura", en: "Near Vilamoura" },
+      eyebrow: { pt: "Vilamoura", en: "Vilamoura" },
       title: {
-        pt: "A 15 minutos de Vilamoura, uma mesa que fica na memória.",
-        en: "15 minutes from Vilamoura, a table worth remembering."
+        pt: "Restaurante perto de Vilamoura",
+        en: "Restaurant near Vilamoura"
       },
       body: {
-        pt: "Muitos dos nossos clientes vêm de Vilamoura — depois do golfe, depois da marina, depois de um dia longo que pede uma boa noite para fechar. Trazem a família, trazem amigos, ficam mais tempo do que planeavam. É isso que acontece quando a mesa é boa e não há pressa.",
-        en: "Many of our guests come from Vilamoura — after golf, after the marina, after a long day that calls for a good evening to close it. They bring family, bring friends, stay longer than they planned. That is what happens when the table is good and there is no rush."
+        pt: "Depois da marina, do golfe ou de um passeio de barco — uma mesa em Almancil para fechar o dia com grelha, picanha e tempo.",
+        en: "After the marina, golf or a boat trip — a table in Almancil to close the day with the grill, picanha and time."
       }
-    }
+    },
+    local: localLandingContent["restaurant-near-vilamoura"]
   },
   {
     slug: "restaurant-near-quarteira",
@@ -558,4 +593,10 @@ export function getEditorialPage(slug: string): SeoLandingPage | FutureEditorial
 
 export function isSeoLandingPage(page: SeoLandingPage | FutureEditorialPage): page is SeoLandingPage {
   return "primaryCta" in page;
+}
+
+export function isLocalLandingPage(
+  page: SeoLandingPage | FutureEditorialPage
+): page is SeoLandingPage & { local: LocalLandingContent } {
+  return isSeoLandingPage(page) && page.local != null;
 }

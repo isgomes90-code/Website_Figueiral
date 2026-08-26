@@ -47,6 +47,12 @@ export const siteConfig = {
   }
 };
 
+/** Embed do Google Maps com `hl` alinhado ao idioma da página. */
+export function mapsEmbedUrl(lang: "pt" | "en") {
+  const hl = lang === "en" ? "en" : "pt";
+  return siteConfig.maps.embedUrl.replace(/([?&]hl=)[^&]*/, `$1${hl}`);
+}
+
 export function sitePhoneHref(phone: string = siteConfig.phone) {
   return `tel:${phone.replace(/\s/g, "")}`;
 }

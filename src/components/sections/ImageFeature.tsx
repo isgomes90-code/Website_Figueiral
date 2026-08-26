@@ -23,6 +23,7 @@ type ImageFeatureProps = {
   quiet?: boolean;
   supportingImage?: string;
   supportingAlt?: string;
+  supportingPosition?: "bottom-right" | "top-right";
   contextLink?: ContextLink;
   faces?: TeamFace[];
   facesImageAltSuffix?: string;
@@ -65,6 +66,7 @@ export function ImageFeature(props: ImageFeatureProps) {
     quiet = false,
     supportingImage,
     supportingAlt,
+    supportingPosition = "bottom-right",
     contextLink,
     faces,
     facesImageAltSuffix = "",
@@ -138,7 +140,13 @@ export function ImageFeature(props: ImageFeatureProps) {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/24 via-charcoal/5 to-transparent" />
       {supportingImage && layout === "split" ? (
-        <div className="absolute bottom-5 right-5 hidden h-40 w-[7.25rem] overflow-hidden rounded-[1rem] border border-cream/45 shadow-[0_18px_44px_rgba(24,18,14,0.22)] sm:bottom-6 sm:right-6 sm:block sm:h-48 sm:w-36 lg:h-52 lg:w-40">
+        <div
+          className={`absolute right-5 hidden h-40 w-[7.25rem] overflow-hidden rounded-[1rem] border border-cream/45 shadow-[0_18px_44px_rgba(24,18,14,0.22)] sm:right-6 sm:block sm:h-48 sm:w-36 lg:h-52 lg:w-40 ${
+            supportingPosition === "top-right"
+              ? "top-5 sm:top-6"
+              : "bottom-5 sm:bottom-6"
+          }`}
+        >
           <Image
             src={supportingImage}
             alt={supportingAlt ?? ""}

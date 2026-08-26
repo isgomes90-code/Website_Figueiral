@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EditorialLandingPage } from "@/components/sections/EditorialLandingPage";
+import { LocalLandingPage } from "@/components/sections/LocalLandingPage";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { getAllEditorialSlugs, getEditorialPage, isSeoLandingPage, t } from "@/data/seo";
+import {
+  getAllEditorialSlugs,
+  getEditorialPage,
+  isLocalLandingPage,
+  isSeoLandingPage,
+  t
+} from "@/data/seo";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, locales, localizedPath, type Locale } from "@/i18n/config";
-import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, faqPageSchema, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return locales.flatMap((lang) => getAllEditorialSlugs().map((landing) => ({ lang, landing })));
@@ -63,6 +70,23 @@ export default async function EditorialRoutePage({
       path: localizedPath(locale, `/${landing}`)
     }
   ]);
+
+  if (isLocalLandingPage(page)) {
+    const faq = faqPageSchema(
+      page.local.faq.map((item) => ({
+        question: t(item.question, locale),
+        answer: t(item.answer, locale)
+      }))
+    );
+
+    return (
+      <>
+        <JsonLd data={breadcrumbs} />
+        <JsonLd data={faq} inline />
+        <LocalLandingPage page={page} lang={locale} dictionary={dictionary} />
+      </>
+    );
+  }
 
   return (
     <>
