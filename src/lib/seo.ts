@@ -36,6 +36,8 @@ export function pageMetadata({
   keywords,
   ogImage,
   ogImageAlt,
+  ogImageWidth,
+  ogImageHeight,
   ogType = "website"
 }: {
   title: string;
@@ -45,6 +47,8 @@ export function pageMetadata({
   keywords?: string[];
   ogImage?: string;
   ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   ogType?: "website" | "article";
 }): Metadata {
   const localized = canonicalPath(lang, path);
@@ -84,8 +88,8 @@ export function pageMetadata({
       images: [
         {
           url: resolvedOgImage,
-          width: 1200,
-          height: 630,
+          width: ogImageWidth ?? 1200,
+          height: ogImageHeight ?? 630,
           alt: resolvedOgImageAlt
         }
       ]

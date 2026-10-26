@@ -6,6 +6,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
+import { FestivitiesMenu } from "@/components/layout/FestivitiesMenu";
 import { figueiralLogoHeaderCreamSrc, figueiralLogoSrc, navItems, siteConfig } from "@/lib/site";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
@@ -268,6 +269,12 @@ export function HeaderNav({
                   </Link>
                 );
               })}
+              <FestivitiesMenu
+                navigation={navigation}
+                lang={lang}
+                variant="mobile"
+                onNavigate={() => setMobileOpen(false)}
+              />
             </nav>
 
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-walnut/18 py-6">
@@ -364,6 +371,13 @@ export function HeaderNav({
                   </Link>
                 );
               })}
+              <FestivitiesMenu
+                navigation={navigation}
+                lang={lang}
+                variant="desktop"
+                deskClassName={deskBase}
+                activeClassName={deskActive}
+              />
             </div>
           </nav>
 

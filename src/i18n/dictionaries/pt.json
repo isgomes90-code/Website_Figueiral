@@ -95,6 +95,26 @@
         "title": "Subscrição Confirmada | Restaurante Figueiral",
         "description": "A sua subscrição à newsletter do Restaurante Figueiral está confirmada.",
         "keywords": ["newsletter Figueiral", "subscrição confirmada"]
+      },
+      "festiveNatal": {
+        "title": "Jantares de Natal de Grupo em Almancil | Restaurante Figueiral",
+        "description": "Jantares de Natal de grupo no Restaurante Figueiral, em Almancil, de 20 de novembro a 23 de dezembro de 2026. Menus a 45 € e 55 € por pessoa, com bebidas incluídas, a partir de 8 pessoas.",
+        "keywords": [
+          "jantar de Natal de grupo Almancil",
+          "Natal empresa Algarve",
+          "menu de Natal Figueiral",
+          "jantar de grupo Quinta do Lago"
+        ]
+      },
+      "festiveReveillon": {
+        "title": "Réveillon 2026 em Almancil | Restaurante Figueiral",
+        "description": "Réveillon 2026/27 no Restaurante Figueiral, em Almancil, a 31 de dezembro. Jantar com DJ, bebidas incluídas, champagne à meia-noite e digestivos em bar aberto.",
+        "keywords": [
+          "Réveillon Almancil",
+          "Réveillon 2026 Algarve",
+          "passagem de ano Figueiral",
+          "jantar de Réveillon Quinta do Lago"
+        ]
       }
     }
   },
@@ -163,6 +183,10 @@
     "gallery": "Galeria",
     "press": "Imprensa",
     "contact": "Contacto",
+    "festivities": "Festividades",
+    "festivitiesChristmas": "Jantares de Natal de Grupo",
+    "festivitiesNewYear": "Réveillon",
+    "festivitiesSubmenu": "Festividades",
     "reserve": "Reservar",
     "reserveTable": "Reservar Mesa",
     "ariaMain": "Navegação principal",
@@ -629,6 +653,46 @@
         "title": "Contacto",
         "body": "Para questões sobre privacidade ou cookies: info@figueiral.pt."
       }
+    }
+  },
+  "festivities": {
+    "actions": {
+      "requestInfo": "Pedir informações",
+      "viewPdf": "Ver menu em PDF"
+    },
+    "natal": {
+      "eyebrow": "Festividades",
+      "title": "Jantares de Natal de Grupo",
+      "subtitle": "Menus fechados para grupos, na sala do Figueiral em Almancil.",
+      "dates": "20 novembro – 23 dezembro 2026",
+      "highlights": [
+        "Dois menus: 45 € e 55 € por pessoa",
+        "Cada pessoa escolhe 1 entrada, 1 prato principal e 1 sobremesa",
+        "Bebidas incluídas: água, cerveja, refrigerantes, vinho (½ garrafa por pessoa) e café",
+        "Grupos a partir de 8 pessoas",
+        "Extras: welcome drink ou digestivo +3 €"
+      ],
+      "note": "O restaurante estará encerrado a 24 e 25 de dezembro.",
+      "imageAlt": "Menu dos jantares de Natal de grupo 2026 no Restaurante Figueiral",
+      "mailtoSubject": "Jantar de Natal de grupo 2026 — pedido de informação",
+      "mailtoBody": "Olá,\n\nGostaria de receber informação sobre os jantares de Natal de grupo.\n\nEmpresa/grupo:\nData pretendida:\nNúmero de pessoas:\nMenu de interesse (45 € / 55 €):\nTelefone:\n\nObrigado."
+    },
+    "reveillon": {
+      "eyebrow": "Festividades",
+      "title": "Réveillon 2026/27",
+      "subtitle": "A última noite do ano no Figueiral, com jantar, música e champagne.",
+      "dates": "31 dezembro 2026",
+      "highlights": [
+        "Jantar completo com DJ",
+        "Bebidas incluídas",
+        "Champagne à meia-noite",
+        "Digestivos em bar aberto",
+        "190 € por pessoa",
+        "Lugares limitados"
+      ],
+      "imageAlt": "Menu de Réveillon 2026 no Restaurante Figueiral",
+      "mailtoSubject": "Réveillon 2026 — pedido de informação",
+      "mailtoBody": "Olá,\n\nGostaria de receber informação sobre o Réveillon.\n\nNome:\nNúmero de pessoas (adultos/crianças):\nTelefone:\n\nObrigado."
     }
   }
 }

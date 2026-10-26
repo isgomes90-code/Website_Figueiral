@@ -14,6 +14,8 @@ type LuxuryButtonProps = {
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   /** Quando verdadeiro, marca o destino como página atual (ex.: Reservas no header). */
   ariaCurrent?: boolean;
+  /** Abre o destino num novo separador (ex.: PDF no mesmo domínio). */
+  openInNewTab?: boolean;
 };
 
 export function LuxuryButton({
@@ -23,7 +25,8 @@ export function LuxuryButton({
   density = "default",
   className = "",
   onClick,
-  ariaCurrent
+  ariaCurrent,
+  openInNewTab = false
 }: LuxuryButtonProps) {
   const baseDefault =
     "group inline-flex min-h-12 items-center justify-center rounded-full px-7 text-[0.7rem] font-semibold uppercase tracking-[0.3em] transition duration-500 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-paper";
@@ -39,14 +42,14 @@ export function LuxuryButton({
   };
   const classNames = `${base} ${variants[variant]} ${className}`;
 
-  if (href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("http")) {
-    const external = href.startsWith("http");
+  if (openInNewTab || href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("http")) {
+    const external = openInNewTab || href.startsWith("http");
     return (
       <a
         href={href}
         className={classNames}
         onClick={onClick}
-        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...(external ? { target: "_blank", rel: openInNewTab && !href.startsWith("http") ? "noopener" : "noopener noreferrer" } : {})}
       >
         {children}
       </a>

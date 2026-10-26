@@ -2,9 +2,10 @@ import type { MetadataRoute } from "next";
 import { locales, localizedPath, type Locale } from "@/i18n/config";
 import { getAllPressSlugs } from "@/data/press";
 import { getAllSeoLandingSlugs } from "@/data/seo";
-import { siteConfig } from "@/lib/site";
+import { festivityNavItems, siteConfig } from "@/lib/site";
 
 const CORE_ROUTES = ["/menu", "/gallery", "/contact", "/reservations"] as const;
+const FESTIVITY_ROUTES = festivityNavItems.map((item) => item.href);
 const SECONDARY_ROUTES = ["/wine-experience", "/about", "/press", "/privacy"] as const;
 
 function sitemapPath(locale: Locale, route: string) {
@@ -21,6 +22,7 @@ function getPriority(route: string, seoSlugs: ReadonlySet<string>): number {
   const slug = route.replace(/^\//, "");
   if (seoSlugs.has(slug)) return 0.9;
   if (route.includes("/about/press/")) return 0.6;
+  if (FESTIVITY_ROUTES.includes(route as (typeof FESTIVITY_ROUTES)[number])) return 0.8;
   if (CORE_ROUTES.includes(route as (typeof CORE_ROUTES)[number])) return 0.8;
   if (SECONDARY_ROUTES.includes(route as (typeof SECONDARY_ROUTES)[number])) return 0.7;
   return 0.7;
@@ -37,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const seoRoutes = getAllSeoLandingSlugs().map((slug) => `/${slug}`);
   const pressRoutes = getAllPressSlugs().map((slug) => `/about/press/${slug}`);
 
-  const allRoutes = [...new Set(["", ...CORE_ROUTES, ...SECONDARY_ROUTES, ...pressRoutes, ...seoRoutes])];
+  const allRoutes = [...new Set(["", ...CORE_ROUTES, ...FESTIVITY_ROUTES, ...SECONDARY_ROUTES, ...pressRoutes, ...seoRoutes])];
   const lastModified = new Date();
 
   return locales.flatMap((locale) =>

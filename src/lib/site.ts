@@ -79,6 +79,12 @@ export const navItems = [
   { href: "/contact", labelKey: "contact" }
 ] as const;
 
+/** Dropdown do menu principal, imediatamente antes do botão Reservar. */
+export const festivityNavItems = [
+  { href: "/festividades/natal", labelKey: "festivitiesChristmas" },
+  { href: "/festividades/reveillon", labelKey: "festivitiesNewYear" }
+] as const;
+
 export const images = {
   hero: "/images/hero/Esplanada-1.webp",
   picanha: "/images/food/Picanha-fundo-branco.webp",
