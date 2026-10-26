@@ -7,9 +7,20 @@ type AtmosphereMomentProps = {
   line: string;
   imageAlt: string;
   imageSrc?: string;
+  /** Substitui só o enquadramento vertical desta instância. */
+  objectClassName?: string;
 };
 
-export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/hero/Alinhamento-mesas.webp" }: AtmosphereMomentProps) {
+export function AtmosphereMoment({
+  eyebrow,
+  line,
+  imageAlt,
+  imageSrc = "/images/hero/Alinhamento-mesas.webp",
+  objectClassName
+}: AtmosphereMomentProps) {
+  const objectPosition =
+    objectClassName ??
+    "object-[center_56%] sm:object-[center_60%] lg:object-[center_63%] xl:object-[center_64%]";
   return (
     <section className="relative min-h-[50vh] w-full overflow-hidden sm:min-h-[52vh] lg:min-h-[58vh]" aria-labelledby="atmosphere-moment-heading">
       {/*
@@ -23,7 +34,7 @@ export function AtmosphereMoment({ eyebrow, line, imageAlt, imageSrc = "/images/
         fill
         sizes="100vw"
         loading="lazy"
-        className={`object-cover object-[center_56%] sm:object-[center_60%] lg:object-[center_63%] xl:object-[center_64%] ${imageToneAtmosphere} scale-[1.05] translate-y-[2.5%]`}
+        className={`object-cover ${objectPosition} ${imageToneAtmosphere} scale-[1.05] translate-y-[2.5%]`}
         quality={68}
       />
       <div

@@ -160,7 +160,16 @@
         "Guests at Restaurante Figueiral in the Algarve",
         "Guest reception at Restaurante Figueiral",
         "Plating at Restaurante Figueiral Almancil"
-      ]
+      ],
+      "festiveNatalTable": "Guests sharing a table at Restaurante Figueiral in Almancil",
+      "festiveNatalWelcome": "Guests welcomed on arrival at Restaurante Figueiral",
+      "festiveNatalGathering": "A group of guests at the table at Restaurante Figueiral",
+      "festiveWineDetail": "A Portuguese wine in detail at Restaurante Figueiral",
+      "festiveNatalHosts": "Ivan and Cláudia, hosts of Restaurante Figueiral in Almancil",
+      "festiveReveillonTable": "Guests gathered at the table at Restaurante Figueiral",
+      "festiveReveillonWine": "Wine served at the table at Restaurante Figueiral",
+      "festiveReveillonBar": "An espresso martini being prepared at the Restaurante Figueiral bar",
+      "festiveReveillonFriends": "Friends at the table at Restaurante Figueiral"
     },
     "gallery": [
       "Grilled prawns at Restaurante Figueiral Almancil",
@@ -661,35 +670,102 @@
       "viewPdf": "View menu (PDF)"
     },
     "natal": {
-      "eyebrow": "Festivities",
-      "title": "Christmas Group Dinners",
-      "subtitle": "Set menus for groups, in the Figueiral dining room in Almancil.",
-      "dates": "20 November – 23 December 2026",
-      "highlights": [
-        "Two menus: €45 and €55 per person",
-        "Each guest chooses 1 starter, 1 main course and 1 dessert",
-        "Drinks included: water, beer, soft drinks, wine (½ bottle per person) and coffee",
-        "Groups of 8 or more",
-        "Extras: welcome drink or digestif +€3"
-      ],
-      "note": "The restaurant will be closed on 24 and 25 December.",
+      "hero": {
+        "eyebrow": "Festive season · Christmas 2026",
+        "title": "Christmas Group Dinners",
+        "body": "A table for the whole team, your friends or family, in a house that has celebrated Christmas since 1986. Set menus, drinks included, and every guest chooses their own dishes.",
+        "dates": "20 November to 23 December 2026",
+        "scrollCta": "View the menus"
+      },
+      "facts": {
+        "items": [
+          { "label": "Menus", "value": "€45 · €55" },
+          { "label": "Dates", "value": "20 Nov – 23 Dec" },
+          { "label": "Groups", "value": "from 8 guests" },
+          { "label": "Drinks", "value": "included" }
+        ],
+        "line": "Per person: 1 starter, 1 main course and 1 dessert of your choice."
+      },
+      "feature": {
+        "eyebrow": "For the organiser",
+        "title": "An evening without the worry",
+        "body": "The price is fixed from the first conversation, and each guest picks their own starter, main course and dessert. Our team looks after everything else, from the first toast to coffee.",
+        "note": "Extras: welcome drink or digestif, +€3 per person."
+      },
+      "menus": {
+        "eyebrow": "The menus",
+        "title": "Two menus, chosen by the group",
+        "body": "The group chooses one menu; within it, each guest chooses their dishes.",
+        "hint": "Tap the image to open the PDF"
+      },
+      "steps": {
+        "eyebrow": "How to book",
+        "title": "Three steps to the table",
+        "items": [
+          { "title": "Ask for a date", "body": "Tell us the day you prefer and the number of guests." },
+          { "title": "Confirm your booking", "body": "We send the confirmation and the date is held for your group." },
+          { "title": "Send the choices", "body": "Before the dinner, the organiser sends each guest's chosen dishes." }
+        ]
+      },
+      "moment": {
+        "eyebrow": "Since 1986",
+        "line": "For forty years, Christmas has been celebrated at our table."
+      },
+      "close": {
+        "title": "Book your group's date",
+        "body": "Fridays and Saturdays in December are the first to fill up.",
+        "closed": "The restaurant will be closed on 24 and 25 December."
+      },
       "imageAlt": "Christmas group dinner menu 2026 at Restaurante Figueiral",
       "mailtoSubject": "Christmas group dinner 2026 — information request",
       "mailtoBody": "Hello,\n\nI would like to receive information about the Christmas group dinners.\n\nCompany/group:\nPreferred date:\nNumber of guests:\nMenu (€45 / €55):\nPhone:\n\nThank you."
     },
     "reveillon": {
-      "eyebrow": "Festivities",
-      "title": "New Year's Eve 2026/27",
-      "subtitle": "The last night of the year at Figueiral, with dinner, music and champagne.",
-      "dates": "31 December 2026",
-      "highlights": [
-        "Full dinner with DJ",
-        "Drinks included",
-        "Champagne at midnight",
-        "Open bar for digestifs",
-        "€190 per person",
-        "Limited places"
-      ],
+      "hero": {
+        "eyebrow": "Festive season · 31 December",
+        "title": "New Year's Eve at Figueiral",
+        "body": "A complete evening at one price: dinner with a DJ, drinks included and champagne at midnight.",
+        "dates": "31 December 2026",
+        "scrollCta": "View the menu"
+      },
+      "facts": {
+        "items": [
+          { "label": "Date", "value": "31 December" },
+          { "label": "Price", "value": "€190 per person" },
+          { "label": "Includes", "value": "dinner, drinks and champagne" },
+          { "label": "Places", "value": "limited" }
+        ],
+        "line": "Champagne at midnight and digestifs at an open bar."
+      },
+      "feature": {
+        "eyebrow": "The evening",
+        "title": "From aperitifs to champagne at midnight",
+        "body": "The evening opens with aperitifs and the cheese buffet, continues with four courses at the table, paired with Figueiral wines, and ends with champagne at midnight and the DJ into the night.",
+        "note": "1 bottle of champagne for every 4 adults."
+      },
+      "menus": {
+        "eyebrow": "The menu",
+        "title": "The New Year's Eve menu",
+        "body": "For the meat course, choose between picanha or the surf and turf steak.",
+        "hint": "Tap the image to open the PDF"
+      },
+      "steps": {
+        "eyebrow": "How to book",
+        "title": "Secure your place",
+        "items": [
+          { "title": "Request a booking", "body": "Tell us how many guests are coming." },
+          { "title": "Confirm", "body": "We send the confirmation and your place is secured." },
+          { "title": "Celebrate", "body": "On 31 December, your table is waiting." }
+        ]
+      },
+      "moment": {
+        "eyebrow": "31 December",
+        "line": "Close the year at the table, among friends."
+      },
+      "close": {
+        "title": "Limited places",
+        "body": "Bookings are confirmed in order of arrival."
+      },
       "imageAlt": "New Year's Eve 2026 menu at Restaurante Figueiral",
       "mailtoSubject": "New Year's Eve 2026 — information request",
       "mailtoBody": "Hello,\n\nI would like to receive information about New Year's Eve.\n\nName:\nNumber of guests (adults/children):\nPhone:\n\nThank you."

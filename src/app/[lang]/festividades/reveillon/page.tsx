@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FestiveEventPage } from "@/components/festivities/FestiveEventPage";
-import { festiveMenuImageSize, festivityAssets } from "@/data/festivities";
+import { festiveMenuImageSize, festiveScenes, festivityAssets } from "@/data/festivities";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/lib/seo";
@@ -30,13 +30,23 @@ export default async function ReveillonFestivityPage({ params }: { params: Promi
   const dictionary = await getDictionary(locale);
   const assets = festivityAssets.reveillon[locale];
 
+  const images = dictionary.seo.images;
+
   return (
     <FestiveEventPage
       menu="reveillon"
       copy={dictionary.festivities.reveillon}
       actions={dictionary.festivities.actions}
+      scene={festiveScenes.reveillon}
       imageSrc={assets.image}
       pdfHref={assets.pdf}
+      alts={{
+        hero: images.festiveReveillonTable,
+        heroSupporting: images.festiveReveillonWine,
+        feature: images.festiveReveillonBar,
+        featureSupporting: images.festiveWineDetail,
+        moment: images.festiveReveillonFriends
+      }}
     />
   );
 }
