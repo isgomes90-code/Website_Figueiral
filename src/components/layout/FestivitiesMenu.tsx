@@ -64,6 +64,18 @@ export function FestivitiesMenu({
   }, [pathname]);
 
   useEffect(() => {
+    if (!open) return;
+    function onKey(event: globalThis.KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      setOpen(false);
+      if (variant === "desktop") buttonRef.current?.focus();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, variant]);
+
+  useEffect(() => {
     if (!open || !pendingFocus.current) return;
     pendingFocus.current = false;
     menuRef.current?.querySelector<HTMLAnchorElement>('[role="menuitem"]')?.focus();
