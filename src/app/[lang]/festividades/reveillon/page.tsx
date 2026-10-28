@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FestiveEventPage } from "@/components/festivities/FestiveEventPage";
-import { festiveMenuImageSize, festiveScenes, festivityAssets } from "@/data/festivities";
+import { festiveHero, festivityAssets } from "@/data/festivities";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/lib/seo";
@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     ...dictionary.meta.pages.festiveReveillon,
     path: PATH,
     lang: locale,
-    ogImage: assets.image,
-    ogImageAlt: dictionary.festivities.reveillon.imageAlt,
-    ogImageWidth: festiveMenuImageSize.width,
-    ogImageHeight: festiveMenuImageSize.height
+    ogImage: festiveHero.reveillon.desktop,
+    ogImageAlt: dictionary.festivities.reveillon.hero.imageAlt,
+    ogImageWidth: festiveHero.reveillon.width,
+    ogImageHeight: festiveHero.reveillon.height
   });
 }
 
@@ -30,23 +30,13 @@ export default async function ReveillonFestivityPage({ params }: { params: Promi
   const dictionary = await getDictionary(locale);
   const assets = festivityAssets.reveillon[locale];
 
-  const images = dictionary.seo.images;
-
   return (
     <FestiveEventPage
       menu="reveillon"
       copy={dictionary.festivities.reveillon}
       actions={dictionary.festivities.actions}
-      scene={festiveScenes.reveillon}
       imageSrc={assets.image}
       pdfHref={assets.pdf}
-      alts={{
-        hero: images.festiveReveillonTable,
-        heroSupporting: images.festiveReveillonWine,
-        feature: images.festiveReveillonBar,
-        featureSupporting: images.festiveWineDetail,
-        moment: images.festiveReveillonFriends
-      }}
     />
   );
 }

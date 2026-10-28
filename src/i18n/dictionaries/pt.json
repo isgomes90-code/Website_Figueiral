@@ -160,16 +160,7 @@
         "Clientes no Restaurante Figueiral no Algarve",
         "Receção de clientes no Restaurante Figueiral",
         "Empratamento no Restaurante Figueiral Almancil"
-      ],
-      "festiveNatalTable": "Mesa de convívio no Restaurante Figueiral em Almancil",
-      "festiveNatalWelcome": "Receção de clientes à chegada ao Restaurante Figueiral",
-      "festiveNatalGathering": "Grupo de clientes à mesa no Restaurante Figueiral",
-      "festiveWineDetail": "Detalhe de um vinho português no Restaurante Figueiral",
-      "festiveNatalHosts": "Ivan e Cláudia, anfitriões do Restaurante Figueiral em Almancil",
-      "festiveReveillonTable": "Clientes reunidos à mesa no Restaurante Figueiral",
-      "festiveReveillonWine": "Vinho servido à mesa no Restaurante Figueiral",
-      "festiveReveillonBar": "Preparação de um espresso martini no bar do Restaurante Figueiral",
-      "festiveReveillonFriends": "Amigos à mesa no Restaurante Figueiral"
+      ]
     },
     "gallery": [
       "Camarão na grelha no Restaurante Figueiral Almancil",
@@ -673,9 +664,10 @@
       "hero": {
         "eyebrow": "Festividades · Natal 2026",
         "title": "Jantares de Natal de Grupo",
-        "body": "Uma mesa para toda a equipa, os amigos ou a família, numa casa que recebe o Natal desde 1986. Menus fechados, bebidas incluídas e cada pessoa escolhe o seu prato.",
-        "dates": "20 de novembro a 23 de dezembro de 2026",
-        "scrollCta": "Ver os menus"
+        "body": "Menus fechados para grupos, bebidas incluídas e cada pessoa escolhe o seu prato.",
+        "dates": "20 novembro – 23 dezembro 2026",
+        "scrollCta": "Ver os menus",
+        "imageAlt": "Entrada empratada na cozinha do Restaurante Figueiral"
       },
       "facts": {
         "items": [
@@ -686,30 +678,11 @@
         ],
         "line": "Por pessoa: 1 entrada, 1 prato principal e 1 sobremesa, à escolha."
       },
-      "feature": {
-        "eyebrow": "Para quem organiza",
-        "title": "Uma noite sem preocupações",
-        "body": "O preço fica fechado desde o primeiro contacto e cada convidado escolhe a sua entrada, o prato principal e a sobremesa. A nossa equipa trata do resto, do primeiro brinde ao café.",
-        "note": "Extras: welcome drink ou digestivo, +3 € por pessoa."
-      },
       "menus": {
         "eyebrow": "Os menus",
         "title": "Dois menus, à escolha do grupo",
         "body": "O grupo escolhe um dos menus; dentro dele, cada pessoa escolhe os seus pratos.",
         "hint": "Toque na imagem para abrir em PDF"
-      },
-      "steps": {
-        "eyebrow": "Como reservar",
-        "title": "Três passos até à mesa",
-        "items": [
-          { "title": "Peça a data", "body": "Diga-nos o dia que prefere e o número de pessoas." },
-          { "title": "Confirme a reserva", "body": "Enviamos a confirmação e a data fica guardada para o seu grupo." },
-          { "title": "Envie as escolhas", "body": "Antes do jantar, o organizador envia o prato escolhido por cada pessoa." }
-        ]
-      },
-      "moment": {
-        "eyebrow": "Desde 1986",
-        "line": "Há quarenta anos que o Natal se celebra à nossa mesa."
       },
       "close": {
         "title": "Reserve a data do seu grupo",
@@ -724,9 +697,10 @@
       "hero": {
         "eyebrow": "Festividades · 31 de dezembro",
         "title": "Réveillon no Figueiral",
-        "body": "Uma noite completa, com um só preço: jantar com DJ, bebidas incluídas e champagne à meia-noite.",
-        "dates": "31 de dezembro de 2026",
-        "scrollCta": "Ver o menu"
+        "body": "Jantar com DJ, bebidas incluídas e champagne à meia-noite. 190 € por pessoa.",
+        "dates": "Lugares limitados",
+        "scrollCta": "Ver o menu",
+        "imageAlt": "Jantar no Restaurante Figueiral com fogo-de-artifício dourado"
       },
       "facts": {
         "items": [
@@ -737,30 +711,11 @@
         ],
         "line": "Champagne à meia-noite e digestivos em bar aberto."
       },
-      "feature": {
-        "eyebrow": "A noite",
-        "title": "Do aperitivo ao champagne da meia-noite",
-        "body": "A noite abre com aperitivos e o buffet de queijos, segue com quatro momentos à mesa, com vinhos Figueiral, e termina com champagne à meia-noite e o DJ até tarde.",
-        "note": "1 garrafa de champagne por cada 4 adultos."
-      },
       "menus": {
         "eyebrow": "O menu",
         "title": "O menu de Réveillon",
         "body": "Na carne, escolhe entre a picanha ou o bife surf and turf.",
         "hint": "Toque na imagem para abrir em PDF"
-      },
-      "steps": {
-        "eyebrow": "Como reservar",
-        "title": "Garanta o seu lugar",
-        "items": [
-          { "title": "Peça a reserva", "body": "Diga-nos quantas pessoas vêm." },
-          { "title": "Confirme", "body": "Enviamos a confirmação e o lugar fica garantido." },
-          { "title": "Celebre", "body": "A 31 de dezembro, a mesa está à sua espera." }
-        ]
-      },
-      "moment": {
-        "eyebrow": "31 de dezembro",
-        "line": "Feche o ano à mesa, entre amigos."
       },
       "close": {
         "title": "Lugares limitados",

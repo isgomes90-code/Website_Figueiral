@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FestiveEventPage } from "@/components/festivities/FestiveEventPage";
-import { festiveMenuImageSize, festiveScenes, festivityAssets } from "@/data/festivities";
+import { festiveHero, festivityAssets } from "@/data/festivities";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/lib/seo";
@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     ...dictionary.meta.pages.festiveNatal,
     path: PATH,
     lang: locale,
-    ogImage: assets.image,
-    ogImageAlt: dictionary.festivities.natal.imageAlt,
-    ogImageWidth: festiveMenuImageSize.width,
-    ogImageHeight: festiveMenuImageSize.height
+    ogImage: festiveHero.natal.photo,
+    ogImageAlt: dictionary.festivities.natal.hero.imageAlt,
+    ogImageWidth: festiveHero.natal.width,
+    ogImageHeight: festiveHero.natal.height
   });
 }
 
@@ -30,23 +30,13 @@ export default async function NatalFestivityPage({ params }: { params: Promise<{
   const dictionary = await getDictionary(locale);
   const assets = festivityAssets.natal[locale];
 
-  const images = dictionary.seo.images;
-
   return (
     <FestiveEventPage
       menu="natal"
       copy={dictionary.festivities.natal}
       actions={dictionary.festivities.actions}
-      scene={festiveScenes.natal}
       imageSrc={assets.image}
       pdfHref={assets.pdf}
-      alts={{
-        hero: images.festiveNatalTable,
-        heroSupporting: images.festiveNatalWelcome,
-        feature: images.festiveNatalGathering,
-        featureSupporting: images.festiveWineDetail,
-        moment: images.festiveNatalHosts
-      }}
     />
   );
 }

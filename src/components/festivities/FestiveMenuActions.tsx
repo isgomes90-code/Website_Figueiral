@@ -12,7 +12,9 @@ export function FestiveButtonRow({
   secondaryHref,
   secondaryLabel,
   secondaryTracksPdf = false,
+  secondaryClassName = "",
   align = "start",
+  wideUntil = "sm",
   className = ""
 }: {
   menu: "natal" | "reveillon";
@@ -21,7 +23,10 @@ export function FestiveButtonRow({
   secondaryHref: string;
   secondaryLabel: string;
   secondaryTracksPdf?: boolean;
+  secondaryClassName?: string;
   align?: "start" | "center";
+  /** Até esta largura os botões ocupam a linha inteira. */
+  wideUntil?: "sm" | "md";
   className?: string;
 }) {
   function trackInfo() {
@@ -32,11 +37,14 @@ export function FestiveButtonRow({
     trackAnalyticsEvent("festive_pdf_open", { menu });
   }
 
-  const alignment = align === "center" ? "sm:justify-center" : "";
+  const alignment = align === "center" ? (wideUntil === "md" ? "md:justify-center" : "sm:justify-center") : "";
+  const direction =
+    wideUntil === "md" ? "flex flex-col gap-3 md:flex-row md:flex-wrap" : "flex flex-col gap-3 sm:flex-row sm:flex-wrap";
+  const width = wideUntil === "md" ? "w-full md:w-auto" : "w-full sm:w-auto";
 
   return (
-    <div className={`flex flex-col gap-3 sm:flex-row sm:flex-wrap ${alignment} ${className}`}>
-      <LuxuryButton href={mailtoHref} onClick={trackInfo} className="w-full sm:w-auto">
+    <div className={`${direction} ${alignment} ${className}`}>
+      <LuxuryButton href={mailtoHref} onClick={trackInfo} className={width}>
         {requestInfo}
       </LuxuryButton>
       <LuxuryButton
@@ -44,7 +52,7 @@ export function FestiveButtonRow({
         variant="secondary"
         openInNewTab={secondaryTracksPdf}
         onClick={secondaryTracksPdf ? trackPdf : undefined}
-        className="w-full sm:w-auto"
+        className={`${width} ${secondaryClassName}`}
       >
         {secondaryLabel}
       </LuxuryButton>

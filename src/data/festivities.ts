@@ -4,26 +4,21 @@ export const festiveMenuImageSize = {
   height: 1697
 } as const;
 
-export const festiveScenes = {
+export const festiveHero = {
   natal: {
     anchor: "menus",
-    heroSrc: "/images/people/mesa-convivio-opt.webp",
-    heroSupportingSrc: "/images/people/Rececao-clientes-opt.webp",
-    featureSrc: "/images/people/Convicio-clientes-3-opt.webp",
-    featureSupportingSrc: "/images/wine/Vinho-detalhe-1.webp",
-    featureTone: "warm",
-    momentSrc: "/images/people/Proprietarios.webp",
-    momentObjectClassName: "object-[center_38%] sm:object-[center_36%]"
+    photo: "/festividades/natal_capa.jpg",
+    lightsDesktop: "/festividades/natal_luzes_desktop.png",
+    lightsMobile: "/festividades/natal_luzes_mobile.png",
+    width: 1536,
+    height: 2048
   },
   reveillon: {
     anchor: "menu",
-    heroSrc: "/images/people/Convicio-clientes-1.webp",
-    heroSupportingSrc: "/images/wine/Vinho-mesa.webp",
-    featureSrc: "/images/bar/Expresso-martini-preparcao-1.webp",
-    featureSupportingSrc: "/images/wine/Vinho-detalhe-1.webp",
-    featureTone: "linen",
-    momentSrc: "/images/people/Convicio-clientes-2.webp",
-    momentObjectClassName: "object-[center_22%] sm:object-[center_16%]"
+    desktop: "/festividades/reveillon-hero-desktop.webp",
+    mobile: "/festividades/reveillon-hero-mobile.webp",
+    width: 2400,
+    height: 1200
   }
 } as const;
 

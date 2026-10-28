@@ -160,16 +160,7 @@
         "Guests at Restaurante Figueiral in the Algarve",
         "Guest reception at Restaurante Figueiral",
         "Plating at Restaurante Figueiral Almancil"
-      ],
-      "festiveNatalTable": "Guests sharing a table at Restaurante Figueiral in Almancil",
-      "festiveNatalWelcome": "Guests welcomed on arrival at Restaurante Figueiral",
-      "festiveNatalGathering": "A group of guests at the table at Restaurante Figueiral",
-      "festiveWineDetail": "A Portuguese wine in detail at Restaurante Figueiral",
-      "festiveNatalHosts": "Ivan and Cláudia, hosts of Restaurante Figueiral in Almancil",
-      "festiveReveillonTable": "Guests gathered at the table at Restaurante Figueiral",
-      "festiveReveillonWine": "Wine served at the table at Restaurante Figueiral",
-      "festiveReveillonBar": "An espresso martini being prepared at the Restaurante Figueiral bar",
-      "festiveReveillonFriends": "Friends at the table at Restaurante Figueiral"
+      ]
     },
     "gallery": [
       "Grilled prawns at Restaurante Figueiral Almancil",
@@ -673,9 +664,10 @@
       "hero": {
         "eyebrow": "Festive season · Christmas 2026",
         "title": "Christmas Group Dinners",
-        "body": "A table for the whole team, your friends or family, in a house that has celebrated Christmas since 1986. Set menus, drinks included, and every guest chooses their own dishes.",
-        "dates": "20 November to 23 December 2026",
-        "scrollCta": "View the menus"
+        "body": "Set menus for groups, drinks included, and every guest chooses their own dishes.",
+        "dates": "20 November – 23 December 2026",
+        "scrollCta": "See the menus",
+        "imageAlt": "Plated starter in the Restaurante Figueiral kitchen"
       },
       "facts": {
         "items": [
@@ -686,30 +678,11 @@
         ],
         "line": "Per person: 1 starter, 1 main course and 1 dessert of your choice."
       },
-      "feature": {
-        "eyebrow": "For the organiser",
-        "title": "An evening without the worry",
-        "body": "The price is fixed from the first conversation, and each guest picks their own starter, main course and dessert. Our team looks after everything else, from the first toast to coffee.",
-        "note": "Extras: welcome drink or digestif, +€3 per person."
-      },
       "menus": {
         "eyebrow": "The menus",
         "title": "Two menus, chosen by the group",
         "body": "The group chooses one menu; within it, each guest chooses their dishes.",
         "hint": "Tap the image to open the PDF"
-      },
-      "steps": {
-        "eyebrow": "How to book",
-        "title": "Three steps to the table",
-        "items": [
-          { "title": "Ask for a date", "body": "Tell us the day you prefer and the number of guests." },
-          { "title": "Confirm your booking", "body": "We send the confirmation and the date is held for your group." },
-          { "title": "Send the choices", "body": "Before the dinner, the organiser sends each guest's chosen dishes." }
-        ]
-      },
-      "moment": {
-        "eyebrow": "Since 1986",
-        "line": "For forty years, Christmas has been celebrated at our table."
       },
       "close": {
         "title": "Book your group's date",
@@ -724,9 +697,10 @@
       "hero": {
         "eyebrow": "Festive season · 31 December",
         "title": "New Year's Eve at Figueiral",
-        "body": "A complete evening at one price: dinner with a DJ, drinks included and champagne at midnight.",
-        "dates": "31 December 2026",
-        "scrollCta": "View the menu"
+        "body": "Dinner with a DJ, drinks included and champagne at midnight. €190 per person.",
+        "dates": "Limited places",
+        "scrollCta": "See the menu",
+        "imageAlt": "Dinner at Restaurante Figueiral with golden fireworks"
       },
       "facts": {
         "items": [
@@ -737,30 +711,11 @@
         ],
         "line": "Champagne at midnight and digestifs at an open bar."
       },
-      "feature": {
-        "eyebrow": "The evening",
-        "title": "From aperitifs to champagne at midnight",
-        "body": "The evening opens with aperitifs and the cheese buffet, continues with four courses at the table, paired with Figueiral wines, and ends with champagne at midnight and the DJ into the night.",
-        "note": "1 bottle of champagne for every 4 adults."
-      },
       "menus": {
         "eyebrow": "The menu",
         "title": "The New Year's Eve menu",
         "body": "For the meat course, choose between picanha or the surf and turf steak.",
         "hint": "Tap the image to open the PDF"
-      },
-      "steps": {
-        "eyebrow": "How to book",
-        "title": "Secure your place",
-        "items": [
-          { "title": "Request a booking", "body": "Tell us how many guests are coming." },
-          { "title": "Confirm", "body": "We send the confirmation and your place is secured." },
-          { "title": "Celebrate", "body": "On 31 December, your table is waiting." }
-        ]
-      },
-      "moment": {
-        "eyebrow": "31 December",
-        "line": "Close the year at the table, among friends."
       },
       "close": {
         "title": "Limited places",
